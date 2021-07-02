@@ -22,14 +22,14 @@ spark = SparkSession \
     .appName("PythonSpark") \
     .getOrCreate()
 
-data = list(range(1, 101))
-rdd_1 = spark.sparkContext.parallelize(data, 2)
+data = list(range(1, 1000001))
+rdd_1 = spark.sparkContext.parallelize(data)
 print("RDD-1 Partition Count : %i " % (rdd_1.getNumPartitions()))
-print(rdd_1.collect())
+#print(rdd_1.collect())
 
 commons.print_separator()
 
-rdd_2 = rdd_1.repartition(4)
+rdd_2 = rdd_1.sample(False, 0.002)
 print("RDD-2 Partition count after re-partitions is  : %i " % (rdd_2.getNumPartitions()))
 print(rdd_2.collect())
 
