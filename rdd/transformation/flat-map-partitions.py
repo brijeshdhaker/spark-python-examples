@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     spark = SparkSession\
       .builder\
-      .appName("PythonSpark")\
+      .appName("PythonRDD-FlatMap")\
       .getOrCreate()
 
     data = [

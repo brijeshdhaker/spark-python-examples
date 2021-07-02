@@ -1,0 +1,60 @@
+#
+#
+version: '3.1'
+#
+services:
+#    
+  spark-master:
+    image: spark:3.1.2
+    container_name: spark-master
+    hostname: spark-master
+    ports:
+      - 7077:7077
+      - 8080:8080
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /apps/hostpath/spark:/usr/local/spark/work-dir
+    environment:
+      NODE_TYPE: MASTER
+      WEBUI_PORT: 8080
+
+#
+  spark-node01:
+    image: spark:3.1.2
+    container_name: spark-node01
+    hostname: spark-node01
+    depends_on:
+      - spark-master
+    ports:
+      - 8081:8081
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /apps/hostpath/spark:/usr/local/spark/work-dir
+    environment:
+      NODE_TYPE: WORKER
+      WEBUI_PORT: 8081
+
+#
+  spark-node02:
+    image: spark:3.1.2
+    container_name: spark-node02
+    hostname: spark-node02
+    depends_on:
+      - spark-master
+    ports:
+      - 8082:8082
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /apps/hostpath/spark:/usr/local/spark/work-dir
+    environment:
+      NODE_TYPE: WORKER
+      WEBUI_PORT: 8082
+
+#
+#networks:
+#  default:
+#    external:
+#      name: bridge  
+#  backend:
+#    driver: bridge
+# 

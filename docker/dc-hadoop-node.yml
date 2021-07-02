@@ -1,0 +1,30 @@
+#
+#
+version: '3.1'
+#
+services:
+#    
+  namenode:
+    image: hadoop:3.2.0
+    container_name: namenode
+    ports:
+      - "9000:9000"
+      - "9866:9866"  
+      - "9870:9870"
+      - "9864:9864" 
+    command: /usr/local/bin/start-hdfs.sh
+    hostname: namenode
+    volumes:
+      - /apps/hostpath/spark/data:/data
+      - /apps/hostpath:/apps/hostpath
+    environment:
+      HDFS_MODE: SingleNode
+
+#
+#networks:
+#  default:
+#    external:
+#      name: bridge  
+#  backend:
+#    driver: bridge
+# 

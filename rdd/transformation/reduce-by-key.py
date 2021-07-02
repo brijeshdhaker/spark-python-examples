@@ -13,11 +13,13 @@ if __name__ == "__main__":
 def f(iterator):
     yield len(list(iterator))
 
+def reduce_fun(v1,v2):
+    yield len(list(iterator))
 
 #
 spark = SparkSession \
     .builder \
-    .appName("PythonSpark") \
+    .appName("PythonRDD-ReduceByKey") \
     .getOrCreate()
 
 data = [
@@ -35,19 +37,14 @@ data = [
 rdd_1 = spark.sparkContext.parallelize(data)
 print("RDD-1 Partition Count : %i " % (rdd_1.getNumPartitions()))
 
-rdd_2 = rdd_1.map(lambda x: (x[1], x))
+rdd_2 = rdd_1.map(lambda x: (x[1], x[4]))
 print(rdd_2.collect())
+#print("RDD-2 Partition Count : %i " % (rdd_2.getNumPartitions()))
 
 commons.print_separator()
 
-rdd_3 = rdd_2.groupByKey()
-print("RDD-3 Partition count after re-partitions is  : %i " % (rdd_3.getNumPartitions()))
-#print(rdd_3.collect())
-
-commons.print_separator()
-
-rdd_4 = rdd_3.reduceByKey(lambda a, b: a[3] + b[3])
-print(rdd_4.collect())
+rdd_3 = rdd_2.reduceByKey(lambda a, b: a + b)
+print(rdd_3.collect())
 
 print("Details available at http://localhost:4040")
 option = input("Do You Want to Kill Spark Job Process Y/N : ")

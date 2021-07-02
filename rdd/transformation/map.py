@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     spark = SparkSession\
       .builder\
-      .appName("PythonSpark")\
+      .appName("PythonRDD-Map")\
       .getOrCreate()
 
     data = range(1, 101)

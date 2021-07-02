@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     spark = SparkSession\
       .builder\
-      .appName("PythonSpark")\
+      .appName("PythonRDD-MapPartitionWithIndex")\
       .getOrCreate()
 
 #    data = range(1, 100)

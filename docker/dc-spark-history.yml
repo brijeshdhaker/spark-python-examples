@@ -1,0 +1,25 @@
+#
+#
+version: '3.1'
+#
+services:
+#
+  history-server:
+    image: spark:3.1.2
+    container_name: history-server
+    hostname: history-server
+    ports:
+      - 18080:18080
+    volumes:
+      - /apps/hostpath/spark:/apps/hostpath/spark
+    environment:
+      NODE_TYPE: LOGSERVER
+
+#
+#networks:
+#  default:
+#    external:
+#      name: bridge  
+#  backend:
+#    driver: bridge
+# 
