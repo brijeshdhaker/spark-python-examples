@@ -9,8 +9,8 @@ if __name__ == "__main__":
     #        print("Usages: spark-file <inpath> <outpath>")
     #        sys.exit(-1)
 
-    def f(iterator):
-        yield len(list(iterator))
+    def f(partition_data):
+        yield len(list(partition_data))
 
 
     #
@@ -35,6 +35,7 @@ if __name__ == "__main__":
     rdd_3 = rdd_2.mapPartitions(f)
     print("RDD-3 Partition count after transformation is : %i " % (rdd_3.getNumPartitions()))
     print(rdd_3.collect())
+#   print(rdd_3.glom().collect())
 
     commons.print_separator()
 

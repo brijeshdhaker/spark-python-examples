@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6561a14d-fe17-41bc-93f4-d151ecbebf27" name="Default Changelist" comment="2021-07-02 Add Common Utils">
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/flat-map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/spark-aggregate-by-key.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rdd/transformation/aggregate-by-key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rdd/transformation/coalesce.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rdd/transformation/distinct.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rdd/transformation/repartition-sort-within-partitions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rdd/transformation/sort-by-key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sampledata.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/transformation/flat-map.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/flat-map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/transformation/group-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/group-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/transformation/map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/map-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/transformation/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdd/transformation/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/reduce-by-key.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/rdd/transformation" />
+    <property name="settings.editor.selected.configurable" value="RainbowCSV.Settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -49,8 +59,8 @@
       <recent name="$PROJECT_DIR$/rdd/transformation" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.flat-map">
-    <configuration name="filter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.repartition-sort-within-partitions">
+    <configuration name="aggregate-by-key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,7 +72,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/filter.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/aggregate-by-key.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -71,7 +81,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="flat-map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="group-by-key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -83,28 +93,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/flat-map.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/transformation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/map.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/group-by-key.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -121,7 +110,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/transformation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -134,7 +123,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="union" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="repartition-sort-within-partitions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -142,11 +131,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/transformation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/union.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/repartition-sort-within-partitions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sort-by-key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/transformation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/sort-by-key.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,10 +167,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.flat-map" />
-        <item itemvalue="Python.filter" />
-        <item itemvalue="Python.map" />
-        <item itemvalue="Python.union" />
+        <item itemvalue="Python.repartition-sort-within-partitions" />
+        <item itemvalue="Python.sort-by-key" />
+        <item itemvalue="Python.aggregate-by-key" />
+        <item itemvalue="Python.group-by-key" />
         <item itemvalue="Python.reduce-by-key" />
       </list>
     </recent_temporary>
@@ -202,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625205411693</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2021-07-02 Add Common Utils">
+      <created>1625218659774</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625218659774</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

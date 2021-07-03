@@ -47,6 +47,13 @@ if __name__ == "__main__":
 
     commons.print_separator()
 
+    rdd_3 = rdd_1.flatMap(lambda x: (x[0], x[0]**2, x[0]*10))
+    print("RDD-2 Partition Count : %i " % (rdd_3.getNumPartitions()))
+    print("RDD-2 Record Count : %i " % (rdd_3.count()))
+    print(rdd_3.collect())
+
+    commons.print_separator()
+
     print("Details available at http://localhost:4040")
     # option = input("Do You Want to Kill Spark Job Process Y/N : ")
 

@@ -13,7 +13,7 @@ if __name__ == "__main__":
 #
 spark = SparkSession \
     .builder \
-    .appName("PythonRDD-ReduceByKey") \
+    .appName("PythonRDD-SortByKey") \
     .getOrCreate()
 
 rdd_1 = spark.sparkContext.parallelize(t_key_values)
@@ -22,11 +22,12 @@ print("Values in RDD-1 : {0} ".format(rdd_1.collect()))
 
 commons.print_separator()
 
-rdd_2 = rdd_1.reduceByKey(lambda a, b: a + b)
+#
+rdd_2 = rdd_1.sortByKey(True)
 print("Values in RDD-2 : {0} ".format(rdd_2.collect()))
 
 
-print("Details available at http://localhost:4040")
+print("Details available at http://localhost:18080")
 option = input("Do You Want to Kill Spark Job Process Y/N : ")
 #
 spark.stop()

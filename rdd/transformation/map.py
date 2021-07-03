@@ -18,13 +18,13 @@ if __name__ == "__main__":
     data = range(1, 101)
     rdd_1 = spark.sparkContext.parallelize(data, 2)
     print("RDD-1 Partition Count : %i " % (rdd_1.getNumPartitions()))
-    print(rdd_1.collect())
+    print("Values in RDD-1 : {0} ".format(rdd_1.collect()))
 
     commons.print_separator()
 
-    rdd_2 = rdd_1.map(lambda x: x*2)
+    rdd_2 = rdd_1.map(lambda x: (x, x*2))
     print("RDD-1 Partition Count : %i " % (rdd_2.getNumPartitions()))
-    print(rdd_2.collect())
+    print("Values in RDD-2 : {0} ".format(rdd_2.collect()))
 
     print("Details available at http://localhost:4040")
     option = input("Do You Want to Kill Spark Job Process Y/N : ")
