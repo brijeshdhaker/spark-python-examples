@@ -1,0 +1,65 @@
+[
+  {
+    "namespace": "sample.multimodule.dto.avro",
+    "type": "record",
+    "name": "UserDTO",
+    "version": "1",
+    "fields": [
+      {
+        "name": "id",
+        "type": ["null", "long"]
+      },
+      {
+        "name": "uuid",
+        "type": ["null", "string"],
+        "logicalType": "uuid"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      {
+        "name": "emailAddr",
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      {
+        "name": "age",
+        "type": ["null", "int"]
+      },
+      {
+        "name": "dob",
+        "type": ["null", "int"],
+        "logicalType": "date"
+      },
+      {
+        "name": "height",
+        "type": ["null", "float"]
+      },
+      {
+        "name": "roles",
+        "type": [ "null", {
+          "type": "array",
+          "items": "string",
+          "default": []
+        }]
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "avro.java.string": "String"
+      },
+      {
+        "name": "addTs",
+        "type": ["null", "long"],
+        "logicalType": "timestamp-millis"
+      },
+      {
+        "name": "updTs",
+        "type": ["null", "long"],
+        "logicalType": "timestamp-millis"
+      }
+    ]
+  }
+]
