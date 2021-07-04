@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6561a14d-fe17-41bc-93f4-d151ecbebf27" name="Default Changelist" comment="2021-07-02 Add Common Utils">
-      <change afterPath="$PROJECT_DIR$/images/spark-aggregate-by-key.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/aggregate-by-key.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/coalesce.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/distinct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/repartition-sort-within-partitions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rdd/transformation/sort-by-key.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sampledata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/flat-map.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/flat-map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/group-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/group-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/map-partitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdd/transformation/reduce-by-key.py" afterDir="false" />
-    </list>
+    <list default="true" id="6561a14d-fe17-41bc-93f4-d151ecbebf27" name="Default Changelist" comment="2021-07-03 Add Spark Transformation Examples." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625218659774</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2021-07-03 Add Spark Transformation Examples.">
+      <created>1625330634366</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625330634366</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +230,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2021-07-01 Add Common Utils" />
     <MESSAGE value="2021-07-02 Add Common Utils" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-07-02 Add Common Utils" />
+    <MESSAGE value="2021-07-03 Add Spark Transformation Examples." />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-07-03 Add Spark Transformation Examples." />
   </component>
 </project>
