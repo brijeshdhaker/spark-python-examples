@@ -41,17 +41,20 @@ if __name__ == "__main__":
     #
     schema_registry_conf = {
         'url': 'http://dockerhost:8081',
-        'basic.auth.user.info': '{}:{}'.format('dfdsfsdfds', 'dsadasdasdasd')
+        'basic.auth.user.info': '{}:{}'.format('userid', 'password')
     }
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
     users_schema_response = schema_registry_client.get_latest_version("users-topic-value").schema
     users_schema = users_schema_response.schema_str
 
     #
-    from_avro_options = {"mode":"PERMISSIVE"}
+    from_avro_options = {"mode": "PERMISSIVE"}
     structuredGpsDf = (
-        data_df.select(from_avro(fn.expr("substring(value, 6, length(value)-5)"), users_schema, from_avro_options).alias("users"))
-        .selectExpr("users.*")
+        data_df.select(
+            from_avro(fn.expr("substring(value, 6, length(value)-5)"),
+            users_schema,
+            from_avro_options).alias("users")
+        ).selectExpr("users.*")
     )
 
     structuredGpsDf.writeStream\
@@ -59,5 +62,14 @@ if __name__ == "__main__":
         .format("console")\
         .start()\
         .awaitTermination()
+
+    structuredGpsDf.write.format('jdbc')\
+        .option("url", "jdbc:mysql://localhost/database_name") \
+        .option("driver", "com.mysql.jdbc.Driver") \
+        .option("dbtable", "jdbc:mysql://localhost/database_name") \
+        .option("user", "jdbc:mysql://localhost/database_name") \
+        .option("password", "jdbc:mysql://localhost/database_name") \
+        .mode('append')\
+        .save()
 
     spark.stop()

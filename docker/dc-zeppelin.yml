@@ -1,0 +1,40 @@
+---
+#
+version: '3.1'
+#
+services:
+#
+  zeppelin:
+    image: apache/zeppelin:0.9.0
+    container_name: zeppelin
+    hostname: zeppelin
+    restart: always
+    volumes:
+      - /apps/hostpath/zeppelin/logs:/logs
+      - /apps/hostpath/zeppelin/notebook:/notebook
+    environment:
+      ZEPPELIN_LOG_DIR: '/logs'
+      ZEPPELIN_NOTEBOOK_DIR: '/notebook'
+    ports:
+      - 8080:8080
+#    networks:
+#      - back-tier
+
+#
+#  adminer:
+#    image: adminer
+#    restart: always
+#    ports:
+#      - 9090:8080
+#    networks:
+#      - back-tier
+#
+
+#
+#networks:
+#  default:
+#    external:
+#      name: bridge
+#  backend:
+#    driver: bridge
+#
