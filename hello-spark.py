@@ -1,23 +1,30 @@
-import sys
 
-import findspark
-findspark.init('/apps/spark')
-# ipython --profile=myprofile
-# findspark.init('/path/to/spark_home', edit_profile=True)
-# findspark.init('/path/to/spark_home', edit_rc=True)
+"""
+This is the "front door" of your application which gets submitted
+to Spark and serves as the starting point. If you needed to
+implement a command-line inteface, for example, you'd invoke the
+setup from here.
+"""
 import pyspark
-import random
+from src.util import metaphone_udf
 
-sc = pyspark.SparkContext(appName="Pi")
-num_samples = 1000
 
-def inside(p):
-  x, y = random.random(), random.random()
-  return x*x + y*y < 1
+if __name__ == '__main__':
+  spark = (
+    pyspark.sql.SparkSession.builder
+      # This doesn't seem to have an impact on YARN.
+      # Use `spark-submit --name` instead.
+      # .appName('Sample Spark Application')
+      .getOrCreate())
+  spark.sparkContext.setLogLevel('WARN')
 
-count = sc.parallelize(range(0, num_samples)).filter(inside).count()
-
-pi = 4 * count / num_samples
-print(pi)
-
-sc.stop()
+  names = (
+    spark.createDataFrame(
+      data=[
+        ('Nick',),
+        ('John',),
+        ('Frank',),
+      ],
+      schema=['name']
+    ))
+  names.select('name', metaphone_udf('name')).show()

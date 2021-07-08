@@ -1,0 +1,9 @@
+flake8
+pytest
+requests
+certifi
+confluent-kafka
+jellyfish
+numpy
+vertica-python
+matplotlib
