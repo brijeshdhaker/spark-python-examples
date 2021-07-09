@@ -11,8 +11,8 @@ set -x
 # runs from the correct location.
 #test -n "$SPARK_HOME"
 
-python -m venv venv
-source venv/bin/activate
+python -m venv v_env
+source v_env/bin/activate
 pip install -U pip
 pip install -r requirements.pip
 deactivate
@@ -20,18 +20,30 @@ deactivate
 # Here we package up an isolated environment that we'll ship to YARN.
 # The awkward zip invocation for venv just creates nicer relative
 # paths.
-pushd venv/
+pushd v_env/
 zip -rq ../target/venv.zip *
+tar -czvf ../target/venv.tar.gz *
 popd
 
 # Here it's important that application/ be zipped in this way so that
 # Python knows how to load the module inside.
-zip -rq target/application.zip src/ scripts/ ./hello.py
+zip -rq target/application.zip src/ ./py-hello.py
+tar -czvf target/application.tar.gz src/ ./py-hello.py
+
+#
+cp target/*.zip /apps/hostpath/spark/artifacts/py/
+
+# docker exec namenode hdfs dfs -mkdir -p /user/$USER
+docker exec namenode hdfs dfs -rm -f /user/$USER/apps/hostpath/spark/artifacts/py/*.zip
+docker exec namenode hdfs dfs -put /apps/hostpath/spark/artifacts/py/*.zip /user/$USER/apps/hostpath/spark/artifacts/py/
+docker exec namenode hdfs dfs -chmod -R 775 /user/$USER/apps/hostpath/spark/artifacts/py/
 
 # We want YARN to use the Python from our virtual environment,
 # which includes all our dependencies.
-export PYSPARK_DRIVER_PYTHON=python
-export PYSPARK_PYTHON="venv/bin/python"
+
+# Do not set in cluster modes.
+export PYSPARK_DRIVER_PYTHON="python"
+export PYSPARK_PYTHON="./venv/bin/python"
 
 # YARN Client Mode Example
 # ------------------------
@@ -40,13 +52,11 @@ export PYSPARK_PYTHON="venv/bin/python"
 # is `local-file-name#aliased-file-name`. So when we set
 # PYSPARK_PYTHON to `venv/bin/python`, `venv/` here references the
 # aliased zip file we're sending to YARN.
-spark-submit \
-    --name "Sample Spark Application" \
-    --master local[*] \
-    --conf "spark.executorEnv.PYSPARK_DRIVER_PYTHON=$PYSPARK_DRIVER_PYTHON" \
-    --conf "spark.executorEnv.PYSPARK_PYTHON=$PYSPARK_PYTHON" \
-    --archives "target/venv.zip#venv" \
-    --py-files "target/application.zip" hello.py
+docker exec spark-master /usr/local/spark/bin/spark-submit \
+    --name "Cluster Spark Application" \
+    --master spark://spark-master:7077 \
+    --archives "hdfs://namenode:9000/user/brijeshdhaker/apps/hostpath/spark/artifacts/py/venv.zip#venv" \
+    --py-files "hdfs://namenode:9000/user/brijeshdhaker/apps/hostpath/spark/artifacts/py/application.zip" /apps/hostpath/spark/artifacts/py/py-hello.py
 
 # YARN Cluster Mode Example
 # -------------------------

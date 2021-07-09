@@ -5,7 +5,7 @@ version: '3.1'
 services:
 #    
   namenode:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     container_name: namenode
     ports:
       - "9000:9000"

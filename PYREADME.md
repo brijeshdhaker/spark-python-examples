@@ -95,7 +95,7 @@ export PYTHON="/path/to/python/executable"
 export SPARK_HOME="/path/to/spark/home"
 export PATH="$SPARK_HOME/bin:$PATH"
 
-./setup-and-submit.sh
+./setup-and-local-submit.sh
 ```
 
 The key pattern for packaging your PySpark application is captured in

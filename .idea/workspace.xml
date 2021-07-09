@@ -4,61 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6561a14d-fe17-41bc-93f4-d151ecbebf27" name="Default Changelist" comment="2021-07-05 Add Spark Transformation Examples.">
-      <change afterPath="$PROJECT_DIR$/COPYRIGHT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PYREADME.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distro.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/dc-kafka-cluster.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/dc-kafka-mini-cluster.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/py-hello.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements-dev.pip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.pip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup-and-submit.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kafka/kafka_utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/accumulator/accumulator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/transformation/coalesce.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/transformation/distinct.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_static.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/setup-and-local-submit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello-spark.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/avro_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/avro_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/k_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka/k_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/aggregate-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/coalesce.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/kafka_consumer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/distinct.py" beforeDir="false" afterPath="$PROJECT_DIR$/resources/kafka_producer.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/filter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/flat-map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/flat-map-partitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/flat-map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/flat-map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/group-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/group-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/map-partitions-with-index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/map-partitions-with-index.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/map-partitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/re-partition.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/re-partition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/reduce-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/repartition-sort-within-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/repartition-sort-within-partitions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/sample.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/sort-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/sort-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rdd/transformation/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/union.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/UserService-Schema.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/resources/avro/UserService-Schema.avsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sampledata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sampledata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PYREADME.md" beforeDir="false" afterPath="$PROJECT_DIR$/PYREADME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-node.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-node.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup-and-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-cluster-submit.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streaming/kafka-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/streaming/kafka-stream.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/commons.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,23 +26,14 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenRunner">
-    <option name="jreName" value="1.8" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1uiIYTsF47j3lSHfz6qzP42advn" />
+  <component name="ProjectId" id="1v3aOWd5wi5PTvr3sZm5wz8eg3X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -92,30 +41,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/application" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/rdd/accumulator" />
-      <recent name="$PROJECT_DIR$/docker" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/resources/avro" />
-      <recent name="$PROJECT_DIR$/rdd/transformation" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker/dc-kafka-cluster.yaml: Compose Deployment">
-    <configuration name="accumulator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +60,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/accumulator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/accumulator/accumulator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,167 +73,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/hello.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="kafka-stream" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/streaming" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/streaming/kafka-stream.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rdd/transformation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rdd/transformation/map.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="docker/dc-kafka-cluster.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="remote-docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker/dc-kafka-cluster.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Docker.docker/dc-kafka-cluster.yaml: Compose Deployment" />
-      <item itemvalue="Python.kafka-stream" />
-      <item itemvalue="Python.accumulator" />
-      <item itemvalue="Python.map" />
-      <item itemvalue="Python.hello" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker/dc-kafka-cluster.yaml: Compose Deployment" />
-        <item itemvalue="Python.hello" />
-        <item itemvalue="Python.map" />
-        <item itemvalue="Python.accumulator" />
-        <item itemvalue="Python.kafka-stream" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6561a14d-fe17-41bc-93f4-d151ecbebf27" name="Default Changelist" comment="" />
-      <created>1625142029892</created>
+      <changelist id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="" />
+      <created>1625793195122</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1625142029892</updated>
+      <updated>1625793195122</updated>
     </task>
-    <task id="LOCAL-00001" summary="2021-07-01 Add Common Utils">
-      <created>1625142878934</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1625142878934</updated>
-    </task>
-    <task id="LOCAL-00002" summary="2021-07-01 Add Common Utils">
-      <created>1625142892575</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1625142892575</updated>
-    </task>
-    <task id="LOCAL-00003" summary="2021-07-02 Add Common Utils">
-      <created>1625197904168</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1625197904168</updated>
-    </task>
-    <task id="LOCAL-00004" summary="2021-07-02 Add Common Utils">
-      <created>1625205411693</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1625205411693</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2021-07-02 Add Common Utils">
-      <created>1625218659774</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1625218659774</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2021-07-03 Add Spark Transformation Examples.">
-      <created>1625330634366</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1625330634366</updated>
-    </task>
-    <task id="LOCAL-00007" summary="2021-07-04 Add Spark Transformation Examples.">
-      <created>1625360939771</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1625360939771</updated>
-    </task>
-    <task id="LOCAL-00008" summary="2021-07-04 Add Spark Transformation Examples.">
-      <created>1625420612774</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1625420612774</updated>
-    </task>
-    <task id="LOCAL-00009" summary="2021-07-05 Add Spark Transformation Examples.">
-      <created>1625464015302</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1625464015302</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,30 +100,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="2021-07-01 Add Common Utils" />
-    <MESSAGE value="2021-07-02 Add Common Utils" />
-    <MESSAGE value="2021-07-03 Add Spark Transformation Examples." />
-    <MESSAGE value="2021-07-04 Add Spark Transformation Examples." />
-    <MESSAGE value="2021-07-05 Add Spark Transformation Examples." />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-07-05 Add Spark Transformation Examples." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/venv/lib/python3.9/site-packages/pip/_internal/cli/base_command.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/kafka/avro_producer.py</url>
-          <line>26</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

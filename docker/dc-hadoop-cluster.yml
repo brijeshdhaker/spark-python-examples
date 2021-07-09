@@ -6,7 +6,7 @@ version: '3'
 services:
 #      
   namenode:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     container_name: namenode
     ports:
       - "9000:9000"
@@ -18,7 +18,7 @@ services:
       - /apps/hostpath/hadoop/in:/in
 #        
   datanode:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     command: hdfs datanode
     ports:
       - "9864:9864" 
@@ -31,7 +31,7 @@ services:
       - /apps/hostpath/hadoop/in:/in
 #          
   secondarynamenode:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     container_name: secondarynamenode
     command: hdfs secondarynamenode
     ports:
@@ -41,7 +41,7 @@ services:
     hostname: secondarynamenode
 #    
   yarn:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     container_name: yarn
     command: start-yarn-historyserver.sh
     ports:
@@ -56,7 +56,7 @@ services:
     hostname: yarn
 #    
   nodemanager:
-    image: hadoop:3.2.0
+    image: hadoop:3.2.1
     command: yarn nodemanager
     ports:
       - "8042" 
