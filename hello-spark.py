@@ -6,6 +6,7 @@ implement a command-line inteface, for example, you'd invoke the
 setup from here.
 """
 import pyspark
+import os
 from src.util import metaphone_udf
 
 

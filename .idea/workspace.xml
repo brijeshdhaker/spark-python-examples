@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/setup-and-local-submit.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-07-09 Update configuration for standalon cluster.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PYREADME.md" beforeDir="false" afterPath="$PROJECT_DIR$/PYREADME.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-node.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-node.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-and-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-cluster-submit.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello-spark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +42,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.map">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,8 +64,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="map" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/rdd/transformation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/rdd/transformation/map.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.map" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -88,6 +101,14 @@
       <option name="presentableId" value="Default" />
       <updated>1625793195122</updated>
     </task>
+    <task id="LOCAL-00001" summary="2021-07-09 Update configuration for standalon cluster.">
+      <created>1625820373222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1625820373222</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,5 +121,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2021-07-09 Update configuration for standalon cluster." />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-07-09 Update configuration for standalon cluster." />
   </component>
 </project>

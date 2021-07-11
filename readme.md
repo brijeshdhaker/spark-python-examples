@@ -76,3 +76,39 @@ $SPARK_HOME/bin/spark-submit \
 --master spark://172.18.0.3:7077 \
 --py-files "file:///apps/hostpath/spark/artifacts/application.zip" /apps/hostpath/spark/artifacts/hello.py
 
+
+spark.kubernetes.driverEnv.[EnvironmentVariableName]
+spark.executorEnv.[EnvironmentVariableName]
+
+spark.kubernetes.pyspark.pythonVersion
+spark.pyspark.python=
+spark.pyspark.driver.python=
+
+PYSPARK_PYTHON
+PYSPARK_DRIVER_PYTHON'
+
+$SPARK_HOME/bin/spark-submit \
+--master "k8s://https://raspberry:6443" \
+--deploy-mode "cluster" \
+--name "spark-pi" \
+--conf "spark.executor.instances=2" \
+--conf "spark.kubernetes.file.upload.path=/apps/hostpath/spark/cluster-uploads" \
+--conf "spark.pyspark.python=python3" \
+--conf "spark.pyspark.driver.python=./venv/bin/python" \
+--conf "spark.kubernetes.container.image=spark-py:3.1.2" \
+--conf "spark.kubernetes.authenticate.driver.serviceAccountName=spark" \
+--conf "spark.kubernetes.driver.volumes.hostPath.hostpath-volume.mount.path=/apps/hostpath/spark" \
+--conf "spark.kubernetes.driver.volumes.hostPath.hostpath-volume.mount.readOnly=false" \
+--conf "spark.kubernetes.driver.volumes.hostPath.hostpath-volume.options.path=/apps/hostpath/spark" \
+--conf "spark.kubernetes.driver.volumes.hostPath.hostpath-volume.options.type=Directory" \
+--conf "spark.kubernetes.executor.volumes.hostPath.hostpath-volume.mount.path=/apps/hostpath/spark" \
+--conf "spark.kubernetes.executor.volumes.hostPath.hostpath-volume.mount.readOnly=false" \
+--conf "spark.kubernetes.executor.volumes.hostPath.hostpath-volume.options.path=/apps/hostpath/spark" \
+--conf "spark.kubernetes.executor.volumes.hostPath.hostpath-volume.options.type=Directory" \
+--conf "spark.driver.extraJavaOptions=-Divy.cache.dir=/tmp -Divy.home=/tmp" \
+--archives "local:///apps/hostpath/spark/artifacts/py/venv.zip#venv" \
+--py-files "local:///apps/hostpath/spark/artifacts/py/application.zip" \
+local:///apps/hostpath/spark/artifacts/py/py-hello.py
+
+--class "org.apache.spark.examples.SparkPi \
+local:///opt/spark/examples/jars/spark-examples_2.12-3.1.2.jar
