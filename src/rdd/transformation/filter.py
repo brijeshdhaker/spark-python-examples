@@ -15,6 +15,7 @@ def m_filter(element):
 #
 spark = SparkSession \
     .builder \
+    .master("spark://spark-master:7077")\
     .appName("PythonRDD-Filter") \
     .getOrCreate()
 

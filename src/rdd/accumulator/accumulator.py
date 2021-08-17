@@ -9,10 +9,7 @@ if __name__ == "__main__":
         print("Usages: spark-file <inpath> <outpath>")
         sys.exit(-1)
 
-    spark = SparkSession\
-      .builder\
-      .appName("PythonRDD-Accumulator")\
-      .getOrCreate()
+    spark = SparkSession.builder.master("spark://spark-master:7077").appName("PythonRDD-Accumulator").getOrCreate()
 
     sc_acc = spark.sparkContext.accumulator(0)
 

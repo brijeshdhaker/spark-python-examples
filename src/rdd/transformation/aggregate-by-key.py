@@ -35,6 +35,7 @@ zero_val = 0
 #
 spark = SparkSession \
     .builder \
+    .master("spark://spark-master:7077") \
     .appName("PythonRDD-AggregateByKey") \
     .getOrCreate()
 

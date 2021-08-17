@@ -1,4 +1,13 @@
 #
+#
+#
+conda create -n venv_spark
+#conda env create venv_spark
+conda env list
+conda activate venv_spark
+conda install pyspark==3.1.2
+
+#
 # 
 #
 jupyter toree install --spark_home /apps/spark --interpreters=Scala,PySpark,SQL --user
