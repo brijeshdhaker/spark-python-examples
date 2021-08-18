@@ -24,6 +24,7 @@
 # =============================================================================
 
 from confluent_kafka import DeserializingConsumer
+from confluent_kafka.avro import SerializerError
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroDeserializer
 from confluent_kafka.serialization import StringDeserializer
@@ -34,25 +35,26 @@ if __name__ == '__main__':
     topic = "users-topic"
 
     schema_registry_conf = {
-        'url': 'http://dockerhost:8081',
+        'url': 'http://localhost:8081',
         'basic.auth.user.info': '{}:{}'.format('userid', 'password')
     }
+
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
     users_schema_response = schema_registry_client.get_latest_version("users-topic-value").schema
     users_schema = users_schema_response.schema_str
 
-    key_str_deserializer = StringDeserializer()
+    key_str_deserializer = StringDeserializer('utf_8')
     user_avro_deserializer = AvroDeserializer(schema_registry_client = schema_registry_client, schema_str =  users_schema)
 
     # for full list of configurations, see:
     #   https://docs.confluent.io/platform/current/clients/confluent-kafka-python/#deserializingconsumer
     consumer_conf = {
-        'bootstrap.servers': 'dockerhost:9092',
+        'bootstrap.servers': 'localhost:9092',
+        'key.deserializer': key_str_deserializer,
         'value.deserializer': user_avro_deserializer,
         'group.id': 'py_avro_consumer',
         'auto.offset.reset': 'earliest'
     }
-    # consumer_conf['key.deserializer'] = name_avro_deserializer
     consumer = DeserializingConsumer(consumer_conf)
 
     # Subscribe to topic
