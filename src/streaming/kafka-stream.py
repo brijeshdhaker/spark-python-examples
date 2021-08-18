@@ -29,7 +29,7 @@ if __name__ == "__main__":
     data_df = spark \
         .readStream \
         .format("kafka") \
-        .option("kafka.bootstrap.servers", "dockerhost:9092") \
+        .option("kafka.bootstrap.servers", "localhost:9092") \
         .option("subscribe", "users-topic") \
         .option("startingOffsets", "earliest") \
         .option("failOnDataLoss", "false") \
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     # Confluent Schema Registry
     #
     schema_registry_conf = {
-        'url': 'http://dockerhost:8081',
+        'url': 'http://localhost:8081',
         'basic.auth.user.info': '{}:{}'.format('userid', 'password')
     }
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)
