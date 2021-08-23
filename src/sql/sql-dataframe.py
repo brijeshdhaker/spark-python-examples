@@ -1,6 +1,7 @@
 import src.utils.commons as commons
 import sys
 #
+from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from src.data.sampledata import t_r_data
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, BooleanType
@@ -10,12 +11,16 @@ if __name__ == "__main__":
         print("Usages: spark-file <in-path> <out-path>")
         sys.exit(-1)
 
+conf = SparkConf() \
+    .set("spark.eventLog.enabled", "true") \
+    .set("spark.eventLog.dir", "file:///apps/hostpath/spark/logs/")
 
 #
 spark = SparkSession \
     .builder \
     .master("local[*]") \
-    .appName("PythonRDD-AggregateByKey") \
+    .appName("PysparkSQL-DataFrame") \
+    .config(conf=conf) \
     .getOrCreate()
 
 cloumns = ["name", "department", "State", "Salary", "Age", "Bonus"]

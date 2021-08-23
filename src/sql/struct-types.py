@@ -59,6 +59,7 @@ df2.show(truncate=False)
 commons.print_separator()
 
 from pyspark.sql.functions import col,struct,when
+
 updatedDF = df2.withColumn("OtherInfo",
                            struct(col("id").alias("identifier"),
                                   col("gender").alias("gender"),
