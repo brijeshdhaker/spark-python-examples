@@ -5,7 +5,7 @@ implement a command-line inteface, for example, you'd invoke the
 setup from here.
 """
 import pyspark
-from src.util import metaphone_udf
+from src.utils.util import metaphone_udf
 
 
 if __name__ == '__main__':

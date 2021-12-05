@@ -32,9 +32,25 @@ pip install confluent-kafka
 #
 # 
 #
-docker run -p 8080:8080 --rm -v /apps/hostpath/zeppelin/logs:/logs -v /apps/hostpath/zeppelin/notebook:/notebook \
+docker run -p 8080:8080 --rm 
+-v /apps/hostpath/zeppelin/logs:/logs \
+-v /apps/hostpath/zeppelin/notebook:/notebook \
 -e ZEPPELIN_LOG_DIR='/logs' -e ZEPPELIN_NOTEBOOK_DIR='/notebook' \
 --name zeppelin apache/zeppelin:0.9.0
+
+#
+#
+# Run on a YARN cluster
+export HADOOP_CONF_DIR=/opt/hadoop-2.7.4/etc/hadoop
+#
+./bin/spark-submit \
+--class org.apache.spark.examples.SparkPi \
+--master yarn \
+--deploy-mode cluster \
+--executor-memory 1G \
+--num-executors 2 \
+--conf "spark.yarn.archive=hdfs:///apps/spark-2.3.1/spark-2.3.1-jars.zip" \
+/opt/spark-2.3.1/examples/jars/spark-examples_2.11-2.3.1.jar 2
 
 #
 #

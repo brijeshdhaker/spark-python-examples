@@ -21,6 +21,7 @@
 # Using Confluent Python Client for Apache Kafka
 #
 # =============================================================================
+import random
 
 from confluent_kafka import Producer, KafkaError
 import json
@@ -32,7 +33,7 @@ if __name__ == '__main__':
     topic = "users-topic"
     # Create Producer instance
     producer_conf = {
-        'bootstrap.servers': 'dockerhost:9092',
+        'bootstrap.servers': 'thinkpad:9092',
     }
     producer = Producer(producer_conf)
     # Create topic if needed
@@ -54,14 +55,18 @@ if __name__ == '__main__':
             print("Produced record to topic {} partition [{}] @ offset {}"
                   .format(msg.topic(), msg.partition(), msg.offset()))
 
-    for n in range(10):
+    n = 0
+    while True:
         record_key = "alice"
-        record_value = json.dumps({'count': n})
+        record_value = json.dumps({'count': random.randint(1000, 5000)})
         print("Producing record: {}\t{}".format(record_key, record_value))
         producer.produce(topic, key=record_key, value=record_value, on_delivery=acked)
         # p.poll() serves delivery reports (on_delivery)
         # from previous produce() calls.
         producer.poll(0)
+        n = n+1
+        if n > 1000 :
+            break
 
     producer.flush()
 

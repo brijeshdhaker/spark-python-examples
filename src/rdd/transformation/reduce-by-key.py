@@ -1,32 +1,55 @@
-import src.utils.commons as commons
-import sys
-#
 from pyspark.sql import SparkSession
-from src.data.sampledata import t_key_values
+
+# Importing Python Related Packages
+import time
 
 if __name__ == "__main__":
-    if len(sys.argv) != 1:
-        print("Usages: spark-file <in-path> <out-path>")
-        sys.exit(-1)
+    print("PySpark Examples")
 
-#
-spark = SparkSession \
-    .builder \
-    .appName("PythonRDD-ReduceByKey") \
-    .getOrCreate()
+    # reduceByKey - Merge the values for each key using an associative and commutative reduce function.
+    # This will also perform the merging locally on each mapper before sending results to a reducer, similarly to a combiner in MapReduce.
 
-rdd_1 = spark.sparkContext.parallelize(t_key_values)
-print("RDD-1 Partition Count : %i " % (rdd_1.getNumPartitions()))
-print("Values in RDD-1 : {0} ".format(rdd_1.collect()))
+    # Why reduceByKey RDD transformation is preferred instead of groupByKey in PySpark | PySpark 101
+    spark = SparkSession \
+        .builder \
+        .appName("PythonRDD-ReduceByKey") \
+        .master("local[*]") \
+        .enableHiveSupport() \
+        .getOrCreate()
 
-commons.print_separator()
+    str_list = ["Three", "Five", "One", "Five", "One"]
+    print("Printing str_list: ")
+    print(str_list)
 
-rdd_2 = rdd_1.reduceByKey(lambda a, b: a + b)
-print("Values in RDD-2 : {0} ".format(rdd_2.collect()))
+    str_rdd = spark.sparkContext.parallelize(str_list, 3)
+
+    print("Get Partition Count: ")
+    print(str_rdd.getNumPartitions())
+
+    kv_rdd = str_rdd.map(lambda e: (e, 1)).reduceByKey(lambda a, b: a + b)
+
+    print(kv_rdd.collect())
+
+    print("Printing current datetime - 1: ")
+    print(time.strftime("%Y-%m-%D %H:%M:%S"))
+
+    '''
+    input_file_path = "/data/input/kv_pair_data/words_datagen.txt"
+    lines_rdd = spark.sparkContext.textFile(input_file_path)
+    words_rdd = lines_rdd.flatMap(lambda e: e.split(','))
+    words_kv_pair_rdd = words_rdd.map(lambda e: (e, 1))
+
+    results_kv_rdd = words_kv_pair_rdd.reduceByKey(lambda x, y: x + y)
+    print(results_kv_rdd.collect())
+    '''
 
 
-print("Details available at http://localhost:4040")
-option = input("Do You Want to Kill Spark Job Process Y/N : ")
-#
-spark.stop()
+    print("Printing current datetime - 2: ")
+    print(time.strftime("%Y-%m-%D %H:%M:%S"))
 
+    print("Please wait for 10 minutes before stopping SparkSession object ... ")
+    time.sleep(600)
+    print(time.strftime("%Y-%m-%D %H:%M:%S"))
+    print("Stopping the SparkSession object")
+
+    spark.stop()

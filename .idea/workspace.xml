@@ -5,18 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-07-09 Update configuration for standalon cluster.">
-      <change afterPath="$PROJECT_DIR$/src/sql/create-dataframe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sql/sql-column.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sql/sql-row.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sql/struct-types.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/avro/test_schema.avsc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sql/sql-udf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/load_avro_schema_from_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-kafka-mini-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-kafka-mini-cluster.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello-spark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/py-hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/py-hello.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/accumulator/accumulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/accumulator/accumulator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/coalesce.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/coalesce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/distinct.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/distinct.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/avro/UserService-Schema.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/resources/avro/UserService-Schema.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/avro_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/reduce-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +45,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1v3aOWd5wi5PTvr3sZm5wz8eg3X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -48,18 +60,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/utils" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/utils" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.coalesce">
-    <configuration name="coalesce" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.avro_producer">
+    <configuration name="avro_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -67,11 +84,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/rdd/transformation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/rdd/transformation/coalesce.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/avro_consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -80,7 +97,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="create-dataframe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="avro_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,11 +105,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sql" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sql/create-dataframe.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/avro_producer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -101,7 +118,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="distinct" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hello-spark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,11 +126,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/rdd/transformation" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/rdd/transformation/distinct.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello-spark.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,7 +139,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sql-row" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="k_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -130,11 +147,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sql" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sql/sql-row.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/k_consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="struct-types" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="k_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -151,11 +168,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sql" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sql/struct-types.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/k_producer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,13 +181,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="docker/dc-kafka-mini-cluster.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker/dc-kafka-mini-cluster.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.docker/dc-kafka-mini-cluster.yaml: Compose Deployment" />
+      <item itemvalue="Python.avro_consumer" />
+      <item itemvalue="Python.avro_producer" />
+      <item itemvalue="Python.hello-spark" />
+      <item itemvalue="Python.k_consumer" />
+      <item itemvalue="Python.k_producer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.coalesce" />
-        <item itemvalue="Python.distinct" />
-        <item itemvalue="Python.sql-row" />
-        <item itemvalue="Python.struct-types" />
-        <item itemvalue="Python.create-dataframe" />
+        <item itemvalue="Python.avro_producer" />
+        <item itemvalue="Python.avro_consumer" />
+        <item itemvalue="Python.k_consumer" />
+        <item itemvalue="Python.k_producer" />
+        <item itemvalue="Docker.docker/dc-kafka-mini-cluster.yaml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +237,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2021-07-09 Update configuration for standalon cluster." />

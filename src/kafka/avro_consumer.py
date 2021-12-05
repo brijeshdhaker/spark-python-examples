@@ -22,49 +22,44 @@
 # Reads Avro data, integration with Confluent Cloud Schema Registry
 #
 # =============================================================================
+import io
 
-from confluent_kafka import DeserializingConsumer
+from avro.io import DatumReader, BinaryDecoder
+from confluent_kafka import Consumer
 from confluent_kafka.avro import SerializerError
-from confluent_kafka.schema_registry import SchemaRegistryClient
-from confluent_kafka.schema_registry.avro import AvroDeserializer
-from confluent_kafka.serialization import StringDeserializer
+
+from src.utils.load_avro_schema_from_file import load_avro_schema_from_file
 
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    topic = "users-topic"
+    topic = "users-topic-avro"
+    BASE_DIR = "/home/brijeshdhaker/PycharmProjects/spark-python-examples/"
+    key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/UserService-Schema.avsc')
 
-    schema_registry_conf = {
-        'url': 'http://localhost:8081',
-        'basic.auth.user.info': '{}:{}'.format('userid', 'password')
-    }
+    reader = DatumReader(value_schema)
+    def decode(msg_value):
+        message_bytes = io.BytesIO(msg_value)
+        message_bytes.seek(5)
+        decoder = BinaryDecoder(message_bytes)
+        event_dict = reader.read(decoder)
+        return event_dict
 
-    schema_registry_client = SchemaRegistryClient(schema_registry_conf)
-    users_schema_response = schema_registry_client.get_latest_version("users-topic-value").schema
-    users_schema = users_schema_response.schema_str
 
-    key_str_deserializer = StringDeserializer('utf_8')
-    user_avro_deserializer = AvroDeserializer(schema_registry_client = schema_registry_client, schema_str =  users_schema)
-
-    # for full list of configurations, see:
-    #   https://docs.confluent.io/platform/current/clients/confluent-kafka-python/#deserializingconsumer
-    consumer_conf = {
-        'bootstrap.servers': 'localhost:9092',
-        'key.deserializer': key_str_deserializer,
-        'value.deserializer': user_avro_deserializer,
-        'group.id': 'py_avro_consumer',
+    # Report malformed record, discard results, continue polling
+    avro_consumer = Consumer({
+        'bootstrap.servers': 'thinkpad:9092',
+        'group.id': 'python-avro-cg',
         'auto.offset.reset': 'earliest'
-    }
-    consumer = DeserializingConsumer(consumer_conf)
+    })
 
-    # Subscribe to topic
-    consumer.subscribe([topic])
+    avro_consumer.subscribe(["users-topic-avro"])
 
     # Process messages
     total_count = 0
     while True:
         try:
-            msg = consumer.poll(1.0)
+            msg = avro_consumer.poll(1.0)
             if msg is None:
                 # No message available within timeout.
                 # Initial message consumption may take up to
@@ -76,8 +71,9 @@ if __name__ == '__main__':
                 print('error: {}'.format(msg.error()))
             else:
                 key_object = msg.key()
-                user_object = msg.value()
-                print(f"Consumed Avro Record : {user_object['uuid']}\t{user_object['name']}")
+                user_object = decode(msg.value())
+                #
+                print("Consumed Avro Record: {}\t{}".format(user_object['uuid'], user_object['name']))
         except KeyboardInterrupt:
             break
         except SerializerError as e:
@@ -86,4 +82,4 @@ if __name__ == '__main__':
             pass
 
     # Leave group and commit final offsets
-    consumer.close()
+    avro_consumer.close()

@@ -1,4 +1,4 @@
-from src.util import metaphone
+from src.utils.util import metaphone
 
 
 def test_metaphone():

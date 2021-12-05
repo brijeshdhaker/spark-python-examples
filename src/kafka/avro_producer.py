@@ -6,93 +6,80 @@
 # Writes Avro data, integration with Confluent Cloud Schema Registry
 #
 # =============================================================================
+import random
+from datetime import datetime
+from uuid import uuid4
 
-from confluent_kafka import SerializingProducer
-from confluent_kafka import avro
-from confluent_kafka.serialization import StringSerializer
-from confluent_kafka.schema_registry import SchemaRegistryClient, Schema, SchemaRegistryError
-from confluent_kafka.schema_registry.avro import AvroSerializer
-import kafka_utils as kfu
-import json
+from confluent_kafka.avro import AvroProducer
 
-BASE_DIR = "/home/brijeshdhaker/git-repos/spark-python-examples/"
+from src.utils.load_avro_schema_from_file import load_avro_schema_from_file
 
 if __name__ == '__main__':
 
-    args = kfu.parse_args()
-    conf = kfu.read_kafka_config(BASE_DIR+"resources/kafka_producer.properties")
+    # args = kfu.parse_args()
 
     # Read arguments and configurations and initialize
-    topic = "users-topic"
+    topic = "users-topic-avro"
 
-    # Create topic if needed
-    kfu.create_topic(conf, topic)
+    # Report malformed record, discard results, continue polling
+    BASE_DIR = "/home/brijeshdhaker/PycharmProjects/spark-python-examples/"
+    key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/UserService-Schema.avsc')
 
-    #
-    # for full list of configurations, see:
-    #  https://docs.confluent.io/platform/current/clients/confluent-kafka-python/#schemaregistryclient
-    # Confluent Schema Registry
-    #
-    schema_registry_conf = {
-        'url': 'http://localhost:8081',
-        'basic.auth.user.info': '{}:{}'.format('userid', 'password')
-    }
-    users_schema=""
-    schema_registry_client = SchemaRegistryClient(schema_registry_conf)
-    try:
-        users_schema_response = schema_registry_client.get_latest_version("users-topic-value").schema
-        users_schema = users_schema_response.schema_str
-    except SchemaRegistryError as e:
-        # Report malformed record, discard results, continue polling
-        users_schema = open(BASE_DIR+'resources/avro/UserService-Schema.avsc', 'r').read()
-        avro_schema = Schema(users_schema, 'AVRO')
-        _schema_id = schema_registry_client.register_schema("users-topic-value", avro_schema)
-        pass
+    epoch = datetime.utcfromtimestamp(0)
+    def unix_time_millis(dt):
+        return (dt - epoch).total_seconds() * 1000.0
 
-    if users_schema:
 
-        print(users_schema)
+    if value_schema:
 
-        key_str_serializer = StringSerializer('utf_8')
-        user_avro_serializer = AvroSerializer(schema_registry_client=schema_registry_client, schema_str=users_schema)
-
-        # for full list of configurations, see:
-        #  https://docs.confluent.io/platform/current/clients/confluent-kafka-python/#serializingproducer
-        producer_conf = {
-            'bootstrap.servers': 'localhost:9092',
-            'key.serializer': key_str_serializer,
-            'value.serializer': user_avro_serializer
-        }
-        producer = SerializingProducer(producer_conf)
         delivered_records = 0
 
         # Optional per-message on_delivery handler (triggered by poll() or flush())
         # when a message has been successfully delivered or
         # permanently failed delivery (after retries).
-        def acked(err, msg):
+        def delivery_report(err, msg):
             global delivered_records
             """
-            Delivery report handler called on
-            successful or failed delivery of message
+            Delivery report handler called on successful or failed delivery of message
             """
             if err is not None:
                 print("Failed to deliver message: {}".format(err))
             else:
                 delivered_records += 1
-                print("Produced record to topic {} partition [{}] @ offset {}"
-                      .format(msg.topic(), msg.partition(), msg.offset()))
+                print("Produced record to topic {} partition [{}] @ offset {}".format(msg.topic(), msg.partition(), msg.offset()))
 
-        user_object = {'id': None, 'uuid': '18e1a8aa-6dc6-4e3e-9212-42f32d9d8a49', 'name': 'Brijesh K Dhaker', 'emailAddr': 'brijeshdhaker@gmail.com', 'age': 38, 'dob': 1232, 'height': 5.60, 'roles': ['admin', 'Technology'], 'status': 'Active'}
 
-        for n in range(10):
-            user_object['id'] = n+1000
-            #user_object['addTs'] = 11122324433242
-            #user_object['updTs'] = 32133423431232
-            print(f"Producing Avro Record: {user_object['uuid']}\t{user_object['name']}")
-            producer.produce(topic=topic, value=user_object, on_delivery=acked)
-            producer.poll(0)
+        avroProducer = AvroProducer({
+            'bootstrap.servers': 'thinkpad:9092',
+            'on_delivery': delivery_report,
+            'schema.registry.url': 'http://thinkpad:8081'
+        }, default_key_schema=key_schema, default_value_schema=value_schema)
 
-        producer.flush()
+        u_names = ["Brijesh K", "Neeta K", "Keshvi K", "Tejas K"]
+        while True:
+            #
+
+            user_object = {'id': random.randint(1000, 5000), 'uuid': str(uuid4()), 'name': random.choice(u_names),
+                           'emailAddr': "abc@gmail.com", 'age': random.randint(18, 70),
+                           'dob': random.randint(18, 70), 'height': round(random.uniform(5.0, 7.0)),
+                           'roles': ['admin', 'Technology'], 'status': 'Active'}
+
+            event_datetime = datetime.now()
+            d_in_ms = int(event_datetime.strftime("%s")) * 1000
+            # int(time.timestamp() * 1000)
+
+            user_object['addTs'] = d_in_ms
+            user_object['updTs'] = d_in_ms
+            key = user_object['uuid']
+
+            # Serve on_delivery callbacks from previous calls to produce()
+            avroProducer.poll(0.0)
+
+            #
+            print("Producing Avro Record: {}\t{} at time {}".format(user_object['uuid'], user_object['name'], user_object['addTs']))
+            avroProducer.produce(topic=topic, key=key, value=user_object)
+
+        avroProducer.flush()
         print("{} messages were produced to topic {}!".format(delivered_records, topic))
 
     else:
