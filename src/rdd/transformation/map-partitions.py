@@ -1,3 +1,6 @@
+#
+#
+#
 import src.utils.commons as commons
 #
 from pyspark.sql import SparkSession
@@ -7,37 +10,56 @@ if __name__ == "__main__":
     #        print("Usages: spark-file <inpath> <outpath>")
     #        sys.exit(-1)
 
-    def f(partition_data):
-        yield len(list(partition_data))
+    def formatWithYield(partition_data):
+        for record in partition_data:
+            sex = 'Female' if  record.sex == 'F' else 'Male'
+            bonus = record.salary * 10/100
+            yield record.first + " " + record.last, sex, record.salary, bonus
 
+    def formatWithIter(partition_data):
+        p_data = []
+        for record in partition_data:
+            sex = 'Female' if  record.sex == 'F' else 'Male'
+            bonus = record.salary * 10/100
+            p_data.append([record.first + " " + record.last, sex, record.salary, bonus])
+        return iter(p_data)
 
     #
     spark = SparkSession \
         .builder \
+        .master("local[*]") \
         .appName("PythonRDD-MapPartition") \
         .getOrCreate()
 
-    data = list(range(1, 101))
-    rdd_1 = spark.sparkContext.parallelize(data, 2)
-    print("RDD-1 Partition Count : %i " % (rdd_1.getNumPartitions()))
-    print(rdd_1.collect())
+
+    data = [
+        ('Brijesh', 'Dhaker', 'M', 10000),
+        ('Neeta', 'Dhakad', 'F', 70000),
+        ('Keshvi', 'Dhaker', 'F', 20000),
+        ('Tejas', 'Kumar', 'M', 45000),
+        ('Sunil', 'Gupta', 'M', 10000)
+    ]
+    columns = ['first', 'last', 'sex', 'salary']
+
+    df1 = spark.createDataFrame(data=data, schema=columns)
+    df1.printSchema()
+
+    print("DF-1 Partition Count : %i " % (df1.rdd.getNumPartitions()))
+    # print(rdd_1.glom().collect())
 
     commons.print_separator()
 
-    rdd_2 = rdd_1.repartition(4)
-    print("RDD-2 Partition count after re-partitions is  : %i " % (rdd_2.getNumPartitions()))
-    print(rdd_2.collect())
+    df2 = df1.rdd.mapPartitions(formatWithYield).toDF(['fullname', 'sex', 'salary', 'bonus'])
+    print("DF-2 Partition count after transformation is : %i " % (df2.rdd.getNumPartitions()))
+    df2.printSchema()
+    df2.show()
 
     commons.print_separator()
+    df3 = df1.rdd.mapPartitions(formatWithIter).toDF(['fullname', 'sex', 'salary', 'bonus'])
+    print("DF-3 Partition count after transformation is : %i " % (df3.rdd.getNumPartitions()))
+    df3.printSchema()
+    df3.show()
 
-    rdd_3 = rdd_2.mapPartitions(f)
-    print("RDD-3 Partition count after transformation is : %i " % (rdd_3.getNumPartitions()))
-    print(rdd_3.collect())
-#   print(rdd_3.glom().collect())
 
-    commons.print_separator()
-
-    print("Details available at http://localhost:4040")
-    option = input("Do You Want to Kill Spark Job Process Y/N : ")
     #
     spark.stop()
