@@ -51,10 +51,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>/apps/hostpath/spark/artifacts</outputDirectory>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${basedir}/target</directory>
+                                    <directory>${basedir}/src</directory>
                                     <includes>
                                         <include>${project.build.finalName}*.zip</include>
                                     </includes>

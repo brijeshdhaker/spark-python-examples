@@ -1,0 +1,102 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": [
+        "null",
+        "long"
+      ]
+    },
+    {
+      "logicalType": "uuid",
+      "name": "uuid",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "avro.java.string": "String",
+      "name": "name",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "avro.java.string": "String",
+      "name": "emailAddr",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "age",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "logicalType": "date",
+      "name": "dob",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "name": "height",
+      "type": [
+        "null",
+        "float"
+      ]
+    },
+    {
+      "name": "roles",
+      "type": [
+        "null",
+        {
+          "default": [],
+          "items": {
+            "avro.java.string": "String",
+            "type": "string"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    {
+      "avro.java.string": "String",
+      "name": "status",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "logicalType": "timestamp-millis",
+      "name": "addTs",
+      "type": [
+        "null",
+        "long"
+      ]
+    },
+    {
+      "logicalType": "timestamp-millis",
+      "name": "updTs",
+      "type": [
+        "null",
+        "long"
+      ]
+    }
+  ],
+  "name": "UserDTO",
+  "namespace": "sample.multimodule.dto.avro",
+  "type": "record",
+  "version": "1"
+}

@@ -1,2 +1,9 @@
+#
+#
+*.zip
+
+#
+#
 /venv/
 /.idea/
+/target

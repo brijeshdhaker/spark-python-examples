@@ -49,7 +49,7 @@ if __name__ == "__main__":
         .getOrCreate()
 
     # `from_avro` requires Avro schema in JSON string format.
-    # jsonFormatSchema = open("/home/brijeshdhaker/git-repos/spark-python-examples/resources/UserService-Schema.avsc", "r").read()
+    # jsonFormatSchema = open("/home/brijeshdhaker/git-repos/spark-python-examples/resources/user-record.avsc", "r").read()
     binary_to_string = fn.udf(lambda x: str(int.from_bytes(x, byteorder='big')), StringType())
 
 

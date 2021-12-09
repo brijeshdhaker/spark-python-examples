@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     # Report malformed record, discard results, continue polling
     BASE_DIR = "/home/brijeshdhaker/PycharmProjects/spark-python-examples/"
-    key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/UserService-Schema.avsc')
+    key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/user-record.avsc')
 
     epoch = datetime.utcfromtimestamp(0)
     def unix_time_millis(dt):

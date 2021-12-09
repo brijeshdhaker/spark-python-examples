@@ -18,7 +18,8 @@ def group_by_f(element):
     key = element[0]
     items = element[1]
     for e in items:
-        print(f"Key :{key} and value is : {e} ")
+        print("Key :{key} and value is : {e}".format(key, e))
+
 
 #
 spark = SparkSession \

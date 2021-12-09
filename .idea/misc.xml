@@ -12,5 +12,5 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 2.7 (spark-python-examples)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="open-jdk-1.8" project-jdk-type="JavaSDK" />
 </project>
