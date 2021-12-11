@@ -1,0 +1,10 @@
+jellyfish
+confluent-kafka[avro,json,protobuf]
+avro
+fastavro
+jsonschema
+protobuf
+requests
+certifi
+matplotlib
+numpy

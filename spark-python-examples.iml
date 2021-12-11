@@ -6,9 +6,9 @@
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <content url="jar:///opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/spark/python/lib/py4j-0.10.7-src.zip!/" />
-    <content url="jar:///opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/spark/python/lib/pyspark.zip!/" />
-    <orderEntry type="jdk" jdkName="Python 2.7 (spark-python-examples)" jdkType="Python SDK" />
+    <content url="jar:///opt/sandbox/spark-3.1.2/python/lib/py4j-0.10.9-src.zip!/" />
+    <content url="jar:///opt/sandbox/spark-3.1.2/python/lib/pyspark.zip!/" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (spark-python-examples)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

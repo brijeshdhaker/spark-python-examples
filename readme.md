@@ -1,6 +1,11 @@
 #
 #
 #
+python -m pip install --upgrade pip
+
+#
+#
+#
 conda create -n venv_spark
 #conda env create venv_spark
 conda env list

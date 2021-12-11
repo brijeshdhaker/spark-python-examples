@@ -14,6 +14,7 @@ spark = SparkSession \
     .master("local[*]") \
     .appName("PythonRDD-AggregateByKey") \
     .getOrCreate()
+spark.sparkContext.setLogLevel('WARN')
 
 # Creating PairRDD student_rdd with key value pairs
 t_student_marks = [

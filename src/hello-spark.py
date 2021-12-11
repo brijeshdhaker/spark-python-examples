@@ -24,14 +24,5 @@ if __name__ == '__main__':
     return jellyfish.metaphone(str)
 
   metaphone_udf = udf(metaphone, StringType())
-
-  names = (
-    spark.createDataFrame(
-      data=[
-        ('Nick',),
-        ('John',),
-        ('Frank',),
-      ],
-      schema=['name']
-    ))
-  names.select('name', metaphone_udf('name')).show()
+  names = spark.createDataFrame(data=[(1000, 'Nick'), (1001, 'John'), (1002, 'Frank')], schema=['id', 'name'])
+  names.select('id', 'name', metaphone_udf('name')).show()
