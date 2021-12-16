@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-10 Update aggregate by key example.">
-      <change afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rdd/transformation/pyspark-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/pyspark-bucketing.zpln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/pyspark-data-frames.zpln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/pyspark-df-datatypes.zpln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/pyspark-df-structtypes.zpln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sql/sql-bucketing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-rdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/file-rdd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello-spark.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myscript.py" beforeDir="false" afterPath="$PROJECT_DIR$/myscript.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pie.py" beforeDir="false" afterPath="$PROJECT_DIR$/pie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poc.py" beforeDir="false" afterPath="$PROJECT_DIR$/poc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py-hello.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/commons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-local-rdd-actions.zpln" beforeDir="false" afterPath="$PROJECT_DIR$/notes/pyspark-local-rdd-actions.zpln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/sampledata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sampledata.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +68,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/rdd" />
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
@@ -273,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639194501693</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2021-12-10 Update aggregate by key example.">
+      <created>1639199078231</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639199078231</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -303,14 +304,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/poc.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/poc.py</url>
-          <line>14</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/utils/commons.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
