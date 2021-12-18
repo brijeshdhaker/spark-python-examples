@@ -24,7 +24,6 @@ t_key_numbers = (
     (16, "Sixteen")
 )
 
-
 #
 t_key_values = (
     ("ABC", 10.5),
@@ -41,7 +40,6 @@ t_key_values = (
     ("LMN", 15.6)
 )
 
-
 #
 t_r_data = [
     ("James", "Sales", "NY", 90000, 34, 10000),
@@ -54,7 +52,6 @@ t_r_data = [
     ("Jeff", "Marketing", "CA", 80000, 25, 18000),
     ("Kumar", "Marketing", "NY", 91000, 50, 21000)
 ]
-
 
 # Creating PairRDD student_rdd with key value pairs
 t_student_marks = [
@@ -88,3 +85,17 @@ t_student_marks = [
     ("Juan", "Biology", 60)
 ]
 
+#
+#
+#
+structureData = [
+    (("James", "", "Smith"), "36636", "Sales", 34, "2006-01-01", "true", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "M", 3100.50, "OH", "07-01-2019 12 01 19 406"),
+    (("Michael", "Rose", ""), "40288", "Finance", 25, "2006-01-01", "true", ["Java", "Scala", "C++"], {'hair': 'brown', 'eye': 'brown'}, "M", 4300.65, "CA", "06-24-2019 12 01 19 406"),
+    (("Robert", "", "Williams"), "42114", "Marketing", 27, "1992-06-23", "false", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'black'}, "M", 1400.80, "NJ", "11-16-2019 16 50 59 406"),
+    (("Maria", "Anne", "Jones"), "39192", "Finance", 19, "1987-05-05", "false", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "F", 5500.75, "NY", "11-16-2019 16 50 59 406"),
+    (("Jen", "Mary", "Brown"), "39191", "Marketing", 24, "1990-01-01", "false", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "F", -1, "UT", "11-16-2019 16 50 59 406"),
+    (("Jeff", "A", "Jones"), "39193", "Finance", 19, "2000-07-17", "false", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "F", 5500.75, "CA", "11-16-2019 16 50 59 406"),
+    (("Robert", "", "Williams"), "42114", "Marketing", 27, "1992-06-23", "false", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "M", 1400.80, "NJ", "11-16-2019 16 50 59 406"),
+    (("James", "", "Smith"), "36636", "Sales", 34, "2006-01-01", "true", ["Java", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "M", 3100.50, "OH", "07-01-2019 12 01 19 406"),
+    (("Scott", "M", "Brown"), "39194", "Marketing", 24, "1994-10-01", "false", ["Python", "Scala", "C++"], {'hair': 'black', 'eye': 'brown'}, "F", -1, None, "11-16-2019 16 50 59 406")
+]

@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-10 Update aggregate by key example.">
-      <change afterPath="$PROJECT_DIR$/notes/pyspark-bucketing.zpln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/pyspark-data-frames.zpln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/pyspark-df-datatypes.zpln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes/pyspark-df-structtypes.zpln" afterDir="false" />
+    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-16 Add Spark Bucketing Example.">
       <change afterPath="$PROJECT_DIR$/src/sql/sql-bucketing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/pyspark-local-rdd-actions.zpln" beforeDir="false" afterPath="$PROJECT_DIR$/notes/pyspark-local-rdd-actions.zpln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/sampledata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/sampledata.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +63,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/notes/bucketing" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/rdd" />
       <recent name="$PROJECT_DIR$/src/utils" />
@@ -274,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639199078231</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2021-12-16 Add Spark Bucketing Example.">
+      <created>1639636401090</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639636401090</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -298,7 +301,8 @@
     <MESSAGE value="2021-12-06 Update configuration for standalon cluster." />
     <MESSAGE value="2021-12-08 Update mapPartition example." />
     <MESSAGE value="2021-12-10 Update aggregate by key example." />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-12-10 Update aggregate by key example." />
+    <MESSAGE value="2021-12-16 Add Spark Bucketing Example." />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-12-16 Add Spark Bucketing Example." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
