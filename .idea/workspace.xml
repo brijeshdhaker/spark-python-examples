@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-16 Add Spark Bucketing Example.">
+    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
+      <change afterPath="$PROJECT_DIR$/docker/hadoop-2.7.4.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/zeppelin.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-zeppelin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-zeppelin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/sql-dataframe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +48,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -56,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/kafka" />
       <recent name="$PROJECT_DIR$/src/utils" />
@@ -67,7 +75,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.commons">
+  <component name="RunManager" selected="Python.sql-dataframe">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,50 +112,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/utils/commons.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hello-spark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/hello-spark.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="myscript" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myscript.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,13 +164,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="sql-column" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sql" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sql/sql-column.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sql-dataframe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/sql" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/sql/sql-dataframe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.sql-dataframe" />
+        <item itemvalue="Python.sql-column" />
         <item itemvalue="Python.commons" />
         <item itemvalue="Python.poc" />
         <item itemvalue="Python.pie" />
-        <item itemvalue="Python.myscript" />
-        <item itemvalue="Python.hello-spark" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639789366907</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639850532411</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1639850532411</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -314,7 +329,8 @@
     <MESSAGE value="2021-12-08 Update mapPartition example." />
     <MESSAGE value="2021-12-10 Update aggregate by key example." />
     <MESSAGE value="2021-12-16 Add Spark Bucketing Example." />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-12-16 Add Spark Bucketing Example." />
+    <MESSAGE value="2021-12-18 Update Docker Configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-12-18 Update Docker Configurations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

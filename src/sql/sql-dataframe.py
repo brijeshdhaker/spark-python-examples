@@ -26,6 +26,7 @@ spark = SparkSession \
 cloumns = ["name", "department", "State", "Salary", "Age", "Bonus"]
 
 rdd = spark.sparkContext.parallelize(t_r_data);
+print("Partitioner :: " + str(rdd.partitioner))
 rddDF = rdd.toDF(cloumns)
 rddDF.printSchema()
 rddDF.show()
@@ -54,18 +55,19 @@ dfFromSchema.show(truncate=False)
 
 commons.print_separator()
 
+
 dfFromCSV = spark.read\
     .option("header", True) \
-    .option("delimiter", ';') \
-    .options(inferSchema='True', delimiter=';') \
-    .csv("hdfs://namenode:9000/data/people.csv")
-
+    .option("delimiter", ',') \
+    .options(inferSchema='True', delimiter=',') \
+    .csv("hdfs://namenode:9000/datasets/zipcodes.csv")
 dfFromCSV.printSchema()
 dfFromCSV.show(truncate=False)
 
 commons.print_separator()
 
-dfFromJSON = spark.read.json("hdfs://namenode:9000/data/people.json")
+
+dfFromJSON = spark.read.json("hdfs://namenode:9000/datasets/people.json")
 dfFromJSON.printSchema()
 dfFromJSON.show(truncate=False)
 
@@ -98,7 +100,7 @@ uschema = StructType() \
 df_with_schema = spark.read.format("csv") \
     .option("header", True) \
     .schema(uschema) \
-    .load("hdfs://namenode:9000/data/zipcodes.csv")
+    .load("hdfs://namenode:9000/datasets/zipcodes.csv")
 
 df_with_schema.printSchema()
 df_with_schema.show(truncate=False)

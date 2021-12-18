@@ -8,7 +8,7 @@
     </content>
     <content url="jar:///opt/sandbox/spark-3.1.2/python/lib/py4j-0.10.9-src.zip!/" />
     <content url="jar:///opt/sandbox/spark-3.1.2/python/lib/pyspark.zip!/" />
-    <orderEntry type="jdk" jdkName="Python 3.8 (spark-python-examples)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
