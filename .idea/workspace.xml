@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
-      <change afterPath="$PROJECT_DIR$/docker/hadoop-2.7.4.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/zeppelin.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/hive-2.3.7.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/dc-zeppelin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-zeppelin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sql/sql-dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/sql-dataframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-hive-2.3.7.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hive-2.3.7.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639850532411</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639853446703</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1639853446703</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">

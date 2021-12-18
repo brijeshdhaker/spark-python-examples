@@ -80,6 +80,7 @@ services:
       - "hostmaster hostmaster.bigdata.net:host-gateway"
     ports:
       - "8042:8042"
+      - "19888:19888"
     volumes:
       - /apps/hostpath:/apps/hostpath
     environment:

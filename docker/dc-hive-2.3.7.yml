@@ -28,7 +28,7 @@ services:
     hostname: hive-metastore
     container_name: hive-metastore
     env_file:
-      - docker-hive-2.3.7/hive-2.3.7.env
+      - hive-2.3.7.env
     command: /opt/hive-2.3.7/bin/hive --service metastore
     environment:
       SERVICE_PRECONDITION: "namenode:50070 datanode:50075 hive-postgresql:5432"
@@ -45,7 +45,7 @@ services:
     hostname: hive-server
     container_name: hive-server
     env_file:
-      - docker-hive-2.3.7/hive-2.3.7.env
+      - hive-2.3.7.env
     links:
       - hive-metastore  
     environment:
