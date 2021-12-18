@@ -1,40 +1,31 @@
+#
+#
+#
 ---
 #
-version: '3.1'
-#
+
+version: '3.5'
 services:
-#
+  #
+  # Zeppelin Notebook
+  #
   zeppelin:
-    image: apache/zeppelin:0.9.0
+    image: apache/zeppelin:0.10.0
     container_name: zeppelin
     hostname: zeppelin
-    restart: always
-    volumes:
-      - /apps/hostpath/zeppelin/logs:/logs
-      - /apps/hostpath/zeppelin/notebook:/notebook
-    environment:
-      ZEPPELIN_LOG_DIR: '/logs'
-      ZEPPELIN_NOTEBOOK_DIR: '/notebook'
+    env_file:
+      - docker-zeppelin/zeppelin.env
     ports:
-      - 8080:8080
-#    networks:
-#      - back-tier
+      - "28080:8080"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /opt/sandbox/hadoop-2.7.4:/opt/hadoop-2.7.4
+      - /opt/sandbox/hive-2.3.7:/opt/hive-2.3.7
+      - /opt/sandbox/spark-3.1.2:/opt/spark-3.1.2
 
 #
-#  adminer:
-#    image: adminer
-#    restart: always
-#    ports:
-#      - 9090:8080
-#    networks:
-#      - back-tier
-#
-
-#
-#networks:
-#  default:
-#    external:
-#      name: bridge
-#  backend:
-#    driver: bridge
-#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: bigdata.net
