@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
-      <change afterPath="$PROJECT_DIR$/docker/hive-2.3.7.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hadoop-2.7.4.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/dc-hive-2.3.7.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-hive-2.3.7.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/zeppelin.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/zeppelin.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639853446703</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639855176979</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1639855176979</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
