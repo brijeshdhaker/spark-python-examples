@@ -1,3 +1,6 @@
+#
+#
+#
 version: "3.5"
 
 services:
@@ -14,6 +17,7 @@ services:
       - "/apps/hostpath/zookeeper/snode:/bitnami/zookeeper"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+
   #
   # Apache Kafka Server
   #
@@ -32,10 +36,32 @@ services:
       - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
-      - KAFKA_CFG_LISTENERS=INTERNAL://:19092,EXTERNAL://:9092
-      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:19092,EXTERNAL://localhost:9092
+      - KAFKA_CFG_LISTENERS=INTERNAL://:9092,EXTERNAL://:19092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:9092,EXTERNAL://localhost:19092
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
       - KAFKA_HEAP_OPTS=-Xmx512m -Xms512m
+
+  #
+  # Mysql Database Server
+  #
+  mariadb:
+    image: mariadb:10.3.27
+    container_name: mariadb
+    hostname: mariadb
+    restart: always
+    volumes:
+      - /apps/hostpath/mysql/conf:/etc/mysql/conf.d
+      - /apps/hostpath/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_OPERATIONS_USER: operate
+      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_PASSWORD: p@SSW0rd
+      MYSQL_DATABASE: PUBLIC
+      MYSQL_USER: developer
+      MYSQL_PASSWORD: pDSSW0rd
+    ports:
+      - 3306:3306
+
   #
   # HDFS & YARN Sandbox
   #
@@ -197,6 +223,7 @@ services:
     volumes:
       - /apps/hostpath:/apps/hostpath
       - /opt/sandbox/hbase-2.4.6:/opt/hbase-2.4.6
+
   #
   # Hbase Server
   #
@@ -238,7 +265,7 @@ services:
     env_file:
       - zeppelin.env
     ports:
-      - "28080:8080"
+      - "9080:8080"
     volumes:
       - /apps/hostpath:/apps/hostpath
       - /opt/sandbox/hadoop-2.7.4:/opt/hadoop-2.7.4
@@ -253,6 +280,5 @@ volumes:
 #
 networks:
   default:
-    external: true
     driver: bridge
-    name: bigdata.net
+    name: sandbox-bigdata.net
