@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
-      <change afterPath="$PROJECT_DIR$/docker/dc-apache-kafka.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.k_producer">
+  <component name="RunManager" selected="Python.k_consumer">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,8 +205,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.k_producer" />
         <item itemvalue="Python.k_consumer" />
+        <item itemvalue="Python.k_producer" />
         <item itemvalue="Python.sql-dataframe" />
         <item itemvalue="Python.sql-column" />
         <item itemvalue="Python.commons" />
@@ -333,7 +334,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639916868609</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639917249461</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1639917249461</updated>
+    </task>
+    <task id="LOCAL-00018" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639925821015</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1639925821015</updated>
+    </task>
+    <task id="LOCAL-00019" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639926572470</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1639926572470</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
