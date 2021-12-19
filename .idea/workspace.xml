@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/zeppelin.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/zeppelin.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sql-dataframe">
+  <component name="RunManager" selected="Python.k_producer">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,7 +115,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="k_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +124,11 @@
         <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pie.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/k_consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,7 +137,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="poc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="k_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -145,11 +146,11 @@
         <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
       <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/poc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/kafka/k_producer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -204,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.k_producer" />
+        <item itemvalue="Python.k_consumer" />
         <item itemvalue="Python.sql-dataframe" />
         <item itemvalue="Python.sql-column" />
         <item itemvalue="Python.commons" />
-        <item itemvalue="Python.poc" />
-        <item itemvalue="Python.pie" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639855176979</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639858365393</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1639858365393</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
