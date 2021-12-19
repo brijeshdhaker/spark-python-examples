@@ -2,7 +2,7 @@ from confluent_kafka import Consumer
 
 
 c = Consumer({
-    'bootstrap.servers': 'localhost:9092',
+    'bootstrap.servers': 'localhost:19092',
     'group.id': 'python-cg',
     'auto.offset.reset': 'earliest'
 })

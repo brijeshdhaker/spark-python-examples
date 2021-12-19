@@ -33,7 +33,7 @@ if __name__ == '__main__':
     topic = "test"
     # Create Producer instance
     producer_conf = {
-        'bootstrap.servers': 'localhost:9092',
+        'bootstrap.servers': 'localhost:19092',
     }
     producer = Producer(producer_conf)
     # Create topic if needed
