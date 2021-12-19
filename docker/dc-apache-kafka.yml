@@ -1,0 +1,45 @@
+#
+#
+
+version: '3.5'
+
+services:
+  #
+  zookeeper:
+    image: bitnami/zookeeper:3.7
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    volumes:
+      - "/apps/hostpath/zookeeper/snode:/bitnami/zookeeper"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  #
+  kafka:
+    image: 'bitnami/kafka:latest'
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - '9092:9092'
+      - '19092:19092'
+    volumes:
+      - /apps/hostpath/kafka/snode:/bitnami/kafka
+    depends_on:
+      - zookeeper
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=INTERNAL://:19092,EXTERNAL://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:19092,EXTERNAL://localhost:9092
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+      - KAFKA_HEAP_OPTS=-Xmx512m -Xms512m
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: bigdata.net
