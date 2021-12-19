@@ -30,10 +30,10 @@ import json
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    topic = "users-topic"
+    topic = "test"
     # Create Producer instance
     producer_conf = {
-        'bootstrap.servers': 'thinkpad:9092',
+        'bootstrap.servers': 'localhost:9092',
     }
     producer = Producer(producer_conf)
     # Create topic if needed
