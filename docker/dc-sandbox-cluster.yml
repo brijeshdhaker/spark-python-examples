@@ -1,0 +1,258 @@
+version: "3.5"
+
+services:
+  #
+  # Zookeeper Server
+  #
+  zookeeper:
+    image: bitnami/zookeeper:3.7
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    volumes:
+      - "/apps/hostpath/zookeeper/snode:/bitnami/zookeeper"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  #
+  # Apache Kafka Server
+  #
+  kafka:
+    image: 'bitnami/kafka:latest'
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - '9092:9092'
+      - '19092:19092'
+    volumes:
+      - /apps/hostpath/kafka/snode:/bitnami/kafka
+    depends_on:
+      - zookeeper
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=INTERNAL://:19092,EXTERNAL://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:19092,EXTERNAL://localhost:9092
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+      - KAFKA_HEAP_OPTS=-Xmx512m -Xms512m
+  #
+  # HDFS & YARN Sandbox
+  #
+  namenode:
+    image: brijeshdhaker/hadoop-namenode:2.7.4
+    build:
+      context: .
+      dockerfile: docker-hadoop-2.7.4/namenode/Dockerfile
+    container_name: namenode
+    hostname: namenode
+    restart: always
+    extra_hosts:
+      - "hostmaster hostmaster.bigdata.net:host-gateway"
+    ports:
+      - "50070:50070"
+      - "9000:9000"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - hadoop-2.7.4.env
+
+  #
+  datanode:
+    image: brijeshdhaker/hadoop-datanode:2.7.4
+    build:
+      context: .
+      dockerfile: docker-hadoop-2.7.4/datanode/Dockerfile
+    container_name: datanode
+    hostname: datanode
+    extra_hosts:
+      - "hostmaster hostmaster.bigdata.net:host-gateway"
+    ports:
+      - "50075:50075"
+      - "50010:50010"
+    restart: always
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070"
+    env_file:
+      - hadoop-2.7.4.env
+
+  #
+  resourcemanager:
+    image: brijeshdhaker/hadoop-resourcemanager:2.7.4
+    build:
+      context: .
+      dockerfile: docker-hadoop-2.7.4/resourcemanager/Dockerfile
+    container_name: resourcemanager
+    hostname: resourcemanager
+    restart: always
+    extra_hosts:
+      - "hostmaster hostmaster.bigdata.net:host-gateway"
+    ports:
+      - "8088:8088"
+      - "8025:8025"
+      - "8032:8032"
+      - "8050:8050"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000  namenode:50070  datanode:50075"
+    env_file:
+      - hadoop-2.7.4.env
+
+  #
+  nodemanager:
+    image: brijeshdhaker/hadoop-nodemanager:2.7.4
+    build:
+      context: .
+      dockerfile: docker-hadoop-2.7.4/nodemanager/Dockerfile
+    container_name: nodemanager
+    hostname: nodemanager
+    restart: always
+    extra_hosts:
+      - "hostmaster hostmaster.bigdata.net:host-gateway"
+    ports:
+      - "8042:8042"
+      - "19888:19888"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000  namenode:50070  datanode:50075 resourcemanager:8088"
+    env_file:
+      - hadoop-2.7.4.env
+
+  #
+  historyserver:
+    image: brijeshdhaker/hadoop-historyserver:2.7.4
+    build:
+      context: .
+      dockerfile: docker-hadoop-2.7.4/historyserver/Dockerfile
+    container_name: historyserver
+    hostname: historyserver
+    restart: always
+    extra_hosts:
+      - "hostmaster hostmaster.bigdata.net:host-gateway"
+    ports:
+      - "8188:8188"
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000  namenode:50070  datanode:50075 resourcemanager:8088"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+    env_file:
+      - hadoop-2.7.4.env
+
+  #
+  # Hive Server
+  #
+  hive-postgresql:
+    image: brijeshdhaker/hive-postgresql:2.3.7
+    build:
+      context: .
+      dockerfile: docker-hive-2.3.7/postgres/Dockerfile
+    hostname: hive-postgresql
+    container_name: hive-postgresql
+    ports:
+      - "5432:5432"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+
+  #
+  hive-metastore:
+    image: brijeshdhaker/hive:2.3.7
+    build:
+      context: .
+      dockerfile: docker-hive-2.3.7/hive/Dockerfile
+    hostname: hive-metastore
+    container_name: hive-metastore
+    env_file:
+      - hive-2.3.7.env
+    command: /opt/hive-2.3.7/bin/hive --service metastore
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 hive-postgresql:5432"
+    links:
+      - hive-postgresql
+    ports:
+      - "9083:9083"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+
+  #
+  hive-server:
+    image: brijeshdhaker/hive:2.3.7
+    hostname: hive-server
+    container_name: hive-server
+    env_file:
+      - hive-2.3.7.env
+    links:
+      - hive-metastore
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
+      SERVICE_PRECONDITION: "hive-metastore:9083"
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /opt/sandbox/hbase-2.4.6:/opt/hbase-2.4.6
+  #
+  # Hbase Server
+  #
+  hbase-master:
+    image: brijeshdhaker/hbase-master:2.4.6
+    hostname: hbase-master
+    container_name: hbase-master
+    environment:
+      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181"
+    env_file:
+      - hbase-distributed.env
+    ports:
+      - 16010:16010
+    volumes:
+      - "/apps/hostpath:/apps/hostpath"
+
+  #
+  hbase-region:
+    image: brijeshdhaker/hbase-regionserver:2.4.6
+    container_name: hbase-regionserver
+    hostname: hbase-regionserver
+    env_file:
+      - hbase-distributed.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region
+      SERVICE_PRECONDITION: "namenode:50070 datanode:50075 zookeeper:2181 hbase-master:16010"
+    ports:
+      - 16030:16030
+    volumes:
+      - "/apps/hostpath:/apps/hostpath"
+
+  #
+  # Zeppelin Notebook
+  #
+  zeppelin:
+    image: apache/zeppelin:0.10.0
+    container_name: zeppelin
+    hostname: zeppelin
+    env_file:
+      - zeppelin.env
+    ports:
+      - "28080:8080"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /opt/sandbox/hadoop-2.7.4:/opt/hadoop-2.7.4
+      - /opt/sandbox/hive-2.3.7:/opt/hive-2.3.7
+      - /opt/sandbox/spark-3.1.2:/opt/spark-3.1.2
+#
+volumes:
+  hadoop_namenode:
+  hadoop_datanode:
+  hadoop_historyserver:
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: bigdata.net
