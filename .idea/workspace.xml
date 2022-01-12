@@ -5,9 +5,72 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2021-12-18 Update Docker Configurations.">
+      <change afterPath="$PROJECT_DIR$/docker/dc-sandbox-cluster3.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/hadoop-3.2.1.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/hive-3.1.2.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker/zeppelin-hadoop-3.2.1.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kafka/k_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kafka/k_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/kafka/k_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/dc-sandbox-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker/dc-sandbox-cluster2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/zeppelin.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker/zeppelin-hadoop-2.7.4.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/visualapi.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/fold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/part13_reduceByKey.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/reduce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/spark-aggregate-by-key.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/spark-narrow-transformation-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/spark-wide-transformation-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py2.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-py3.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/sampledata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hello-spark.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro-test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro_consumer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro_producer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/avro_schema_producer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_consumer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/k_producer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/kafka_utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/user.avsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kafka/users.avro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/accumulator/accumulator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/broadcast/broadcast.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/file-rdd.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/aggregate-by-key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/coalesce.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/distinct.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/filter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/flat-map-partitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/flat-map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/group-by-key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/map-partitions-with-index.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/map-partitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/pyspark-test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/re-partition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/reduce-by-key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/repartition-sort-within-partitions.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/sample.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/sort-by-key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdd/transformation/union.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-bucketing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-column.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-dataframe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-row.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-s3a-read.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/sql-udf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sql/struct-types.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/streaming/kafka-stream.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/streaming/spark-kafkaread-batch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/commons.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/load_avro_schema_from_file.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +106,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docker" />
+    <property name="last_opened_file_path" value="/opt/sandbox/spark-3.1.2/python/lib/pyspark.zip" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,7 +418,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639926572470</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639926656593</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1639926656593</updated>
+    </task>
+    <task id="LOCAL-00021" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639926767453</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1639926767453</updated>
+    </task>
+    <task id="LOCAL-00022" summary="2021-12-18 Update Docker Configurations.">
+      <created>1639927298866</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1639927298866</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">

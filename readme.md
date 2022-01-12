@@ -115,7 +115,7 @@ spark.pyspark.python=
 spark.pyspark.driver.python=
 
 PYSPARK_PYTHON
-PYSPARK_DRIVER_PYTHON'
+PYSPARK_DRIVER_PYTHON
 
 $SPARK_HOME/bin/spark-submit \
 --master "k8s://https://raspberry:6443" \

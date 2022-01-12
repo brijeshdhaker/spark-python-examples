@@ -1,0 +1,38 @@
+#
+#
+#
+version: "3.5"
+
+services:
+  #
+  # elasticsearch Server
+  #
+  elasticsearch:
+    image: elasticsearch:7.8.1
+    container_name: elasticsearch
+    hostname: elasticsearch
+    volumes:
+      - /apps/hostpath/elasticsearch/es00:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    environment:
+      discovery.type: 'single-node'
+      xpack.security.enabled: 'true'
+      ELASTIC_PASSWORD: 'admin'
+  #
+  # kibana Server
+  #
+  kibana:
+    image: kibana:7.8.1
+    container_name: kibana
+    hostname: kibana
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - 5601:5601
+
+#
+networks:
+  default:
+    driver: bridge
+    name: sandbox-bigdata.net
