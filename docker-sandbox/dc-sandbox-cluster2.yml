@@ -324,7 +324,7 @@ services:
       - /apps/hostpath:/apps/hostpath
       - /opt/sandbox/hadoop-2.10.1:/opt/hadoop-2.10.1
       - /opt/sandbox/hbase-2.4.9:/opt/hbase-2.4.9
-      - /opt/sandbox/hbase-client:/opt/hbase-client
+      - /opt/sandbox/hbase-1.1.7:/opt/hbase-client
       - /opt/sandbox/hive-2.3.9:/opt/hive-2.3.9
       - /opt/sandbox/spark-2.3.4:/opt/spark-2.3.4
       - /opt/sandbox/spark-3.1.2-2.7:/opt/spark-3.1.2

@@ -11,17 +11,17 @@ set -x
 # runs from the correct location.
 #test -n "$SPARK_HOME"
 
-python -m venv v_env
-source v_env/bin/activate
+python -m venv venv
+source venv/bin/activate
 pip install -U pip
 pip install -r requirements.pip
 deactivate
 
-mkdir -p target
+mkdir -p dist
 # Here we package up an isolated environment that we'll ship to YARN.
 # The awkward zip invocation for venv just creates nicer relative
 # paths.
-pushd v_env/
+pushd venv/
 zip -rq ../target/venv.zip *
 popd
 

@@ -296,7 +296,7 @@ services:
       - /apps/hostpath:/apps/hostpath
       - /opt/sandbox/hadoop-3.2.1:/opt/hadoop-3.2.1
       - /opt/sandbox/hbase-2.4.9:/opt/hbase-2.4.9
-      - /opt/sandbox/hbase-client:/opt/hbase-client
+      - /opt/sandbox/hbase-1.1.7:/opt/hbase-client
       - /opt/sandbox/hive-3.1.2:/opt/hive-3.1.2
       - /opt/sandbox/spark-3.1.2:/opt/spark-3.1.2
       - /apps/hostpath/sandbox3/zeppelin/conf:/opt/zeppelin/conf
