@@ -11,8 +11,19 @@ from datetime import datetime
 from uuid import uuid4
 from time import sleep
 from confluent_kafka.avro import AvroProducer
+# from com.example.utils.load_avro_schema_from_file import load_avro_schema_as_str
+# from com.example.utils.load_avro_schema_from_file import load_avro_schema_from_file
+from confluent_kafka import avro
 
-from com.example.utils.load_avro_schema_from_file import load_avro_schema_from_file
+def load_avro_schema_from_file(schema_file):
+    key_schema_string = """
+    {"type": "string"}
+    """
+
+    key_schema = avro.loads(key_schema_string)
+    value_schema = avro.load(schema_file)
+
+    return key_schema, value_schema
 
 if __name__ == '__main__':
 
@@ -22,7 +33,7 @@ if __name__ == '__main__':
     topic = "users-topic-avro"
 
     # Report malformed record, discard results, continue polling
-    BASE_DIR = "/home/brijeshdhaker/IdeaProjects/spark-bigdata-examples/"
+    BASE_DIR = "/home/brijeshdhaker/IdeaProjects/spark-python-examples/"
     key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/user-record.avsc')
 
     epoch = datetime.utcfromtimestamp(0)

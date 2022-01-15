@@ -22,7 +22,7 @@ mkdir -p dist
 # The awkward zip invocation for venv just creates nicer relative
 # paths.
 pushd venv/
-zip -rq ../target/venv.zip *
+zip -rq ../dist/venv.zip *
 popd
 
 # Here it's important that application/ be zipped in this way so that
@@ -34,8 +34,8 @@ cp target/*.zip /apps/hostpath/spark/artifacts/py/
 
 # We want YARN to use the Python from our virtual environment,
 # which includes all our dependencies.
-export PYSPARK_DRIVER_PYTHON=python
-export PYSPARK_PYTHON="venv/bin/python"
+export PYSPARK_DRIVER_PYTHON=./venv/bin/python
+export PYSPARK_PYTHON=./venv/bin/python
 
 # YARN Client Mode Example
 # ------------------------
@@ -45,13 +45,47 @@ export PYSPARK_PYTHON="venv/bin/python"
 # PYSPARK_PYTHON to `venv/bin/python`, `venv/` here references the
 # aliased zip file we're sending to YARN.
 
+export PYSPARK_DRIVER_PYTHON=python3
+export PYSPARK_PYTHON="./venv/bin/python3"
 spark-submit \
     --name "Python Spark Application" \
-    --master local[*] \
-    --conf "spark.executorEnv.PYSPARK_DRIVER_PYTHON=$PYSPARK_DRIVER_PYTHON" \
-    --conf "spark.executorEnv.PYSPARK_PYTHON=$PYSPARK_PYTHON" \
-    --archives "/apps/hostpath/spark/artifacts/py/venv.zip#venv" \
-    --py-files "/apps/hostpath/spark/artifacts/py/application.zip" /apps/hostpath/spark/artifacts/py/py-hello.py
+    --master yarn \
+    --deploy-mode cluster \
+    --conf "spark.yarn.dist.archives=hdfs://namenode:9000/archives/pyspark_venv.tar.gz#venv" \
+    src/main/py/com/example/app.py
+
+#
+# Working YARN Client Mode Example
+#
+export PYSPARK_DRIVER_PYTHON=/opt/sandbox/conda/envs/pyspark3.7/bin/python
+export PYSPARK_PYTHON=./environment/bin/python
+$SPARK_HOME/bin/spark-submit --name "PySpark Yarn Client Application" \
+--master yarn \
+--deploy-mode client \
+--conf "spark.yarn.dist.archives=hdfs://namenode:9000/archives/pyspark3.7.tar.gz#environment" \
+src/main/py/com/example/app.py
+
+
+
+#
+# Working YARN Cluster Mode Example
+#
+unset PYSPARK_DRIVER_PYTHON
+export PYSPARK_PYTHON=./environment/bin/python
+$SPARK_HOME/bin/spark-submit --name "PySpark Yarn Cluster Application" \
+--master yarn \
+--deploy-mode cluster \
+--conf "spark.yarn.dist.archives=hdfs://namenode:9000/archives/pyspark3.7.tar.gz#environment" \
+src/main/py/com/example/app.py
+
+
+# spark-submit \
+#    --name "Python Spark Application" \
+#    --master yarn \
+#    --conf "spark.executorEnv.PYSPARK_DRIVER_PYTHON=$PYSPARK_DRIVER_PYTHON" \
+#    --conf "spark.executorEnv.PYSPARK_PYTHON=$PYSPARK_PYTHON" \
+#    --archives "hdfs://namenode:9000/archives/venv.zip#venv" \
+#    src/main/py/com/example/app.py
 
 # YARN Cluster Mode Example
 # -------------------------
