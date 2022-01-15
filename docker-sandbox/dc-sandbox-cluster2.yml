@@ -128,7 +128,7 @@ services:
     hostname: namenode
     restart: always
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "50070:50070"
       - "9000:9000"
@@ -145,7 +145,7 @@ services:
     container_name: datanode
     hostname: datanode
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "50075:50075"
       - "50010:50010"
@@ -164,7 +164,7 @@ services:
     hostname: resourcemanager
     restart: always
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "8088:8088"
       - "8032:8032"
@@ -189,7 +189,7 @@ services:
         reservations:
           memory: 8192M
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "8042:8042"
       - "19888:19888"
@@ -207,7 +207,7 @@ services:
     hostname: historyserver
     restart: always
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "8188:8188"
     environment:
@@ -316,7 +316,7 @@ services:
     hostname: zeppelin
     restart: always
     extra_hosts:
-      - "hostmaster hostmaster.bigdata.net:host-gateway"
+      - "hostmaster hostmaster.sandbox-bigdata.net:host-gateway"
     ports:
       - "9080:8080"
       - "4040:4040"
@@ -364,6 +364,7 @@ volumes:
 #
 networks:
   default:
+    external: true
     driver: bridge
     name: sandbox-bigdata.net
 
