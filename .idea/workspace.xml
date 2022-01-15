@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2022-01-12 Update Docker Configurations.">
-      <change afterPath="$PROJECT_DIR$/conda-readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv_pyspark3.7.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2022-01-15 Update Docker Configurations.">
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_consumer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements-py3.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-and-local-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-local-submit.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +71,7 @@
       <recent name="$PROJECT_DIR$/src/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.AvroConsumer">
+  <component name="RunManager" selected="Python.avro_consumer">
     <configuration name="AvroConsumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,11 +80,21 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroConsumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -157,7 +160,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="avro_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="avro_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -180,8 +183,8 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" />
         </ENTRIES>
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" />
-      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t users-topic-avro" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_consumer.py" />
+      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -189,7 +192,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="k_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="avro_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -197,13 +200,23 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_HOME" value="/opt/sandbox/conda/envs/pyspark3.7/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/k_consumer.py" />
-      <option name="PARAMETERS" value="" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" />
+      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -219,11 +232,21 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/k_producer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -236,17 +259,17 @@
     <list>
       <item itemvalue="Python.AvroProducer" />
       <item itemvalue="Python.k_producer" />
-      <item itemvalue="Python.k_consumer" />
       <item itemvalue="Python.AvroConsumer" />
       <item itemvalue="Python.avro_producer" />
+      <item itemvalue="Python.avro_consumer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.avro_consumer" />
+        <item itemvalue="Python.avro_producer" />
         <item itemvalue="Python.AvroConsumer" />
         <item itemvalue="Python.AvroProducer" />
-        <item itemvalue="Python.avro_producer" />
         <item itemvalue="Python.k_producer" />
-        <item itemvalue="Python.k_consumer" />
       </list>
     </recent_temporary>
   </component>
@@ -434,7 +457,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642234917022</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="2022-01-12 Update Docker Configurations.">
+      <created>1642256782216</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1642256782216</updated>
+    </task>
+    <task id="LOCAL-00027" summary="2022-01-15 Update Docker Configurations.">
+      <created>1642256922346</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1642256922346</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -461,7 +498,8 @@
     <MESSAGE value="2021-12-16 Add Spark Bucketing Example." />
     <MESSAGE value="2021-12-18 Update Docker Configurations." />
     <MESSAGE value="2022-01-12 Update Docker Configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-01-12 Update Docker Configurations." />
+    <MESSAGE value="2022-01-15 Update Docker Configurations." />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-01-15 Update Docker Configurations." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
