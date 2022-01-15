@@ -1,3 +1,4 @@
+#
 kafka-python
 confluent-kafka[avro]==1.8.2
 avro==1.11.0
