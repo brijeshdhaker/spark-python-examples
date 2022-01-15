@@ -17,6 +17,9 @@
 #
 
 #
+# avro_producer.py -b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic
+#
+#
 # This is a simple example of the SerializingProducer using Avro.
 #
 import argparse
