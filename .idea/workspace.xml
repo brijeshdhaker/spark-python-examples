@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2022-01-15 Update Docker Configurations.">
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/CardTransactionAnalysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/accumulator/accumulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/accumulator/accumulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/broadcast/broadcast.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/broadcast/broadcast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/file-rdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/file-rdd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/aggregate-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/aggregate-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/coalesce.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/coalesce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/distinct.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/distinct.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/flat-map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/flat-map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/group-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/group-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/map-partitions-with-index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions-with-index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/pyspark-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/pyspark-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/re-partition.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/re-partition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/reduce-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/repartition-sort-within-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/repartition-sort-within-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/sort-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/sort-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/schema-merge.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,13 +89,46 @@
       <recent name="$PROJECT_DIR$/src/kafka" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/py/com/example/core/rdd" />
+      <recent name="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd" />
       <recent name="$PROJECT_DIR$/notes/bucketing" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/rdd" />
-      <recent name="$PROJECT_DIR$/src/utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.hello-spark">
+  <component name="RunManager" selected="Python.CardTransactionAnalysis">
+    <configuration name="CardTransactionAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/CardTransactionAnalysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,38 +166,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/aggregate-by-key.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="avro_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_consumer.py" />
-      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -235,19 +260,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.avro_consumer" />
       <item itemvalue="Python.coalesce" />
       <item itemvalue="Python.aggregate-by-key" />
       <item itemvalue="Python.commons" />
       <item itemvalue="Python.hello-spark" />
+      <item itemvalue="Python.CardTransactionAnalysis" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CardTransactionAnalysis" />
         <item itemvalue="Python.hello-spark" />
         <item itemvalue="Python.commons" />
         <item itemvalue="Python.aggregate-by-key" />
         <item itemvalue="Python.coalesce" />
-        <item itemvalue="Python.avro_consumer" />
       </list>
     </recent_temporary>
   </component>
@@ -470,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642257997799</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="2022-01-15 Update Docker Configurations.">
+      <created>1642259329815</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1642259329815</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
