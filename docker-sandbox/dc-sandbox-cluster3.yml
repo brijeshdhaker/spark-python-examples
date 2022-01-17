@@ -131,6 +131,7 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
+      - /apps/hostpath/sandbox3/hadoop/dfs/name:/hadoop/dfs/name
       - /apps/hostpath:/apps/hostpath
     environment:
       - CLUSTER_NAME=test
@@ -147,6 +148,7 @@ services:
       - "9866:9866"
     restart: always
     volumes:
+      - /apps/hostpath/sandbox3/hadoop/dfs/data:/hadoop/dfs/data
       - /apps/hostpath:/apps/hostpath
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
@@ -195,6 +197,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     volumes:
+      - /apps/hostpath/sandbox3/hadoop/yarn/timeline:/hadoop/yarn/timeline
       - /apps/hostpath:/apps/hostpath
     env_file:
       - sandbox3.env
