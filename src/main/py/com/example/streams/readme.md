@@ -12,9 +12,11 @@ Let's quickly visualize how the data will flow:
 #
 ##### Topic - Creation
 kafka-topics --create --zookeeper quickstart-bigdata:2181 --partitions 1 --replication-factor 1 --topic tweeter-tweets
+kafka-topics --create --zookeeper zookeeper:2181 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
 
 ##### Topic - List
 kafka-topics --list --zookeeper quickstart-bigdata:2181
+kafka-topics --list --zookeeper zookeeper:2181
 
 ##### Topic - Describe
 kafka-topics --describe --topic tweeter-tweets --zookeeper quickstart-bigdata:2181
@@ -107,6 +109,12 @@ spark-submit \
 --master local[4] \
 --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 \
 /home/brijeshdhaker/IdeaProjects/spark-bigdata-examples/pyspark-examples/src/main/py/com/example/streams/structured/structured-kafka-stream.py
+
+spark-submit \
+--name "structured-kafka-stream" \
+--master local[4] \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
+/home/brijeshdhaker/IdeaProjects/spark-python-examples/src/main/py/com/example/streams/structured/KafkaStreamDemo.py
 
 spark-submit \
 --name "structured-kafka-stream" \
