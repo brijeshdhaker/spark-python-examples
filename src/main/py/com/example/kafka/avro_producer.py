@@ -25,7 +25,7 @@
 import argparse
 from uuid import uuid4
 
-from six.moves import input
+from builtins import input
 
 from confluent_kafka import SerializingProducer
 from confluent_kafka.serialization import StringSerializer

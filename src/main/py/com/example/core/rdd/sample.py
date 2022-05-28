@@ -13,9 +13,6 @@ def f(iterator):
     yield len(list(iterator))
 
 
-    #
-
-
 spark = SparkSession \
     .builder \
     .appName("PythonRDD-Sample") \

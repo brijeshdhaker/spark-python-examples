@@ -1,0 +1,212 @@
+#
+#
+#
+version: "3.9"
+
+services:
+  #
+  # HDFS & YARN Sandbox
+  #
+  namenode:
+    image: brijeshdhaker/hadoop-namenode:3.2.1
+    container_name: namenode
+    hostname: namenode
+    restart: always
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    volumes:
+      - sandbox3_hadoop_dfs_name:/hadoop/dfs/name
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - sandbox3.env
+
+  #
+  datanode:
+    image: brijeshdhaker/hadoop-datanode:3.2.1
+    container_name: datanode
+    hostname: datanode
+    ports:
+      - "9864:9864"
+      - "9866:9866"
+    restart: always
+    volumes:
+      - sandbox3_hadoop_dfs_data:/hadoop/dfs/data
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file:
+      - sandbox3.env
+
+  #
+  resourcemanager:
+    image: brijeshdhaker/hadoop-resourcemanager:3.2.1
+    container_name: resourcemanager
+    hostname: resourcemanager
+    restart: always
+    ports:
+      - "8088:8088"
+      - "8032:8032"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+    env_file:
+      - sandbox3.env
+
+  #
+  nodemanager:
+    image: brijeshdhaker/hadoop-nodemanager:3.2.1
+    container_name: nodemanager
+    hostname: nodemanager
+    restart: always
+    ports:
+      - "8042:8042"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    env_file:
+      - sandbox3.env
+
+  #
+  historyserver:
+    image: brijeshdhaker/hadoop-historyserver:3.2.1
+    container_name: historyserver
+    hostname: historyserver
+    restart: always
+    ports:
+      - "19888:19888"
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+    volumes:
+      - sandbox3_hadoop_yarn_history:/tmp/yarn/history
+      - sandbox3_apps_hostpath:/apps/hostpath
+    env_file:
+      - sandbox3.env
+
+  #
+  # Hive Server
+  #
+  hive-postgresql:
+    image: brijeshdhaker/hive-postgresql:3.1.2
+    hostname: hive-postgresql
+    container_name: hive-postgresql
+    ports:
+      - "5432:5432"
+    volumes:
+      - sandbox3_postgres:/var/lib/postgresql/data
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  hive-metastore:
+    image: brijeshdhaker/hive:3.1.2
+    hostname: hive-metastore
+    container_name: hive-metastore
+    env_file:
+      - sandbox3.env
+    command: /opt/hive-3.1.2/bin/hive --service metastore
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
+    links:
+      - hive-postgresql
+    ports:
+      - "9083:9083"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  hive-server:
+    image: brijeshdhaker/hive:3.1.2
+    hostname: hive-server
+    container_name: hive-server
+    env_file:
+      - sandbox3.env
+    links:
+      - hive-metastore
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
+      SERVICE_PRECONDITION: "hive-metastore:9083"
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  #
+  #
+  spark-historyserver:
+    image: brijeshdhaker/spark-historyserver:3.1.2
+    container_name: spark-historyserver
+    hostname: spark-historyserver
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864"
+    depends_on:
+      - namenode
+      - datanode
+    ports:
+      - "18080:18080"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  # Zeppelin Notebook
+  #
+  zeppelin:
+    image: apache/zeppelin:0.10.0
+    container_name: zeppelin
+    hostname: zeppelin
+    env_file:
+      - sandbox3.env
+    ports:
+      - "9080:8080"
+      - "4040:4040"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hbase:/opt/hbase-2.4.9
+      - sandbox3_hbase_client:/opt/hbase-client
+      - sandbox3_hive:/opt/hive-3.1.2
+      - sandbox3_spark:/opt/spark-3.1.2
+      - sandbox3_zeppelin_conf:/opt/zeppelin/conf
+      - sandbox3_m2:/opt/zeppelin/.m2
+      - sandbox3_ivy2:/opt/zeppelin/.ivy2
+
+#
+volumes:
+  sandbox3_apps_hostpath:
+    external: true
+  sandbox3_m2:
+    external: true
+  sandbox3_ivy2:
+    external: true
+  sandbox3_hadoop_dfs_name:
+    external: true
+  sandbox3_hadoop_dfs_data:
+    external: true
+  sandbox3_hadoop_yarn_history:
+    external: true
+  sandbox3_postgres:
+    external: true
+  sandbox3_zeppelin_conf:
+    external: true
+  sandbox3_hadoop:
+    external: true
+  sandbox3_hbase:
+    external: true
+  sandbox3_hbase_client:
+    external: true
+  sandbox3_hive:
+    external: true
+  sandbox3_spark:
+    external: true
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net

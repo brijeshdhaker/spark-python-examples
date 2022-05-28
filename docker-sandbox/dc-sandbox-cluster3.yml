@@ -1,0 +1,417 @@
+#
+#
+#
+version: "3.9"
+
+services:
+  #
+  # Zookeeper Server
+  #
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.5.0
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_zookeeper_secrets:/etc/zookeeper/secrets
+      - sandbox3_zookeeper_data:/var/lib/zookeeper/data
+      - sandbox3_zookeeper_log:/var/lib/zookeeper/log
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ALLOW_UNSIGNED: "true"
+
+  #
+  # Apache Kafka Server
+  #
+  kafka-broker:
+    image: confluentinc/cp-server:5.5.0
+    hostname: kafka-broker
+    container_name: kafka-broker
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "19092:19092"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_kafka_secrets:/etc/kafka/secrets
+      - sandbox3_kafka_data:/var/lib/kafka/data
+    environment:
+      KAFKA_BROKER_ID: 0
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_LISTENERS: INTERNAL://kafka-broker:19092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka-broker:19092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_CONFLUENT_BALANCER_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafka-broker:19092
+      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
+      CONFLUENT_METRICS_ENABLE: 'true'
+      CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
+
+  #
+  #
+  #
+  schema-registry:
+    image: confluentinc/cp-schema-registry:5.5.0
+    hostname: schema-registry
+    container_name: schema-registry
+    depends_on:
+      - zookeeper
+      - kafka-broker
+    ports:
+      - "8081:8081"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_schemaregistry_secrets:/etc/schema-registry/secrets
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka-broker:19092'
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+      SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: INFO
+
+  #
+  # Mysql Database Server
+  #
+  mysqlserver:
+    image: mysql/mysql-server:8.0.28
+    container_name: mysqlserver
+    hostname: mysqlserver
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_mysql_conf:/etc/mysql/conf.d
+      - sandbox3_mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_OPERATIONS_USER: operate
+      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_PASSWORD: p@SSW0rd
+      MYSQL_DATABASE: PUBLIC
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_HOST: 172.18.0.1
+
+  #
+  # Cassandra Server
+  #
+  cassandra:
+    image: cassandra:4.0.2
+    hostname: cassandra
+    container_name: cassandra
+    restart: always
+    ports:
+      - "7000:7000"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_cassandra_data:/var/lib/cassandra
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  #
+  # HDFS & YARN Sandbox
+  #
+  namenode:
+    image: brijeshdhaker/hadoop-namenode:3.2.1
+    container_name: namenode
+    hostname: namenode
+    restart: always
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    volumes:
+      - sandbox3_hadoop_dfs_name:/hadoop/dfs/name
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      - CLUSTER_NAME=test
+    env_file:
+      - sandbox3.env
+
+  #
+  datanode:
+    image: brijeshdhaker/hadoop-datanode:3.2.1
+    container_name: datanode
+    hostname: datanode
+    ports:
+      - "9864:9864"
+      - "9866:9866"
+    restart: always
+    volumes:
+      - sandbox3_hadoop_dfs_data:/hadoop/dfs/data
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870"
+    env_file:
+      - sandbox3.env
+
+  #
+  resourcemanager:
+    image: brijeshdhaker/hadoop-resourcemanager:3.2.1
+    container_name: resourcemanager
+    hostname: resourcemanager
+    restart: always
+    ports:
+      - "8088:8088"
+      - "8032:8032"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+    env_file:
+      - sandbox3.env
+
+  #
+  nodemanager:
+    image: brijeshdhaker/hadoop-nodemanager:3.2.1
+    container_name: nodemanager
+    hostname: nodemanager
+    restart: always
+    ports:
+      - "8042:8042"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    env_file:
+      - sandbox3.env
+
+  #
+  historyserver:
+    image: brijeshdhaker/hadoop-historyserver:3.2.1
+    container_name: historyserver
+    hostname: historyserver
+    restart: always
+    ports:
+      - "19888:19888"
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+    volumes:
+      - sandbox3_hadoop_yarn_history:/tmp/yarn/history
+      - sandbox3_apps_hostpath:/apps/hostpath
+    env_file:
+      - sandbox3.env
+
+  #
+  # Hive Server
+  #
+  hive-postgresql:
+    image: brijeshdhaker/hive-postgresql:3.1.2
+    hostname: hive-postgresql
+    container_name: hive-postgresql
+    ports:
+      - "5432:5432"
+    volumes:
+      - sandbox3_postgres:/var/lib/postgresql/data
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  hive-metastore:
+    image: brijeshdhaker/hive:3.1.2
+    hostname: hive-metastore
+    container_name: hive-metastore
+    env_file:
+      - sandbox3.env
+    command: /opt/hive-3.1.2/bin/hive --service metastore
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
+    links:
+      - hive-postgresql
+    ports:
+      - "9083:9083"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  hive-server:
+    image: brijeshdhaker/hive:3.1.2
+    hostname: hive-server
+    container_name: hive-server
+    env_file:
+      - sandbox3.env
+    links:
+      - hive-metastore
+    environment:
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
+      SERVICE_PRECONDITION: "hive-metastore:9083"
+    ports:
+      - "10000:10000"
+      - "10002:10002"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  # Hbase Server
+  #
+  hbase-master:
+    image: brijeshdhaker/hbase-master:2.4.9
+    hostname: hbase-master
+    container_name: hbase-master
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181"
+    env_file:
+      - sandbox3.env
+    ports:
+      - "16000:16000"
+      - "16010:16010"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  hbase-region:
+    image: brijeshdhaker/hbase-regionserver:2.4.9
+    container_name: hbase-regionserver
+    hostname: hbase-regionserver
+    env_file:
+      - sandbox3.env
+    environment:
+      HBASE_CONF_hbase_regionserver_hostname: hbase-region
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181 hbase-master:16010"
+    ports:
+      - "16020:16020"
+      - "16030:16030"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  #
+  #
+  spark-historyserver:
+    image: brijeshdhaker/spark-historyserver:3.1.2
+    container_name: spark-historyserver
+    hostname: spark-historyserver
+    environment:
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864"
+    depends_on:
+      - namenode
+      - datanode
+    ports:
+      - "18080:18080"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+
+  #
+  # Zeppelin Notebook
+  #
+  zeppelin:
+    image: apache/zeppelin:0.10.0
+    container_name: zeppelin
+    hostname: zeppelin
+    env_file:
+      - sandbox3.env
+    ports:
+      - "9080:8080"
+      - "4040:4040"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hbase:/opt/hbase-2.4.9
+      - sandbox3_hbase_client:/opt/hbase-client
+      - sandbox3_hive:/opt/hive-3.1.2
+      - sandbox3_spark:/opt/spark-3.1.2
+      - sandbox3_zeppelin_conf:/opt/zeppelin/conf
+      - sandbox3_m2:/opt/zeppelin/.m2
+      - sandbox3_ivy2:/opt/zeppelin/.ivy2
+
+  #
+  # Apache NiFi
+  #
+  nififlow:
+    image: hortonworks/nifi:latest
+    container_name: nififlow
+    hostname: nififlow
+    restart: always
+    ports:
+      - "19090:8080"
+      - "19443:8443"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_nifi_conf:/opt/nifi/nifi-current/conf
+      - sandbox3_nifi_content_repository:/opt/nifi/nifi-current/content_repository
+      - sandbox3_nifi_database_repository:/opt/nifi/nifi-current/database_repository
+      - sandbox3_nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - sandbox3_nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
+      - sandbox3_nifi_log:/opt/nifi/nifi-current/logs
+      - sandbox3_nifi_state:/opt/nifi/nifi-current/state
+
+#
+volumes:
+  sandbox3_apps_hostpath:
+    external: true
+  sandbox3_m2:
+    external: true
+  sandbox3_ivy2:
+    external: true
+  sandbox3_zookeeper_secrets:
+    external: true
+  sandbox3_zookeeper_data:
+    external: true
+  sandbox3_zookeeper_log:
+    external: true
+  sandbox3_kafka_secrets:
+    external: true
+  sandbox3_kafka_data:
+    external: true
+  sandbox3_kafka_log:
+    external: true
+  sandbox3_schemaregistry_secrets:
+    external: true
+  sandbox3_cassandra_data:
+    external: true
+  sandbox3_mysql_data:
+    external: true
+  sandbox3_mysql_conf:
+    external: true
+  sandbox3_hadoop_dfs_name:
+    external: true
+  sandbox3_hadoop_dfs_data:
+    external: true
+  sandbox3_hadoop_yarn_history:
+    external: true
+  sandbox3_postgres:
+    external: true
+  sandbox3_zeppelin_conf:
+    external: true
+  sandbox3_hadoop:
+    external: true
+  sandbox3_hbase:
+    external: true
+  sandbox3_hbase_client:
+    external: true
+  sandbox3_hive:
+    external: true
+  sandbox3_spark:
+    external: true
+  sandbox3_nifi_conf:
+    external: true
+  sandbox3_nifi_content_repository:
+    external: true
+  sandbox3_nifi_database_repository:
+    external: true
+  sandbox3_nifi_flowfile_repository:
+    external: true
+  sandbox3_nifi_provenance_repository:
+    external: true
+  sandbox3_nifi_log:
+    external: true
+  sandbox3_nifi_state:
+    external: true
+
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net

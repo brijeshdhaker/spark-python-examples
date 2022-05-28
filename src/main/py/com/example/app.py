@@ -15,6 +15,9 @@ def main(spark):
 
 
 if __name__ == "__main__":
+
     session = SparkSession.builder.getOrCreate()
     session.sparkContext.setLogLevel("WARN")
+    session.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
+
     main(session)

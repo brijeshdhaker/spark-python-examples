@@ -8,3 +8,4 @@ jsonschema
 protobuf
 requests
 certifi
+pyrsistent==0.16.1;python_version<"3.0"

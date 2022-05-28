@@ -12,7 +12,7 @@ services:
     container_name: elasticsearch
     hostname: elasticsearch
     volumes:
-      - /apps/hostpath/elasticsearch/es00:/usr/share/elasticsearch/data
+      - /apps/hostpath/sandbox3/elasticsearch/es00:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     environment:

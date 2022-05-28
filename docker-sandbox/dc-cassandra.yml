@@ -1,0 +1,33 @@
+#
+#
+#
+version: "3.9"
+
+services:
+  #
+  # Cassandra Server
+  #
+  cassandra:
+    image: cassandra:4.0.2
+    hostname: cassandra
+    container_name: cassandra
+    restart: always
+    ports:
+      - "7000:7000"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_cassandra_data:/var/lib/cassandra
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+#
+volumes:
+  sandbox3_apps_hostpath:
+    external: true
+  sandbox3_cassandra_data:
+    external: true
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net

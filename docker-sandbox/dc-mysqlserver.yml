@@ -1,0 +1,35 @@
+#
+#
+#
+version: "3.5"
+
+services:
+  #
+  # Mysql Database Server
+  #
+  mysqlserver:
+    image: mysql/mysql-server:8.0.28
+    container_name: mysqlserver
+    hostname: mysqlserver
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - /apps/hostpath:/apps/hostpath
+      - /apps/hostpath/sandbox3/mysql/conf:/etc/mysql/conf.d
+      - /apps/hostpath/sandbox3/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_OPERATIONS_USER: operate
+      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_PASSWORD: p@SSW0rd
+      MYSQL_DATABASE: PUBLIC
+      MYSQL_USER: superuser
+      MYSQL_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_HOST: 172.18.0.1
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net

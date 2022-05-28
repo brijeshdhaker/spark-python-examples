@@ -4,22 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="2022-01-15 Update Docker Configurations.">
-      <change afterPath="$PROJECT_DIR$/docker-sandbox" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/KafkaStreamDemo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/lib/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/log4j.properties" afterDir="false" />
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-cassandra.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-hbase-cluster.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-mysqlserver.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch-cluster.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster2.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-sandbox.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/kibana.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox2.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/dc-elasticsearch-cluster.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/dc-elasticsearch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/dc-sandbox-cluster2.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/dc-sandbox-cluster3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/docker-sandbox.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/kibana.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/kibana.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/sandbox2.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/docker-sandbox/sandbox3.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-py2.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py2.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-py3.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-python-examples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spark-python-examples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hello-spark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +40,6 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,71 +50,43 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="1v3aOWd5wi5PTvr3sZm5wz8eg3X" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="29jNbZCrSDVeMfMOMCtAV4vzr9p" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/py/com/example/streams/structured" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
-  </component>
-  <component name="PyConsoleOptionsProvider">
-    <option name="myPythonConsoleState">
-      <console-settings module-name="spark-python-examples">
-        <option name="myModuleName" value="spark-python-examples" />
-      </console-settings>
-    </option>
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brije/IdeaProjects/spark-python-examples/dist/docker-sandbox&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/py/com/example/streams/structured" />
-      <recent name="$PROJECT_DIR$/docker-sandbox" />
-      <recent name="$PROJECT_DIR$/src/main/py" />
-      <recent name="$PROJECT_DIR$/src/main/py/com" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\dist\docker-sandbox" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/py/com/example/core/rdd" />
-      <recent name="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd" />
-      <recent name="$PROJECT_DIR$/notes/bucketing" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/rdd" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.KafkaStreamDemo">
-    <configuration name="CardTransactionAnalysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.avro_producer">
+    <configuration name="AvroConsumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/CardTransactionAnalysis.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroConsumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -118,118 +95,82 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="KafkaStreamDemo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="AvroProducer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/streams/structured" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/streams/structured/KafkaStreamDemo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="aggregate-by-key" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/rdd/transformation/aggregate-by-key.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="commons" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/utils/commons.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="hello-spark" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
-        </ENTRIES>
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/hello-spark.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="avro_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/Scripts/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" />
+      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="k_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/k_consumer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="k_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/k_producer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -239,269 +180,32 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.aggregate-by-key" />
-      <item itemvalue="Python.commons" />
-      <item itemvalue="Python.hello-spark" />
-      <item itemvalue="Python.CardTransactionAnalysis" />
-      <item itemvalue="Python.KafkaStreamDemo" />
+      <item itemvalue="Python.avro_producer" />
+      <item itemvalue="Python.AvroConsumer" />
+      <item itemvalue="Python.AvroProducer" />
+      <item itemvalue="Python.k_consumer" />
+      <item itemvalue="Python.k_producer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.KafkaStreamDemo" />
-        <item itemvalue="Python.CardTransactionAnalysis" />
-        <item itemvalue="Python.hello-spark" />
-        <item itemvalue="Python.commons" />
-        <item itemvalue="Python.aggregate-by-key" />
+        <item itemvalue="Python.avro_producer" />
+        <item itemvalue="Python.AvroProducer" />
+        <item itemvalue="Python.AvroConsumer" />
+        <item itemvalue="Python.k_producer" />
+        <item itemvalue="Python.k_consumer" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff511011-fac7-4e95-a135-53915787ab72" name="Default Changelist" comment="" />
-      <created>1625793195122</created>
+      <changelist id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="" />
+      <created>1653622607980</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1625793195122</updated>
+      <updated>1653622607980</updated>
     </task>
-    <task id="LOCAL-00001" summary="2021-07-09 Update configuration for standalon cluster.">
-      <created>1625820373222</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1625820373222</updated>
-    </task>
-    <task id="LOCAL-00002" summary="2021-12-06 Update configuration for standalon cluster.">
-      <created>1638739657486</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1638739657486</updated>
-    </task>
-    <task id="LOCAL-00003" summary="2021-12-08 Update mapPartition example.">
-      <created>1638933526317</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1638933526317</updated>
-    </task>
-    <task id="LOCAL-00004" summary="2021-12-08 Update mapPartition example.">
-      <created>1638933576621</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1638933576621</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2021-12-08 Update mapPartition example.">
-      <created>1638935272474</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1638935272474</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2021-12-10 Update aggregate by key example.">
-      <created>1639194501693</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1639194501693</updated>
-    </task>
-    <task id="LOCAL-00007" summary="2021-12-10 Update aggregate by key example.">
-      <created>1639199078231</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1639199078231</updated>
-    </task>
-    <task id="LOCAL-00008" summary="2021-12-16 Add Spark Bucketing Example.">
-      <created>1639636401090</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1639636401090</updated>
-    </task>
-    <task id="LOCAL-00009" summary="2021-12-16 Add Spark Bucketing Example.">
-      <created>1639788070540</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1639788070540</updated>
-    </task>
-    <task id="LOCAL-00010" summary="2021-12-16 Add Spark Bucketing Example.">
-      <created>1639789366907</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1639789366907</updated>
-    </task>
-    <task id="LOCAL-00011" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639850532411</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1639850532411</updated>
-    </task>
-    <task id="LOCAL-00012" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639853446703</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1639853446703</updated>
-    </task>
-    <task id="LOCAL-00013" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639855176979</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1639855176979</updated>
-    </task>
-    <task id="LOCAL-00014" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639858365393</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1639858365393</updated>
-    </task>
-    <task id="LOCAL-00015" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639916858983</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1639916858983</updated>
-    </task>
-    <task id="LOCAL-00016" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639916868609</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1639916868609</updated>
-    </task>
-    <task id="LOCAL-00017" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639917249461</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1639917249461</updated>
-    </task>
-    <task id="LOCAL-00018" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639925821015</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1639925821015</updated>
-    </task>
-    <task id="LOCAL-00019" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639926572470</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1639926572470</updated>
-    </task>
-    <task id="LOCAL-00020" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639926656593</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1639926656593</updated>
-    </task>
-    <task id="LOCAL-00021" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639926767453</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1639926767453</updated>
-    </task>
-    <task id="LOCAL-00022" summary="2021-12-18 Update Docker Configurations.">
-      <created>1639927298866</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1639927298866</updated>
-    </task>
-    <task id="LOCAL-00023" summary="2022-01-12 Update Docker Configurations.">
-      <created>1641965330765</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1641965330765</updated>
-    </task>
-    <task id="LOCAL-00024" summary="2022-01-12 Update Docker Configurations.">
-      <created>1642188249585</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1642188249585</updated>
-    </task>
-    <task id="LOCAL-00025" summary="2022-01-12 Update Docker Configurations.">
-      <created>1642234917022</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1642234917022</updated>
-    </task>
-    <task id="LOCAL-00026" summary="2022-01-12 Update Docker Configurations.">
-      <created>1642256782216</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1642256782216</updated>
-    </task>
-    <task id="LOCAL-00027" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642256922346</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1642256922346</updated>
-    </task>
-    <task id="LOCAL-00028" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642257896893</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1642257896893</updated>
-    </task>
-    <task id="LOCAL-00029" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642257987971</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1642257987971</updated>
-    </task>
-    <task id="LOCAL-00030" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642257997799</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1642257997799</updated>
-    </task>
-    <task id="LOCAL-00031" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642259329815</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1642259329815</updated>
-    </task>
-    <task id="LOCAL-00032" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642395441049</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1642395441049</updated>
-    </task>
-    <task id="LOCAL-00033" summary="2022-01-15 Update Docker Configurations.">
-      <created>1642395485327</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1642395485327</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
     <servers />
-  </component>
-  <component name="TerminalProjectNonSharedOptionsProvider">
-    <envs>
-      <env key="SPARK_HOME" value="/opt/sandbox/spark-3.1.2" />
-    </envs>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -514,30 +218,20 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="2021-07-09 Update configuration for standalon cluster." />
-    <MESSAGE value="2021-12-06 Update configuration for standalon cluster." />
-    <MESSAGE value="2021-12-08 Update mapPartition example." />
-    <MESSAGE value="2021-12-10 Update aggregate by key example." />
-    <MESSAGE value="2021-12-16 Add Spark Bucketing Example." />
-    <MESSAGE value="2021-12-18 Update Docker Configurations." />
-    <MESSAGE value="2022-01-12 Update Docker Configurations." />
-    <MESSAGE value="2022-01-15 Update Docker Configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-01-15 Update Docker Configurations." />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/utils/commons.py</url>
-          <line>39</line>
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/pipelines/fake_tweet_stream.py</url>
+          <line>1</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py</url>
+          <line>43</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

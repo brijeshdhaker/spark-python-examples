@@ -11,7 +11,6 @@ if __name__ == "__main__":
 
     spark = SparkSession\
       .builder\
-      .master("spark://172.18.0.3:7077")\
       .appName("PythonRDD-Map")\
       .getOrCreate()
 
