@@ -82,7 +82,7 @@ class Transaction(object):
         t.setCardType(random.choice(Transaction.CCTYPES))
         t.setWebsite(random.choice(Transaction.SITES))
         t.setProduct(random.choice(Transaction.PRODUCTS))
-        t.setAmount(round(random.uniform(500.99, 25000.99),2))
+        t.setAmount(round(random.uniform(500.99, 25000.99), 2))
         c = random.choice(Transaction.COUNTRIES)
         t.setCountry(c)
         t.setCity(random.choice(Transaction.CITIES[c]))
@@ -101,8 +101,8 @@ class Transaction(object):
             id=self.id,
             uuid=self.uuid,
             cardtype=self.cardType,
-            website= self.website,
-            product= self.product,
+            website=self.website,
+            product=self.product,
             amount=self.amount,
             city=self.city,
             country=self.country,

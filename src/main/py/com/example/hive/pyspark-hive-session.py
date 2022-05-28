@@ -19,7 +19,8 @@ if __name__ == "__main__":
 
     #
     transactionDF = spark.sql("SELECT * from transaction_details")
-    transactionDF.filter(transactionDF.transaction_amount > 10000).show()
+    transactionDF.printSchema()
+    transactionDF.filter(transactionDF.amount > 10000).show()
 
     #
     #df_08 = spark.sql("SELECT * from sample_08")

@@ -14,7 +14,6 @@ uvicorn
 six
 pyrsistent;python_version>"3.0"
 jsonschema
-requests==2.27.1
+requests
 faker
-fastavro>=0.23.0
 requests
