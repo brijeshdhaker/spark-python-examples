@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-05-28 Update configuration as per windows os.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements-py3.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-session.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" afterDir="false" />
-    </list>
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-05-28 Update configuration as per windows os." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653747903093</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2022-05-28 Update configuration as per windows os.">
+      <created>1653750726749</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653750726749</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
