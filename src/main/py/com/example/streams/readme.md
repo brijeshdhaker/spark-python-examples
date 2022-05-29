@@ -10,38 +10,45 @@ Let's quickly visualize how the data will flow:
 ![](../../../../../../../images/Twitter Sentiment with Watson TA and PI architecture diagram.png)
 
 #
+```shell
 ##### Topic - Creation
-kafka-topics --create --zookeeper quickstart-bigdata:2181 --partitions 1 --replication-factor 1 --topic tweeter-tweets
-kafka-topics --create --zookeeper zookeeper:2181 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
+
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic tweeter-tweets
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
+
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
+kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-delimiter-stream-topic
 
 ##### Topic - List
-kafka-topics --list --zookeeper quickstart-bigdata:2181
-kafka-topics --list --zookeeper zookeeper:2181
+kafka-topics --list --zookeeper zookeeper.sandbox-bigdata.net:2181
 
 ##### Topic - Describe
-kafka-topics --describe --topic tweeter-tweets --zookeeper quickstart-bigdata:2181
+kafka-topics --describe --topic tweeter-tweets --zookeeper zookeeper.sandbox-bigdata.net:2181
 
 ##### Topic - Alter
-kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server quickstart-bigdata:2181
+kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server zookeeper.sandbox-bigdata.net:2181
 
 ##### Topic - Delete
-kafka-topics --delete --topic tweeter-tweets --zookeeper quickstart-bigdata:2181
-kafka-topics --delete --topic tweeter-tweets --bootstrap-server quickstart-bigdata:9092
+kafka-topics --delete --topic tweeter-tweets --zookeeper zookeeper.sandbox-bigdata.net:2181
+kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker.sandbox-bigdata.net:9092
 
 ##### Command Line Producer :
-kafka-console-producer --topic tweeter-tweets --broker-list quickstart-bigdata:9092
+kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox-bigdata.net:9092
 
-kafka-console-producer --topic tweeter-tweets --broker-list quickstart-bigdata:9092 --property parse.key=true --property key.separator=":"
+kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox-bigdata.net:9092 --property parse.key=true --property key.separator=":"
 
 ##### Command Line Consumer :
-kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server quickstart-bigdata:9092
+kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server kafka-broker.sandbox-bigdata.net:9092
 
-listeners=PLAINTEXT://quickstart-bigdata:9092
+```
+
+listeners=PLAINTEXT://kafka-broker.sandbox-bigdata.net:9092
 advertised.listeners=PLAINTEXT://localhost:19092
 
-#
 ### Create Hive Table
-#
 ```
 beeline -u jdbc:hive2://quickstart-bigdata:10000 
 
@@ -77,9 +84,7 @@ STORED AS ORC;
 select count(*) from tweeter_tweets;
 
 ```
-#
 ### Create Cassandra Table
-#
 ```
 docker-compose -f dc-sandbox-cluster3.yml up -d cassandra
 
@@ -122,6 +127,9 @@ spark-submit \
 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
 /home/brijeshdhaker/IdeaProjects/spark-bigdata-examples/pyspark-examples/src/main/py/com/example/streams/structured/structured-kafka-stream.py
 
+
+spark-submit --name "structured-kafka-stream" --master local[4] --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 structured-kafka-stream.py
+spark-submit --name "structured-delimiter-stream" --master local[4] --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 src/main/py/com/example/streams/structured/structured-delimiter-stream.py
 
 
 spark-submit \

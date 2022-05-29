@@ -1,7 +1,8 @@
 #
 #
 #
-
+import json
+import csv
 from uuid import uuid4
 from datetime import datetime
 import random
@@ -22,12 +23,13 @@ class Transaction(object):
     SITES = ["Amazon", "Flipkart", "SnapDeal", "Myntra"]
 
     # Use __slots__ to explicitly declare all data members.
-    __slots__ = ["id", "uuid", "cardType", "cardProvider", "website",  "product", "amount", "city", "country", "addts"]
+    __slots__ = ["id", "uuid", "cardType", "website",  "product", "amount", "city", "country", "addts"]
 
     # The init method or constructor
     def __init__(self, uuid=None):
-        event_datetime = datetime.now()
-        self.addts = int(event_datetime.strftime("%s"))
+
+        event_datetime = datetime.now().timestamp()
+        self.addts = int(event_datetime)
         if uuid is None:
             self.uuid = str(uuid4())
         else:
@@ -38,12 +40,6 @@ class Transaction(object):
 
     def getCardType(self):
         return self.cardType
-
-    def setCardProvider(self, cardProvider):
-        self.card_type = cardProvider
-
-    def getCardProvider(self):
-        return self.cardProvider
 
     def setWebsite(self, website):
         self.website = website
@@ -109,3 +105,13 @@ class Transaction(object):
             addts=self.addts
         )
 
+    def to_json(self):
+        return json.dumps(self.to_dict())
+
+    def to_delimeter_text(self, separator):
+        text_val = ""
+        dict_val = self.to_dict()
+        for key in ["id", "uuid", "cardtype", "website",  "product", "amount", "city", "country", "addts"]:
+            text_val = text_val + str(dict_val[key]) + separator
+
+        return text_val[:-1]
