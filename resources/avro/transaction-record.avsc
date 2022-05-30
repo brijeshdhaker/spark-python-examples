@@ -1,0 +1,81 @@
+{
+  "fields": [
+    {
+      "name": "id",
+      "type": [
+        "null",
+        "int"
+      ]
+    },
+    {
+      "logicalType": "uuid",
+      "name": "uuid",
+      "type": [
+        "null",
+        {
+          "avro.java.string": "String",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "avro.java.string": "String",
+      "name": "cardtype",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "avro.java.string": "String",
+      "name": "website",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "avro.java.string": "String",
+      "name": "product",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "name": "amount",
+      "type": [
+        "null",
+        "double"
+      ]
+    },
+    {
+      "avro.java.string": "String",
+      "name": "city",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "avro.java.string": "String",
+      "name": "country",
+      "type": {
+        "avro.java.string": "String",
+        "type": "string"
+      }
+    },
+    {
+      "logicalType": "timestamp-millis",
+      "name": "addts",
+      "type": [
+        "null",
+        "long"
+      ]
+    }
+  ],
+  "name": "Transaction",
+  "namespace": "sample.multimodule.dto.avro",
+  "type": "record",
+  "version": "1"
+}
