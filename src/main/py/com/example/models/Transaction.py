@@ -108,7 +108,7 @@ class Transaction(object):
     def to_json(self):
         return json.dumps(self.to_dict())
 
-    def to_delimeter_text(self, separator):
+    def to_delimited_text(self, separator):
         text_val = ""
         dict_val = self.to_dict()
         for key in ["id", "uuid", "cardtype", "website",  "product", "amount", "city", "country", "addts"]:
