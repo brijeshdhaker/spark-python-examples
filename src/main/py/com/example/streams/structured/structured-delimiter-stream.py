@@ -26,7 +26,7 @@ txnSchema = StructType([
     StructField("amount", DoubleType()),
     StructField("city", StringType()),
     StructField("country", StringType()),
-    StructField("addts", LongType())
+    StructField("addts", TimestampType())
 ])
 
 # Subscribe to 1 topic
