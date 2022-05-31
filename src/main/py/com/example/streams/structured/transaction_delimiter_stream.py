@@ -43,7 +43,7 @@ if __name__ == '__main__':
         try:
             transaction = Transaction.random()
             record_key = "|"
-            record_value = transaction.to_delimeter_text(record_key)
+            record_value = transaction.to_delimited_text(record_key)
             print("Producing record: {}\t{}".format(record_key, record_value))
             producer.produce(topic, key=record_key, value=record_value, on_delivery=acked)
             sleep(1)
