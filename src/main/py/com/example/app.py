@@ -1,23 +1,47 @@
-import pandas as pd
+import os
+import numpy as np  # type: ignore[import]
+import pandas as pd  # type: ignore[import]
 from pyspark.sql.functions import pandas_udf
 from pyspark.sql import SparkSession
+from typing import Iterator
+from pyspark.sql.pandas.utils import require_minimum_pandas_version, require_minimum_pyarrow_version
+
+require_minimum_pandas_version()
+require_minimum_pyarrow_version()
+
+# This is only needed for windows
+def setEnv():
+
+    # Replace with your Spark dir in windows
+    os.environ['PYSPARK_DRIVER_PYTHON'] = 'C:\\Users\\brije\\IdeaProjects\\spark-python-examples\\venv\\Scripts\\python'
+    os.environ['PYSPARK_PYTHON'] = 'C:\\Users\\brije\\IdeaProjects\\spark-python-examples\\venv\\Scripts\\python'
+
+    print(os.environ['SPARK_HOME'])
+
 
 def main(spark):
-    df = spark.createDataFrame(
-        [(1, 1.0), (1, 2.0), (2, 3.0), (2, 5.0), (2, 10.0)],
-        ("id", "v"))
+    pdf = pd.DataFrame([1, 2, 3], columns=["x"])
+    df = spark.createDataFrame(pdf)
 
-    @pandas_udf("double")
-    def mean_udf(v: pd.Series) -> float:
-        return v.mean()
+    # Declare the function and create the UDF
+    @pandas_udf("long")
+    def plus_one(iterator: Iterator[pd.Series]) -> Iterator[pd.Series]:
+        for x in iterator:
+            yield x + 1
 
-    print(df.groupby("id").agg(mean_udf(df['v'])).collect())
+    df.select(plus_one("x")).show()
 
 
 if __name__ == "__main__":
 
+    # If running on windows , set env variables , for Linux skip
+    if os.name == 'nt':
+        setEnv()
+
     session = SparkSession.builder.getOrCreate()
     session.sparkContext.setLogLevel("WARN")
+    # Enable Arrow-based columnar data transfers
     session.conf.set("spark.sql.execution.arrow.pyspark.enabled", "true")
 
+    #
     main(session)
