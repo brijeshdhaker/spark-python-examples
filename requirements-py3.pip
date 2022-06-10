@@ -17,3 +17,4 @@ jsonschema
 requests
 faker
 requests
+mysql-connector-python
