@@ -16,7 +16,10 @@ def commit_completed(err, partitions):
     else:
         print("Committed partition offsets: " + str(partitions))
 
+
 running = True
+
+
 def shutdown():
     running = False
 
@@ -24,11 +27,13 @@ def shutdown():
 def default_offset_commit_callback(offsets, response):
     print(str(offsets))
 
+
 """
 #
 # Exactly Once Consumer
 #
 """
+
 
 class SaveOffsetsRebalanceListener(ConsumerRebalanceListener):
 
@@ -53,8 +58,8 @@ value_deserializer = lambda v: json.loads(v.decode("utf-8"))
 
 consumer = KafkaConsumer(
     bootstrap_servers='kafka-broker:9092',
-    client_id='python-kafka-client',
-    group_id='python-kafka-client-cg',
+    client_id='partitioned-test-topic-client',
+    group_id='partitioned-test-topic-cg',
     auto_offset_reset='earliest',
     enable_auto_commit=False,
     default_offset_commit_callback=default_offset_commit_callback,
@@ -62,14 +67,14 @@ consumer = KafkaConsumer(
     value_deserializer=value_deserializer
 )
 
-consumer.subscribe(["test-topic"])
-MIN_COMMIT_COUNT = 10
+consumer.subscribe(["partitioned-test-topic"])
+MIN_COMMIT_COUNT = 100
 
 try:
     msg_count = 0
     while True:
 
-        #msg = next(consumer)
+        # msg = next(consumer)
         results = consumer.poll(timeout_ms=2000)
 
         if results is None:
@@ -78,16 +83,16 @@ try:
             # application-specific processing
             for messages in results.values():
                 for message in messages:
-                    print("topic=%s | partition=%d | offset=%d | key=%s | value=%s" % (message.topic, message.partition, message.offset, message.key, message.value))
-
-                #msg_process(msg)
-                msg_count += 1
-                if msg_count % MIN_COMMIT_COUNT == 0:
-                    print("Try for commit.")
-                    # commits the latest offsets returned by poll
-                    # consumer.commit()
-
-                    # consumer.commit(asynchronous=True)
+                    print("topic=%s | partition=%d | offset=%d | key=%s | value=%s" % (
+                    message.topic, message.partition, message.offset, message.key, message.value))
+                    # msg_process(msg)
+                    msg_count += 1
+                    if msg_count % MIN_COMMIT_COUNT == 0:
+                        a = 0
+                        # print("Try for commit.")
+                        # commits the latest offsets returned by poll
+                        # consumer.commit()
+                        # consumer.commit(asynchronous=True)
 
 except:
     print("Something went wrong")
