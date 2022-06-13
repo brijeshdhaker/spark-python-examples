@@ -115,26 +115,28 @@ def asynchronous_commits_consume_loop(consumer, topics):
     finally:
         # Close down consumer to commit final offsets.
         consumer.close()
+#
+#
+#
+TOPIC = "test-topic"
 
-""" 
- 'default.topic.config': {'auto.offset.reset': 'smallest'}
-"""
+#
+#     'enable.auto.commit': False,
+#
 consumer = Consumer({
     'bootstrap.servers': 'kafka-broker:9092',
-    'group.id': 'python-cg',
-    'enable.auto.commit': False,
-    'auto.offset.reset': 'smallest',
+    'group.id': 'confluent_kafka_simple_consumer-cg',
     'on_commit': commit_completed
 })
 
-consumer.subscribe(["test-topic"])
+consumer.subscribe([TOPIC])
 MIN_COMMIT_COUNT = 10
 
 try:
     msg_count = 0
     while True:
 
-        msg = consumer.poll(timeout=1.0, maxevents=100)
+        msg = consumer.poll(1.0)
         if msg is None: continue
 
         if msg.error():
@@ -148,8 +150,8 @@ try:
             # application-specific processing
             msg_process(msg)
             msg_count += 1
-            if msg_count % MIN_COMMIT_COUNT == 0:
-                consumer.commit(asynchronous=True)
+#            if msg_count % MIN_COMMIT_COUNT == 0:
+#                consumer.commit(asynchronous=True)
 
 except:
     print("Something went wrong")
