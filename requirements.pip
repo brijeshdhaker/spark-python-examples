@@ -7,3 +7,4 @@ jellyfish
 numpy
 vertica-python
 matplotlib
+mysql-connector-python

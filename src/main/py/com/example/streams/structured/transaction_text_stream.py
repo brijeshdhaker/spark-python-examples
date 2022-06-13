@@ -32,13 +32,15 @@ from com.example.models.Transaction import Transaction
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    topic = 'structured-stream-topic'
+    topic = 'txn-text-stream-topic'
+
+    # Create topic if needed
+
     # Create Producer instance
     producer_conf = {
         'bootstrap.servers': 'kafka-broker:9092',
     }
     producer = Producer(producer_conf)
-    # Create topic if needed
 
 
     delivered_records = 0
@@ -56,6 +58,7 @@ if __name__ == '__main__':
             delivered_records += 1
             print("Produced record to topic {} partition [{}] @ offset {}".format(msg.topic(), msg.partition(), msg.offset()))
 
+
     while True:
         # Serve on_delivery callbacks from previous calls to produce()
         producer.poll(0.0)
@@ -63,8 +66,7 @@ if __name__ == '__main__':
             transaction = Transaction.random()
             record_key = str(transaction.uuid)
             record_value = str(transaction.to_dict())
-            # json.dumps() function converts a Python object into a json string.
-            # record_value = json.dumps({'count': random.randint(1000, 5000)})
+
             print("Producing record: {}\t{}".format(record_key, record_value))
             producer.produce(topic, key=record_key, value=record_value, on_delivery=acked)
             sleep(5)

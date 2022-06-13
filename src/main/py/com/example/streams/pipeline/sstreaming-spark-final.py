@@ -3,10 +3,20 @@ spark/bin/spark-submit \
     --master local --driver-memory 4g \
     --num-executors 2 --executor-memory 4g \
     --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.0 \
-    sstreaming-spark-final.py
-'''
+    src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py
 
-'''
+# as spark user from master02.cluster host
+$SPARK_HOME/bin/spark-submit \
+--master yarn
+--deploy-mode client \
+--num-executors 2
+--executor-cores 1 \
+--executor-memory 5g
+--driver-memory 4g \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.0 \
+--conf spark.sql.hive.thriftServer.singleSession=true \
+src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py
+
 $SPARK_HOME/bin/spark-submit \
     --master local \
     --driver-memory 4g \

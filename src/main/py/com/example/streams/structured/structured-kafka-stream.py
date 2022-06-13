@@ -3,6 +3,12 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
+"""
+spark-text-txn-stream-topic
+spark-json-txn-stream-topic
+spark-avro-txn-stream-topic
+spark-xml-txn-stream-topic
+"""
 spark = SparkSession \
     .builder \
     .master("local[4]") \
@@ -82,7 +88,7 @@ structureStreamDf = spark \
     .readStream \
     .format("kafka") \
     .option("kafka.bootstrap.servers", "kafka-broker:9092") \
-    .option("subscribe", "structured-stream-source") \
+    .option("subscribe", "structured-stream-topic") \
     .option("startingOffsets", "earliest")\
     .option("failOnDataLoss", "false") \
     .load()\
@@ -97,9 +103,10 @@ print("Schema for structureStreamDf  : ")
 structureStreamDf.printSchema()
 
 recordsDF = structureStreamDf.select("value.*", "txn_receive_date", "timestamp")
+
 # Group the data by window and word and compute the count of each group
-windowAggregationDF = recordsDF.withWatermark("timestamp", "10 minutes") \
-    .groupBy(window(recordsDF.timestamp, "10 minutes", "5 minutes"), recordsDF.country) \
+windowAggregationDF = recordsDF.withWatermark("timestamp", "10 seconds") \
+    .groupBy(window(recordsDF.timestamp, "10 seconds", "5 seconds"), recordsDF.country) \
     .count()
 
 #
@@ -150,7 +157,7 @@ hiveWarehouseDF.writeStream \
     .option("path", "hdfs://namenode:9000/transaction_details/") \
     .option("checkpointLocation", "hdfs://namenode:9000/checkpoints/transaction_details/") \
     .partitionBy("txn_receive_date") \
-    .trigger(processingTime="30 seconds") \
+    .trigger(processingTime="20 seconds") \
     .start()
 
 # Writing to console sink (for debugging)

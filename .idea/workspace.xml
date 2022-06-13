@@ -4,7 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-05-28 Update configuration as per windows os." />
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-06-13 Update Kafka Python Examples.">
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/mysql/DB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/joins/stream-stream-join.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_text_stream.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup-and-local-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-local-submit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/avro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_AvroConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroConsumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_AvroProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_DeserializingConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_DeserializingConsumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_SerializingProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_SerializingProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_simple_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/custom_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/custom_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/fastavro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/fastavro-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/kafka_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/kafka_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/test" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/user.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/user.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/mysql/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka-topic.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka-topic.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_batch_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_batch_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_confluent_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_confluent_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_exactly_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_exactly_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_least_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_least_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_most_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_most_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_partitioned_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_partitioned_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/matplot/pie.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/matplot/pie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-dataframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/fake_transaction_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/fake_transaction_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-kafka-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-kafka-stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_avro_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_avro_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/utils/load_avro_schema_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/utils/load_avro_schema_from_file.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,11 +56,26 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apps\hostpath\.m2\repository" />
+        <option name="userSettingsFile" value="C:\Users\brije\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -31,143 +89,33 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brije/IdeaProjects/spark-python-examples/dist/docker-sandbox&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brije/IdeaProjects/spark-python-examples/src/main/py/com/example/kafka/clients/python&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="spark-python-examples">
+        <option name="myModuleName" value="spark-python-examples" />
+      </console-settings>
+    </option>
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\dist\docker-sandbox" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\python" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\streams\structured" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\resources\avro" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\streams" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\confluent" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples" />
     </key>
-  </component>
-  <component name="RunManager" selected="Python.pyspark-hive-session">
-    <configuration name="AvroProducer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="avro_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/Scripts/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_consumer.py" />
-      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic -g test-avro-cg" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="avro_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/Scripts/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/avro_producer.py" />
-      <option name="PARAMETERS" value="-b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="k_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/k_producer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pyspark-hive-session" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/hive" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-session.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Python.pyspark-hive-session" />
-      <item itemvalue="Python.AvroProducer" />
-      <item itemvalue="Python.avro_consumer" />
-      <item itemvalue="Python.avro_producer" />
-      <item itemvalue="Python.k_producer" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.pyspark-hive-session" />
-        <item itemvalue="Python.k_producer" />
-        <item itemvalue="Python.avro_producer" />
-        <item itemvalue="Python.avro_consumer" />
-        <item itemvalue="Python.AvroProducer" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -199,8 +147,96 @@
       <option name="project" value="LOCAL" />
       <updated>1653750726749</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2022-05-28 Update configuration as per windows os.">
+      <created>1653751290834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653751290834</updated>
+    </task>
+    <task id="LOCAL-00005" summary="2022-05-28 Add Transaction delimiter stream process.">
+      <created>1653839281297</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653839281307</updated>
+    </task>
+    <task id="LOCAL-00006" summary="2022-05-31 Add Transaction delimiter stream process.">
+      <created>1653968045026</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653968045026</updated>
+    </task>
+    <task id="LOCAL-00007" summary="2022-05-31 Add Transaction delimiter stream process.">
+      <created>1653968061184</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653968061184</updated>
+    </task>
+    <task id="LOCAL-00008" summary="2022-05-31 Add Transaction delimiter stream process.">
+      <created>1653968134189</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653968134189</updated>
+    </task>
+    <task id="LOCAL-00009" summary="2022-05-31 Add Transaction delimiter stream process.">
+      <created>1653968150989</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653968150989</updated>
+    </task>
+    <task id="LOCAL-00010" summary="2022-06-02 Update Pandas &amp; PyArrow Configuration.">
+      <created>1654219513428</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1654219513428</updated>
+    </task>
+    <task id="LOCAL-00011" summary="2022-06-06 Spark Stream Join &amp; Filter Example.">
+      <created>1654485588311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654485588311</updated>
+    </task>
+    <task id="LOCAL-00012" summary="2022-06-10 Update Volume For Mysql.">
+      <created>1654836120793</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654836120793</updated>
+    </task>
+    <task id="LOCAL-00013" summary="2022-06-10 Update Kafka Python Examples.">
+      <created>1654836194686</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654836194686</updated>
+    </task>
+    <task id="LOCAL-00014" summary="2022-06-11 Update Kafka Python Examples.">
+      <created>1654976847333</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654976847333</updated>
+    </task>
+    <task id="LOCAL-00015" summary="2022-06-13 Update Kafka Python Examples.">
+      <created>1655086920890</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655086920890</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.avro" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -215,7 +251,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2022-05-28 Update configuration as per windows os." />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-05-28 Update configuration as per windows os." />
+    <MESSAGE value="2022-05-28 Add Transaction delimiter stream process." />
+    <MESSAGE value="2022-05-31 Add Transaction delimiter stream process." />
+    <MESSAGE value="2022-06-02 Update Pandas &amp; PyArrow Configuration." />
+    <MESSAGE value="2022-06-06 Spark Stream Join &amp; Filter Example." />
+    <MESSAGE value="2022-06-10 Update Volume For Mysql." />
+    <MESSAGE value="2022-06-10 Update Kafka Python Examples." />
+    <MESSAGE value="2022-06-11 Update Kafka Python Examples." />
+    <MESSAGE value="2022-06-13 Update Kafka Python Examples." />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-06-13 Update Kafka Python Examples." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -226,16 +270,58 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/AvroProducer.py</url>
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroProducer.py</url>
           <line>43</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/avro_consumer.py</url>
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_DeserializingConsumer.py</url>
           <line>82</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/test.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/test.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-delimiter-stream.py</url>
+          <line>60</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-avro-stream.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/test.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_avro_stream.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/kafka_utils.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

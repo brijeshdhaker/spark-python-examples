@@ -85,7 +85,7 @@ src/main/py/com/example/app.py
 #    --conf "spark.executorEnv.PYSPARK_DRIVER_PYTHON=$PYSPARK_DRIVER_PYTHON" \
 #    --conf "spark.executorEnv.PYSPARK_PYTHON=$PYSPARK_PYTHON" \
 #    --archives "hdfs://namenode:9000/archives/venv.zip#venv" \
-#    src/main/py/com/example/app.py
+#    src/main/py/com/example/pyspark-pandas.py
 
 # YARN Cluster Mode Example
 # -------------------------

@@ -13,7 +13,7 @@ from confluent_kafka import SerializingProducer
 from confluent_kafka.serialization import StringSerializer
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
-from com.example.utils.load_avro_schema_from_file import load_avro_schema_from_file, load_avro_schema_as_str
+from com.example.utils.load_avro_schema_from_file import load_avro_schema_as_schema, load_avro_schema_as_str
 
 
 def txn_to_dict(user, ctx):
@@ -37,7 +37,7 @@ if __name__ == '__main__':
     topic = 'txn-avro-stream-topic'
     AVRO_PATH = Path(expanduser("~"), "IdeaProjects", "spark-python-examples", "resources", "avro",
                      "transaction-record.avsc")
-    key_schema, value_schema = load_avro_schema_from_file(AVRO_PATH)
+    key_schema, value_schema = load_avro_schema_as_schema(AVRO_PATH)
 
     schema_registry_conf = {'url': 'http://schema-registry:8081'}
     schema_registry_client = SchemaRegistryClient(schema_registry_conf)

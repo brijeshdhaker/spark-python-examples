@@ -39,15 +39,14 @@ employeeDF.show()
 
 commons.print_separator()
 
-
 schema = StructType([ \
-    StructField("name",StringType(),True), \
-    StructField("department",StringType(),True), \
-    StructField("State",StringType(),True), \
+    StructField("name", StringType(), True), \
+    StructField("department", StringType(), True), \
+    StructField("State", StringType(), True), \
     StructField("Salary", IntegerType(), True), \
     StructField("Age", IntegerType(), True), \
     StructField("Bonus", IntegerType(), True) \
-])
+    ])
 
 dfFromSchema = spark.createDataFrame(data=t_r_data, schema=schema)
 dfFromSchema.printSchema()
@@ -55,8 +54,7 @@ dfFromSchema.show(truncate=False)
 
 commons.print_separator()
 
-
-dfFromCSV = spark.read\
+dfFromCSV = spark.read \
     .option("header", True) \
     .option("delimiter", ',') \
     .options(inferSchema='True', delimiter=',') \
@@ -65,7 +63,6 @@ dfFromCSV.printSchema()
 dfFromCSV.show(truncate=False)
 
 commons.print_separator()
-
 
 dfFromJSON = spark.read.json("hdfs://namenode:9000/datasets/people.json")
 dfFromJSON.printSchema()
@@ -76,26 +73,26 @@ print(" User Defined ")
 commons.print_separator()
 
 uschema = StructType() \
-    .add("RecordNumber",IntegerType(),True) \
-    .add("Zipcode",IntegerType(),True) \
-    .add("ZipCodeType",StringType(),True) \
-    .add("City",StringType(),True) \
-    .add("State",StringType(),True) \
-    .add("LocationType",StringType(),True) \
-    .add("Lat",DoubleType(),True) \
-    .add("Long",DoubleType(),True) \
-    .add("Xaxis",IntegerType(),True) \
-    .add("Yaxis",DoubleType(),True) \
-    .add("Zaxis",DoubleType(),True) \
-    .add("WorldRegion",StringType(),True) \
-    .add("Country",StringType(),True) \
-    .add("LocationText",StringType(),True) \
-    .add("Location",StringType(),True) \
-    .add("Decommisioned",BooleanType(),True) \
-    .add("TaxReturnsFiled",StringType(),True) \
-    .add("EstimatedPopulation",IntegerType(),True) \
-    .add("TotalWages",IntegerType(),True) \
-    .add("Notes",StringType(),True)
+    .add("RecordNumber", IntegerType(), True) \
+    .add("Zipcode", IntegerType(), True) \
+    .add("ZipCodeType", StringType(), True) \
+    .add("City", StringType(), True) \
+    .add("State", StringType(), True) \
+    .add("LocationType", StringType(), True) \
+    .add("Lat", DoubleType(), True) \
+    .add("Long", DoubleType(), True) \
+    .add("Xaxis", IntegerType(), True) \
+    .add("Yaxis", DoubleType(), True) \
+    .add("Zaxis", DoubleType(), True) \
+    .add("WorldRegion", StringType(), True) \
+    .add("Country", StringType(), True) \
+    .add("LocationText", StringType(), True) \
+    .add("Location", StringType(), True) \
+    .add("Decommisioned", BooleanType(), True) \
+    .add("TaxReturnsFiled", StringType(), True) \
+    .add("EstimatedPopulation", IntegerType(), True) \
+    .add("TotalWages", IntegerType(), True) \
+    .add("Notes", StringType(), True)
 
 df_with_schema = spark.read.format("csv") \
     .option("header", True) \
