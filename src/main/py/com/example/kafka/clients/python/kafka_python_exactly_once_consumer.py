@@ -108,11 +108,18 @@ class SaveOffsetsRebalanceListener(ConsumerRebalanceListener):
     def on_partitions_revoked(self, revoked):
         # here commit the current open db transaction if possible to avoid having to reprocess the current
         # un-persisted but processed batch messages -- not 100% necessary
+        print("Following Partitions Revoked ....")
+        for topic_partition in revoked:
+            print("{}, ".format(topic_partition.partition))
+
         database.commit_transaction()
 
+
+    # on a rebalancing of partitions this method will be called if a new partition is assigned to this consumer
     def on_partitions_assigned(self, assigned):
-        # on a rebalancing of partitions this method will be called if a new partition is assigned to this consumer
+        print("Following Partitions Assigned ....")
         for topic_partition in assigned:
+            print("{}, ".format(topic_partition.partition))
             self.consumer.seek(topic_partition.partition, database.get_offset(topic_partition))
 
 

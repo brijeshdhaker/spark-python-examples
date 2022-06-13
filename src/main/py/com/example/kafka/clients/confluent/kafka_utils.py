@@ -101,8 +101,7 @@ def parse_args():
     """Parse command line arguments"""
 
     parser = argparse.ArgumentParser(
-        description="Confluent Python Client example to produce messages \
-                  to Confluent Cloud")
+        description="Confluent Python Client example to produce messages to Confluent Cloud")
     parser._action_groups.pop()
     required = parser.add_argument_group('required arguments')
     required.add_argument('-f',

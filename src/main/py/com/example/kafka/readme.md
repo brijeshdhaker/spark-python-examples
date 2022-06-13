@@ -2,13 +2,9 @@
 docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
 
 # Topic - Creation
-kafka-broker kafka-topics \
---create \
---bootstrap-server kafka-broker:9092 \
---partitions 3 \
---replication-factor 1 \
---topic test-topic \
---if-not-exists
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic test-topic --if-not-exists
+
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 4 --replication-factor 1 --topic partitioned-test-topic
 
 # Topic - List
 kafka-topics --list --bootstrap-server kafka-broker:9092
@@ -20,9 +16,7 @@ kafka-topics --describe --topic test-topic --bootstrap-server kafka-broker:9092
 kafka-topics --alter --topic test-topic --partitions 9 --bootstrap-server kafka-broker:9092
 
 # Topic - Delete
-kafka-topics --delete --topic warm-topic --bootstrap-server kafka-broker:9092
-
-
+kafka-topics --delete --topic test-topic --bootstrap-server kafka-broker:9092
 
 # Topic - Check current Retention period
 kafka-configs –zookeeper zookeeper.sandbox-bigdata.net:2181 –describe –entity-type topics –entity-name <topic name>
@@ -188,10 +182,10 @@ kafka-topics --zookeeper zookeeper:2181 --alter --topic users-topic-avro --confi
 docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker kafka-consumer-groups --bootstrap-server kafka-broker:9092 --list
 docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker kafka-consumer-groups --bootstrap-server kafka-broker:9092 --describe --group test-avro-cg
 
-kafka-consumer-groups --describe --group test-taxi-rides-cg --bootstrap-server localhost:9092
+kafka-consumer-groups --describe --bootstrap-server localhost:9092 --group test-taxi-rides-cg 
 kafka-consumer-groups --bootstrap-server kafka-broker:9092 --list 
 
-#### Reset Offset
+#### Reset Offset ``
 kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --to-earliest --all-topics --execute
 
 ##### --shift-by :- Reset the offset by incrementing the current offset position by take both +ve or -ve number

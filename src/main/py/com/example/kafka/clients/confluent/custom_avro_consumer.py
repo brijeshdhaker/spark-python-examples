@@ -22,52 +22,38 @@
 # Reads Avro data, integration with Confluent Cloud Schema Registry
 #
 # =============================================================================
-import base64
 import io
 
-import avro.schema
-import fastavro
 from avro.io import DatumReader, BinaryDecoder
 from confluent_kafka import Consumer
 from confluent_kafka.avro import SerializerError
 
-from src.utils.load_avro_schema_from_file import load_avro_schema_from_file, load_avro_schema_as_str
+from com.example.utils.load_avro_schema_from_file import load_avro_schema_as_schema
 
 if __name__ == '__main__':
 
     # Read arguments and configurations and initialize
-    topic = "users-topic"
-    BASE_DIR = "/home/brijeshdhaker/PycharmProjects/spark-python-examples/"
-    key_schema, value_schema = load_avro_schema_from_file(BASE_DIR + 'resources/avro/user-record.avsc')
-    key_schema_str, value_schema_str = load_avro_schema_as_str(BASE_DIR + 'resources/avro/user-record.avsc')
+    topic = "users-topic-avro"
+    BASE_DIR = "/home/brijeshdhaker/IdeaProjects/spark-bigdata-examples/"
+    key_schema, value_schema = load_avro_schema_as_schema(BASE_DIR + 'resources/avro/user-record.avsc')
 
-    schema = avro.schema.parse(open(BASE_DIR + 'resources/avro/user-record.avsc').read())
-
-    reader = DatumReader(schema)
-    def avro_decode(raw_bytes):
-        bytes_reader = io.BytesIO(raw_bytes)
-        bytes_reader.seek(5)
-        decoder = BinaryDecoder(bytes_reader)
+    reader = DatumReader(value_schema)
+    def decode(msg_value):
+        message_bytes = io.BytesIO(msg_value)
+        message_bytes.seek(5)
+        decoder = BinaryDecoder(message_bytes)
         event_dict = reader.read(decoder)
         return event_dict
 
-    def fastavro_decode(raw_bytes):
-        bytes_reader = io.BytesIO(raw_bytes)
-        # bytes_reader.seek(5)
-        event = {}
-        for record in fastavro.reader(bytes_reader):
-            event = record
-            #print("{}".format(record['id']))
-        return event
 
     # Report malformed record, discard results, continue polling
     avro_consumer = Consumer({
-        'bootstrap.servers': 'thinkpad:9092',
-        'group.id': 'python-avro-cg',
+        'bootstrap.servers': 'kafka-broker:9092',
+        'group.id': 'python-custom-cg',
         'auto.offset.reset': 'earliest'
     })
 
-    avro_consumer.subscribe(["users-topic"])
+    avro_consumer.subscribe([topic])
 
     # Process messages
     total_count = 0
@@ -79,18 +65,12 @@ if __name__ == '__main__':
                 # Initial message consumption may take up to
                 # `session.timeout.ms` for the consumer group to
                 # rebalance and start consuming
-                print("Waiting for message or event/error in poll()")
                 continue
             elif msg.error():
                 print('error: {}'.format(msg.error()))
             else:
                 key_object = msg.key()
-                #
-                # raw_bytes = base64.b64decode(msg.value())
-                raw_bytes = msg.value()
-                user_object = avro_decode(raw_bytes)
-                # user_object = fastavro_decode(raw_bytes)
-
+                user_object = decode(msg.value())
                 #
                 print("Consumed Avro Record: {}".format(user_object))
         except KeyboardInterrupt:

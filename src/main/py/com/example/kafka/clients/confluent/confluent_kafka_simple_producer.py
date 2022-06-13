@@ -22,10 +22,57 @@
 #
 # =============================================================================
 import random
-
-from confluent_kafka import Producer, KafkaError
 import json
+import hashlib
+from confluent_kafka import Producer, KafkaError
+from random import random
 
+
+def key_partitioner(key, all_partitions, available):
+    """
+    Customer Kafka partitioner to get the partition corresponding to key
+    :param key: partitioning key
+    :param all_partitions: list of all partitions sorted by partition ID
+    :param available: list of available partitions in no particular order
+    :return: one of the values from all_partitions or available
+    """
+
+    numPartitions = len(all_partitions)
+    sp = abs(numPartitions*0.3)
+    p = 0
+
+    if key is None:
+        if available:
+            return random.choice(available)
+        return random.choice(all_partitions)
+
+    if key == "TESS":
+        p = int(hashlib.sha1(key).hexdigest(), 16) % sp
+    else:
+        p = int(hashlib.sha1(key).hexdigest(), 16) % (numPartitions - sp) + sp
+
+    print("Key = " + str(key) + " Partition = " + str(p))
+    return all_partitions[p]
+
+
+def hash_partitioner(key, all_partitions, available):
+    """
+    Customer Kafka partitioner to get the partition corresponding to key
+    :param key: partitioning key
+    :param all_partitions: list of all partitions sorted by partition ID
+    :param available: list of available partitions in no particular order
+    :return: one of the values from all_partitions or available
+    """
+
+    if key is None:
+        if available:
+            return random.choice(available)
+        return random.choice(all_partitions)
+
+    idx = int(hashlib.sha1(key).hexdigest(), 16) % (10 ** 8)
+    idx &= 0x7fffffff
+    idx %= len(all_partitions)
+    return all_partitions[idx]
 
 if __name__ == '__main__':
 
@@ -34,9 +81,11 @@ if __name__ == '__main__':
     # Create Producer instance
     producer_conf = {
         'bootstrap.servers': 'kafka-broker:9092',
+        'partitioner': hash_partitioner
     }
     producer = Producer(producer_conf)
     # Create topic if needed
+
 
 
     delivered_records = 0
