@@ -14,7 +14,7 @@ RUNNING = True
 TOPIC = "test-topic"
 MIN_COMMIT_COUNT = 10
 key_deserializer = lambda k: k.decode("utf-8")
-value_deserializer = lambda v: json.loads(v.decode("utf-8"))
+value_deserializer = lambda v: v.decode("utf-8")
 
 consumer = KafkaConsumer(
     bootstrap_servers='kafka-broker:9092',

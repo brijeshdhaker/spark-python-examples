@@ -52,7 +52,7 @@ class SaveOffsetsRebalanceListener(ConsumerRebalanceListener):
 #
 #
 """
-
+TOPIC = "kafka-python-json-topic"
 key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: json.loads(v.decode("utf-8"))
 
@@ -67,7 +67,7 @@ consumer = KafkaConsumer(
     value_deserializer=value_deserializer
 )
 
-consumer.subscribe(["test-topic"])
+consumer.subscribe([TOPIC])
 MIN_COMMIT_COUNT = 10
 
 try:

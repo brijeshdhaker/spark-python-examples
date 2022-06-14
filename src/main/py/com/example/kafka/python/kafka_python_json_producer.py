@@ -6,6 +6,7 @@
 #
 # =============================================================================
 import random
+import json
 from time import sleep
 from kafka import KafkaProducer
 
@@ -13,17 +14,14 @@ from kafka import KafkaProducer
 #
 #
 #
-TOPIC = "test-topic"
-
-#
-# Create Producer instance
-#
+TOPIC = "kafka-python-json-topic"
 key_serializer = lambda k: k.encode('utf-8')
 value_serializer = lambda v: v.encode('utf-8')
 
+# Create Producer instance
 producer = KafkaProducer(
     bootstrap_servers='kafka-broker:9092',
-    client_id='kafka_python_simple_producer',
+    client_id='python-kafka-client',
     key_serializer=key_serializer,
     value_serializer=value_serializer,
     acks=1
@@ -45,10 +43,9 @@ def on_send_error(excp):
 #
 #
 #
-def produce_message(event):
+def produce_message(message):
     #
-    future = producer.send(TOPIC, value=event["value"], key=event["key"]).add_callback(on_send_success).add_errback(on_send_error)
-    result = future.get(timeout=60)
+    producer.send(TOPIC, value=message["value"], key=message["key"]).add_callback(on_send_success).add_errback(on_send_error)
     # flush the message buffer to force message delivery to broker on each iteration
     producer.flush()
 
@@ -58,14 +55,14 @@ def produce_message(event):
 #
 if __name__ == '__main__':
 
-    produced_records = 0
+    delivered_records = 0
     while True:
         #
-        produced_records += 1
+        delivered_records = delivered_records+1
         #
         KEYS = ["A", "B", "C", "D"]
         record_key = random.choice(KEYS)
-        record_value = "This is test event {} of type {}".format(produced_records, record_key)
+        record_value = json.dumps({'key': record_key, 'index': delivered_records})
         produce_message({"key": record_key, "value": record_value})
         sleep(1)
 
