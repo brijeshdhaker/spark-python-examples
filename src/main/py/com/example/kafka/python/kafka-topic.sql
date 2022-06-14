@@ -10,9 +10,9 @@ SHOW GRANTS FOR 'brijeshdhaker'@'%';
 
 create database SANDBOXDB;
 use SANDBOXDB;
-
 show tables;
 
+drop table if exists kafka_stream_data;
 create table kafka_stream_data(stream_key varchar(50), stream_value varchar(512));
 
 drop table if exists kafka_topic_offsets;
@@ -20,13 +20,19 @@ create table kafka_topic_offsets(topic_name varchar(50), `partition` int, `offse
 commit;
 
 
-insert into kafka_topic_offsets values('partitioned-test-topic', 0, 0);
-insert into kafka_topic_offsets values('partitioned-test-topic', 1, 0);
-insert into kafka_topic_offsets values('partitioned-test-topic', 2, 0);
-insert into kafka_topic_offsets values('partitioned-test-topic', 3, 0);
-insert into kafka_topic_offsets values('partitioned-test-topic', 4, 0);
+insert into kafka_topic_offsets values('kafka-python-partitioned-topic', 0, 0);
+insert into kafka_topic_offsets values('kafka-python-partitioned-topic', 1, 0);
+insert into kafka_topic_offsets values('kafka-python-partitioned-topic', 2, 0);
+insert into kafka_topic_offsets values('kafka-python-partitioned-topic', 3, 0);
+insert into kafka_topic_offsets values('kafka-python-partitioned-topic', 4, 0);
 
-update kafka_topic_offsets set offset=0 where topic_name='partitioned-test-topic' and `partition`=0
+update kafka_topic_offsets set offset=0 where topic_name='kafka-python-partitioned-topic' and `partition`=0;
+update kafka_topic_offsets set offset=0 where topic_name='kafka-python-partitioned-topic' and `partition`=1;
+update kafka_topic_offsets set offset=0 where topic_name='kafka-python-partitioned-topic' and `partition`=2;
+update kafka_topic_offsets set offset=0 where topic_name='kafka-python-partitioned-topic' and `partition`=3;
+update kafka_topic_offsets set offset=0 where topic_name='kafka-python-partitioned-topic' and `partition`=4;
+
+update kafka_topic_offsets set topic_name='kafka-python-partitioned-topic'
 
 commit;
 

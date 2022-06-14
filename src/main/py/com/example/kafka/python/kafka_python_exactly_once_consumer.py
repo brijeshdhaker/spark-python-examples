@@ -17,7 +17,7 @@ docker-compose -f dc-kafka-cluster.yml exec kafka-broker kafka-console-consumer 
 """
 
 RUNNING = True
-TOPIC = "partitioned-test-topic"
+TOPIC = "kafka-python-partitioned-topic"
 MIN_COMMIT_COUNT = 10
 key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: json.loads(v.decode("utf-8"))

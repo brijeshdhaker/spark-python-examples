@@ -9,12 +9,12 @@ each iteration. This will give you at-least-once behaviour as the latest process
 kafka before each iteration meaning that in the event of a failure the consumer will restart from the last comitted 
 offset which may not be the latest message that was successfully processed.
 
-docker-compose -f dc-kafka-cluster.yml exec kafka-broker kafka-console-consumer --bootstrap-server kafka-broker:9092 --topic test-topic --from-beginning --max-messages 100
+docker-compose -f dc-kafka-cluster.yml exec kafka-broker kafka-console-consumer --bootstrap-server kafka-broker:9092 --topic kafka-python-json-topic --from-beginning --max-messages 100
 
 """
 
 RUNNING = True
-TOPIC = "test-topic"
+TOPIC = "kafka-python-json-topic"
 MIN_COMMIT_COUNT = 10
 key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: json.loads(v.decode("utf-8"))

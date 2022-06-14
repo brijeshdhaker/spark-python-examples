@@ -52,14 +52,15 @@ class SaveOffsetsRebalanceListener(ConsumerRebalanceListener):
 #
 #
 """
-
+MIN_COMMIT_COUNT = 100
+TOPIC = "kafka-python-partitioned-topic"
 key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: json.loads(v.decode("utf-8"))
 
 consumer = KafkaConsumer(
     bootstrap_servers='kafka-broker:9092',
-    client_id='partitioned-test-topic-client',
-    group_id='partitioned-test-topic-cg',
+    client_id='kafka-python-partitioned-client',
+    group_id='kafka-python-partitioned-cg',
     auto_offset_reset='earliest',
     enable_auto_commit=False,
     default_offset_commit_callback=default_offset_commit_callback,
@@ -67,8 +68,8 @@ consumer = KafkaConsumer(
     value_deserializer=value_deserializer
 )
 
-consumer.subscribe(["partitioned-test-topic"])
-MIN_COMMIT_COUNT = 100
+consumer.subscribe([TOPIC])
+
 
 try:
     msg_count = 0

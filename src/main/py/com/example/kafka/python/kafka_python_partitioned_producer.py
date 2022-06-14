@@ -9,6 +9,8 @@ import base64
 import random
 import json
 import hashlib
+from time import sleep
+
 from kafka import KafkaProducer
 
 def key_partitioner(key, all_partitions, available):
@@ -61,7 +63,7 @@ def hash_partitioner(key, all_partitions, available):
 #
 #
 #
-TOPIC = "partitioned-test-topic"
+TOPIC = "kafka-python-partitioned-topic"
 key_serializer = lambda k: k.encode('utf-8')
 value_serializer = lambda v: json.dumps(v).encode('utf-8')
 
@@ -103,17 +105,13 @@ if __name__ == '__main__':
 
     delivered_records = 0
     while True:
-
-        if delivered_records > 1000:
-            break
-
+        delivered_records += 1
         COUNTRIES = ["IN", "USA", "UK", "JP"]
         record_key = random.choice(COUNTRIES)
-        record_value = json.dumps({'count': random.randint(1000, 5000)})
+        record_value = json.dumps({'key': record_key, 'index': delivered_records})
         produce_message({"key": record_key, "value": record_value})
-
         #
-        delivered_records = delivered_records+1
+        sleep(1)
 
     print("{} messages were produced to topic {}!".format(delivered_records, TOPIC))
 

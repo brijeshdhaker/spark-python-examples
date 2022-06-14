@@ -13,7 +13,7 @@ from kafka import KafkaProducer
 #
 #
 #
-TOPIC = "test-topic"
+TOPIC = "kafka-python-simple-topic"
 
 #
 # Create Producer instance
