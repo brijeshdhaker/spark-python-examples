@@ -156,7 +156,7 @@ services:
   # Zeppelin Notebook
   #
   zeppelin:
-    image: apache/zeppelin:0.10.0
+    image: apache/zeppelin:0.10.1
     container_name: zeppelin
     hostname: zeppelin
     env_file:
