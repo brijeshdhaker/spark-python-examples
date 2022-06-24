@@ -1,8 +1,8 @@
-#
-#
-#
-version: "3.9"
+# docker-compose build
+# docker-compose up -d
+# docker-compose scale nodemanager=X; # X=integer number --> allows to add more nodes to the hadoop cluster for testing
 
+version: '3.5'
 services:
   #
   # HDFS & YARN Sandbox
@@ -41,99 +41,75 @@ services:
       - sandbox3.env
 
   #
-  resourcemanager:
-    image: brijeshdhaker/hadoop-resourcemanager:3.2.1
-    container_name: resourcemanager
-    hostname: resourcemanager
-    restart: always
+  spark-master:
+    image: brijeshdhaker/spark-master:3.1.2
+    container_name: spark-master
+    hostname: spark-master
     ports:
-      - "8088:8088"
-      - "8032:8032"
-    volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-    environment:
-      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
+      - "7077:7077"
+      - "8080:8080"
     env_file:
       - sandbox3.env
-
-  #
-  nodemanager:
-    image: brijeshdhaker/hadoop-nodemanager:3.2.1
-    container_name: nodemanager
-    hostname: nodemanager
-    restart: always
-    ports:
-      - "8042:8042"
     volumes:
       - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hive:/opt/hive-3.1.2
     environment:
-      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+      WEBUI_PORT: 8080
+
+  ##
+  spark-worker01:
+    image: brijeshdhaker/spark-worker:3.1.2
+    container_name: spark-worker01
+    hostname: spark-worker01
+    ports:
+      - "8081:8081"
+    depends_on:
+      - spark-master
     env_file:
       - sandbox3.env
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hive:/opt/hive-3.1.2
+    environment:
+      WORKER_WEBUI_PORT: 8081
 
   #
-  historyserver:
-    image: brijeshdhaker/hadoop-historyserver:3.2.1
-    container_name: historyserver
-    hostname: historyserver
-    restart: always
+  spark-worker02:
+    image: brijeshdhaker/spark-worker:3.1.2
+    container_name: spark-worker02
+    hostname: spark-worker02
     ports:
-      - "19888:19888"
-    environment:
-      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
-    volumes:
-      - sandbox3_hadoop_yarn_history:/tmp/yarn/history
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - "8082:8082"
+    depends_on:
+      - spark-master
     env_file:
       - sandbox3.env
-
-  #
-  # Hive Server
-  #
-  hive-postgresql:
-    image: brijeshdhaker/hive-postgresql:3.1.2
-    hostname: hive-postgresql
-    container_name: hive-postgresql
-    ports:
-      - "5432:5432"
     volumes:
-      - sandbox3_postgres:/var/lib/postgresql/data
       - sandbox3_apps_hostpath:/apps/hostpath
-
-  #
-  hive-metastore:
-    image: brijeshdhaker/hive:3.1.2
-    hostname: hive-metastore
-    container_name: hive-metastore
-    env_file:
-      - sandbox3.env
-    command: /opt/hive-3.1.2/bin/hive --service metastore
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hive:/opt/hive-3.1.2
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
-    links:
-      - hive-postgresql
-    ports:
-      - "9083:9083"
-    volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      WORKER_WEBUI_PORT: 8082
 
-  #
-  hive-server:
-    image: brijeshdhaker/hive:3.1.2
-    hostname: hive-server
-    container_name: hive-server
-    env_file:
-      - sandbox3.env
-    links:
-      - hive-metastore
-    environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
-      SERVICE_PRECONDITION: "hive-metastore:9083"
-    ports:
-      - "10000:10000"
-      - "10002:10002"
-    volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+  #  #
+  #  spark-worker03:
+  #    image: brijeshdhaker/spark-worker:3.1.2
+  #    container_name: spark-worker03
+  #    hostname: spark-worker03
+  #    ports:
+  #      - "8083:8083"
+  #    depends_on:
+  #      - spark-master
+  #    env_file:
+  #      - sandbox3.env
+  #    volumes:
+  #        - sandbox3_apps_hostpath:/apps/hostpath
+  #        - sandbox3_hadoop:/opt/hadoop-3.2.1
+  #        - sandbox3_hive:/opt/hive-3.1.2
+  #    environment:
+  #      WORKER_WEBUI_PORT: 8083
 
   #
   #
@@ -151,6 +127,8 @@ services:
       - "18080:18080"
     volumes:
       - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hive:/opt/hive-3.1.2
 
   #
   # Zeppelin Notebook
@@ -167,14 +145,12 @@ services:
     volumes:
       - sandbox3_apps_hostpath:/apps/hostpath
       - sandbox3_hadoop:/opt/hadoop-3.2.1
+      - sandbox3_hive:/opt/hive-3.1.2
       - sandbox3_hbase:/opt/hbase-2.4.9
       - sandbox3_hbase_client:/opt/hbase-client
-      - sandbox3_hive:/opt/hive-3.1.2
       - sandbox3_spark:/opt/spark
-      - sandbox3_zeppelin:/opt/zeppelin
-#      - sandbox3_zeppelin_conf:/opt/zeppelin/conf
-#      - sandbox3_m2:/opt/zeppelin/.m2
-#      - sandbox3_ivy2:/opt/zeppelin/.ivy2
+#      - sandbox3_zeppelin:/opt/zeppelin
+
 
 #
 volumes:

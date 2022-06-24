@@ -320,9 +320,7 @@ services:
       - sandbox3_hbase_client:/opt/hbase-client
       - sandbox3_hive:/opt/hive-3.1.2
       - sandbox3_spark:/opt/spark-3.1.2
-      - sandbox3_zeppelin_conf:/opt/zeppelin/conf
-      - sandbox3_m2:/opt/zeppelin/.m2
-      - sandbox3_ivy2:/opt/zeppelin/.ivy2
+      - sandbox3_zeppelin:/opt/zeppelin
 
   #
   # Apache NiFi
@@ -380,6 +378,8 @@ volumes:
   sandbox3_hadoop_yarn_history:
     external: true
   sandbox3_postgres:
+    external: true
+  sandbox3_zeppelin:
     external: true
   sandbox3_zeppelin_conf:
     external: true
