@@ -18,3 +18,5 @@ requests
 faker
 requests
 mysql-connector-python
+# Required for PySpark
+psutil

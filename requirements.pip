@@ -8,3 +8,5 @@ numpy
 vertica-python
 matplotlib
 mysql-connector-python
+# Required for PySpark
+psutil
