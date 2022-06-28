@@ -8,7 +8,7 @@ services:
   # Zookeeper Server
   #
   zookeeper:
-    image: confluentinc/cp-zookeeper:5.5.0
+    image: confluentinc/cp-zookeeper:6.1.1
     hostname: zookeeper
     container_name: zookeeper
     ports:
@@ -27,7 +27,7 @@ services:
   # Apache Kafka Server
   #
   kafka-broker:
-    image: confluentinc/cp-server:5.5.0
+    image: confluentinc/cp-server:6.1.1
     hostname: kafka-broker
     container_name: kafka-broker
     depends_on:
@@ -64,7 +64,7 @@ services:
   #
   #
   schema-registry:
-    image: confluentinc/cp-schema-registry:5.5.0
+    image: confluentinc/cp-schema-registry:6.1.1
     hostname: schema-registry
     container_name: schema-registry
     depends_on:
