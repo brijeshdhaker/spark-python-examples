@@ -8,7 +8,7 @@ services:
   # Zookeeper Server
   #
   zookeeper:
-    image: confluentinc/cp-zookeeper:5.5.0
+    image: confluentinc/cp-zookeeper:7.1.2
     hostname: zookeeper
     container_name: zookeeper
     ports:
@@ -27,7 +27,7 @@ services:
   # Apache Kafka Server
   #
   kafka-broker:
-    image: confluentinc/cp-server:5.5.0
+    image: confluentinc/cp-server:7.1.2
     hostname: kafka-broker
     container_name: kafka-broker
     depends_on:
@@ -64,7 +64,7 @@ services:
   #
   #
   schema-registry:
-    image: confluentinc/cp-schema-registry:5.5.0
+    image: confluentinc/cp-schema-registry:7.1.2
     hostname: schema-registry
     container_name: schema-registry
     depends_on:
@@ -305,7 +305,7 @@ services:
   # Zeppelin Notebook
   #
   zeppelin:
-    image: apache/zeppelin:0.10.0
+    image: apache/zeppelin:0.10.1
     container_name: zeppelin
     hostname: zeppelin
     env_file:
@@ -319,7 +319,7 @@ services:
       - sandbox3_hbase:/opt/hbase-2.4.9
       - sandbox3_hbase_client:/opt/hbase-client
       - sandbox3_hive:/opt/hive-3.1.2
-      - sandbox3_spark:/opt/spark-3.1.2
+      - sandbox3_spark:/opt/spark
       - sandbox3_zeppelin:/opt/zeppelin
 
   #
