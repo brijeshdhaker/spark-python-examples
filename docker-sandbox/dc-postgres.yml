@@ -1,0 +1,43 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+# postgres:14.5
+  hive-postgresql:
+    image: postgres:9.5.3
+    restart: always
+    hostname: hive-postgresql
+    container_name: hive-postgresql
+    ports:
+      - "5432:5432"
+    volumes:
+      - sandbox3_postgres_data:/var/lib/postgresql/data
+      - sandbox3_postgres_init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pgadmin
+#      PGDATA: /var/lib/postgresql/data
+
+#
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+#
+volumes:
+  sandbox3_postgres_data:
+    external: true
+  sandbox3_postgres_conf:
+    external: true
+  sandbox3_postgres_init:
+    external: true
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net
