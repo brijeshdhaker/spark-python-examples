@@ -91,19 +91,14 @@ services:
   # Hive Server
   #
   hive-postgresql:
-    image: postgres:9.5.3
-    restart: always
+    image: brijeshdhaker/hive-postgresql:3.1.2
     hostname: hive-postgresql
     container_name: hive-postgresql
     ports:
       - "5432:5432"
     volumes:
       - sandbox3_postgres_data:/var/lib/postgresql/data
-      - sandbox3_postgres_init:/docker-entrypoint-initdb.d
       - sandbox3_apps_hostpath:/apps/hostpath
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pgadmin
 
   #
   hive-metastore:
@@ -194,6 +189,8 @@ volumes:
   sandbox3_hadoop_dfs_data:
     external: true
   sandbox3_hadoop_yarn_history:
+    external: true
+  sandbox3_postgres:
     external: true
   sandbox3_postgres_data:
     external: true

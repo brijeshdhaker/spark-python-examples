@@ -22,6 +22,8 @@ services:
   adminer:
     image: adminer
     restart: always
+    hostname: hive-postgresql
+    container_name: hive-postgresql
     ports:
       - 8080:8080
 
