@@ -4,9 +4,9 @@
 version: "3.9"
 
 services:
-  #
-  # HDFS & YARN Sandbox
-  #
+#
+# HDFS & YARN Sandbox
+#
   namenode:
     image: brijeshdhaker/hadoop-namenode:3.2.1
     container_name: namenode
@@ -87,20 +87,49 @@ services:
     env_file:
       - sandbox3.env
 
+#
+# Mysql Database Server
+#
+
   #
-  # Hive Server
+  mysqlserver:
+    image: mysql/mysql-server:8.0.28
+    container_name: mysqlserver
+    hostname: mysqlserver
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox3_mysql_conf:/etc/mysql/conf.d
+      - sandbox3_mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_OPERATIONS_USER: operate
+      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_PASSWORD: p@SSW0rd
+      MYSQL_DATABASE: PUBLIC
+      MYSQL_USER: superuser
+      MYSQL_PASSWORD: p@SSW0rd
+      MYSQL_ROOT_HOST: 172.18.0.1
+
+#
+# Postgres Database Server
+#
+
   #
-  hive-postgresql:
-    image: brijeshdhaker/hive-postgresql:3.1.2
-    hostname: hive-postgresql
-    container_name: hive-postgresql
+  postgres:
+    image: postgres:9.5.3
+    hostname: postgres
+    container_name: postgres
     ports:
       - "5432:5432"
     volumes:
       - sandbox3_postgres_data:/var/lib/postgresql/data
       - sandbox3_apps_hostpath:/apps/hostpath
 
-  #
+#
+# Hive Server
+#
   hive-metastore:
     image: brijeshdhaker/hive:3.1.2
     hostname: hive-metastore
@@ -109,9 +138,9 @@ services:
       - sandbox3.env
     command: /opt/hive-3.1.2/bin/hive --service metastore
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
+      SERVICE_PRECONDITION: "mysqlserver:3306"
     links:
-      - hive-postgresql
+      - mysqlserver
     ports:
       - "9083:9083"
     volumes:
@@ -126,18 +155,20 @@ services:
       - sandbox3.env
     links:
       - hive-metastore
+      - namenode
+      - datanode
     environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
-      SERVICE_PRECONDITION: "hive-metastore:9083"
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:mysql://mysqlserver/metastore?createDatabaseIfNotExist=true"
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore:9083"
     ports:
       - "10000:10000"
       - "10002:10002"
     volumes:
       - sandbox3_apps_hostpath:/apps/hostpath
 
-  #
-  #
-  #
+#
+#
+#
   spark-historyserver:
     image: brijeshdhaker/spark-historyserver:3.1.2
     container_name: spark-historyserver
@@ -152,9 +183,9 @@ services:
     volumes:
       - sandbox3_apps_hostpath:/apps/hostpath
 
-  #
-  # Zeppelin Notebook
-  #
+#
+# Zeppelin Notebook
+#
   zeppelin:
     image: apache/zeppelin:0.10.1
     container_name: zeppelin
@@ -190,7 +221,9 @@ volumes:
     external: true
   sandbox3_hadoop_yarn_history:
     external: true
-  sandbox3_postgres:
+  sandbox3_mysql_data:
+    external: true
+  sandbox3_mysql_conf:
     external: true
   sandbox3_postgres_data:
     external: true
