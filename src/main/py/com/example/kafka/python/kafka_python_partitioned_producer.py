@@ -73,6 +73,7 @@ producer = KafkaProducer(
     client_id='python-kafka-client',
     key_serializer=key_serializer,
     value_serializer=value_serializer,
+    partitioner=hash_partitioner,
     acks=1
 )
 
