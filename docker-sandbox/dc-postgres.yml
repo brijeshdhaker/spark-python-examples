@@ -2,12 +2,16 @@
 version: '3.9'
 
 services:
-# postgres:14.5
-  hive-postgresql:
+  #
+  # Postgres Database Server
+  #
+
+  # postgres:14.5
+  postgres:
     image: postgres:9.5.3
     restart: always
-    hostname: hive-postgresql
-    container_name: hive-postgresql
+    hostname: postgres
+    container_name: postgres
     ports:
       - "5432:5432"
     volumes:
@@ -15,15 +19,15 @@ services:
       - sandbox3_postgres_init:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pgadmin
+      POSTGRES_PASSWORD: postgres
 #      PGDATA: /var/lib/postgresql/data
 
 #
   adminer:
     image: adminer
     restart: always
-    hostname: hive-postgresql
-    container_name: hive-postgresql
+    hostname: adminer
+    container_name: adminer
     ports:
       - 8080:8080
 
