@@ -18,14 +18,8 @@ services:
       - sandbox3_apps_hostpath:/apps/hostpath
       - sandbox3_mysql_conf:/etc/mysql/conf.d
       - sandbox3_mysql_data:/var/lib/mysql
-    environment:
-      MYSQL_OPERATIONS_USER: operate
-      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_PASSWORD: p@SSW0rd
-      MYSQL_DATABASE: PUBLIC
-      MYSQL_USER: superuser
-      MYSQL_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_HOST: 172.18.0.1
+    env_file:
+      - sandbox3.env
 
 #
 volumes:

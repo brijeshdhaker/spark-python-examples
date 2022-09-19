@@ -2,21 +2,21 @@
 docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
 
 # Topic - Creation
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic test-topic --if-not-exists
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic kafka-python-simple-topic --if-not-exists
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 4 --replication-factor 1 --topic partitioned-test-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 4 --replication-factor 1 --topic kafka-python-partitioned-topic
 
 # Topic - List
 kafka-topics --list --bootstrap-server kafka-broker:9092
 
 # Topic - Describe
-kafka-topics --describe --topic test-topic --bootstrap-server kafka-broker:9092
+kafka-topics --describe --topic kafka-python-simple-topic --bootstrap-server kafka-broker:9092
 
 # Topic - Alter
-kafka-topics --alter --topic test-topic --partitions 9 --bootstrap-server kafka-broker:9092
+kafka-topics --alter --topic kafka-python-partitioned-topic --partitions 5 --bootstrap-server kafka-broker:9092
 
 # Topic - Delete
-kafka-topics --delete --topic test-topic --bootstrap-server kafka-broker:9092
+kafka-topics --delete --topic kafka-python-simple-topic --bootstrap-server kafka-broker:9092
 
 # Topic - Check current Retention period
 kafka-configs –zookeeper zookeeper.sandbox-bigdata.net:2181 –describe –entity-type topics –entity-name <topic name>
@@ -28,26 +28,25 @@ docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
 ### Producer :
 docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
 
-kafka-console-producer --topic test-topic --broker-list kafka-broker:9092
+kafka-console-producer --topic kafka-python-simple-topic --broker-list kafka-broker:9092
 
 #### With Key
 kafka-console-producer \
---topic test-topic
+--topic kafka-python-simple-topic
 --broker-list kafka-broker:9092 \
 --property parse.key=true \
 --property key.separator=":" \
 
 
 ### Consumer :
-
 kafka-console-consumer \
---topic test-topic \
+--topic kafka-python-simple-topic \
 --group test-cg \
 --bootstrap-server kafka-broker:9092
 
 #### With Key
 kafka-console-consumer \
---topic test-topic \
+--topic kafka-python-simple-topic \
 --group test-cg \
 --bootstrap-server kafka-broker:9092 \
 --from-beginning \
@@ -58,7 +57,6 @@ kafka-console-consumer \
 docker system prune -a --volumes --filter "label=io.confluent.docker"
 
 # Application Setup
-
 docker-compose up -d
 docker-compose exec broker kafka-topics --create \
 --topic users-topic-avro \

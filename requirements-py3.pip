@@ -18,5 +18,7 @@ requests
 faker
 requests
 mysql-connector-python
+#postgres connector
+psycopg2
 # Required for PySpark
 psutil

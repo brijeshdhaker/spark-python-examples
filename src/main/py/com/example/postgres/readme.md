@@ -27,6 +27,4 @@ postgres=# \c testdb;
 
 \dn+ --list schemas
 
-
-
 postgres=# DROP DATABASE testdb;

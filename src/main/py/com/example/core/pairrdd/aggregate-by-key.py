@@ -90,12 +90,12 @@ commons.print_separator()
 print(" Sum Aggregation Results : ")
 # Defining Sequential Operation and Combiner Operations
 # Sequence operation for aggregation
-def seq_max(accumulator, element):
+def seq_agg(accumulator, element):
     return accumulator + element[1]
 
 
 # Reduce/Combine operation for max aggregation#
-def comb_max(accumulator1, accumulator2):
+def comb_agg(accumulator1, accumulator2):
     return accumulator1 + accumulator2
 
 aggRDD = mapped_student_rdd.aggregateByKey(0, seq_max, comb_max)

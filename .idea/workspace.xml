@@ -4,49 +4,175 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-06-13 Update Kafka Python Examples.">
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/mysql/DB.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/joins/stream-stream-join.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_text_stream.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/test.py" afterDir="false" />
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-09-19 update Hive metastore with mysql server.">
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_exactly_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COPYRIGHT" beforeDir="false" afterPath="$PROJECT_DIR$/COPYRIGHT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PYREADME.md" beforeDir="false" afterPath="$PROJECT_DIR$/PYREADME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conda-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/conda-readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/distro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/distro.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-cassandra.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-cassandra.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hbase-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hbase-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster-7.1.2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster-7.1.2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-mysqlserver.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-mysqlserver.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-postgres.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-postgres.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/kibana.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/kibana.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bucketing/pyspark-bucketed-sort-merge-join.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bucketing/pyspark-large-tables.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/bucketing/pyspark-sort-merge-join.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-bucketing.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-data-frames.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-df-datatypes.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-df-structtypes.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/pyspark-local-rdd-actions.zpln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pie.py" beforeDir="false" afterPath="$PROJECT_DIR$/pie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-py2.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py2.pip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-py3.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-py3.pip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.pip" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.pip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-and-local-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-local-submit.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/avro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_AvroConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroConsumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_AvroProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroProducer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_DeserializingConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_DeserializingConsumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_SerializingProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_SerializingProducer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/confluent_kafka_simple_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/custom_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/custom_avro_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/fastavro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/fastavro-test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/kafka_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/kafka_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/test" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/confluent/user.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/user.avsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/mysql/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka-topic.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka-topic.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_batch_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_batch_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_confluent_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_confluent_avro_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_exactly_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_exactly_once_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_least_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_least_once_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_most_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_most_once_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_partitioned_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_partitioned_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/clients/python/kafka_python_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/avro/test_schema.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/resources/avro/test_schema.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/avro/transaction-record.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/resources/avro/transaction-record.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/avro/user-record.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/resources/avro/user-record.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/kafka_producer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/kafka_producer.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup-and-cluster-submit.sh" beforeDir="false" afterPath="$PROJECT_DIR$/setup-and-cluster-submit.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-file.py" beforeDir="false" afterPath="$PROJECT_DIR$/spark-file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark-rdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/spark-rdd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/accumulator/accumulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/accumulator/accumulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/broadcast/broadcast.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/broadcast/broadcast.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/CardTransactionAnalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/CardTransactionAnalysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/aggregate-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/aggregate-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/group-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/group-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/reduce-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/reduce-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/sort-by-key.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/pairrdd/sort-by-key.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/coalesce.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/coalesce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/distinct.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/distinct.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/file-rdd.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/file-rdd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/filter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/filter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/flat-map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions-with-index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions-with-index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/pyspark-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/pyspark-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/re-partition.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/re-partition.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/repartition-sort-within-partitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/repartition-sort-within-partitions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/union.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/core/rdd/union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/data/sampledata.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/data/sampledata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/elasticsearch/esreadwrite.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/elasticsearch/esreadwrite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/hbase-commands.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/hbase-commands.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/hbase-spark.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/hbase-spark.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-hive-hbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-hive-hbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-shc-hbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-shc-hbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-spark-hbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/pyspark-spark-hbase.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hbase/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hbase/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hello-spark.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hello-spark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-context.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-context.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-session.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-hive-session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-window-functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/pyspark-window-functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/avro-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroConsumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_AvroProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_DeserializingConsumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_DeserializingConsumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_SerializingProducer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_SerializingProducer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/custom_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/custom_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/kafka_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/kafka_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/test" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/user.avsc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/user.avsc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/fastavro-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/fastavro-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/partitioners.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/partitioners.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka-topic.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka-topic.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_avro_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_batch_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_batch_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_confluent_avro_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_confluent_avro_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_exactly_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_exactly_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_json_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_json_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_json_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_json_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_least_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_least_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_most_once_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_most_once_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_consumer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_simple_producer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/matplot/pie.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/matplot/pie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/models/User.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/models/User.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/mysql/DB.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/mysql/DB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pipelines/fake_tweet_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pipelines/fake_tweet_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pipelines/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pipelines/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-cassandra-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-cassandra-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-hbase-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-hbase-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-hive-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pipelines/stream-hive-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/postgres/postgres-quries.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/postgres/postgres-quries.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/postgres/postgres-test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/postgres/postgres-test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/postgres/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/postgres/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/pyspark-pandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/pyspark-pandas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/schemas/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/schemas/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/schemas/schema-merge.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/schemas/schema-merge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-bucketing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-bucketing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-column.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-column.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-dataframe.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-dataframe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-row.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-row.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-s3a-read.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-s3a-read.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-udf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/sql-udf.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/struct-types.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/struct-types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/window-functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/window-functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/sql/window_analytic_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/sql/window_analytic_functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/fake_tweet_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/fake_tweet_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-cassandra-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-cassandra-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-hbase-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-hbase-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-hive-transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/discretized/stream-hive-transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/joins/stream-stream-join.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/joins/stream-stream-join.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/kafka-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/kafka-stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/spark-kafkaread-batch.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/spark-kafkaread-batch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/KafkaStreamDemo.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/KafkaStreamDemo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/fake_transaction_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/fake_transaction_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/lib/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/lib/logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-avro-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-avro-stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-delimiter-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-delimiter-stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-json-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-json-stream.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-kafka-stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured-kafka-stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured_kafka_wordcount.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/structured_kafka_wordcount.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_avro_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_avro_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_delimiter_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_delimiter_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_json_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_json_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_text_stream.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/structured/transaction_text_stream.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/utils/SparkUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/utils/SparkUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/utils/commons.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/utils/commons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/utils/load_avro_schema_from_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/utils/load_avro_schema_from_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_static.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_static.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv_pyspark3.7.yml" beforeDir="false" afterPath="$PROJECT_DIR$/venv_pyspark3.7.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,10 +215,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brije/IdeaProjects/spark-python-examples/src/main/py/com/example/kafka/clients/python&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brije/IdeaProjects/spark-python-examples/src/main/py/com/example/kafka/confluent&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -105,17 +231,112 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\confluent" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\docker-sandbox" />
+      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\python" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\python" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\streams\structured" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\resources\avro" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\streams" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\confluent" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples" />
     </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment">
+    <configuration name="confluent_kafka_exactly_once_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_exactly_once_consumer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kafka_python_exactly_once_consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_exactly_once_consumer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kafka_python_partitioned_producer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/kafka/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/kafka/python/kafka_python_partitioned_producer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-mysqlserver.yml.mysqlserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="docker-desktop">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysqlserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-mysqlserver.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" />
+        <item itemvalue="Python.confluent_kafka_exactly_once_consumer" />
+        <item itemvalue="Python.kafka_python_partitioned_producer" />
+        <item itemvalue="Python.kafka_python_exactly_once_consumer" />
+        <item itemvalue="Docker.docker-sandbox/dc-mysqlserver.yml.mysqlserver: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -231,7 +452,140 @@
       <option name="project" value="LOCAL" />
       <updated>1655086920890</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2022-06-13 Update Kafka Python Examples.">
+      <created>1655088184470</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655088184470</updated>
+    </task>
+    <task id="LOCAL-00017" summary="2022-06-13 Update Kafka Python Examples.">
+      <created>1655088298272</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655088298272</updated>
+    </task>
+    <task id="LOCAL-00018" summary="2022-06-13 Update Kafka Python Examples.">
+      <created>1655090845566</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1655090845566</updated>
+    </task>
+    <task id="LOCAL-00019" summary="2022-06-14 Update Kafka Python Examples.">
+      <created>1655166913421</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1655166913422</updated>
+    </task>
+    <task id="LOCAL-00020" summary="2022-06-14 Update Kafka Python Examples.">
+      <created>1655174354654</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1655174354654</updated>
+    </task>
+    <task id="LOCAL-00021" summary="2022-06-20 Update Kafka Python Partitioner Examples.">
+      <created>1655692926596</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1655692926596</updated>
+    </task>
+    <task id="LOCAL-00022" summary="2022-06-22 Update zeppline version in docker compose.">
+      <created>1655855412304</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1655855412304</updated>
+    </task>
+    <task id="LOCAL-00023" summary="2022-06-24 Update docker compose for cluster setup.">
+      <created>1656039736939</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1656039736939</updated>
+    </task>
+    <task id="LOCAL-00024" summary="2022-06-28 Update docker compose for kafka cluster setup.">
+      <created>1656388995156</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656388995156</updated>
+    </task>
+    <task id="LOCAL-00025" summary="2022-06-28 Update docker compose for kafka cluster setup.">
+      <created>1656394119217</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1656394119217</updated>
+    </task>
+    <task id="LOCAL-00026" summary="2022-06-28 Update docker compose for kafka cluster setup.">
+      <created>1656394161214</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1656394161214</updated>
+    </task>
+    <task id="LOCAL-00027" summary="2022-09-02 Update docker compose for kafka cluster setup.">
+      <created>1662087903464</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1662087903464</updated>
+    </task>
+    <task id="LOCAL-00028" summary="2022-09-12 Update docker compose for kafka cluster setup.">
+      <created>1662957566062</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1662957566062</updated>
+    </task>
+    <task id="LOCAL-00029" summary="2022-09-14 Update docker compose for postgres docker setup.">
+      <created>1663175452066</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1663175452066</updated>
+    </task>
+    <task id="LOCAL-00030" summary="2022-09-16 Update docker compose for postgres docker setup.">
+      <created>1663293736348</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1663293736348</updated>
+    </task>
+    <task id="LOCAL-00031" summary="2022-09-16 add postgres examples in python.">
+      <created>1663296798183</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1663296798183</updated>
+    </task>
+    <task id="LOCAL-00032" summary="2022-09-18 update Hive metastore with mysql server.">
+      <created>1663479196362</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1663479196362</updated>
+    </task>
+    <task id="LOCAL-00033" summary="2022-09-18 update Hive metastore with mysql server.">
+      <created>1663479628454</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1663479628454</updated>
+    </task>
+    <task id="LOCAL-00034" summary="2022-09-18 update Hive metastore with mysql server.">
+      <created>1663505382240</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1663505382240</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -259,7 +613,19 @@
     <MESSAGE value="2022-06-10 Update Kafka Python Examples." />
     <MESSAGE value="2022-06-11 Update Kafka Python Examples." />
     <MESSAGE value="2022-06-13 Update Kafka Python Examples." />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-06-13 Update Kafka Python Examples." />
+    <MESSAGE value="2022-06-14 Update Kafka Python Examples." />
+    <MESSAGE value="2022-06-20 Update Kafka Python Partitioner Examples." />
+    <MESSAGE value="2022-06-22 Update zeppline version in docker compose." />
+    <MESSAGE value="2022-06-24 Update docker compose for cluster setup." />
+    <MESSAGE value="2022-06-28 Update docker compose for kafka cluster setup." />
+    <MESSAGE value="2022-09-02 Update docker compose for kafka cluster setup." />
+    <MESSAGE value="2022-09-12 Update docker compose for kafka cluster setup." />
+    <MESSAGE value="2022-09-14 Update docker compose for postgres docker setup." />
+    <MESSAGE value="2022-09-16 Update docker compose for postgres docker setup." />
+    <MESSAGE value="2022-09-16 add postgres examples in python." />
+    <MESSAGE value="2022-09-18 update Hive metastore with mysql server." />
+    <MESSAGE value="2022-09-19 update Hive metastore with mysql server." />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-09-19 update Hive metastore with mysql server." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -314,6 +680,16 @@
           <line>8</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_producer.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_simple_consumer.py</url>
+          <line>150</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -323,5 +699,9 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
