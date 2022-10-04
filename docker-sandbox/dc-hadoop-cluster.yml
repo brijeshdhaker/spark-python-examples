@@ -19,7 +19,7 @@ services:
       - sandbox3_hadoop_dfs_name:/hadoop/dfs/name
       - sandbox3_apps_hostpath:/apps/hostpath
     environment:
-      - CLUSTER_NAME=test
+      - CLUSTER_NAME=docker-sandbox
     env_file:
       - sandbox3.env
 
