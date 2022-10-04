@@ -21,8 +21,14 @@ consumer = KafkaConsumer(
     client_id='kafka_python_simple_consumer-client',
     group_id='kafka_python_simple_consumer-cg',
     key_deserializer=key_deserializer,
-    value_deserializer=value_deserializer
+    value_deserializer=value_deserializer,
+    auto_offset_reset='earliest',
+    enable_auto_commit=False
 )
+""" 
+Partitions will be dynamically assigned via a group coordinator. 
+Topic subscriptions are not incremental: this list will replace the current assignment (if there is one).
+"""
 consumer.subscribe(TOPIC)
 
 def shutdown():
@@ -33,8 +39,11 @@ def msg_process(msg):
     print('Received message: {}'.format(m_value))
 
 def consume_messages():
-    for message in consumer:
-        msg_process(message)
+    for m in consumer:
+        # message value and key are raw bytes -- decode if necessary!
+        # e.g., for unicode: `message.value.decode('utf-8')`
+        print ("%s:%d:%d: key=%s value=%s" % (m.topic, m.partition, m.offset, m.key, m.value))
+        msg_process(m)
 
 if __name__ == '__main__':
     consume_messages()

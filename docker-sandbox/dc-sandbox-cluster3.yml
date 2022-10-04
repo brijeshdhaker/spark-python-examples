@@ -95,14 +95,8 @@ services:
       - sandbox3_apps_hostpath:/apps/hostpath
       - sandbox3_mysql_conf:/etc/mysql/conf.d
       - sandbox3_mysql_data:/var/lib/mysql
-    environment:
-      MYSQL_OPERATIONS_USER: operate
-      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_PASSWORD: p@SSW0rd
-      MYSQL_DATABASE: PUBLIC
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_HOST: 172.18.0.1
+    env_file:
+      - sandbox3.env
 
   #
   # Cassandra Server
@@ -206,22 +200,6 @@ services:
   #
   # Hive Server
   #
-  hive-postgresql:
-    image: postgres:9.5.3
-    restart: always
-    hostname: hive-postgresql
-    container_name: hive-postgresql
-    ports:
-      - "5432:5432"
-    volumes:
-      - sandbox3_postgres_data:/var/lib/postgresql/data
-      - sandbox3_postgres_init:/docker-entrypoint-initdb.d
-      - sandbox3_apps_hostpath:/apps/hostpath
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pgadmin
-
-  #
   hive-metastore:
     image: brijeshdhaker/hive:3.1.2
     hostname: hive-metastore
@@ -230,9 +208,9 @@ services:
       - sandbox3.env
     command: /opt/hive-3.1.2/bin/hive --service metastore
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
+      SERVICE_PRECONDITION: "mysqlserver:3306"
     links:
-      - hive-postgresql
+      - mysqlserver
     ports:
       - "9083:9083"
     volumes:
@@ -247,9 +225,11 @@ services:
       - sandbox3.env
     links:
       - hive-metastore
+      - namenode
+      - datanode
     environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
-      SERVICE_PRECONDITION: "hive-metastore:9083"
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:mysql://mysqlserver/metastore?createDatabaseIfNotExist=true"
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore:9083"
     ports:
       - "10000:10000"
       - "10002:10002"
@@ -381,8 +361,6 @@ volumes:
   sandbox3_hadoop_dfs_data:
     external: true
   sandbox3_hadoop_yarn_history:
-    external: true
-  sandbox3_postgres:
     external: true
   sandbox3_postgres_data:
     external: true

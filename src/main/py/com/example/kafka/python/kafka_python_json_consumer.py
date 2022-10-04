@@ -82,9 +82,8 @@ try:
         else:
             # application-specific processing
             for messages in results.values():
-                for message in messages:
-                    print("topic=%s | partition=%d | offset=%d | key=%s | value=%s" % (
-                    message.topic, message.partition, message.offset, message.key, message.value))
+                for m in messages:
+                    print("topic=%s | partition=%d | offset=%d | key=%s | value=%s" % (m.topic, m.partition, m.offset, m.key, m.value))
                     # msg_process(msg)
                     msg_count += 1
                     if msg_count % MIN_COMMIT_COUNT == 0:
