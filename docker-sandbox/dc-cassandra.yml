@@ -15,15 +15,15 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_cassandra_data:/var/lib/cassandra
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_cassandra_data:/var/lib/cassandra
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
 #
 volumes:
-  sandbox3_apps_hostpath:
+  sandbox_host_path:
     external: true
-  sandbox3_cassandra_data:
+  sandbox_cassandra_data:
     external: true
 #
 networks:
