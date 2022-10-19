@@ -74,7 +74,7 @@ services:
       - "8081:8081"
     volumes:
       - sandbox_host_path:/apps/hostpath
-      - sandbox_schemaregistry_secrets:/etc/schema-registry/secrets
+      - sandbox_schema_registry_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka-broker:19092'
