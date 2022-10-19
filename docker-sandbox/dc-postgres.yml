@@ -15,8 +15,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - sandbox3_postgres_data:/var/lib/postgresql/data
-      - sandbox3_postgres_init:/docker-entrypoint-initdb.d
+      - sandbox_postgres_data:/var/lib/postgresql/data
+      - sandbox_postgres_init:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -34,11 +34,11 @@ services:
 
 #
 volumes:
-  sandbox3_postgres_data:
+  sandbox_postgres_data:
     external: true
-  sandbox3_postgres_conf:
+  sandbox_postgres_conf:
     external: true
-  sandbox3_postgres_init:
+  sandbox_postgres_init:
     external: true
 
 #

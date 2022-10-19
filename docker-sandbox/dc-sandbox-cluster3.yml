@@ -14,10 +14,10 @@ services:
     ports:
       - "2181:2181"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_zookeeper_secrets:/etc/zookeeper/secrets
-      - sandbox3_zookeeper_data:/var/lib/zookeeper/data
-      - sandbox3_zookeeper_log:/var/lib/zookeeper/log
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
+      - sandbox_zookeeper_data:/var/lib/zookeeper/data
+      - sandbox_zookeeper_log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -36,9 +36,9 @@ services:
       - "9092:9092"
       - "19092:19092"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_kafka_secrets:/etc/kafka/secrets
-      - sandbox3_kafka_data:/var/lib/kafka/data
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_kafka_secrets:/etc/kafka/secrets
+      - sandbox_kafka_data:/var/lib/kafka/data
     environment:
       KAFKA_BROKER_ID: 0
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
@@ -73,8 +73,8 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_schemaregistry_secrets:/etc/schema-registry/secrets
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_schemaregistry_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka-broker:19092'
@@ -92,9 +92,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_mysql_conf:/etc/mysql/conf.d
-      - sandbox3_mysql_data:/var/lib/mysql
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_mysql_conf:/etc/mysql/conf.d
+      - sandbox_mysql_data:/var/lib/mysql
     env_file:
       - sandbox3.env
 
@@ -109,8 +109,8 @@ services:
     ports:
       - "7000:7000"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_cassandra_data:/var/lib/cassandra
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_cassandra_data:/var/lib/cassandra
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
 
@@ -126,8 +126,8 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox3_hadoop_dfs_name:/hadoop/dfs/name
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_hadoop_data:/hadoop
+      - sandbox_host_path:/apps/hostpath
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -143,8 +143,8 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox3_hadoop_dfs_data:/hadoop/dfs/data
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_hadoop_data:/hadoop
+      - sandbox_host_path:/apps/hostpath
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -160,7 +160,7 @@ services:
       - "8088:8088"
       - "8032:8032"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
@@ -175,7 +175,7 @@ services:
     ports:
       - "8042:8042"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
@@ -192,8 +192,8 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     volumes:
-      - sandbox3_hadoop_yarn_history:/tmp/yarn/history
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_hadoop_yarn_history:/tmp/yarn/history
+      - sandbox_host_path:/apps/hostpath
     env_file:
       - sandbox3.env
 
@@ -214,7 +214,7 @@ services:
     ports:
       - "9083:9083"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
 
   #
   hive-server:
@@ -234,7 +234,7 @@ services:
       - "10000:10000"
       - "10002:10002"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
 
   #
   # Hbase Server
@@ -251,7 +251,7 @@ services:
       - "16000:16000"
       - "16010:16010"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
 
   #
   hbase-region:
@@ -267,7 +267,7 @@ services:
       - "16020:16020"
       - "16030:16030"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
 
   #
   #
@@ -284,7 +284,7 @@ services:
     ports:
       - "18080:18080"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
+      - sandbox_host_path:/apps/hostpath
 
   #
   # Zeppelin Notebook
@@ -299,13 +299,13 @@ services:
       - "9080:8080"
       - "4040:4040"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_hadoop:/opt/hadoop-3.2.1
-      - sandbox3_hbase:/opt/hbase-2.4.9
-      - sandbox3_hbase_client:/opt/hbase-client
-      - sandbox3_hive:/opt/hive-3.1.2
-      - sandbox3_spark:/opt/spark
-      - sandbox3_zeppelin:/opt/zeppelin
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hbase:/opt/hbase-2.4.9
+      - sandbox_hbase_client:/opt/hbase-client
+      - sandbox_hive:/opt/hive-3.1.2
+      - sandbox_spark:/opt/spark
+      - sandbox_zeppelin:/opt/zeppelin
 
   #
   # Apache NiFi
@@ -319,82 +319,84 @@ services:
       - "19090:8080"
       - "19443:8443"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_nifi_conf:/opt/nifi/nifi-current/conf
-      - sandbox3_nifi_content_repository:/opt/nifi/nifi-current/content_repository
-      - sandbox3_nifi_database_repository:/opt/nifi/nifi-current/database_repository
-      - sandbox3_nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
-      - sandbox3_nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
-      - sandbox3_nifi_log:/opt/nifi/nifi-current/logs
-      - sandbox3_nifi_state:/opt/nifi/nifi-current/state
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_nifi_conf:/opt/nifi/nifi-current/conf
+      - sandbox_nifi_content_repository:/opt/nifi/nifi-current/content_repository
+      - sandbox_nifi_database_repository:/opt/nifi/nifi-current/database_repository
+      - sandbox_nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - sandbox_nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
+      - sandbox_nifi_log:/opt/nifi/nifi-current/logs
+      - sandbox_nifi_state:/opt/nifi/nifi-current/state
 
 #
 volumes:
-  sandbox3_apps_hostpath:
+  sandbox_host_path:
     external: true
-  sandbox3_m2:
+  sandbox_base_path:
     external: true
-  sandbox3_ivy2:
+  sandbox_m2:
     external: true
-  sandbox3_zookeeper_secrets:
+  sandbox_ivy2:
     external: true
-  sandbox3_zookeeper_data:
+  sandbox_zookeeper_secrets:
     external: true
-  sandbox3_zookeeper_log:
+  sandbox_zookeeper_data:
     external: true
-  sandbox3_kafka_secrets:
+  sandbox_zookeeper_log:
     external: true
-  sandbox3_kafka_data:
+  sandbox_kafka_secrets:
     external: true
-  sandbox3_kafka_log:
+  sandbox_kafka_data:
     external: true
-  sandbox3_schemaregistry_secrets:
+  sandbox_kafka_log:
     external: true
-  sandbox3_cassandra_data:
+  sandbox_schema_registry_secrets:
     external: true
-  sandbox3_mysql_data:
+  sandbox_cassandra_data:
     external: true
-  sandbox3_mysql_conf:
+  sandbox_mysql_data:
     external: true
-  sandbox3_hadoop_dfs_name:
+  sandbox_mysql_conf:
     external: true
-  sandbox3_hadoop_dfs_data:
+  sandbox_hadoop_dfs_name:
     external: true
-  sandbox3_hadoop_yarn_history:
+  sandbox_hadoop_dfs_data:
     external: true
-  sandbox3_postgres_data:
+  sandbox_hadoop_yarn_history:
     external: true
-  sandbox3_postgres_conf:
+  sandbox_postgres_data:
     external: true
-  sandbox3_postgres_init:
+  sandbox_postgres_conf:
     external: true
-  sandbox3_zeppelin:
+  sandbox_postgres_init:
     external: true
-  sandbox3_zeppelin_conf:
+  sandbox_zeppelin:
     external: true
-  sandbox3_hadoop:
+  sandbox_zeppelin_conf:
     external: true
-  sandbox3_hbase:
+  sandbox_hadoop:
     external: true
-  sandbox3_hbase_client:
+  sandbox_hbase:
     external: true
-  sandbox3_hive:
+  sandbox_hbase_client:
     external: true
-  sandbox3_spark:
+  sandbox_hive:
     external: true
-  sandbox3_nifi_conf:
+  sandbox_spark:
     external: true
-  sandbox3_nifi_content_repository:
+  sandbox_nifi_conf:
     external: true
-  sandbox3_nifi_database_repository:
+  sandbox_nifi_content_repository:
     external: true
-  sandbox3_nifi_flowfile_repository:
+  sandbox_nifi_database_repository:
     external: true
-  sandbox3_nifi_provenance_repository:
+  sandbox_nifi_flowfile_repository:
     external: true
-  sandbox3_nifi_log:
+  sandbox_nifi_provenance_repository:
     external: true
-  sandbox3_nifi_state:
+  sandbox_nifi_log:
+    external: true
+  sandbox_nifi_state:
     external: true
 
 

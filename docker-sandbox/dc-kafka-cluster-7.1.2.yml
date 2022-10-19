@@ -14,10 +14,10 @@ services:
     ports:
       - "2181:2181"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_zookeeper_secrets:/etc/zookeeper/secrets
-      - sandbox3_zookeeper_data:/var/lib/zookeeper/data
-      - sandbox3_zookeeper_log:/var/lib/zookeeper/log
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
+      - sandbox_zookeeper_data:/var/lib/zookeeper/data
+      - sandbox_zookeeper_log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -33,9 +33,9 @@ services:
       - "9092:9092"
       - "19092:19092"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_kafka_secrets:/etc/kafka/secrets
-      - sandbox3_kafka_data:/var/lib/kafka/data
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_kafka_secrets:/etc/kafka/secrets
+      - sandbox_kafka_data:/var/lib/kafka/data
     environment:
       KAFKA_BROKER_ID: 0
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
@@ -67,8 +67,8 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_schemaregistry_secrets:/etc/schema-registry/secrets
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_schemaregistry_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka-broker:19092'
@@ -202,21 +202,21 @@ services:
 #
 #
 volumes:
-  sandbox3_apps_hostpath:
+  sandbox_host_path:
     external: true
-  sandbox3_zookeeper_secrets:
+  sandbox_zookeeper_secrets:
     external: true
-  sandbox3_zookeeper_data:
+  sandbox_zookeeper_data:
     external: true
-  sandbox3_zookeeper_log:
+  sandbox_zookeeper_log:
     external: true
-  sandbox3_kafka_secrets:
+  sandbox_kafka_secrets:
     external: true
-  sandbox3_kafka_data:
+  sandbox_kafka_data:
     external: true
-  sandbox3_kafka_log:
+  sandbox_kafka_log:
     external: true
-  sandbox3_schemaregistry_secrets:
+  sandbox_schema_registry_secrets:
     external: true
 
 #
