@@ -15,19 +15,19 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - sandbox3_apps_hostpath:/apps/hostpath
-      - sandbox3_mysql_conf:/etc/mysql/conf.d
-      - sandbox3_mysql_data:/var/lib/mysql
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_mysql_conf:/etc/mysql/conf.d
+      - sandbox_mysql_data:/var/lib/mysql
     env_file:
       - sandbox3.env
 
 #
 volumes:
-  sandbox3_apps_hostpath:
+  sandbox_host_path:
     external: true
-  sandbox3_mysql_data:
+  sandbox_mysql_data:
     external: true
-  sandbox3_mysql_conf:
+  sandbox_mysql_conf:
     external: true
 
 #
