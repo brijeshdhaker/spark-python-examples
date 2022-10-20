@@ -15,6 +15,7 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
       - sandbox_zookeeper_data:/var/lib/zookeeper/data
       - sandbox_zookeeper_log:/var/lib/zookeeper/log
@@ -37,6 +38,7 @@ services:
       - "19092:19092"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_kafka_secrets:/etc/kafka/secrets
       - sandbox_kafka_data:/var/lib/kafka/data
     environment:
@@ -74,6 +76,7 @@ services:
       - "8081:8081"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_schema_registry_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
@@ -93,6 +96,7 @@ services:
       - "3306:3306"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     environment:
@@ -116,6 +120,7 @@ services:
       - "7000:7000"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_cassandra_data:/var/lib/cassandra
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
@@ -134,6 +139,7 @@ services:
     volumes:
       - sandbox_hadoop_data:/hadoop
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -151,6 +157,7 @@ services:
     volumes:
       - sandbox_hadoop_data:/hadoop
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
@@ -167,6 +174,7 @@ services:
       - "8032:8032"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
@@ -182,6 +190,7 @@ services:
       - "8042:8042"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
@@ -200,6 +209,7 @@ services:
     volumes:
       - sandbox_hadoop_yarn_history:/tmp/yarn/history
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     env_file:
       - sandbox3.env
 
@@ -217,6 +227,7 @@ services:
       - sandbox_postgres_data:/var/lib/postgresql/data
       - sandbox_postgres_init:/docker-entrypoint-initdb.d
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: pgadmin
@@ -236,6 +247,7 @@ services:
       - "9083:9083"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   hive-server:
@@ -254,6 +266,7 @@ services:
       - "10002:10002"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   # Hbase Server
@@ -271,6 +284,7 @@ services:
       - "16010:16010"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   hbase-region:
@@ -287,6 +301,7 @@ services:
       - "16030:16030"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   #
@@ -304,6 +319,7 @@ services:
       - "18080:18080"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   # Zeppelin Notebook
@@ -319,6 +335,7 @@ services:
       - "4040:4040"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_hadoop:/opt/hadoop-3.2.1
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client
@@ -339,6 +356,7 @@ services:
       - "19443:8443"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_nifi_conf:/opt/nifi/nifi-current/conf
       - sandbox_nifi_content_repository:/opt/nifi/nifi-current/content_repository
       - sandbox_nifi_database_repository:/opt/nifi/nifi-current/database_repository

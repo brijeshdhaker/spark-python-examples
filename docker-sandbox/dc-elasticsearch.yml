@@ -1,7 +1,7 @@
 #
 #
 #
-version: "3.5"
+version: "3.9"
 
 services:
   #
@@ -12,7 +12,9 @@ services:
     container_name: elasticsearch
     hostname: elasticsearch
     volumes:
-      - /apps/hostpath/sandbox3/elasticsearch/es00:/usr/share/elasticsearch/data
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - /apps/sandbox/elasticsearch/es00:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     environment:
@@ -27,9 +29,18 @@ services:
     container_name: kibana
     hostname: kibana
     volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - ./kibana.yml:/usr/share/kibana/config/kibana.yml
     ports:
       - 5601:5601
+
+#
+volumes:
+  sandbox_host_path:
+    external: true
+  sandbox_base_path:
+    external: true
 
 #
 networks:

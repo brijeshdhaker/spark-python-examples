@@ -15,6 +15,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
+      - sandbox_base_path:/apps/sandbox
       - sandbox_postgres_data:/var/lib/postgresql/data
       - sandbox_postgres_init:/docker-entrypoint-initdb.d
     environment:
@@ -34,6 +35,8 @@ services:
 
 #
 volumes:
+  sandbox_base_path:
+    external: true
   sandbox_postgres_data:
     external: true
   sandbox_postgres_conf:

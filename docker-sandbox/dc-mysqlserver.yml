@@ -16,6 +16,7 @@ services:
       - "3306:3306"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     env_file:
@@ -24,6 +25,8 @@ services:
 #
 volumes:
   sandbox_host_path:
+    external: true
+  sandbox_base_path:
     external: true
   sandbox_mysql_data:
     external: true

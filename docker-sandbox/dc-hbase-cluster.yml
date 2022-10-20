@@ -15,6 +15,7 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
       - sandbox_zookeeper_data:/var/lib/zookeeper/data
       - sandbox_zookeeper_log:/var/lib/zookeeper/log
@@ -39,6 +40,7 @@ services:
       - "16010:16010"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
   #
   hbase-region:
@@ -55,10 +57,13 @@ services:
       - "16030:16030"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
 
 #
 volumes:
   sandbox_host_path:
+    external: true
+  sandbox_base_path:
     external: true
   sandbox_zookeeper_secrets:
     external: true

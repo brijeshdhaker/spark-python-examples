@@ -15,6 +15,7 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
       - sandbox_zookeeper_data:/var/lib/zookeeper/data
       - sandbox_zookeeper_log:/var/lib/zookeeper/log
@@ -74,6 +75,7 @@ services:
       - "8081:8081"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_schema_registry_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
@@ -84,6 +86,8 @@ services:
 #
 volumes:
   sandbox_host_path:
+    external: true
+  sandbox_base_path:
     external: true
   sandbox_zookeeper_secrets:
     external: true

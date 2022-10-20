@@ -204,6 +204,8 @@ services:
 volumes:
   sandbox_host_path:
     external: true
+  sandbox_base_path:
+    external: true
   sandbox_zookeeper_secrets:
     external: true
   sandbox_zookeeper_data:
