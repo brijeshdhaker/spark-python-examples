@@ -16,7 +16,7 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_hadoop_data:/hadoop
+      - sandbox_hadoop_dfs_name:/hadoop/dfs/name
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
@@ -34,7 +34,7 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_hadoop_data:/hadoop
+      - sandbox_hadoop_dfs_data:/hadoop/dfs/data
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
@@ -86,7 +86,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     volumes:
-      - sandbox_hadoop_yarn_history:/tmp/yarn/history
+      - sandbox_yarn_history:/tmp/yarn/history
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     env_file:
@@ -211,7 +211,11 @@ volumes:
     external: true
   sandbox_hadoop_data:
     external: true
-  sandbox_hadoop_yarn_history:
+  sandbox_hadoop_dfs_name:
+    external: true
+  sandbox_hadoop_dfs_data:
+    external: true
+  sandbox_yarn_history:
     external: true
   sandbox_mysql_data:
     external: true
