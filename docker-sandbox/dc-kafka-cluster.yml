@@ -38,6 +38,7 @@ services:
       - "19092:19092"
     volumes:
       - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
       - sandbox_kafka_secrets:/etc/kafka/secrets
       - sandbox_kafka_data:/var/lib/kafka/data
     environment:
