@@ -16,11 +16,11 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_hadoop_data:/hadoop
+      - sandbox_hadoop_dfs_name:/hadoop/dfs/name
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
-      - CLUSTER_NAME=test
+      - CLUSTER_NAME=docker-sandbox
     env_file:
       - sandbox3.env
 
@@ -34,7 +34,7 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_hadoop_data:/hadoop
+      - sandbox_hadoop_dfs_data:/hadoop/dfs/data
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
@@ -171,7 +171,11 @@ volumes:
     external: true
   sandbox_hadoop_data:
     external: true
-  sandbox_hadoop_yarn_history:
+  sandbox_hadoop_dfs_name:
+    external: true
+  sandbox_hadoop_dfs_data:
+    external: true
+  sandbox_yarn_history:
     external: true
   sandbox_postgres:
     external: true
