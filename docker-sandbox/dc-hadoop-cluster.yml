@@ -162,6 +162,8 @@ services:
     hostname: spark-historyserver
     environment:
       SERVICE_PRECONDITION: "namenode:9870 datanode:9864"
+    env_file:
+      - sandbox3.env
     depends_on:
       - namenode
       - datanode
@@ -170,6 +172,7 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
+      - sandbox_hadoop:/opt/hadoop-3.2.1
 
 #
 # Zeppelin Notebook
