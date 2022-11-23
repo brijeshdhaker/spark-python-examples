@@ -207,6 +207,7 @@ services:
       - sandbox_hive:/opt/hive-3.1.2
       - sandbox_spark:/opt/spark
       - sandbox_zeppelin:/opt/zeppelin
+      - sandbox_zeppelin_notebook:/opt/notebook
 #      - sandbox_zeppelin_conf:/opt/zeppelin/conf
 #      - sandbox_m2:/opt/zeppelin/.m2
 #      - sandbox_ivy2:/opt/zeppelin/.ivy2
@@ -242,6 +243,8 @@ volumes:
   sandbox_zeppelin:
     external: true
   sandbox_zeppelin_conf:
+    external: true
+  sandbox_zeppelin_notebook:
     external: true
   sandbox_hadoop:
     external: true
