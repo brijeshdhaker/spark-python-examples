@@ -16,9 +16,15 @@ pyrsistent;python_version>"3.0"
 jsonschema
 requests
 faker
-requests
 mysql-connector-python
+
 #postgres connector
 psycopg2
+
 # Required for PySpark
 psutil
+
+#
+delta-spark==1.0.0
+quinn
+chispa

@@ -1,0 +1,29 @@
+#
+# conda env create -f mr-delta.yml
+#
+# conda activate mr-delta
+# pip install confluent-kafka avro-python3 fastavro==1.4.9 pycodestyle
+# pip install numpy pandas scipy grpcio protobuf pandasql ipython ipykernel
+# pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
+# pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
+
+#
+#
+#
+
+name: mr-delta
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - ipykernel
+  - nb_conda
+  - jupyterlab
+  - jupyterlab_code_formatter
+  - isort
+  - black
+  - pytest
+  - pip
+  - pip:
+    - delta-spark==1.0.0

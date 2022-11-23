@@ -39,9 +39,9 @@ export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*:$HIVE_HOME/lib/*
 #
 #### Setup Metastore Database
 #
-echo "CREATE DATABASE hive_store;" | psql -U postgres
-echo "CREATE USER hive_admin WITH PASSWORD 'hive_admin';" | psql -U postgres
-echo "GRANT ALL PRIVILEGES ON DATABASE hive_store TO hive_admin;" | psql -U postgres
+echo "CREATE DATABASE metastore;" | psql -U postgres
+echo "CREATE USER hiveadmin WITH PASSWORD 'hiveadmin';" | psql -U postgres
+echo "GRANT ALL PRIVILEGES ON DATABASE metastore TO hiveadmin;" | psql -U postgres
 
 #### Setup Hadoop Directories
 ```
@@ -237,6 +237,7 @@ create external table nation_s3_parquet (
 )
 STORED AS Parquet
 LOCATION  's3://qtest-qubole-com/datasets/presto/functional/nation_s3_orc'
+
 ```
 ### #ORC Tables : The Optimized Row Columnar (ORC) file format offers an efficient way for storing Hive data.
 ```

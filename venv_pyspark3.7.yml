@@ -5,8 +5,8 @@ channels:
 dependencies:
   - python=3.7
   - kafka-python
-  - python-confluent-kafka
-  - avro-python3=1.10.0
+  - confluent-kafka
+  - avro-python3
   - fastavro=1.4.9
   - pycodestyle
   - numpy
@@ -18,6 +18,7 @@ dependencies:
   - ipython
   - ipykernel
   - jupyter_client
+  - nb_conda
   - panel
   - pyyaml
   - seaborn
@@ -29,6 +30,7 @@ dependencies:
   - altair
   - vega_datasets
   - pyarrow
+  - pytest
   - r-base=3
   - r-data.table
   - r-evaluate
@@ -38,3 +40,8 @@ dependencies:
   - r-irkernel
   - r-shiny
   - r-googlevis
+  - pip
+  - pip:
+      - delta-spark==1.0.0
+      - quinn
+      - chispa

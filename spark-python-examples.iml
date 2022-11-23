@@ -5,7 +5,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/py" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <content url="jar:///opt/spark-3.1.2/python/lib/py4j-0.10.9-src.zip!/" />
+    <content url="jar:///opt/spark-3.1.2/python/lib/pyspark.zip!/" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (mr-delta)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

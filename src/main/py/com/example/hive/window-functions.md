@@ -1,5 +1,6 @@
 
 $HIVE_HOME/bin/beeline -u jdbc:hive2://hive-server.sandbox-bigdata.net:10000 scott tiger
+
 ```scala
 val dataset = Seq(
 ("Thin",       "cell phone", 6000),

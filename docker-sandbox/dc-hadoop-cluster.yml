@@ -5,8 +5,10 @@ version: "3.9"
 
 services:
 #
-# HDFS & YARN Sandbox
+# HDFS Sandbox
 #
+
+  #
   namenode:
     image: brijeshdhaker/hadoop-namenode:3.2.1
     container_name: namenode
@@ -41,6 +43,10 @@ services:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
       - sandbox3.env
+
+#
+# YARN Sandbox
+#
 
   #
   resourcemanager:
@@ -115,6 +121,8 @@ services:
 #
 # Hive Server
 #
+
+  #
   hive-metastore:
     image: brijeshdhaker/hive:3.1.2
     hostname: hive-metastore
@@ -154,8 +162,10 @@ services:
       - sandbox_base_path:/apps/sandbox
 
 #
+# Spark History Server
 #
-#
+
+  #
   spark-historyserver:
     image: brijeshdhaker/spark-historyserver:3.1.2
     container_name: spark-historyserver
@@ -177,6 +187,8 @@ services:
 #
 # Zeppelin Notebook
 #
+
+  #
   zeppelin:
     image: apache/zeppelin:0.10.1
     container_name: zeppelin
