@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-11-23 update configurations .">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -512,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669171071212</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="2022-11-23 update configurations .">
+      <created>1669222596835</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1669222596835</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="UnknownFeatures">
