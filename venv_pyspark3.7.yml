@@ -4,23 +4,25 @@ channels:
   - defaults
 dependencies:
   - python=3.7
+  - conda-pack
+  - nb_conda
   - kafka-python
-  - confluent-kafka
-  - avro-python3
   - fastavro=1.4.9
   - pycodestyle
-  - numpy
   - pandas
+  - pandasql
+  - numpy
   - scipy
   - grpcio
   - protobuf
-  - pandasql
   - ipython
   - ipykernel
+  - jupyterlab
+  - jupyterlab_code_formatter
   - jupyter_client
-  - nb_conda
   - panel
-  - pyyaml
+  - jellyfish
+  - matplotlib
   - seaborn
   - plotnine
   - hvplot
@@ -29,8 +31,12 @@ dependencies:
   - intake-xarray
   - altair
   - vega_datasets
+  - pyyaml
   - pyarrow
+  - pytz
   - pytest
+  - isort
+  - black
   - r-base=3
   - r-data.table
   - r-evaluate
@@ -40,8 +46,14 @@ dependencies:
   - r-irkernel
   - r-shiny
   - r-googlevis
+  - jsonschema
+  - requests
+  - faker
+  - mysql-connector-python
   - pip
   - pip:
       - delta-spark==1.0.0
       - quinn
       - chispa
+      - confluent-kafka[avro]==1.8.2
+      - avro==1.11.0

@@ -4,6 +4,9 @@
 wget https://repo.continuum.io/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh -O ~/Miniconda3-py38_4.10.3-Linux-x86_64.sh
 bash ~/Miniconda3-py38_4.10.3-Linux-x86_64.sh -b -p /opt/sandbox/conda
 
+#
+# Ubuntu 22.04
+#
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Miniconda3-latest-Linux-x86_64.sh
 bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
 
@@ -12,7 +15,13 @@ bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
 #
 export PATH=/opt/conda/bin:$PATH
 
-PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/mr-delta/bin/python;PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/mr-delta/bin/python
+PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
+PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
+
+conda config --set always_yes yes
+conda info -a
+conda install mamba -c conda-forge
+mamba env update -f venv_pyspark3.7.yml --prune
 
 #
 #### Create Conda Virtual Env 
@@ -42,6 +51,7 @@ conda install -c conda-forge grpcio protobuf pycodestyle numpy pandas scipy pand
 # 
 conda env create -f venv_pyspark3.7.yml
 sudo -E /opt/conda/bin/conda env create -f venv_pyspark3.7.yml
+sudo -E /opt/conda/bin/conda update -n base -c defaults conda
 
 conda env create -f mr-delta.yml
 
@@ -52,9 +62,14 @@ pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
 pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
 
 #
-# List Conda Virtual Env
+# List Conda Virtual Environments
 #
 conda env list
+
+#
+# List Conda Virtual Environments Libraries
+#
+conda list
 
 #
 #
@@ -72,6 +87,9 @@ pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
 pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
 
 
+conda env update --file local.yml --prune
+
+conda env update --name pyspark3.7 --file local.yml --prune
 #
 #### Export Virtual Env
 #
