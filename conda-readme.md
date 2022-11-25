@@ -34,11 +34,22 @@ conda create -y -n pyspark3.7 -c conda-forge pyarrow pandas conda-pack
 conda activate pyspark3.7
 conda pack -f -o pyspark3.7.tar.gz
 
+hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/
+
+hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /user/root
+
+hadoop fs -put pyspark_env.tar.gz /tmp
+
+# The python conda tar should be public accessible, so need to change permission here.
+hadoop fs -chmod 644 /tmp/pyspark_env.tar.gz
+
+
 
 conda create -y -n pyspark3.8 -c conda-forge pyarrow pandas conda-pack
 conda activate pyspark3.8
 conda pack -f -o pyspark3.8.tar.gz
 
+hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/
 
 #
 #### Install Package in Virtual Environment
