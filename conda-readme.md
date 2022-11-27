@@ -38,7 +38,7 @@ hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/
 
 hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /user/root
 
-hadoop fs -put pyspark_env.tar.gz /tmp
+hdfs dfs -put pyspark_env.tar.gz /tmp
 
 # The python conda tar should be public accessible, so need to change permission here.
 hadoop fs -chmod 644 /tmp/pyspark_env.tar.gz
