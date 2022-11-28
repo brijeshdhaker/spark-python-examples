@@ -11,7 +11,7 @@ spark = SparkSession \
     .appName("txn-json-stream") \
     .getOrCreate()
 
-spark.conf.set("spark.sql.streaming.checkpointLocation", "/home/brijeshdhaker/txn-json-stream/checkpoints/")
+spark.conf.set("spark.sql.streaming.checkpointLocation", "/user/brijeshdhaker/structured-json-stream/checkpoints/")
 spark.conf.set("spark.sql.shuffle.partitions", "1")
 spark.conf.set("spark.sql.hive.convertMetastoreParquet", "false")
 
