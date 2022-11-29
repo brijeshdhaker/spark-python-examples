@@ -20,7 +20,7 @@ services:
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
 
 #
 volumes:
