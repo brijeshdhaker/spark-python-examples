@@ -85,30 +85,6 @@ services:
       SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: INFO
 
   #
-  # Mysql Database Server
-  #
-  mysqlserver:
-    image: mysql/mysql-server:8.0.28
-    container_name: mysqlserver
-    hostname: mysqlserver
-    restart: always
-    ports:
-      - "3306:3306"
-    volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-      - sandbox_mysql_conf:/etc/mysql/conf.d
-      - sandbox_mysql_data:/var/lib/mysql
-    environment:
-      MYSQL_OPERATIONS_USER: operate
-      MYSQL_OPERATIONS_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_PASSWORD: p@SSW0rd
-      MYSQL_DATABASE: PUBLIC
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: p@SSW0rd
-      MYSQL_ROOT_HOST: 172.18.0.1
-
-  #
   # Cassandra Server
   #
   cassandra:
@@ -126,10 +102,12 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
 
   #
-  # HDFS & YARN Sandbox
+  # HDFS Sandbox
+  #
+
   #
   namenode:
-    image: brijeshdhaker/hadoop-namenode:3.2.1
+    image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode
     hostname: namenode
     restart: always
@@ -143,11 +121,11 @@ services:
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
 
   #
   datanode:
-    image: brijeshdhaker/hadoop-datanode:3.2.1
+    image: brijeshdhaker/hadoop-datanode:3.3.4
     container_name: datanode
     hostname: datanode
     ports:
@@ -161,11 +139,15 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
+
+  #
+  # YARN Sandbox
+  #
 
   #
   resourcemanager:
-    image: brijeshdhaker/hadoop-resourcemanager:3.2.1
+    image: brijeshdhaker/hadoop-resourcemanager:3.3.4
     container_name: resourcemanager
     hostname: resourcemanager
     restart: always
@@ -178,11 +160,11 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
 
   #
   nodemanager:
-    image: brijeshdhaker/hadoop-nodemanager:3.2.1
+    image: brijeshdhaker/hadoop-nodemanager:3.3.4
     container_name: nodemanager
     hostname: nodemanager
     restart: always
@@ -194,11 +176,11 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
 
   #
   historyserver:
-    image: brijeshdhaker/hadoop-historyserver:3.2.1
+    image: brijeshdhaker/hadoop-historyserver:3.3.4
     container_name: historyserver
     hostname: historyserver
     restart: always
@@ -211,38 +193,44 @@ services:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
+
+  #
+  # Mysql Database Server
+  #
+
+  #
+  mysqlserver:
+    image: mysql/mysql-server:8.0.28
+    container_name: mysqlserver
+    hostname: mysqlserver
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - sandbox_mysql_conf:/etc/mysql/conf.d
+      - sandbox_mysql_data:/var/lib/mysql
+    env_file:
+      - sandbox_3_3_4.env
 
   #
   # Hive Server
   #
-  hive-postgresql:
-    image: postgres:9.5.3
-    restart: always
-    hostname: hive-postgresql
-    container_name: hive-postgresql
-    ports:
-      - "5432:5432"
-    volumes:
-      - sandbox_postgres_data:/var/lib/postgresql/data
-      - sandbox_postgres_init:/docker-entrypoint-initdb.d
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pgadmin
+
   #
   hive-metastore:
     image: brijeshdhaker/hive:3.1.2
     hostname: hive-metastore
     container_name: hive-metastore
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
     command: /opt/hive-3.1.2/bin/hive --service metastore
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-postgresql:5432"
+      SERVICE_PRECONDITION: "mysqlserver:3306"
     links:
-      - hive-postgresql
+      - mysqlserver
     ports:
       - "9083:9083"
     volumes:
@@ -255,18 +243,21 @@ services:
     hostname: hive-server
     container_name: hive-server
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
     links:
       - hive-metastore
+      - namenode
+      - datanode
     environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:postgresql://hive-postgresql/metastore"
-      SERVICE_PRECONDITION: "hive-metastore:9083"
+      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:mysql://mysqlserver/metastore?createDatabaseIfNotExist=true;autoReconnect=true;useSSL=false"
+      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore:9083"
     ports:
       - "10000:10000"
       - "10002:10002"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
+
 
   #
   # Hbase Server
@@ -278,7 +269,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181"
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
     ports:
       - "16000:16000"
       - "16010:16010"
@@ -292,7 +283,7 @@ services:
     container_name: hbase-regionserver
     hostname: hbase-regionserver
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
     environment:
       HBASE_CONF_hbase_regionserver_hostname: hbase-region
       SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181 hbase-master:16010"
@@ -329,18 +320,18 @@ services:
     container_name: zeppelin
     hostname: zeppelin
     env_file:
-      - sandbox3.env
+      - sandbox_3_3_4.env
     ports:
       - "9080:8080"
       - "4040:4040"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client
       - sandbox_hive:/opt/hive-3.1.2
-      - sandbox_spark:/opt/spark
+      - sandbox_spark:/opt/spark-3.1.2
       - sandbox_zeppelin:/opt/zeppelin
 
   #

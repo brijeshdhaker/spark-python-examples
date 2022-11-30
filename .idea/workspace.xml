@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-11-25 Update venv_pyspark3.7.yml configurations .">
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-11-30 revert back to spark 3.1.2 version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conda-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/conda-readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox_3_2_1.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox_3_3_4.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox_3_3_4.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +54,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsDialog.application.dockerMachine&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -65,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker-sandbox" />
       <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\confluent" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\docker-sandbox" />
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\python" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\python" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
@@ -99,6 +104,40 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="docker-sandbox/dc-hadoop-cluster-334.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster-334.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-hadoop-cluster-334.yml.hive-server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="hive-server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster-334.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-hadoop-cluster-334.yml.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="spark-historyserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster-334.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -107,18 +146,15 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-sandbox-cluster.yml.schema-registry: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-kafka-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-sandbox/dc-kafka-cluster.yml" />
+          <option name="services">
+            <list>
+              <option value="schema-registry" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-sandbox-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -126,8 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-sandbox-cluster.yml.schema-registry: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster-334.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster-334.yml.spark-historyserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster-334.yml.hive-server: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -139,62 +177,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653622607980</updated>
-    </task>
-    <task id="LOCAL-00001" summary="2022-05-28 Update configuration as per windows os.">
-      <created>1653726386911</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1653726386911</updated>
-    </task>
-    <task id="LOCAL-00002" summary="2022-05-28 Update configuration as per windows os.">
-      <created>1653747903093</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1653747903093</updated>
-    </task>
-    <task id="LOCAL-00003" summary="2022-05-28 Update configuration as per windows os.">
-      <created>1653750726749</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1653750726749</updated>
-    </task>
-    <task id="LOCAL-00004" summary="2022-05-28 Update configuration as per windows os.">
-      <created>1653751290834</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1653751290834</updated>
-    </task>
-    <task id="LOCAL-00005" summary="2022-05-28 Add Transaction delimiter stream process.">
-      <created>1653839281297</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1653839281307</updated>
-    </task>
-    <task id="LOCAL-00006" summary="2022-05-31 Add Transaction delimiter stream process.">
-      <created>1653968045026</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1653968045026</updated>
-    </task>
-    <task id="LOCAL-00007" summary="2022-05-31 Add Transaction delimiter stream process.">
-      <created>1653968061184</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1653968061184</updated>
-    </task>
-    <task id="LOCAL-00008" summary="2022-05-31 Add Transaction delimiter stream process.">
-      <created>1653968134189</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1653968134189</updated>
     </task>
     <task id="LOCAL-00009" summary="2022-05-31 Add Transaction delimiter stream process.">
       <created>1653968150989</created>
@@ -476,7 +458,70 @@
       <option name="project" value="LOCAL" />
       <updated>1669338369089</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="2022-11-25 Update venv_pyspark3.7.yml configurations .">
+      <created>1669344675082</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669344675082</updated>
+    </task>
+    <task id="LOCAL-00050" summary="2022-11-27 Update cassandra image version .">
+      <created>1669524703748</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1669524703748</updated>
+    </task>
+    <task id="LOCAL-00051" summary="2022-11-29 Update cassandra image version .">
+      <created>1669679020467</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1669679020467</updated>
+    </task>
+    <task id="LOCAL-00052" summary="2022-11-29 Update cassandra image version .">
+      <created>1669741927409</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669741927409</updated>
+    </task>
+    <task id="LOCAL-00053" summary="2022-11-29 Update hadoop image version .">
+      <created>1669741950310</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1669741950310</updated>
+    </task>
+    <task id="LOCAL-00054" summary="2022-11-29 Update hadoop image version .">
+      <created>1669742011570</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742011570</updated>
+    </task>
+    <task id="LOCAL-00055" summary="2022-11-29 Update hadoop image version .">
+      <created>1669742064656</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1669742064656</updated>
+    </task>
+    <task id="LOCAL-00056" summary="2022-11-30 Add apache nifi docker yaml.">
+      <created>1669767484284</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1669767484284</updated>
+    </task>
+    <task id="LOCAL-00057" summary="2022-11-30 revert back to spark 3.1.2 version">
+      <created>1669767689869</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1669767689869</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -497,10 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022-05-28 Update configuration as per windows os." />
-    <MESSAGE value="2022-05-28 Add Transaction delimiter stream process." />
-    <MESSAGE value="2022-05-31 Add Transaction delimiter stream process." />
-    <MESSAGE value="2022-06-02 Update Pandas &amp; PyArrow Configuration." />
     <MESSAGE value="2022-06-06 Spark Stream Join &amp; Filter Example." />
     <MESSAGE value="2022-06-10 Update Volume For Mysql." />
     <MESSAGE value="2022-06-10 Update Kafka Python Examples." />
@@ -521,7 +562,12 @@
     <MESSAGE value="2022-09-20 update volume config in all compose.yml ." />
     <MESSAGE value="2022-11-23 update configurations ." />
     <MESSAGE value="2022-11-25 Update venv_pyspark3.7.yml configurations ." />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-11-25 Update venv_pyspark3.7.yml configurations ." />
+    <MESSAGE value="2022-11-27 Update cassandra image version ." />
+    <MESSAGE value="2022-11-29 Update cassandra image version ." />
+    <MESSAGE value="2022-11-29 Update hadoop image version ." />
+    <MESSAGE value="2022-11-30 Add apache nifi docker yaml." />
+    <MESSAGE value="2022-11-30 revert back to spark 3.1.2 version" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-11-30 revert back to spark 3.1.2 version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
