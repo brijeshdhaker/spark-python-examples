@@ -167,7 +167,7 @@ services:
 
   #
   spark-historyserver:
-    image: brijeshdhaker/spark-historyserver:3.3.1
+    image: brijeshdhaker/spark-historyserver:3.1.2
     container_name: spark-historyserver
     hostname: spark-historyserver
     environment:
@@ -180,7 +180,6 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
 
   #
   # Zeppelin Notebook
@@ -203,7 +202,7 @@ services:
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client
       - sandbox_hive:/opt/hive-3.1.2
-      - sandbox_spark:/opt/spark-3.3.1
+      - sandbox_spark:/opt/spark-3.1.2
       - sandbox_zeppelin:/opt/zeppelin
       - sandbox_zeppelin_notebook:/opt/notebook
 #      - sandbox_zeppelin_conf:/opt/zeppelin/conf
