@@ -1,0 +1,56 @@
+#
+#
+#
+version: "3.9"
+
+services:
+  #
+  # Apache NiFi
+  #
+  nififlow:
+    image: hortonworks/nifi:latest
+    container_name: nififlow
+    hostname: nififlow
+    restart: always
+    ports:
+      - "19090:8080"
+      - "19443:8443"
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - sandbox_nifi_conf:/opt/nifi/nifi-current/conf
+      - sandbox_nifi_content_repository:/opt/nifi/nifi-current/content_repository
+      - sandbox_nifi_database_repository:/opt/nifi/nifi-current/database_repository
+      - sandbox_nifi_flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
+      - sandbox_nifi_provenance_repository:/opt/nifi/nifi-current/provenance_repository
+      - sandbox_nifi_log:/opt/nifi/nifi-current/logs
+      - sandbox_nifi_state:/opt/nifi/nifi-current/state
+
+#
+volumes:
+  sandbox_host_path:
+    external: true
+  sandbox_base_path:
+    external: true
+  sandbox_nifi_conf:
+    external: true
+  sandbox_nifi_content_repository:
+    external: true
+  sandbox_nifi_database_repository:
+    external: true
+  sandbox_nifi_flowfile_repository:
+    external: true
+  sandbox_nifi_provenance_repository:
+    external: true
+  sandbox_nifi_log:
+    external: true
+  sandbox_nifi_state:
+    external: true
+
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net
