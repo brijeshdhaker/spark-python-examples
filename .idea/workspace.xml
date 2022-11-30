@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-11-30 revert back to spark 3.1.2 version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster3.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox3.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox_3_2_1.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox_3_3_4.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/sandbox_3_3_4.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/sandbox_3_2_1.env" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,13 +173,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653622607980</updated>
-    </task>
-    <task id="LOCAL-00009" summary="2022-05-31 Add Transaction delimiter stream process.">
-      <created>1653968150989</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1653968150989</updated>
     </task>
     <task id="LOCAL-00010" summary="2022-06-02 Update Pandas &amp; PyArrow Configuration.">
       <created>1654219513428</created>
@@ -521,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669767689869</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="2022-11-30 revert back to spark 3.1.2 version">
+      <created>1669768078937</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1669768078937</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="UnknownFeatures">
