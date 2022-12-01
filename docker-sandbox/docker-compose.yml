@@ -10,7 +10,7 @@ services:
 
   #
   namenode:
-    image: brijeshdhaker/hadoop-namenode:3.3.4
+    image: brijeshdhaker/hadoop-namenode:3.2.1
     container_name: namenode
     hostname: namenode
     restart: always
@@ -18,17 +18,17 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_hadoop_dfs_name:/hadoop/dfs/name
+      - sandbox_hadoop321_dfs_name:/hadoop/dfs/name
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   datanode:
-    image: brijeshdhaker/hadoop-datanode:3.3.4
+    image: brijeshdhaker/hadoop-datanode:3.2.1
     container_name: datanode
     hostname: datanode
     ports:
@@ -36,13 +36,13 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_hadoop_dfs_data:/hadoop/dfs/data
+      - sandbox_hadoop321_dfs_data:/hadoop/dfs/data
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   # YARN Sandbox
@@ -50,7 +50,7 @@ services:
 
   #
   resourcemanager:
-    image: brijeshdhaker/hadoop-resourcemanager:3.3.4
+    image: brijeshdhaker/hadoop-resourcemanager:3.2.1
     container_name: resourcemanager
     hostname: resourcemanager
     restart: always
@@ -63,11 +63,11 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   nodemanager:
-    image: brijeshdhaker/hadoop-nodemanager:3.3.4
+    image: brijeshdhaker/hadoop-nodemanager:3.2.1
     container_name: nodemanager
     hostname: nodemanager
     restart: always
@@ -79,11 +79,11 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   historyserver:
-    image: brijeshdhaker/hadoop-historyserver:3.3.4
+    image: brijeshdhaker/hadoop-historyserver:3.2.1
     container_name: historyserver
     hostname: historyserver
     restart: always
@@ -96,7 +96,7 @@ services:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   # Mysql Database Server
@@ -116,7 +116,7 @@ services:
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
 
   #
   # Hive Server
@@ -128,7 +128,7 @@ services:
     hostname: hive-metastore
     container_name: hive-metastore
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
     command: /opt/hive-3.1.2/bin/hive --service metastore
     environment:
       SERVICE_PRECONDITION: "mysqlserver:3306"
@@ -146,7 +146,7 @@ services:
     hostname: hive-server
     container_name: hive-server
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
     links:
       - hive-metastore
       - namenode
@@ -191,14 +191,14 @@ services:
     container_name: zeppelin
     hostname: zeppelin
     env_file:
-      - sandbox_3_3_4.env
+      - sandbox_3_2_1.env
     ports:
       - "9080:8080"
       - "4040:4040"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
+      - sandbox_hadoop_321:/opt/hadoop-3.2.1
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client
       - sandbox_hive:/opt/hive-3.1.2
@@ -221,9 +221,9 @@ volumes:
     external: true
   sandbox_hadoop_data:
     external: true
-  sandbox_hadoop_dfs_name:
+  sandbox_hadoop321_dfs_name:
     external: true
-  sandbox_hadoop_dfs_data:
+  sandbox_hadoop321_dfs_data:
     external: true
   sandbox_yarn_history:
     external: true
@@ -243,7 +243,7 @@ volumes:
     external: true
   sandbox_zeppelin_notebook:
     external: true
-  sandbox_hadoop:
+  sandbox_hadoop_321:
     external: true
   sandbox_hbase:
     external: true
