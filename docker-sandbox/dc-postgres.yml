@@ -22,7 +22,13 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
 #      PGDATA: /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      retries: 5
 
+#
+#
 #
   adminer:
     image: adminer
