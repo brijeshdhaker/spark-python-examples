@@ -1,7 +1,5 @@
 #
 import sys
-import com.example.utils.commons as commons
-
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
@@ -9,6 +7,11 @@ if __name__ == "__main__":
     if len(sys.argv) == 0:
         print("Usages: spark-file <in-path> <out-path>")
         sys.exit(-1)
+
+    def print_separator():
+        print(" " * 30)
+        print(" #" * 30)
+        print(" " * 30)
 
     def flatMapFun(x):
         l = []
@@ -39,23 +42,23 @@ if __name__ == "__main__":
     print("RDD-1 Record Count : %i " % (rdd_1.count()))
     print(rdd_1.collect())
 
-    commons.print_separator()
+    print_separator()
 
     rdd_2 = rdd_1.flatMap(flatMapFun, False)
     print("RDD-2 Partition Count : %i " % (rdd_2.getNumPartitions()))
     print("RDD-2 Record Count : %i " % (rdd_2.count()))
     print(rdd_2.collect())
 
-    commons.print_separator()
+    print_separator()
 
     rdd_3 = rdd_1.flatMap(lambda x: (x[0], x[0]**2, x[0]*10))
     print("RDD-2 Partition Count : %i " % (rdd_3.getNumPartitions()))
     print("RDD-2 Record Count : %i " % (rdd_3.count()))
     print(rdd_3.collect())
 
-    commons.print_separator()
+    print_separator()
 
-    print("Details available at http://localhost:4040")
+    # print("Details available at http://localhost:4040")
     # option = input("Do You Want to Kill Spark Job Process Y/N : ")
 
     spark.stop()

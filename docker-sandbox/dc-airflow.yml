@@ -1,43 +1,74 @@
+
+# Basic Airflow cluster configuration for CeleryExecutor with Redis and PostgreSQL.
 #
+# WARNING: This configuration is for local development. Do not use it in a production deployment.
 #
+# This configuration supports basic configuration using environment variables or an .env file
+# The following variables are supported:
 #
+# AIRFLOW_IMAGE_NAME           - Docker image name used to run Airflow.
+#                                Default: apache/airflow:2.4.3
+# AIRFLOW_UID                  - User ID in Airflow containers
+#                                Default: 50000
+# Those configurations are useful mostly in case of standalone testing/running Airflow in test/try-out mode
+#
+# _AIRFLOW_WWW_USER_USERNAME   - Username for the administrator account (if requested).
+#                                Default: airflow
+# _AIRFLOW_WWW_USER_PASSWORD   - Password for the administrator account (if requested).
+#                                Default: airflow
+# _PIP_ADDITIONAL_REQUIREMENTS - Additional PIP requirements to add when starting all containers.
+#                                Default: ''
+#
+# Feel free to modify this file to suit your needs.
+---
 version: '3.9'
-#
-#x-airflow-common:
-#  &airflow-common
-#  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.4.3}
-#  environment:
-#    &airflow-common-env
-#    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-#    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysqlserver:3306/airflow
-#    AIRFLOW__CORE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysqlserver:3306/airflow
-#    AIRFLOW__CELERY__RESULT_BACKEND: db+mysql://airflow:airflow@mysqlserver:3306/airflow
-#    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-#    AIRFLOW__CORE__FERNET_KEY: ''
-#    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-#    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
-#    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
-#    _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-#    AIRFLOW_UID: 50000
-#  volumes:
-#    - /apps/sandbox/airflow/dags:/opt/airflow/dags
-#    - /apps/sandbox/airflow/logs:/opt/airflow/logs
-#    - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-#  user: "${AIRFLOW_UID:-50000}:50000"
-#  depends_on:
-#    &airflow-common-depends-on
-#    redis-server:
-#      condition: service_healthy
-#
+x-airflow-common:
+  &airflow-common
+  # In order to add custom dependencies or upgrade provider packages you can use your extended image.
+  # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
+  # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
+  image: ${AIRFLOW_IMAGE_NAME:-brijeshdhaker/apache-airflow:2.5.0}
+  # build: .
+  env_file:
+    - ./docker_airflow.env
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysqlserver:3306/airflow
+    # For backward compatibility, with Airflow <2.3
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysqlserver:3306/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+mysql://airflow:airflow@mysqlserver:3306/airflow
+    AIRFLOW__CELERY__BROKER_URL: redis://:@redisserver:6379/0
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    _PIP_ADDITIONAL_REQUIREMENTS: ''
+  volumes:
+    - sandbox_airflow_dags:/opt/airflow/dags
+    - sandbox_airflow_logs:/opt/airflow/logs
+    - sandbox_airflow_plugins:/opt/airflow/plugins
+    - sandbox_host_path:/apps/hostpath
+    - sandbox_base_path:/apps/sandbox
+    - sandbox_hadoop:/opt/hadoop-3.3.4
+    - sandbox_hbase:/opt/hbase-2.4.9
+    - sandbox_hbase_client:/opt/hbase-client
+    - sandbox_hive:/opt/hive-3.1.2
+    - sandbox_spark:/opt/spark-3.1.2
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    &airflow-common-depends-on
+    redisserver:
+      condition: service_healthy
+    mysqlserver:
+      condition: service_healthy
 
 services:
-#
-#
-#
-  redis-server:
+
+  redisserver:
+    container_name: redisserver
+    hostname: redisserver
     image: redis:latest
-    container_name: redis-server
-    hostname: redis-server
     expose:
       - 6379
     healthcheck:
@@ -47,23 +78,40 @@ services:
       retries: 50
     restart: always
 
-#
-#
-#
+  #
+  # Mysql Database Server
+  #
+  mysqlserver:
+    image: mysql/mysql-server:8.0.28
+    container_name: mysqlserver
+    hostname: mysqlserver
+    restart: always
+    ports:
+      - "3306:3306"
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - sandbox_mysql_conf:/etc/mysql/conf.d
+      - sandbox_mysql_data:/var/lib/mysql
+    env_file:
+      - ./docker_airflow.env
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+
+
+  #
+  #
+  #
   airflow-webserver:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-webserver
     hostname: airflow-webserver
-    env_file:
-      - env_airflow.env
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     command: webserver
     ports:
-      - 8880:8080
+      - 8080:8080
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 10s
@@ -71,23 +119,14 @@ services:
       retries: 5
     restart: always
     depends_on:
-      redis-server:
-        condition: service_healthy
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
-#
-#
-#
   airflow-scheduler:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-scheduler
     hostname: airflow-scheduler
-    env_file:
-      - env_airflow.env
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     command: scheduler
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type SchedulerJob --hostname "$${HOSTNAME}"']
@@ -96,21 +135,14 @@ services:
       retries: 5
     restart: always
     depends_on:
-      redis-server:
-        condition: service_healthy
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
-#
-#
-#
   airflow-worker:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-worker
     hostname: airflow-worker
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     command: celery worker
     healthcheck:
       test:
@@ -119,31 +151,21 @@ services:
       interval: 10s
       timeout: 10s
       retries: 5
-    env_file:
-      - env_airflow.env
     environment:
+      <<: *airflow-common-env
       # Required to handle warm shutdown of the celery workers properly
       # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
     restart: always
     depends_on:
-      redis-server:
-        condition: service_healthy
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
-#
-#
-#
   airflow-triggerer:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-triggerer
     hostname: airflow-triggerer
-    env_file:
-      - env_airflow.env
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     command: triggerer
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
@@ -152,14 +174,14 @@ services:
       retries: 5
     restart: always
     depends_on:
-      redis-server:
-        condition: service_healthy
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
   airflow-init:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-init
     hostname: airflow-init
-    user: "0:0"
     entrypoint: /bin/bash
     # yamllint disable rule:line-length
     command:
@@ -222,37 +244,28 @@ services:
           echo
         fi
         mkdir -p /sources/logs /sources/dags /sources/plugins
-        chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
+        # chown -R "${AIRFLOW_UID}:0" /sources/{logs,dags,plugins}
         exec /entrypoint airflow version
     # yamllint enable rule:line-length
-    env_file:
-      - env_airflow.env
     environment:
+      <<: *airflow-common-env
       _AIRFLOW_DB_UPGRADE: 'true'
       _AIRFLOW_WWW_USER_CREATE: 'true'
-      _AIRFLOW_WWW_USER_USERNAME: 'airflow'
-      _AIRFLOW_WWW_USER_PASSWORD: 'airflow'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
+    user: "0:0"
     volumes:
-      - /apps/sandbox/airflow/sources:/sources
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
+      - sandbox_airflow_sources:/sources
 
   airflow-cli:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: airflow-cli
     hostname: airflow-cli
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     profiles:
       - debug
-    env_file:
-      - env_airflow.env
     environment:
+      <<: *airflow-common-env
       CONNECTION_CHECK_MAX_COUNT: "0"
     # Workaround for entrypoint issue. See: https://github.com/apache/airflow/issues/16252
     command:
@@ -264,16 +277,9 @@ services:
   # or by explicitly targeted on the command line e.g. docker-compose up flower.
   # See: https://docs.docker.com/compose/profiles/
   flower:
-    image: apache/airflow:2.4.3
+    <<: *airflow-common
     container_name: flower
     hostname: flower
-    env_file:
-      - env_airflow.env
-    volumes:
-      - /apps/sandbox/airflow/dags:/opt/airflow/dags
-      - /apps/sandbox/airflow/logs:/opt/airflow/logs
-      - /apps/sandbox/airflow/plugins:/opt/airflow/plugins
-    user: "0:0"
     command: celery flower
     profiles:
       - flower
@@ -286,11 +292,38 @@ services:
       retries: 5
     restart: always
     depends_on:
-      redis-server:
-        condition: service_healthy
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
 
+#
 volumes:
-  postgres-db-volume:
+  sandbox_host_path:
+    external: true
+  sandbox_base_path:
+    external: true
+  sandbox_airflow_sources:
+    external: true
+  sandbox_airflow_dags:
+    external: true
+  sandbox_airflow_logs:
+    external: true
+  sandbox_airflow_plugins:
+    external: true
+  sandbox_mysql_data:
+    external: true
+  sandbox_mysql_conf:
+    external: true
+  sandbox_hadoop:
+    external: true
+  sandbox_hbase:
+    external: true
+  sandbox_hbase_client:
+    external: true
+  sandbox_hive:
+    external: true
+  sandbox_spark:
+    external: true
 
 #
 networks:

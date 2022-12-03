@@ -36,7 +36,10 @@ $SPARK_HOME/bin/spark-submit \
 
 
 
-spark-submit --name "sstreaming-spark-final" --master local[4] --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py
+spark-submit --name "sstreaming-spark-final" \
+--master local[4] \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
+src/main/py/com/example/streams/pipeline/sstreaming-spark-final.py
 
 
 '''

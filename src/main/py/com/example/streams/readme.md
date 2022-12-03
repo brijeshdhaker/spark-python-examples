@@ -11,28 +11,29 @@ Let's quickly visualize how the data will flow:
 
 #
 ```shell
-##### Topic - Creation
 
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic tweeter-tweets
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
+# Topic - Creation
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic tweeter-tweets --if-not-exists
 
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
-kafka-topics --create --zookeeper zookeeper.sandbox-bigdata.net:2181 --partitions 1 --replication-factor 1 --topic txn-delimiter-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
+
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-delimiter-stream-topic
 
 ##### Topic - List
-kafka-topics --list --zookeeper zookeeper.sandbox-bigdata.net:2181
+kafka-topics --list --bootstrap-server kafka-broker:9092
 
 ##### Topic - Describe
-kafka-topics --describe --topic tweeter-tweets --zookeeper zookeeper.sandbox-bigdata.net:2181
+kafka-topics --describe --topic tweeter-tweets --bootstrap-server kafka-broker:9092
 
 ##### Topic - Alter
 kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server zookeeper.sandbox-bigdata.net:2181
 
 ##### Topic - Delete
-kafka-topics --delete --topic tweeter-tweets --zookeeper zookeeper.sandbox-bigdata.net:2181
+kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker:9092
 kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker.sandbox-bigdata.net:9092
 
 ##### Command Line Producer :
