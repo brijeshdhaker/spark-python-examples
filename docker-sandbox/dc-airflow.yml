@@ -30,7 +30,7 @@ x-airflow-common:
   image: ${AIRFLOW_IMAGE_NAME:-brijeshdhaker/apache-airflow:2.5.0}
   # build: .
   env_file:
-    - ./docker_airflow.env
+    - ./envs/docker_airflow.env
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
