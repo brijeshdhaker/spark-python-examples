@@ -21,7 +21,12 @@ services:
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_mysql.env
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=p@SSW0rd --execute \"SHOW DATABASES;\""
+      # test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
 
 #
 volumes:

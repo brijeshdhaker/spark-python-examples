@@ -8,7 +8,7 @@ services:
   # HDFS & YARN Sandbox
   #
   namenode:
-    image: brijeshdhaker/hadoop-namenode:3.3.4
+    image: brijeshdhaker/hadoop-namenode:3.2.1
     container_name: namenode
     hostname: namenode
     restart: always
@@ -22,11 +22,11 @@ services:
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_hadoop.env
 
   #
   datanode:
-    image: brijeshdhaker/hadoop-datanode:3.3.4
+    image: brijeshdhaker/hadoop-datanode:3.2.1
     container_name: datanode
     hostname: datanode
     ports:
@@ -40,7 +40,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_hadoop.env
 
   #
   spark-master:
@@ -51,11 +51,11 @@ services:
       - "7077:7077"
       - "8080:8080"
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_spark.env
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
+      - sandbox_hadoop:/opt/hadoop-3.2.1
       - sandbox_hive:/opt/hive-3.1.2
     environment:
       WEBUI_PORT: 8080
@@ -70,11 +70,11 @@ services:
     depends_on:
       - spark-master
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_spark.env
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
+      - sandbox_hadoop:/opt/hadoop-3.2.1
       - sandbox_hive:/opt/hive-3.1.2
     environment:
       WORKER_WEBUI_PORT: 8081
@@ -89,11 +89,11 @@ services:
     depends_on:
       - spark-master
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_spark.env
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
+      - sandbox_hadoop:/opt/hadoop-3.2.1
       - sandbox_hive:/opt/hive-3.1.2
     environment:
       WORKER_WEBUI_PORT: 8082
@@ -124,14 +124,14 @@ services:
     container_name: zeppelin
     hostname: zeppelin
     env_file:
-      - sandbox_3_3_4.env
+      - envs/docker_zeppelin.env
     ports:
       - "9080:8080"
       - "4040:4040"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
+      - sandbox_hadoop:/opt/hadoop-3.2.1
       - sandbox_hive:/opt/hive-3.1.2
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client

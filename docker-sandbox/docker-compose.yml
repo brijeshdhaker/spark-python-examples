@@ -24,7 +24,7 @@ services:
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hadoop.env
 
   #
   datanode:
@@ -42,7 +42,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hadoop.env
 
   #
   # YARN Sandbox
@@ -63,7 +63,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hadoop.env
 
   #
   nodemanager:
@@ -79,7 +79,7 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hadoop.env
 
   #
   historyserver:
@@ -96,7 +96,7 @@ services:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hadoop.env
 
   #
   # Mysql Database Server
@@ -116,7 +116,12 @@ services:
       - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_mysql.env
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=p@SSW0rd --execute \"SHOW DATABASES;\""
+      # test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
 
   #
   # Hive Server
@@ -128,7 +133,7 @@ services:
     hostname: hive-metastore
     container_name: hive-metastore
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hive.env
     command: /opt/hive-3.1.2/bin/hive --service metastore
     environment:
       SERVICE_PRECONDITION: "mysqlserver:3306"
@@ -139,14 +144,16 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-
+    depends_on:
+      mysqlserver:
+        condition: service_healthy
   #
   hive-server:
     image: brijeshdhaker/hive:3.1.2
     hostname: hive-server
     container_name: hive-server
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_hive.env
     links:
       - hive-metastore
       - namenode
@@ -191,7 +198,7 @@ services:
     container_name: zeppelin
     hostname: zeppelin
     env_file:
-      - sandbox_3_2_1.env
+      - envs/docker_zeppelin.env
     ports:
       - "9080:8080"
       - "4040:4040"
