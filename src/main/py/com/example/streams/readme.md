@@ -17,7 +17,7 @@ kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --repl
 
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic
+kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic --if-not-exists
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
@@ -126,7 +126,13 @@ spark-submit \
 --name "structured-kafka-stream" \
 --master local[4] \
 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
-/home/brijeshdhaker/IdeaProjects/spark-bigdata-examples/pyspark-examples/src/main/py/com/example/streams/structured/structured-kafka-stream.py
+/home/brijeshdhaker/IdeaProjects/pyspark-examples/src/main/py/com/example/streams/structured/structured-kafka-stream.py
+
+spark-submit \
+--name "structured-kafka-stream" \
+--master yarn \
+--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.2 \
+/home/brijeshdhaker/IdeaProjects/pyspark-examples/src/main/py/com/example/streams/structured/structured-kafka-stream.py
 
 
 spark-submit ^
