@@ -8,7 +8,7 @@ services:
   # HDFS & YARN Sandbox
   #
   namenode:
-    image: brijeshdhaker/hadoop-namenode:3.2.1
+    image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode
     hostname: namenode
     restart: always
@@ -26,7 +26,7 @@ services:
 
   #
   datanode:
-    image: brijeshdhaker/hadoop-datanode:3.2.1
+    image: brijeshdhaker/hadoop-datanode:3.3.4
     container_name: datanode
     hostname: datanode
     ports:
@@ -43,70 +43,86 @@ services:
       - envs/docker_hadoop.env
 
   #
+  #
+  #
   spark-master:
-    image: brijeshdhaker/spark-master:3.1.2
+    image: brijeshdhaker/spark:3.3.1
     container_name: spark-master
     hostname: spark-master
     ports:
       - "7077:7077"
       - "8080:8080"
-    env_file:
-      - envs/docker_spark.env
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
     environment:
-      WEBUI_PORT: 8080
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+      - WEBUI_PORT= 8080
 
-  ##
-  spark-worker01:
-    image: brijeshdhaker/spark-worker:3.1.2
-    container_name: spark-worker01
-    hostname: spark-worker01
+  #
+  #
+  #
+  spark-worker-a:
+    image: brijeshdhaker/spark:3.3.1
+    container_name: spark-worker-a
+    hostname: spark-worker-a
     ports:
       - "8081:8081"
     depends_on:
       - spark-master
-    env_file:
-      - envs/docker_spark.env
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+      - SPARK_WORKER_WEBUI_PORT=8081
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
-    environment:
-      WORKER_WEBUI_PORT: 8081
 
   #
-  spark-worker02:
-    image: brijeshdhaker/spark-worker:3.1.2
-    container_name: spark-worker02
-    hostname: spark-worker02
+  #
+  #
+  spark-worker-b:
+    image: brijeshdhaker/spark:3.3.1
+    container_name: spark-worker-b
+    hostname: spark-worker-b
     ports:
       - "8082:8082"
     depends_on:
       - spark-master
-    env_file:
-      - envs/docker_spark.env
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-b
+      - SPARK_WORKER_WEBUI_PORT=8082
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
-    environment:
-      WORKER_WEBUI_PORT: 8082
 
   #
   #
   #
   spark-historyserver:
-    image: brijeshdhaker/spark-historyserver:3.1.2
+    image: brijeshdhaker/spark:3.3.1
     container_name: spark-historyserver
     hostname: spark-historyserver
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864"
+      SPARK_WORKLOAD: HistoryServer
     depends_on:
       - namenode
       - datanode
@@ -131,7 +147,7 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.2.1
+      - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
       - sandbox_hbase:/opt/hbase-2.4.9
       - sandbox_hbase_client:/opt/hbase-client
@@ -146,10 +162,6 @@ volumes:
     external: true
   sandbox_base_path:
     external: true
-  sandbox_m2:
-    external: true
-  sandbox_ivy2:
-    external: true
   sandbox_hadoop_data:
     external: true
   sandbox_hadoop_dfs_name:
@@ -157,8 +169,6 @@ volumes:
   sandbox_hadoop_dfs_data:
     external: true
   sandbox_yarn_history:
-    external: true
-  sandbox_postgres:
     external: true
   sandbox_zeppelin:
     external: true
