@@ -42,7 +42,7 @@ services:
       - sandbox_kafka_secrets:/etc/kafka/secrets
       - sandbox_kafka_data:/var/lib/kafka/data
     environment:
-      KAFKA_BROKER_ID: 0
+      KAFKA_BROKER_ID: 100
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_LISTENERS: INTERNAL://kafka-broker:19092,EXTERNAL://0.0.0.0:9092
