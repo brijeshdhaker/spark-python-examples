@@ -2,6 +2,9 @@
 docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
 
 # Topic - Creation
+
+docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker
+
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic kafka-python-simple-topic --if-not-exists
 
 kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 4 --replication-factor 1 --topic kafka-python-partitioned-topic
@@ -183,8 +186,11 @@ docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker kafka-consumer-group
 kafka-consumer-groups --describe --bootstrap-server localhost:9092 --group test-taxi-rides-cg 
 kafka-consumer-groups --bootstrap-server kafka-broker:9092 --list 
 
-#### Reset Offset ``
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --to-earliest --all-topics --execute
+#### Delete Offset 
+kafka-consumer-groups --bootstrap-server kafka-broker:9092 --delete --group group_name
+
+#### Reset Offset 
+kafka-consumer-groups --bootstrap-server kafka-broker:9092 --reset-offsets --to-earliest --all-topics --execute --group test-taxi-rides-cg
 
 ##### --shift-by :- Reset the offset by incrementing the current offset position by take both +ve or -ve number
 kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --shift-by 10 --topic sales_topic --execute

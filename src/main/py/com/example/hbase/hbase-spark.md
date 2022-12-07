@@ -101,8 +101,8 @@ TBLPROPERTIES (
 ```
 ### 1.2 Query Hive table from Spark using the SQLContext or Spark session:
 ```
-
-spark-shell --jars file:///opt/sandbox/hive-2.3.9/lib/hive-hbase-handler-2.3.9.jar
+spark-shell --jars file:///opt/hive-3.1.2/lib/hive-hbase-handler-3.1.2.jar
+spark-shell --jars file:///opt/hive-2.3.9/lib/hive-hbase-handler-2.3.9.jar
 
 spark.table("default.books_ext").show()
 
@@ -157,8 +157,8 @@ Note : The last point means that accessing HBase from Spark through Hive is only
 ```
 
 spark-shell --jars /home/brijeshdhaker/IdeaProjects/hbase-connectors/spark/hbase-spark/target/hbase-spark-1.0.1-SNAPSHOT.jar
-export HBASE_CLASSPATH=$HBASE_CONN_PATH/hbase-spark-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-it-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-protocol-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-protocol-shaded-1.0.1_2.11-2.4.8.jar
 export HBASE_CONN_PATH=/opt/sandbox/spark-2.4.8/hbase
+export HBASE_CLASSPATH=$HBASE_CONN_PATH/hbase-spark-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-it-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-protocol-1.0.1_2.11-2.4.8.jar:$HBASE_CONN_PATH/hbase-spark-protocol-shaded-1.0.1_2.11-2.4.8.jar
 spark-shell --jars $HBASE_CONN_PATH/hbase-spark-1.0.1_2.11-2.4.8.jar,$HBASE_CONN_PATH/hbase-spark-it-1.0.1_2.11-2.4.8.jar,$HBASE_CONN_PATH/hbase-spark-protocol-1.0.1_2.11-2.4.8.jar,$HBASE_CONN_PATH/hbase-spark-protocol-shaded-1.0.1_2.11-2.4.8.jar
 
 ```

@@ -34,7 +34,13 @@ catalog = json.dumps(catalogDict)
 # Writing
 bookname = "Book-"+str(uuid4())
 
-books = [(bookname+"1", 'Brijesh K', '2011', '190'), (bookname+"2", 'Neeta K', '2012', '90'), (bookname+"3", 'Tejas K', '2012', '08'), (bookname+"4", 'Keshvi D.', '2012', '909'), (bookname+"5", 'Tulsidaas', '1212', '199990')]
+books = [(bookname+"1", 'Brijesh K', '2011', '190'),
+         (bookname+"2", 'Neeta K', '2012', '90'),
+         (bookname+"3", 'Tejas K', '2012', '08'),
+         (bookname+"4", 'Keshvi D.', '2012', '909'),
+         (bookname+"5", 'Tulsidaas', '1212', '199990')
+         ]
+
 bookRDD = spark.sparkContext.parallelize(books)
 booksDF = spark.createDataFrame(bookRDD, schema=["title", "author", "year", "views"])
 
