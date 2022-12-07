@@ -1,0 +1,36 @@
+name: venv_zeppelin
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - pycodestyle
+  - numpy
+  - pandas
+  - scipy
+  - grpcio
+  - protobuf
+  - pandasql
+  - ipython
+  - ipykernel
+  - jupyter_client
+  - panel
+  - pyyaml
+  - seaborn
+  - plotnine
+  - hvplot
+  - intake
+  - intake-parquet
+  - intake-xarray
+  - altair
+  - vega_datasets
+  - pyarrow
+  - r-base=3
+  - r-data.table
+  - r-evaluate
+  - r-base64enc
+  - r-knitr
+  - r-ggplot2
+  - r-irkernel
+  - r-shiny
+  - r-googlevis
