@@ -1,26 +1,22 @@
 #
 #### Install Conda
 #
-wget https://repo.continuum.io/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh -O ~/Miniconda3-py38_4.10.3-Linux-x86_64.sh
-bash ~/Miniconda3-py38_4.10.3-Linux-x86_64.sh -b -p /opt/sandbox/conda
 
-#
-# Ubuntu 22.04
-#
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Miniconda3-latest-Linux-x86_64.sh
-bash ~/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
+sudo bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
+conda config --set always_yes yes
+conda info -a
+sudo -E /opt/conda/bin/conda update -n base -c defaults conda
+sudo -E /opt/conda/bin/conda install mamba -c conda-forge
+
+export PATH=/opt/conda/bin:$PATH
+PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
+PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
 
 #
 #### Path entry for conda package manager
 #
-export PATH=/opt/conda/bin:$PATH
 
-PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
-PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
-
-conda config --set always_yes yes
-conda info -a
-conda install mamba -c conda-forge
 mamba env update -f venv_pyspark3.7.yml --prune
 
 #
@@ -97,7 +93,9 @@ pip install numpy pandas scipy grpcio protobuf pandasql ipython ipykernel
 pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
 pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
 
-
+#
+#
+#
 conda env update --file local.yml --prune
 
 conda env update --name pyspark3.7 --file local.yml --prune

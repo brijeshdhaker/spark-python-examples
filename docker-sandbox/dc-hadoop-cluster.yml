@@ -7,8 +7,6 @@ services:
   #
   # HDFS Sandbox
   #
-
-  #
   namenode:
     image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode
@@ -47,8 +45,6 @@ services:
   #
   # YARN Sandbox
   #
-
-  #
   resourcemanager:
     image: brijeshdhaker/hadoop-resourcemanager:3.3.4
     container_name: resourcemanager
@@ -82,6 +78,8 @@ services:
       - envs/docker_hadoop.env
 
   #
+  # YARN History Server
+  #
   historyserver:
     image: brijeshdhaker/hadoop-historyserver:3.3.4
     container_name: historyserver
@@ -101,8 +99,6 @@ services:
   #
   # Mysql Database Server
   #
-
-  #
   mysqlserver:
     image: mysql/mysql-server:8.0.28
     container_name: mysqlserver
@@ -120,8 +116,6 @@ services:
 
   #
   # Hive Server
-  #
-
   #
   hive-metastore:
     image: brijeshdhaker/hive:3.1.2-3.3.4
@@ -164,8 +158,6 @@ services:
   #
   # Spark History Server
   #
-
-  #
   spark-historyserver:
     image: brijeshdhaker/spark:3.3.1
     container_name: spark-historyserver
@@ -183,8 +175,6 @@ services:
 
   #
   # Zeppelin Notebook
-  #
-
   #
   zeppelin:
     image: apache/zeppelin:0.10.1
