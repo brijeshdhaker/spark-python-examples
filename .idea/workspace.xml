@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-12-05 Update Docker Configurations" />
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-12-08 Update Docker Configurations">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mr-delta.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mr-delta.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,10 +51,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/airflow/dags&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
   <component name="PyConsoleOptionsProvider">
@@ -75,7 +79,7 @@
       <recent name="C:\Users\brije\IdeaProjects\spark-python-examples" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-sandbox/dc-hbase-cluster.yml: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,40 +111,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="fake_transaction_stream" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="spark-python-examples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/streams/structured" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/streams/structured/fake_transaction_stream.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
+        </settings>
       </deployment>
       <method v="2" />
     </configuration>
@@ -152,54 +133,47 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hbase-master: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="namenode" />
+              <option value="hbase-master" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.zeppelin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="zeppelin" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
           <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment" />
-      <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml: Compose Deployment" />
-      <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.zeppelin: Compose Deployment" />
-      <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" />
-      <item itemvalue="Python.fake_transaction_stream" />
-    </list>
+    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="hbase-region" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox/dc-kafka-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-sandbox/dc-kafka-cluster.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)" />
         <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.zeppelin: Compose Deployment" />
-        <item itemvalue="Python.fake_transaction_stream" />
+        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-master: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -211,13 +185,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653622607980</updated>
-    </task>
-    <task id="LOCAL-00022" summary="2022-06-22 Update zeppline version in docker compose.">
-      <created>1655855412304</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1655855412304</updated>
     </task>
     <task id="LOCAL-00023" summary="2022-06-24 Update docker compose for cluster setup.">
       <created>1656039736939</created>
@@ -555,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670416284127</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="2022-12-08 Update Docker Configurations">
+      <created>1670462537361</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1670462537361</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -576,7 +550,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022-06-14 Update Kafka Python Examples." />
     <MESSAGE value="2022-06-20 Update Kafka Python Partitioner Examples." />
     <MESSAGE value="2022-06-22 Update zeppline version in docker compose." />
     <MESSAGE value="2022-06-24 Update docker compose for cluster setup." />
@@ -601,18 +574,8 @@
     <MESSAGE value="2022-12-03 Add Airflow Docker Support" />
     <MESSAGE value="2022-12-04 Update Docker Configurations" />
     <MESSAGE value="2022-12-05 Update Docker Configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-12-05 Update Docker Configurations" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/main/py/com/example/core/rdd/map-partitions-with-index.py</url>
-          <line>1</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="2022-12-08 Update Docker Configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="2022-12-08 Update Docker Configurations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
