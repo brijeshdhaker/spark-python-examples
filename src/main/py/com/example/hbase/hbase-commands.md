@@ -1,14 +1,24 @@
 
-### 1.
+#
+# Create Table
+# 
 create 'test_table', 'cf'
-### 2.
+
+#
+# Add Data
+# 
 put 'test_table', 'row1', 'cf:a', 'value-A'
 put 'test_table', 'row2', 'cf:b', 'value-B'
 put 'test_table', 'row3', 'cf:c', 'value-C'
 
+#
+# Delete Record
+#
 deleteall 'emp', '1'
 
-### 3.
+#
+# List Tables
+# 
 list 
 
 ### 4.

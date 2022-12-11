@@ -28,54 +28,54 @@ hbase(main):003:0>
 ```commandline
 
 put 'transaction_detail_hbase_tbl','1','txn_data:uuid','f5933a1b-7e40-46ec-a512-b69f3355a3bc'
-put 'transaction_detail_hbase_tbl','1','txn_data:amount', 50.85
+put 'transaction_detail_hbase_tbl','1','txn_data:amount','50.85'
 put 'transaction_detail_hbase_tbl','1','txn_data:cardtype','MasterCard'
 put 'transaction_detail_hbase_tbl','1','txn_data:website','www.ebay.com'
 put 'transaction_detail_hbase_tbl','1','txn_data:product','Laptop'
 put 'transaction_detail_hbase_tbl','1','cust_data:city','Mumbai'
 put 'transaction_detail_hbase_tbl','1','cust_data:country','India'
-put 'transaction_detail_hbase_tbl','1','txn_data:addts', 1670229342
+put 'transaction_detail_hbase_tbl','1','txn_data:addts','1670229342'
 put 'transaction_detail_hbase_tbl','1','txn_data:txn_receive_date','2022-12-05'
 
 
 put 'transaction_detail_hbase_tbl','2','txn_data:uuid','d8bc8036-dd5a-4866-a7c0-25b01aa466b1'
-put 'transaction_detail_hbase_tbl','2','txn_data:amount',259.12
+put 'transaction_detail_hbase_tbl','2','txn_data:amount','259.12'
 put 'transaction_detail_hbase_tbl','2','txn_data:cardtype','MasterCard'
 put 'transaction_detail_hbase_tbl','2','txn_data:website','www.amazon.com'
 put 'transaction_detail_hbase_tbl','2','txn_data:product','Wrist Band'
 put 'transaction_detail_hbase_tbl','2','cust_data:city','Pune'
 put 'transaction_detail_hbase_tbl','2','cust_data:country','India'
-put 'transaction_detail_hbase_tbl','2','txn_data:addts', 1670229344
+put 'transaction_detail_hbase_tbl','2','txn_data:addts','1670229344'
 put 'transaction_detail_hbase_tbl','2','txn_data:txn_receive_date','2022-12-05'
 
 put 'transaction_detail_hbase_tbl','3','txn_data:uuid','8fa465b4-90ed-4729-b4c3-f1991257d00c'
-put 'transaction_detail_hbase_tbl','3','txn_data:amount', 328.16
+put 'transaction_detail_hbase_tbl','3','txn_data:amount','328.16'
 put 'transaction_detail_hbase_tbl','3','txn_data:cardtype','MasterCard'
 put 'transaction_detail_hbase_tbl','3','txn_data:website','www.flipkart.com'
 put 'transaction_detail_hbase_tbl','3','txn_data:product','TV Stand'
 put 'transaction_detail_hbase_tbl','3','cust_data:city','New York City'
 put 'transaction_detail_hbase_tbl','3','cust_data:country','United States'
-put 'transaction_detail_hbase_tbl','3','txn_data:addts', 1670229346
+put 'transaction_detail_hbase_tbl','3','txn_data:addts','1670229346'
 put 'transaction_detail_hbase_tbl','3','txn_data:txn_receive_date','2022-12-05'
 
 put 'transaction_detail_hbase_tbl','4','txn_data:uuid','55bd7efe-2396-44d9-a132-6b707f1839a7'
-put 'transaction_detail_hbase_tbl','4','txn_data:amount',399.06
+put 'transaction_detail_hbase_tbl','4','txn_data:amount','399.06'
 put 'transaction_detail_hbase_tbl','4','txn_data:cardtype','Visa'
 put 'transaction_detail_hbase_tbl','4','txn_data:website','www.snapdeal.com'
 put 'transaction_detail_hbase_tbl','4','txn_data:product','TV Stand'
 put 'transaction_detail_hbase_tbl','4','cust_data:city','New Delhi'
 put 'transaction_detail_hbase_tbl','4','cust_data:country','India'
-put 'transaction_detail_hbase_tbl','4','txn_data:addts',1670229348
+put 'transaction_detail_hbase_tbl','4','txn_data:addts','1670229348'
 put 'transaction_detail_hbase_tbl','4','txn_data:txn_receive_date','2022-12-05'
 
 put 'transaction_detail_hbase_tbl','5','txn_data:uuid','65ff481a-fdb3-4135-9cfc-bede42984252'
-put 'transaction_detail_hbase_tbl','5','txn_data:amount',194.52
+put 'transaction_detail_hbase_tbl','5','txn_data:amount','194.52'
 put 'transaction_detail_hbase_tbl','5','txn_data:cardtype','Visa'
 put 'transaction_detail_hbase_tbl','5','txn_data:website','www.ebay.com'
 put 'transaction_detail_hbase_tbl','5','txn_data:product','External Hard Drive'
 put 'transaction_detail_hbase_tbl','5','cust_data:city','Rome'
 put 'transaction_detail_hbase_tbl','5','cust_data:country','Italy'
-put 'transaction_detail_hbase_tbl','5','txn_data:addts',1670229350
+put 'transaction_detail_hbase_tbl','5','txn_data:addts','1670229350'
 put 'transaction_detail_hbase_tbl','5','txn_data:txn_receive_date','2022-12-05'
 
 ```
@@ -83,21 +83,21 @@ put 'transaction_detail_hbase_tbl','5','txn_data:txn_receive_date','2022-12-05'
 ### Step 3: Create Hive table pointing to HBase table using HBaseStorageHandler
 ```commandline
 
-$ beeline -u jdbc:hive2://quickstart-bigdata:10000 scott tiger
-0: jdbc:hive2://quickstart-bigdata:10000> 
+$ beeline -u jdbc:hive2://hive-server:10000 scott tiger
+0: jdbc:hive2://hive-server:10000> 
 
 drop table transaction_detail_hive_tbl;
 
 CREATE EXTERNAL TABLE transaction_detail_hive_tbl(
-    id int,
+    id string,
     uuid string, 
     cardtype string, 
     website string, 
     product string, 
-    amount double, 
+    amount string, 
     city string, 
     country string,
-    addts bigint,
+    addts string,
     txn_receive_date string
 )
 STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
@@ -112,7 +112,7 @@ TBLPROPERTIES (
 
 ###
 ```
-0: jdbc:hive2://> describe transaction_detail_hive_tbl;
+0: jdbc:hive2://> describe formatted transaction_detail_hive_tbl;
 OK
 +-------------------------------------+------------+----------+
 |              col_name               | data_type  | comment  |
@@ -134,7 +134,7 @@ OK
 
 ### Step 4: Query Hive table from Hive CLI or Hue browser to verify Hive table and HBase table integration is working
 ```commandline
-0: jdbc:hive2://quickstart-bigdata:10000> select * from transaction_detail_hive_tbl;
+0: jdbc:hive2://hive-server:10000> select * from transaction_detail_hive_tbl;
 ```
 
 ### ===============================================================================================================================

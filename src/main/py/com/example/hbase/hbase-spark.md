@@ -140,7 +140,6 @@ Note : The last point means that accessing HBase from Spark through Hive is only
    cd hbase-connectors/
    
    #
-   
    mvn -Dspark.version=2.3.4 -Dscala.version=2.11.12 -Dscala.binary.version=2.11 -Dhbase.version=2.2.4 -Dhadoop.profile=2.0 -Dhadoop-three.version=2.10.1 -DskipTests -Dcheckstyle.skip -U clean package
    
    # for spark 2.4.0
@@ -149,6 +148,8 @@ Note : The last point means that accessing HBase from Spark through Hive is only
    # for spark 3.2.1
    mvn -Dspark.version=3.0.1 -Dscala.version=2.12.10 -Dscala.binary.version=2.12 -Dhbase.version=2.2.4 -Dhadoop.profile=3.0 -Dhadoop-three.version=3.2.0 -DskipTests -Dcheckstyle.skip -U clean package
    
+   # for spark 3.2.1
+   mvn -Dspark.version=3.0.1 -Dscala.version=2.12.10 -Dscala.binary.version=2.12 -Dhbase.version=2.4.9 -Dhadoop.profile=3.0 -Dhadoop-three.version=3.3.4 -DskipTests -Dcheckstyle.skip -U clean package
    
    The version arguments need to match with your Hadoop, Spark and HBase versions.
 ```

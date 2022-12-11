@@ -1,24 +1,26 @@
-Beeline Shell Commands
+#
+# Beeline Shell Commands
+#
 
-COMMAND	DESCRIPTION	EXAMPLE
-!help	Print a summary of command usage
-!quit	Exits the Beeline client.
-!history	Display the command history
-!table <sql_query_file>	Run SQL query from file	!run /user/dummy_local_user/myquery1.sql
-set	Prints a list of configuration variables that are overridden by the user or Hive.
-set -v	Prints all Hadoop and Hive configuration variables.
-reset	Resets the configuration to the default values.
-!record <file_name>
-!record	Save result set to a file in local file system	!record /user/dummy_local_user/myquery1_results.out
-!record
-!sh	Run shell CMD	# Lists local filesytem
-!sh ls
-#Print date
-!sh date
-!sh hadoop fs	Run HDFS CMD	!sh hadoop fs -ls /
-!dbinfo	Check Hive version
-Beeline Command line options
+# The output should be:
+| COMMAND                 | DESCRIPTION                                                                       | EXAMPLE                                             |
+|-------------------------|:----------------------------------------------------------------------------------|:----------------------------------------------------|
+| !help                   | Print a summary of command usage                                                  |                                                     |
+| !quit                   | Exits the Beeline client.                                                         |                                                     |
+| !history                | Display the command history                                                       |                                                     |
+| !table <sql_query_file> | Run SQL query from file                                                           |                                                     |
+| set                     | Prints a list of configuration variables that are overridden by the user or Hive. |                                                     |
+| set -v                  | Prints all Hadoop and Hive configuration variables.                               |                                                     |
+| reset                   | Resets the configuration to the default values.                                   |                                                     |
+| !record <file_name>     | Save result set to a file in local file system                                    | !record /user/dummy_local_user/myquery1_results.out |
+| !sh                     | Run shell CMD                                                                     | !sh date                                            |
+| !sh hadoop fs           | Run HDFS CMD                                                                      | !sh hadoop fs -ls /                                 |
+| !dbinfo                 | Check Hive version                                                                |                                                     |
+| dfs                     | Executes a dfs command.                                                           | dfs -ls /user ;                                     |
 
+#
+# Beeline Command line options
+#
 COMMAND	DESCRIPTION	BEELINE COMMAND LINE OPTION	INSIDE BEELINE SHELL
 Ctrl + r	Search on history of commands		
 Autocomplete	Press Tab key
