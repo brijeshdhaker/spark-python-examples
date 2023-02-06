@@ -1,0 +1,136 @@
+#
+#
+# docker volume create --name sandbox_prometheus --opt type=none --opt device=/apps/sandbox/prometheus --opt o=bind
+# docker volume create --name sandbox_prometheus_data --opt type=none --opt device=/apps/sandbox/prometheus/data --opt o=bind
+#
+# docker volume create --name sandbox_grafana_provisioning --opt type=none --opt device=/apps/sandbox/grafana/provisioning --opt o=bind
+# docker volume create --name sandbox_grafana_data --opt type=none --opt device=/apps/sandbox/grafana/data --opt o=bind
+#
+#
+# docker volume create --name sandbox_alertmanager --opt type=none --opt device=/apps/sandbox/alertmanager --opt o=bind
+# docker volume create --name sandbox_alertmanager_data --opt type=none --opt device=/apps/sandbox/alertmanager/data --opt o=bind
+#
+---
+version: "3.9"
+
+services:
+
+#
+# Prometheus Server
+#
+  prometheus:
+    image: prom/prometheus
+    hostname: prometheus
+    container_name: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - sandbox_prometheus:/etc/prometheus
+      - sandbox_prometheus_data:/prometheus
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+#
+#
+#
+  node-exporter:
+    image: prom/node-exporter:latest
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+      - /:/host:ro,rslave
+    command:
+      - '--path.rootfs=/host'
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    restart: always
+    deploy:
+      mode: global
+
+#
+#
+#
+  alertmanager:
+    image: prom/alertmanager
+    ports:
+      - 9093:9093
+    volumes:
+      - sandbox_alertmanager:/etc/alertmanager/
+      - sandbox_alertmanager_data:/alertmanager
+    restart: always
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+  #    deploy:
+  #      placement:
+  #        constraints:
+  #          - node.hostname == ${HOSTNAME}
+
+
+#
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8080:8080
+    restart: always
+    deploy:
+      mode: global
+
+#
+  grafana:
+    image: grafana/grafana
+    user: "472"
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - sandbox_grafana_data:/var/lib/grafana
+      - sandbox_grafana_provisioning:/etc/grafana/provisioning/
+    env_file:
+      - envs/docker_grafana.env
+    restart: always
+
+#
+volumes:
+  sandbox_host_path:
+    external: true
+  sandbox_base_path:
+    external: true
+  sandbox_prometheus:
+    external: true
+  sandbox_prometheus_data:
+    external: true
+  sandbox_grafana_data:
+    external: true
+  sandbox_grafana_provisioning:
+    external: true
+  sandbox_alertmanager:
+    external: true
+  sandbox_alertmanager_data:
+    external: true
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net
