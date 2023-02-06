@@ -3,6 +3,7 @@
 # docker volume create --name sandbox_prometheus --opt type=none --opt device=/apps/sandbox/prometheus --opt o=bind
 # docker volume create --name sandbox_prometheus_data --opt type=none --opt device=/apps/sandbox/prometheus/data --opt o=bind
 #
+#
 # docker volume create --name sandbox_grafana_provisioning --opt type=none --opt device=/apps/sandbox/grafana/provisioning --opt o=bind
 # docker volume create --name sandbox_grafana_data --opt type=none --opt device=/apps/sandbox/grafana/data --opt o=bind
 #
@@ -41,8 +42,10 @@ services:
 #
 #
 #
-  node-exporter:
+  nodeexporter:
     image: prom/node-exporter:latest
+    hostname: nodeexporter
+    container_name: nodeexporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
@@ -65,6 +68,8 @@ services:
 #
   alertmanager:
     image: prom/alertmanager
+    hostname: alertmanager
+    container_name: alertmanager
     ports:
       - 9093:9093
     volumes:
@@ -79,10 +84,13 @@ services:
   #        constraints:
   #          - node.hostname == ${HOSTNAME}
 
-
+#
+#
 #
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
+    hostname: cadvisor
+    container_name: cadvisor
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
@@ -95,8 +103,12 @@ services:
       mode: global
 
 #
+#
+#
   grafana:
     image: grafana/grafana
+    hostname: grafana
+    container_name: grafana
     user: "472"
     depends_on:
       - prometheus
