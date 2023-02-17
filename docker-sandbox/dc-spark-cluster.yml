@@ -46,7 +46,7 @@ services:
   #
   #
   spark-master:
-    image: brijeshdhaker/spark:3.3.1
+    image: docker.io/brijeshdhaker/spark:3.1.2-standalone
     container_name: spark-master
     hostname: spark-master
     ports:
@@ -58,15 +58,17 @@ services:
       - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
     environment:
-      - SPARK_LOCAL_IP=spark-master
-      - SPARK_WORKLOAD=master
-      - WEBUI_PORT= 8080
+      - SPARK_MASTER_LOG=/opt/spark/logs/spark-master.out
+      - SPARK_MASTER_PORT=7077
+      - SPARK_MASTER_WEBUI_PORT=8080
+      - SPARK_DRIVER_CORES=1
+      - SPARK_DRIVER_MEMORY=1G
 
   #
   #
   #
   spark-worker-a:
-    image: brijeshdhaker/spark:3.3.1
+    image: docker.io/brijeshdhaker/spark:3.1.2-standalone
     container_name: spark-worker-a
     hostname: spark-worker-a
     ports:
@@ -74,25 +76,26 @@ services:
     depends_on:
       - spark-master
     environment:
+      - SPARK_WORKLOAD=worker
       - SPARK_MASTER=spark://spark-master:7077
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1G
-      - SPARK_DRIVER_MEMORY=1G
       - SPARK_EXECUTOR_MEMORY=1G
-      - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-a
       - SPARK_WORKER_WEBUI_PORT=8081
+      - SPARK_WORKER_LOG=/opt/spark/logs/spark-worker.out
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
       - sandbox_hadoop:/opt/hadoop-3.3.4
       - sandbox_hive:/opt/hive-3.1.2
 
+
   #
   #
   #
   spark-worker-b:
-    image: brijeshdhaker/spark:3.3.1
+    image: docker.io/brijeshdhaker/spark:3.1.2-standalone
     container_name: spark-worker-b
     hostname: spark-worker-b
     ports:
@@ -100,14 +103,14 @@ services:
     depends_on:
       - spark-master
     environment:
+      - SPARK_WORKLOAD=worker
       - SPARK_MASTER=spark://spark-master:7077
       - SPARK_WORKER_CORES=1
       - SPARK_WORKER_MEMORY=1G
-      - SPARK_DRIVER_MEMORY=1G
       - SPARK_EXECUTOR_MEMORY=1G
-      - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-b
       - SPARK_WORKER_WEBUI_PORT=8082
+      - SPARK_WORKER_LOG=/opt/spark/logs/spark-worker.out
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
@@ -118,11 +121,12 @@ services:
   #
   #
   spark-historyserver:
-    image: brijeshdhaker/spark:3.3.1
+    image: docker.io/brijeshdhaker/spark:3.1.2-standalone
     container_name: spark-historyserver
     hostname: spark-historyserver
     environment:
       SPARK_WORKLOAD: HistoryServer
+      SPARK_HISTORY_CONF_FILE: '/opt/spark/conf/spark-defaults.conf'
     depends_on:
       - namenode
       - datanode
@@ -131,6 +135,7 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
+      - ./conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
 
   #
   # Zeppelin Notebook
