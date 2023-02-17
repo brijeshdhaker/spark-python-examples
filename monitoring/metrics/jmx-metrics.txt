@@ -1,0 +1,488 @@
+# HELP jmx_config_reload_success_total Number of times configuration have successfully been reloaded.
+# TYPE jmx_config_reload_success_total counter
+jmx_config_reload_success_total 0.0
+# HELP jvm_info JVM version info
+# TYPE jvm_info gauge
+jvm_info{version="1.8.0_352-8u352-ga-1~22.04-b08",vendor="Private Build",runtime="OpenJDK Runtime Environment",} 1.0
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 34.52
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.675918227912E9
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 683.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1048576.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 2.964291584E9
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 8.33683456E8
+# HELP jvm_gc_collection_seconds Time spent in a given JVM garbage collector in seconds.
+# TYPE jvm_gc_collection_seconds summary
+jvm_gc_collection_seconds_count{gc="PS Scavenge",} 15.0
+jvm_gc_collection_seconds_sum{gc="PS Scavenge",} 0.141
+jvm_gc_collection_seconds_count{gc="PS MarkSweep",} 4.0
+jvm_gc_collection_seconds_sum{gc="PS MarkSweep",} 0.232
+# HELP jvm_classes_loaded The number of classes that are currently loaded in the JVM
+# TYPE jvm_classes_loaded gauge
+jvm_classes_loaded 14573.0
+# HELP jvm_classes_loaded_total The total number of classes that have been loaded since the JVM has started execution
+# TYPE jvm_classes_loaded_total counter
+jvm_classes_loaded_total 14575.0
+# HELP jvm_classes_unloaded_total The total number of classes that have been unloaded since the JVM has started execution
+# TYPE jvm_classes_unloaded_total counter
+jvm_classes_unloaded_total 2.0
+# HELP jmx_config_reload_failure_total Number of times configuration have failed to be reloaded.
+# TYPE jmx_config_reload_failure_total counter
+jmx_config_reload_failure_total 0.0
+# HELP jvm_buffer_pool_used_bytes Used bytes of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_used_bytes gauge
+jvm_buffer_pool_used_bytes{pool="direct",} 144859.0
+jvm_buffer_pool_used_bytes{pool="mapped",} 0.0
+# HELP jvm_buffer_pool_capacity_bytes Bytes capacity of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_capacity_bytes gauge
+jvm_buffer_pool_capacity_bytes{pool="direct",} 144858.0
+jvm_buffer_pool_capacity_bytes{pool="mapped",} 0.0
+# HELP jvm_buffer_pool_used_buffers Used buffers of a given JVM buffer pool.
+# TYPE jvm_buffer_pool_used_buffers gauge
+jvm_buffer_pool_used_buffers{pool="direct",} 12.0
+jvm_buffer_pool_used_buffers{pool="mapped",} 0.0
+# HELP jvm_memory_bytes_used Used bytes of a given JVM memory area.
+# TYPE jvm_memory_bytes_used gauge
+jvm_memory_bytes_used{area="heap",} 3.4205956E8
+jvm_memory_bytes_used{area="nonheap",} 1.65666904E8
+# HELP jvm_memory_bytes_committed Committed (bytes) of a given JVM memory area.
+# TYPE jvm_memory_bytes_committed gauge
+jvm_memory_bytes_committed{area="heap",} 6.99400192E8
+jvm_memory_bytes_committed{area="nonheap",} 1.74252032E8
+# HELP jvm_memory_bytes_max Max (bytes) of a given JVM memory area.
+# TYPE jvm_memory_bytes_max gauge
+jvm_memory_bytes_max{area="heap",} 9.54728448E8
+jvm_memory_bytes_max{area="nonheap",} -1.0
+# HELP jvm_memory_bytes_init Initial bytes of a given JVM memory area.
+# TYPE jvm_memory_bytes_init gauge
+jvm_memory_bytes_init{area="heap",} 2.57949696E8
+jvm_memory_bytes_init{area="nonheap",} 2555904.0
+# HELP jvm_memory_pool_bytes_used Used bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_used gauge
+jvm_memory_pool_bytes_used{pool="Code Cache",} 4.3157952E7
+jvm_memory_pool_bytes_used{pool="Metaspace",} 1.0900128E8
+jvm_memory_pool_bytes_used{pool="Compressed Class Space",} 1.3507672E7
+jvm_memory_pool_bytes_used{pool="PS Eden Space",} 2.0182672E8
+jvm_memory_pool_bytes_used{pool="PS Survivor Space",} 1.2043552E7
+jvm_memory_pool_bytes_used{pool="PS Old Gen",} 1.28189288E8
+# HELP jvm_memory_pool_bytes_committed Committed bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_committed gauge
+jvm_memory_pool_bytes_committed{pool="Code Cache",} 4.3450368E7
+jvm_memory_pool_bytes_committed{pool="Metaspace",} 1.16629504E8
+jvm_memory_pool_bytes_committed{pool="Compressed Class Space",} 1.417216E7
+jvm_memory_pool_bytes_committed{pool="PS Eden Space",} 2.68959744E8
+jvm_memory_pool_bytes_committed{pool="PS Survivor Space",} 4.1418752E7
+jvm_memory_pool_bytes_committed{pool="PS Old Gen",} 3.89021696E8
+# HELP jvm_memory_pool_bytes_max Max bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_max gauge
+jvm_memory_pool_bytes_max{pool="Code Cache",} 2.5165824E8
+jvm_memory_pool_bytes_max{pool="Metaspace",} -1.0
+jvm_memory_pool_bytes_max{pool="Compressed Class Space",} 1.073741824E9
+jvm_memory_pool_bytes_max{pool="PS Eden Space",} 2.76299776E8
+jvm_memory_pool_bytes_max{pool="PS Survivor Space",} 4.1418752E7
+jvm_memory_pool_bytes_max{pool="PS Old Gen",} 7.16177408E8
+# HELP jvm_memory_pool_bytes_init Initial bytes of a given JVM memory pool.
+# TYPE jvm_memory_pool_bytes_init gauge
+jvm_memory_pool_bytes_init{pool="Code Cache",} 2555904.0
+jvm_memory_pool_bytes_init{pool="Metaspace",} 0.0
+jvm_memory_pool_bytes_init{pool="Compressed Class Space",} 0.0
+jvm_memory_pool_bytes_init{pool="PS Eden Space",} 6.5011712E7
+jvm_memory_pool_bytes_init{pool="PS Survivor Space",} 1.048576E7
+jvm_memory_pool_bytes_init{pool="PS Old Gen",} 1.71966464E8
+# HELP jmx_exporter_build_info A metric with a constant '1' value labeled with the version of the JMX exporter.
+# TYPE jmx_exporter_build_info gauge
+jmx_exporter_build_info{version="0.11.0",name="jmx_prometheus_javaagent",} 1.0
+# HELP jvm_threads_current Current thread count of a JVM
+# TYPE jvm_threads_current gauge
+jvm_threads_current 64.0
+# HELP jvm_threads_daemon Daemon thread count of a JVM
+# TYPE jvm_threads_daemon gauge
+jvm_threads_daemon 56.0
+# HELP jvm_threads_peak Peak thread count of a JVM
+# TYPE jvm_threads_peak gauge
+jvm_threads_peak 66.0
+# HELP jvm_threads_started_total Started thread count of a JVM
+# TYPE jvm_threads_started_total counter
+jvm_threads_started_total 118.0
+# HELP jvm_threads_deadlocked Cycles of JVM-threads that are in deadlock waiting to acquire object monitors or ownable synchronizers
+# TYPE jvm_threads_deadlocked gauge
+jvm_threads_deadlocked 0.0
+# HELP jvm_threads_deadlocked_monitor Cycles of JVM-threads that are in deadlock waiting to acquire object monitors
+# TYPE jvm_threads_deadlocked_monitor gauge
+jvm_threads_deadlocked_monitor 0.0
+# HELP spark_executor_ProcessTreePythonRSSMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreePythonRSSMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreePythonRSSMemory gauge
+spark_executor_ProcessTreePythonRSSMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_mapped_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.mapped.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_mapped_used gauge
+spark_driver_jvm_mapped_used{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.executorManagement.numDroppedEvents, type=counters><>Count)
+# TYPE spark_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_total counter
+spark_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Eden_Space_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_init gauge
+spark_driver_jvm_pools_PS_Eden_Space_init{app_id="application_1675917976649_0001",} 6.5011712E7
+# HELP spark_driver_BlockManager_memory_offHeapMemUsed_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.offHeapMemUsed_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_offHeapMemUsed_MB gauge
+spark_driver_BlockManager_memory_offHeapMemUsed_MB{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_executor_JVMOffHeapMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.JVMOffHeapMemory, type=gauges><>Value)
+# TYPE spark_executor_JVMOffHeapMemory gauge
+spark_executor_JVMOffHeapMemory{app_id="application_1675917976649_0001",executor_id="driver",} 1.65612592E8
+# HELP spark_driver_BlockManager_disk_diskSpaceUsed_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.disk.diskSpaceUsed_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_disk_diskSpaceUsed_MB gauge
+spark_driver_BlockManager_disk_diskSpaceUsed_MB{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Eden_Space_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_max gauge
+spark_driver_jvm_pools_PS_Eden_Space_max{app_id="application_1675917976649_0001",} 2.76299776E8
+# HELP spark_driver_jvm_heap_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.heap.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_heap_max gauge
+spark_driver_jvm_heap_max{app_id="application_1675917976649_0001",} 9.54728448E8
+# HELP spark_driver_jvm_pools_Compressed_Class_Space_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Compressed-Class-Space.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Compressed_Class_Space_init gauge
+spark_driver_jvm_pools_Compressed_Class_Space_init{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_mapped_count Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.mapped.count, type=gauges><>Value)
+# TYPE spark_driver_jvm_mapped_count gauge
+spark_driver_jvm_mapped_count{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_LiveListenerBus_queue_eventLog_numDroppedEvents_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.eventLog.numDroppedEvents, type=counters><>Count)
+# TYPE spark_driver_LiveListenerBus_queue_eventLog_numDroppedEvents_total counter
+spark_driver_LiveListenerBus_queue_eventLog_numDroppedEvents_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_heap_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.heap.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_heap_committed gauge
+spark_driver_jvm_heap_committed{app_id="application_1675917976649_0001",} 6.99400192E8
+# HELP spark_driver_LiveListenerBus_queue_appStatus_size Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.appStatus.size, type=gauges><>Value)
+# TYPE spark_driver_LiveListenerBus_queue_appStatus_size gauge
+spark_driver_LiveListenerBus_queue_appStatus_size{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_non_heap_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.non-heap.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_non_heap_init gauge
+spark_driver_jvm_non_heap_init{app_id="application_1675917976649_0001",} 2555904.0
+# HELP spark_driver_jvm_PS_Scavenge_time Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.PS-Scavenge.time, type=gauges><>Value)
+# TYPE spark_driver_jvm_PS_Scavenge_time gauge
+spark_driver_jvm_PS_Scavenge_time{app_id="application_1675917976649_0001",} 141.0
+# HELP spark_executor_JVMHeapMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.JVMHeapMemory, type=gauges><>Value)
+# TYPE spark_executor_JVMHeapMemory gauge
+spark_executor_JVMHeapMemory{app_id="application_1675917976649_0001",executor_id="driver",} 3.39997576E8
+# HELP spark_executor_ProcessTreeOtherVMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreeOtherVMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreeOtherVMemory gauge
+spark_executor_ProcessTreeOtherVMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_init gauge
+spark_driver_jvm_pools_PS_Survivor_Space_init{app_id="application_1675917976649_0001",} 1.048576E7
+# HELP spark_driver_jvm_non_heap_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.non-heap.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_non_heap_max gauge
+spark_driver_jvm_non_heap_max{app_id="application_1675917976649_0001",} -1.0
+# HELP spark_driver_HiveExternalCatalog_fileCacheHits_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.HiveExternalCatalog.fileCacheHits, type=counters><>Count)
+# TYPE spark_driver_HiveExternalCatalog_fileCacheHits_total counter
+spark_driver_HiveExternalCatalog_fileCacheHits_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_executor_OnHeapExecutionMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OnHeapExecutionMemory, type=gauges><>Value)
+# TYPE spark_executor_OnHeapExecutionMemory gauge
+spark_executor_OnHeapExecutionMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_executor_ProcessTreeOtherRSSMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreeOtherRSSMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreeOtherRSSMemory gauge
+spark_executor_ProcessTreeOtherRSSMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_pools_Metaspace_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Metaspace.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Metaspace_used gauge
+spark_driver_jvm_pools_Metaspace_used{app_id="application_1675917976649_0001",} 1.09013992E8
+# HELP spark_driver_jvm_total_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.total.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_total_init gauge
+spark_driver_jvm_total_init{app_id="application_1675917976649_0001",} 2.605056E8
+# HELP spark_driver_HiveExternalCatalog_filesDiscovered_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.HiveExternalCatalog.filesDiscovered, type=counters><>Count)
+# TYPE spark_driver_HiveExternalCatalog_filesDiscovered_total counter
+spark_driver_HiveExternalCatalog_filesDiscovered_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_Compressed_Class_Space_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Compressed-Class-Space.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Compressed_Class_Space_max gauge
+spark_driver_jvm_pools_Compressed_Class_Space_max{app_id="application_1675917976649_0001",} 1.073741824E9
+# HELP spark_driver_jvm_heap_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.heap.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_heap_used gauge
+spark_driver_jvm_heap_used{app_id="application_1675917976649_0001",} 3.53161464E8
+# HELP spark_driver_DAGScheduler_job_allJobs Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.DAGScheduler.job.allJobs, type=gauges><>Value)
+# TYPE spark_driver_DAGScheduler_job_allJobs gauge
+spark_driver_DAGScheduler_job_allJobs{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Old_Gen_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_committed gauge
+spark_driver_jvm_pools_PS_Old_Gen_committed{app_id="application_1675917976649_0001",} 3.89021696E8
+# HELP spark_driver_LiveListenerBus_queue_appStatus_numDroppedEvents_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.appStatus.numDroppedEvents, type=counters><>Count)
+# TYPE spark_driver_LiveListenerBus_queue_appStatus_numDroppedEvents_total counter
+spark_driver_LiveListenerBus_queue_appStatus_numDroppedEvents_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_used gauge
+spark_driver_jvm_pools_PS_Survivor_Space_used{app_id="application_1675917976649_0001",} 1.2043552E7
+# HELP spark_driver_BlockManager_memory_maxOnHeapMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.maxOnHeapMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_maxOnHeapMem_MB gauge
+spark_driver_BlockManager_memory_maxOnHeapMem_MB{app_id="application_1675917976649_0001",} 527.0
+# HELP spark_driver_jvm_direct_count Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.direct.count, type=gauges><>Value)
+# TYPE spark_driver_jvm_direct_count gauge
+spark_driver_jvm_direct_count{app_id="application_1675917976649_0001",} 12.0
+# HELP spark_executor_OnHeapUnifiedMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OnHeapUnifiedMemory, type=gauges><>Value)
+# TYPE spark_executor_OnHeapUnifiedMemory gauge
+spark_executor_OnHeapUnifiedMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_non_heap_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.non-heap.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_non_heap_usage gauge
+spark_driver_jvm_non_heap_usage{app_id="application_1675917976649_0001",} -1.65813736E8
+# HELP spark_driver_jvm_PS_Scavenge_count Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.PS-Scavenge.count, type=gauges><>Value)
+# TYPE spark_driver_jvm_PS_Scavenge_count gauge
+spark_driver_jvm_PS_Scavenge_count{app_id="application_1675917976649_0001",} 15.0
+# HELP spark_driver_jvm_total_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.total.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_total_max gauge
+spark_driver_jvm_total_max{app_id="application_1675917976649_0001",} 9.54728447E8
+# HELP spark_driver_BlockManager_memory_maxOffHeapMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.maxOffHeapMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_maxOffHeapMem_MB gauge
+spark_driver_BlockManager_memory_maxOffHeapMem_MB{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_Code_Cache_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Code-Cache.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Code_Cache_used gauge
+spark_driver_jvm_pools_Code_Cache_used{app_id="application_1675917976649_0001",} 4.3197888E7
+# HELP spark_executor_MinorGCTime Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.MinorGCTime, type=gauges><>Value)
+# TYPE spark_executor_MinorGCTime gauge
+spark_executor_MinorGCTime{app_id="application_1675917976649_0001",executor_id="driver",} 141.0
+# HELP spark_driver_LiveListenerBus_queue_eventLog_size Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.eventLog.size, type=gauges><>Value)
+# TYPE spark_driver_LiveListenerBus_queue_eventLog_size gauge
+spark_driver_LiveListenerBus_queue_eventLog_size{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_mapped_capacity Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.mapped.capacity, type=gauges><>Value)
+# TYPE spark_driver_jvm_mapped_capacity gauge
+spark_driver_jvm_mapped_capacity{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_DAGScheduler_stage_failedStages Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.DAGScheduler.stage.failedStages, type=gauges><>Value)
+# TYPE spark_driver_DAGScheduler_stage_failedStages gauge
+spark_driver_DAGScheduler_stage_failedStages{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_used_after_gc Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.used-after-gc, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_used_after_gc gauge
+spark_driver_jvm_pools_PS_Survivor_Space_used_after_gc{app_id="application_1675917976649_0001",} 1.2043552E7
+# HELP spark_driver_LiveListenerBus_queue_shared_numDroppedEvents_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.shared.numDroppedEvents, type=counters><>Count)
+# TYPE spark_driver_LiveListenerBus_queue_shared_numDroppedEvents_total counter
+spark_driver_LiveListenerBus_queue_shared_numDroppedEvents_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_Compressed_Class_Space_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Compressed-Class-Space.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Compressed_Class_Space_committed gauge
+spark_driver_jvm_pools_Compressed_Class_Space_committed{app_id="application_1675917976649_0001",} 1.417216E7
+# HELP spark_driver_jvm_pools_Code_Cache_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Code-Cache.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Code_Cache_usage gauge
+spark_driver_jvm_pools_Code_Cache_usage{app_id="application_1675917976649_0001",} 0.17204869588216146
+# HELP spark_driver_BlockManager_memory_memUsed_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.memUsed_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_memUsed_MB gauge
+spark_driver_BlockManager_memory_memUsed_MB{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_executor_DirectPoolMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.DirectPoolMemory, type=gauges><>Value)
+# TYPE spark_executor_DirectPoolMemory gauge
+spark_executor_DirectPoolMemory{app_id="application_1675917976649_0001",executor_id="driver",} 144859.0
+# HELP spark_driver_jvm_pools_Compressed_Class_Space_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Compressed-Class-Space.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Compressed_Class_Space_usage gauge
+spark_driver_jvm_pools_Compressed_Class_Space_usage{app_id="application_1675917976649_0001",} 0.01257999986410141
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_usage gauge
+spark_driver_jvm_pools_PS_Survivor_Space_usage{app_id="application_1675917976649_0001",} 0.2907753473595728
+# HELP spark_executor_OffHeapUnifiedMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OffHeapUnifiedMemory, type=gauges><>Value)
+# TYPE spark_executor_OffHeapUnifiedMemory gauge
+spark_executor_OffHeapUnifiedMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_executor_MappedPoolMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.MappedPoolMemory, type=gauges><>Value)
+# TYPE spark_executor_MappedPoolMemory gauge
+spark_executor_MappedPoolMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_direct_capacity Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.direct.capacity, type=gauges><>Value)
+# TYPE spark_driver_jvm_direct_capacity gauge
+spark_driver_jvm_direct_capacity{app_id="application_1675917976649_0001",} 144858.0
+# HELP spark_driver_jvm_total_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.total.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_total_committed gauge
+spark_driver_jvm_total_committed{app_id="application_1675917976649_0001",} 8.73652224E8
+# HELP spark_executor_OnHeapStorageMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OnHeapStorageMemory, type=gauges><>Value)
+# TYPE spark_executor_OnHeapStorageMemory gauge
+spark_executor_OnHeapStorageMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_BlockManager_memory_maxMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.maxMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_maxMem_MB gauge
+spark_driver_BlockManager_memory_maxMem_MB{app_id="application_1675917976649_0001",} 527.0
+# HELP spark_executor_OffHeapStorageMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OffHeapStorageMemory, type=gauges><>Value)
+# TYPE spark_executor_OffHeapStorageMemory gauge
+spark_executor_OffHeapStorageMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+# HELP spark_driver_jvm_pools_Metaspace_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Metaspace.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Metaspace_max gauge
+spark_driver_jvm_pools_Metaspace_max{app_id="application_1675917976649_0001",} -1.0
+# HELP spark_driver_jvm_pools_PS_Eden_Space_used_after_gc Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.used-after-gc, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_used_after_gc gauge
+spark_driver_jvm_pools_PS_Eden_Space_used_after_gc{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_committed gauge
+spark_driver_jvm_pools_PS_Survivor_Space_committed{app_id="application_1675917976649_0001",} 4.1418752E7
+# HELP spark_driver_jvm_pools_Code_Cache_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Code-Cache.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Code_Cache_max gauge
+spark_driver_jvm_pools_Code_Cache_max{app_id="application_1675917976649_0001",} 2.5165824E8
+# HELP spark_driver_HiveExternalCatalog_hiveClientCalls_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.HiveExternalCatalog.hiveClientCalls, type=counters><>Count)
+# TYPE spark_driver_HiveExternalCatalog_hiveClientCalls_total counter
+spark_driver_HiveExternalCatalog_hiveClientCalls_total{app_id="application_1675917976649_0001",} 0.0
+# HELP spark_driver_jvm_pools_PS_Eden_Space_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_usage gauge
+spark_driver_jvm_pools_PS_Eden_Space_usage{app_id="application_1675917976649_0001",} 0.7937816352048002
+# HELP spark_driver_jvm_heap_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.heap.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_heap_usage gauge
+spark_driver_jvm_heap_usage{app_id="application_1675917976649_0001",} 0.37836641901341983
+# HELP spark_executor_MajorGCCount Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.MajorGCCount, type=gauges><>Value)
+# TYPE spark_executor_MajorGCCount gauge
+spark_executor_MajorGCCount{app_id="application_1675917976649_0001",executor_id="driver",} 4.0
+
+# HELP spark_driver_jvm_pools_Code_Cache_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Code-Cache.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Code_Cache_committed gauge
+spark_driver_jvm_pools_Code_Cache_committed{app_id="application_1675917976649_0001",} 4.3515904E7
+
+# HELP spark_driver_jvm_direct_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.direct.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_direct_used gauge
+spark_driver_jvm_direct_used{app_id="application_1675917976649_0001",} 144859.0
+
+# HELP spark_driver_jvm_pools_PS_Old_Gen_used_after_gc Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.used-after-gc, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_used_after_gc gauge
+spark_driver_jvm_pools_PS_Old_Gen_used_after_gc{app_id="application_1675917976649_0001",} 1.28172904E8
+
+# HELP spark_driver_HiveExternalCatalog_parallelListingJobCount_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.HiveExternalCatalog.parallelListingJobCount, type=counters><>Count)
+# TYPE spark_driver_HiveExternalCatalog_parallelListingJobCount_total counter
+spark_driver_HiveExternalCatalog_parallelListingJobCount_total{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_jvm_pools_PS_Old_Gen_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_used gauge
+spark_driver_jvm_pools_PS_Old_Gen_used{app_id="application_1675917976649_0001",} 1.28189288E8
+
+# HELP spark_executor_MinorGCCount Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.MinorGCCount, type=gauges><>Value)
+# TYPE spark_executor_MinorGCCount gauge
+spark_executor_MinorGCCount{app_id="application_1675917976649_0001",executor_id="driver",} 15.0
+
+# HELP spark_driver_jvm_total_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.total.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_total_used gauge
+spark_driver_jvm_total_used{app_id="application_1675917976649_0001",} 5.30172976E8
+
+# HELP spark_driver_HiveExternalCatalog_partitionsFetched_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.HiveExternalCatalog.partitionsFetched, type=counters><>Count)
+# TYPE spark_driver_HiveExternalCatalog_partitionsFetched_total counter
+spark_driver_HiveExternalCatalog_partitionsFetched_total{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_jvm_non_heap_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.non-heap.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_non_heap_committed gauge
+spark_driver_jvm_non_heap_committed{app_id="application_1675917976649_0001",} 1.74710784E8
+
+# HELP spark_driver_DAGScheduler_job_activeJobs Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.DAGScheduler.job.activeJobs, type=gauges><>Value)
+# TYPE spark_driver_DAGScheduler_job_activeJobs gauge
+spark_driver_DAGScheduler_job_activeJobs{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_jvm_pools_PS_Old_Gen_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_max gauge
+spark_driver_jvm_pools_PS_Old_Gen_max{app_id="application_1675917976649_0001",} 7.16177408E8
+
+# HELP spark_driver_LiveListenerBus_queue_shared_size Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.shared.size, type=gauges><>Value)
+# TYPE spark_driver_LiveListenerBus_queue_shared_size gauge
+spark_driver_LiveListenerBus_queue_shared_size{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_jvm_heap_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.heap.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_heap_init gauge
+spark_driver_jvm_heap_init{app_id="application_1675917976649_0001",} 2.57949696E8
+
+# HELP spark_driver_jvm_pools_Metaspace_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Metaspace.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Metaspace_committed gauge
+spark_driver_jvm_pools_Metaspace_committed{app_id="application_1675917976649_0001",} 1.16891648E8
+
+# HELP spark_driver_jvm_PS_MarkSweep_time Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.PS-MarkSweep.time, type=gauges><>Value)
+# TYPE spark_driver_jvm_PS_MarkSweep_time gauge
+spark_driver_jvm_PS_MarkSweep_time{app_id="application_1675917976649_0001",} 232.0
+
+# HELP spark_driver_jvm_pools_PS_Old_Gen_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_usage gauge
+spark_driver_jvm_pools_PS_Old_Gen_usage{app_id="application_1675917976649_0001",} 0.17899096867350497
+
+# HELP spark_driver_BlockManager_memory_onHeapMemUsed_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.onHeapMemUsed_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_onHeapMemUsed_MB gauge
+spark_driver_BlockManager_memory_onHeapMemUsed_MB{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_executor_ProcessTreePythonVMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreePythonVMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreePythonVMemory gauge
+spark_executor_ProcessTreePythonVMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+
+# HELP spark_driver_BlockManager_memory_remainingOnHeapMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.remainingOnHeapMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_remainingOnHeapMem_MB gauge
+spark_driver_BlockManager_memory_remainingOnHeapMem_MB{app_id="application_1675917976649_0001",} 527.0
+
+# HELP spark_driver_jvm_pools_Metaspace_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Metaspace.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Metaspace_init gauge
+spark_driver_jvm_pools_Metaspace_init{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_LiveListenerBus_numEventsPosted_total Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.numEventsPosted, type=counters><>Count)
+# TYPE spark_driver_LiveListenerBus_numEventsPosted_total counter
+spark_driver_LiveListenerBus_numEventsPosted_total{app_id="application_1675917976649_0001",} 42.0
+
+# HELP spark_driver_jvm_PS_MarkSweep_count Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.PS-MarkSweep.count, type=gauges><>Value)
+# TYPE spark_driver_jvm_PS_MarkSweep_count gauge
+spark_driver_jvm_PS_MarkSweep_count{app_id="application_1675917976649_0001",} 4.0
+
+# HELP spark_executor_ProcessTreeJVMRSSMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreeJVMRSSMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreeJVMRSSMemory gauge
+spark_executor_ProcessTreeJVMRSSMemory{app_id="application_1675917976649_0001",executor_id="driver",} 8.33683456E8
+
+# HELP spark_driver_jvm_pools_PS_Eden_Space_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_used gauge
+spark_driver_jvm_pools_PS_Eden_Space_used{app_id="application_1675917976649_0001",} 2.13264976E8
+
+# HELP spark_executor_ProcessTreeJVMVMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.ProcessTreeJVMVMemory, type=gauges><>Value)
+# TYPE spark_executor_ProcessTreeJVMVMemory gauge
+spark_executor_ProcessTreeJVMVMemory{app_id="application_1675917976649_0001",executor_id="driver",} 2.964291584E9
+
+# HELP spark_executor_OffHeapExecutionMemory Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.OffHeapExecutionMemory, type=gauges><>Value)
+# TYPE spark_executor_OffHeapExecutionMemory gauge
+spark_executor_OffHeapExecutionMemory{app_id="application_1675917976649_0001",executor_id="driver",} 0.0
+
+# HELP spark_driver_jvm_pools_Code_Cache_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Code-Cache.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Code_Cache_init gauge
+spark_driver_jvm_pools_Code_Cache_init{app_id="application_1675917976649_0001",} 2555904.0
+
+# HELP spark_executor_MajorGCTime Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.ExecutorMetrics.MajorGCTime, type=gauges><>Value)
+# TYPE spark_executor_MajorGCTime gauge
+spark_executor_MajorGCTime{app_id="application_1675917976649_0001",executor_id="driver",} 232.0
+
+# HELP spark_driver_jvm_pools_PS_Eden_Space_committed Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Eden-Space.committed, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Eden_Space_committed gauge
+spark_driver_jvm_pools_PS_Eden_Space_committed{app_id="application_1675917976649_0001",} 2.68959744E8
+
+# HELP spark_driver_BlockManager_memory_remainingMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.remainingMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_remainingMem_MB gauge
+spark_driver_BlockManager_memory_remainingMem_MB{app_id="application_1675917976649_0001",} 527.0
+
+# HELP spark_driver_jvm_pools_Metaspace_usage Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Metaspace.usage, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Metaspace_usage gauge
+spark_driver_jvm_pools_Metaspace_usage{app_id="application_1675917976649_0001",} 0.9346856178004496
+
+# HELP spark_driver_BlockManager_memory_remainingOffHeapMem_MB Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.BlockManager.memory.remainingOffHeapMem_MB, type=gauges><>Value)
+# TYPE spark_driver_BlockManager_memory_remainingOffHeapMem_MB gauge
+spark_driver_BlockManager_memory_remainingOffHeapMem_MB{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_LiveListenerBus_queue_executorManagement_size Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.LiveListenerBus.queue.executorManagement.size, type=gauges><>Value)
+# TYPE spark_driver_LiveListenerBus_queue_executorManagement_size gauge
+spark_driver_LiveListenerBus_queue_executorManagement_size{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_DAGScheduler_stage_waitingStages Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.DAGScheduler.stage.waitingStages, type=gauges><>Value)
+# TYPE spark_driver_DAGScheduler_stage_waitingStages gauge
+spark_driver_DAGScheduler_stage_waitingStages{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_DAGScheduler_stage_runningStages Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.DAGScheduler.stage.runningStages, type=gauges><>Value)
+# TYPE spark_driver_DAGScheduler_stage_runningStages gauge
+spark_driver_DAGScheduler_stage_runningStages{app_id="application_1675917976649_0001",} 0.0
+
+# HELP spark_driver_jvm_pools_Compressed_Class_Space_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.Compressed-Class-Space.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_Compressed_Class_Space_used gauge
+spark_driver_jvm_pools_Compressed_Class_Space_used{app_id="application_1675917976649_0001",} 1.3507672E7
+
+# HELP spark_driver_jvm_non_heap_used Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.non-heap.used, type=gauges><>Value)
+# TYPE spark_driver_jvm_non_heap_used gauge
+spark_driver_jvm_non_heap_used{app_id="application_1675917976649_0001",} 1.65719552E8
+
+# HELP spark_driver_jvm_pools_PS_Survivor_Space_max Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Survivor-Space.max, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Survivor_Space_max gauge
+spark_driver_jvm_pools_PS_Survivor_Space_max{app_id="application_1675917976649_0001",} 4.1418752E7
+
+# HELP spark_driver_jvm_pools_PS_Old_Gen_init Attribute exposed for management (metrics<name=application_1675917976649_0001.driver.jvm.pools.PS-Old-Gen.init, type=gauges><>Value)
+# TYPE spark_driver_jvm_pools_PS_Old_Gen_init gauge
+spark_driver_jvm_pools_PS_Old_Gen_init{app_id="application_1675917976649_0001",} 1.71966464E8
+
+# HELP jmx_scrape_duration_seconds Time this JMX scrape took, in seconds.
+# TYPE jmx_scrape_duration_seconds gauge
+jmx_scrape_duration_seconds 0.111943552
+
+# HELP jmx_scrape_error Non-zero if this scrape failed.
+# TYPE jmx_scrape_error gauge
+jmx_scrape_error 0.0

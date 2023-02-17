@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2022-12-08 Update Docker Configurations">
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-12 Add graphite_exporter mapping configuration.">
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/graphite_mapping.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/graphite_mapping.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/prometheus/alert.rules" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/prometheus/prometheus.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark-defaults.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-graphite-cluster.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-influxdb-cluster.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/dashboard/spark-jmx-grafana-board.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/jmx/jmx-spark-2-0.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/jmx/jmx-spark-3-0.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/jmx/prometheus.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/metrics/graphite-metrics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/metrics/jmx-metrics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/metrics/prometheus-metrics.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/monitoring/metrics/statsd-metrics.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr-delta.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mr-delta.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/statsd_mapping.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/statsd_mapping.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +65,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/airflow/dags&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox/conf",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.31724137",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="spark-python-examples">
@@ -66,20 +85,52 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/airflow/dags" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/conf" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/conf/prometheus" />
       <recent name="$PROJECT_DIR$/docker-sandbox" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\confluent" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\docker-sandbox" />
+      <recent name="$PROJECT_DIR$/monitoring" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/monitor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docker-sandbox/envs" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples\src\main\py\com\example\kafka\clients\confluent" />
-      <recent name="C:\Users\brije\IdeaProjects\spark-python-examples" />
+      <recent name="$PROJECT_DIR$/monitoring/dashboard" />
+      <recent name="$PROJECT_DIR$/monitoring/jmx" />
+      <recent name="$PROJECT_DIR$/monitoring/merrics" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/py/com/example/azure" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)">
+  <component name="RunManager" selected="Docker.docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="8e03724e-727b-451f-8717-f026b77ba5ca" />
+      <option name="artifact" />
+      <option name="autoPort" value="true" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="funcPort" value="0" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,63 +168,78 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="services">
+            <list>
+              <option value="datanode" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
+          <option name="services">
+            <list>
+              <option value="spark-historyserver" />
+            </list>
+          </option>
           <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hbase-master: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="hbase-master" />
+              <option value="spark-historyserver" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
+          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-master: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="hbase-region" />
+              <option value="spark-master" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
+          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-kafka-cluster.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-worker-a: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker-sandbox/dc-kafka-cluster.yml" />
+          <option name="services">
+            <list>
+              <option value="spark-worker-a" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment (1)" />
-        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-master: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hbase-region: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-master: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-worker-a: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.spark-historyserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -185,41 +251,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653622607980</updated>
-    </task>
-    <task id="LOCAL-00023" summary="2022-06-24 Update docker compose for cluster setup.">
-      <created>1656039736939</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1656039736939</updated>
-    </task>
-    <task id="LOCAL-00024" summary="2022-06-28 Update docker compose for kafka cluster setup.">
-      <created>1656388995156</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1656388995156</updated>
-    </task>
-    <task id="LOCAL-00025" summary="2022-06-28 Update docker compose for kafka cluster setup.">
-      <created>1656394119217</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1656394119217</updated>
-    </task>
-    <task id="LOCAL-00026" summary="2022-06-28 Update docker compose for kafka cluster setup.">
-      <created>1656394161214</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1656394161214</updated>
-    </task>
-    <task id="LOCAL-00027" summary="2022-09-02 Update docker compose for kafka cluster setup.">
-      <created>1662087903464</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1662087903464</updated>
     </task>
     <task id="LOCAL-00028" summary="2022-09-12 Update docker compose for kafka cluster setup.">
       <created>1662957566062</created>
@@ -529,11 +560,47 @@
       <option name="project" value="LOCAL" />
       <updated>1670462537361</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="2023-02-06 Update Docker Configurations">
+      <created>1675701010606</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1675701010606</updated>
+    </task>
+    <task id="LOCAL-00073" summary="2023-02-06 Update Docker Configurations">
+      <created>1675704217832</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1675704217832</updated>
+    </task>
+    <task id="LOCAL-00074" summary="2023-02-12 Add statsd_exporter mapping configuration.">
+      <created>1676207635757</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1676207635757</updated>
+    </task>
+    <task id="LOCAL-00075" summary="2023-02-12 Add graphite_exporter mapping configuration.">
+      <created>1676226489611</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1676226489611</updated>
+    </task>
+    <task id="LOCAL-00076" summary="2023-02-12 Add graphite_exporter mapping configuration.">
+      <created>1676601531004</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1676601531005</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
     <option featureType="com.intellij.configurationType" implementationName="PythonConfigurationType" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.avro" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.sql" />
@@ -550,9 +617,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022-06-20 Update Kafka Python Partitioner Examples." />
-    <MESSAGE value="2022-06-22 Update zeppline version in docker compose." />
-    <MESSAGE value="2022-06-24 Update docker compose for cluster setup." />
     <MESSAGE value="2022-06-28 Update docker compose for kafka cluster setup." />
     <MESSAGE value="2022-09-02 Update docker compose for kafka cluster setup." />
     <MESSAGE value="2022-09-12 Update docker compose for kafka cluster setup." />
@@ -575,7 +639,10 @@
     <MESSAGE value="2022-12-04 Update Docker Configurations" />
     <MESSAGE value="2022-12-05 Update Docker Configurations" />
     <MESSAGE value="2022-12-08 Update Docker Configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="2022-12-08 Update Docker Configurations" />
+    <MESSAGE value="2023-02-06 Update Docker Configurations" />
+    <MESSAGE value="2023-02-12 Add statsd_exporter mapping configuration." />
+    <MESSAGE value="2023-02-12 Add graphite_exporter mapping configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="2023-02-12 Add graphite_exporter mapping configuration." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

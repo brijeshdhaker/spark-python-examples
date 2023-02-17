@@ -1,0 +1,61 @@
+#
+# mkdir -p /apps/sandbox/graphite/config
+# mkdir -p /apps/sandbox/graphite/data
+# sudo chmod -Rf 777 /apps/sandbox/graphite
+#
+
+#
+# docker volume create --name sandbox_graphite_config --opt type=none --opt device=/apps/sandbox/graphite/config --opt o=bind
+# docker volume create --name sandbox_graphite_data --opt type=none --opt device=/apps/sandbox/graphite/data --opt o=bind
+#
+
+#
+# docker exec -it graphite /usr/bin/influx
+#
+
+#
+#
+#
+---
+
+version: "3.9"
+
+services:
+
+  graphite:
+    image: graphiteapp/graphite-statsd
+    hostname: graphite
+    container_name: graphite
+    restart: always
+    ports:
+      - "80:80"
+      - "2003-2004:2003-2004"
+      - "2023-2024:2023-2024"
+      - "8125:8125/udp"
+      - "8126:8126"
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - ./conf/graphite:/opt/graphite/conf
+      - ./conf/statsd:/opt/statsd/config
+      - ./data/graphite:/opt/graphite/storage
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+#
+volumes:
+  sandbox_host_path:
+    external: true
+  sandbox_base_path:
+    external: true
+  sandbox_graphite_config:
+    external: true
+  sandbox_graphite_data:
+    external: true
+
+#
+networks:
+  default:
+    external: true
+    driver: bridge
+    name: sandbox-bigdata.net

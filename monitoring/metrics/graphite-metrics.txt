@@ -1,0 +1,895 @@
+# HELP CodeGenerator Graphite metric CodeGenerator
+# TYPE CodeGenerator gauge
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="count",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="count",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="count",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="count",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="max",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="max",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="max",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="max",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="mean",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="mean",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="mean",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="mean",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="min",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="min",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="min",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="min",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p50",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p50",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p50",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p50",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p75",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p75",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p75",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p75",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p95",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p95",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p95",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p95",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p98",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p98",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p98",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p98",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p99",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p99",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p99",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p99",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p999",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p999",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p999",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="p999",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="stddev",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="stddev",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="stddev",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="1",name="CodeGenerator",qty="stddev",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="count",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="count",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="count",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="count",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="max",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="max",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="max",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="max",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="mean",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="mean",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="mean",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="mean",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="min",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="min",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="min",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="min",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p50",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p50",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p50",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p50",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p75",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p75",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p75",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p75",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p95",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p95",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p95",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p95",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p98",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p98",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p98",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p98",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p99",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p99",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p99",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p99",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p999",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p999",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p999",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="p999",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="stddev",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="stddev",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="stddev",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="2",name="CodeGenerator",qty="stddev",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="count",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="count",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="count",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="count",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="max",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="max",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="max",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="max",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="mean",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="mean",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="mean",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="mean",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="min",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="min",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="min",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="min",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p50",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p50",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p50",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p50",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p75",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p75",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p75",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p75",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p95",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p95",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p95",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p95",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p98",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p98",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p98",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p98",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p99",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p99",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p99",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p99",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p999",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p999",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p999",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="p999",type="sourceCodeSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="stddev",type="compilationTime"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="stddev",type="generatedClassSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="stddev",type="generatedMethodSize"} 0
+CodeGenerator{application="application_1676201956571_0003",executor_id="driver",name="CodeGenerator",qty="stddev",type="sourceCodeSize"} 0
+# HELP ExecutorMetrics Graphite metric ExecutorMetrics
+# TYPE ExecutorMetrics gauge
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="DirectPoolMemory"} 10264
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="JVMHeapMemory"} 3.340508e+07
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="JVMOffHeapMemory"} 5.2098368e+07
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="MajorGCCount"} 2
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="MajorGCTime"} 37
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="MappedPoolMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="MinorGCCount"} 18
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="MinorGCTime"} 67
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OffHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OffHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OffHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OnHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OnHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="OnHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreeJVMRSSMemory"} 3.42433792e+08
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreeJVMVMemory"} 2.418860032e+09
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreeOtherRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreeOtherVMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreePythonRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="1",name="ExecutorMetrics",type="ProcessTreePythonVMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="DirectPoolMemory"} 10264
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="JVMHeapMemory"} 1.2031592e+07
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="JVMOffHeapMemory"} 5.2068712e+07
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="MajorGCCount"} 2
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="MajorGCTime"} 38
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="MappedPoolMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="MinorGCCount"} 18
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="MinorGCTime"} 69
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OffHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OffHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OffHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OnHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OnHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="OnHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreeJVMRSSMemory"} 3.3705984e+08
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreeJVMVMemory"} 2.41891328e+09
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreeOtherRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreeOtherVMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreePythonRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="2",name="ExecutorMetrics",type="ProcessTreePythonVMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="DirectPoolMemory"} 111947
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="JVMHeapMemory"} 1.4663888e+08
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="JVMOffHeapMemory"} 1.72380768e+08
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="MajorGCCount"} 12
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="MajorGCTime"} 1585
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="MappedPoolMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="MinorGCCount"} 43
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="MinorGCTime"} 283
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OffHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OffHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OffHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OnHeapExecutionMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OnHeapStorageMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="OnHeapUnifiedMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreeJVMRSSMemory"} 6.75311616e+08
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreeJVMVMemory"} 2.578214912e+09
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreeOtherRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreeOtherVMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreePythonRSSMemory"} 0
+ExecutorMetrics{application="application_1676201956571_0003",executor_id="driver",name="ExecutorMetrics",type="ProcessTreePythonVMemory"} 0
+# HELP HiveExternalCatalog Graphite metric HiveExternalCatalog
+# TYPE HiveExternalCatalog gauge
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="1",name="HiveExternalCatalog",type="fileCacheHits"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="1",name="HiveExternalCatalog",type="filesDiscovered"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="1",name="HiveExternalCatalog",type="hiveClientCalls"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="1",name="HiveExternalCatalog",type="parallelListingJobCount"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="1",name="HiveExternalCatalog",type="partitionsFetched"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="2",name="HiveExternalCatalog",type="fileCacheHits"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="2",name="HiveExternalCatalog",type="filesDiscovered"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="2",name="HiveExternalCatalog",type="hiveClientCalls"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="2",name="HiveExternalCatalog",type="parallelListingJobCount"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="2",name="HiveExternalCatalog",type="partitionsFetched"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="driver",name="HiveExternalCatalog",type="fileCacheHits"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="driver",name="HiveExternalCatalog",type="filesDiscovered"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="driver",name="HiveExternalCatalog",type="hiveClientCalls"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="driver",name="HiveExternalCatalog",type="parallelListingJobCount"} 0
+HiveExternalCatalog{application="application_1676201956571_0003",executor_id="driver",name="HiveExternalCatalog",type="partitionsFetched"} 0
+# HELP appStatus Graphite metric appStatus
+# TYPE appStatus gauge
+appStatus{action="",application="application_1676201956571_0003",name="appStatus",type="jobs"} 0
+appStatus{action="blackListedExecutors",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="completedStages",application="application_1676201956571_0003",name="appStatus",type="stages"} 0
+appStatus{action="completedTasks",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="excludedExecutors",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="failedJobs",application="application_1676201956571_0003",name="appStatus",type="jobs"} 0
+appStatus{action="failedStages",application="application_1676201956571_0003",name="appStatus",type="stages"} 0
+appStatus{action="failedTasks",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="killedTasks",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="skippedStages",application="application_1676201956571_0003",name="appStatus",type="stages"} 0
+appStatus{action="skippedTasks",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="succeededJobs",application="application_1676201956571_0003",name="appStatus",type="jobs"} 0
+appStatus{action="unblackListedExecutors",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+appStatus{action="unexcludedExecutors",application="application_1676201956571_0003",name="appStatus",type="tasks"} 0
+# HELP driver_LiveListenerBus Graphite metric driver_LiveListenerBus
+# TYPE driver_LiveListenerBus gauge
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="count",name="driver_LiveListenerBus",type="AppStatusListener"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="count",name="driver_LiveListenerBus",type="EventLoggingListener"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="count",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="count",name="driver_LiveListenerBus",type="executorManagement"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m15_rate",name="driver_LiveListenerBus",type="AppStatusListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m15_rate",name="driver_LiveListenerBus",type="EventLoggingListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m15_rate",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m15_rate",name="driver_LiveListenerBus",type="executorManagement"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m1_rate",name="driver_LiveListenerBus",type="AppStatusListener"} 0.31
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m1_rate",name="driver_LiveListenerBus",type="EventLoggingListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m1_rate",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.31
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m1_rate",name="driver_LiveListenerBus",type="executorManagement"} 0.31
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m5_rate",name="driver_LiveListenerBus",type="AppStatusListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m5_rate",name="driver_LiveListenerBus",type="EventLoggingListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m5_rate",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="m5_rate",name="driver_LiveListenerBus",type="executorManagement"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="max",name="driver_LiveListenerBus",type="AppStatusListener"} 0.42
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="max",name="driver_LiveListenerBus",type="EventLoggingListener"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="max",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="max",name="driver_LiveListenerBus",type="executorManagement"} 2.46
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean",name="driver_LiveListenerBus",type="AppStatusListener"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean",name="driver_LiveListenerBus",type="executorManagement"} 0.05
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean_rate",name="driver_LiveListenerBus",type="AppStatusListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean_rate",name="driver_LiveListenerBus",type="EventLoggingListener"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean_rate",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="mean_rate",name="driver_LiveListenerBus",type="executorManagement"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="min",name="driver_LiveListenerBus",type="AppStatusListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="min",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="min",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="min",name="driver_LiveListenerBus",type="executorManagement"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p50",name="driver_LiveListenerBus",type="AppStatusListener"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p50",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p50",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p50",name="driver_LiveListenerBus",type="executorManagement"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p75",name="driver_LiveListenerBus",type="AppStatusListener"} 0.03
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p75",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p75",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p75",name="driver_LiveListenerBus",type="executorManagement"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p95",name="driver_LiveListenerBus",type="AppStatusListener"} 0.04
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p95",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p95",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p95",name="driver_LiveListenerBus",type="executorManagement"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p98",name="driver_LiveListenerBus",type="AppStatusListener"} 0.04
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p98",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p98",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p98",name="driver_LiveListenerBus",type="executorManagement"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p99",name="driver_LiveListenerBus",type="AppStatusListener"} 0.04
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p99",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p99",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p99",name="driver_LiveListenerBus",type="executorManagement"} 2.46
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p999",name="driver_LiveListenerBus",type="AppStatusListener"} 0.05
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p999",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p999",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="p999",name="driver_LiveListenerBus",type="executorManagement"} 2.46
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="size",name="driver_LiveListenerBus",type="eventLog"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="size",name="driver_LiveListenerBus",type="queueAppStatus"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="size",name="driver_LiveListenerBus",type="queueShared"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="stddev",name="driver_LiveListenerBus",type="AppStatusListener"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="stddev",name="driver_LiveListenerBus",type="EventLoggingListener"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="stddev",name="driver_LiveListenerBus",type="HeartbeatReceiver"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",measure="stddev",name="driver_LiveListenerBus",type="executorManagement"} 0.29
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="count",name="driver_LiveListenerBus",type="eventLog"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="count",name="driver_LiveListenerBus",type="queueAppStatus"} 4351
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="count",name="driver_LiveListenerBus",type="queueShared"} 4340
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m15_rate",name="driver_LiveListenerBus",type="eventLog"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m15_rate",name="driver_LiveListenerBus",type="queueAppStatus"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m15_rate",name="driver_LiveListenerBus",type="queueShared"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m1_rate",name="driver_LiveListenerBus",type="eventLog"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m1_rate",name="driver_LiveListenerBus",type="queueAppStatus"} 0.31
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m1_rate",name="driver_LiveListenerBus",type="queueShared"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m5_rate",name="driver_LiveListenerBus",type="eventLog"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m5_rate",name="driver_LiveListenerBus",type="queueAppStatus"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="m5_rate",name="driver_LiveListenerBus",type="queueShared"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="max",name="driver_LiveListenerBus",type="eventLog"} 3.29
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="max",name="driver_LiveListenerBus",type="queueAppStatus"} 3.03
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="max",name="driver_LiveListenerBus",type="queueShared"} 2.85
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean",name="driver_LiveListenerBus",type="eventLog"} 0.06
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean",name="driver_LiveListenerBus",type="queueAppStatus"} 0.07
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean",name="driver_LiveListenerBus",type="queueShared"} 0.06
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean_rate",name="driver_LiveListenerBus",type="eventLog"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean_rate",name="driver_LiveListenerBus",type="queueAppStatus"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="mean_rate",name="driver_LiveListenerBus",type="queueShared"} 0.3
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="min",name="driver_LiveListenerBus",type="eventLog"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="min",name="driver_LiveListenerBus",type="queueAppStatus"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="min",name="driver_LiveListenerBus",type="queueShared"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p50",name="driver_LiveListenerBus",type="eventLog"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p50",name="driver_LiveListenerBus",type="queueAppStatus"} 0.03
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p50",name="driver_LiveListenerBus",type="queueShared"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p75",name="driver_LiveListenerBus",type="eventLog"} 0.01
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p75",name="driver_LiveListenerBus",type="queueAppStatus"} 0.04
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p75",name="driver_LiveListenerBus",type="queueShared"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p95",name="driver_LiveListenerBus",type="eventLog"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p95",name="driver_LiveListenerBus",type="queueAppStatus"} 0.04
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p95",name="driver_LiveListenerBus",type="queueShared"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p98",name="driver_LiveListenerBus",type="eventLog"} 0.02
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p98",name="driver_LiveListenerBus",type="queueAppStatus"} 0.05
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p98",name="driver_LiveListenerBus",type="queueShared"} 0.03
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p99",name="driver_LiveListenerBus",type="eventLog"} 3.29
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p99",name="driver_LiveListenerBus",type="queueAppStatus"} 3.03
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p99",name="driver_LiveListenerBus",type="queueShared"} 2.85
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p999",name="driver_LiveListenerBus",type="eventLog"} 3.29
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p999",name="driver_LiveListenerBus",type="queueAppStatus"} 3.03
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="p999",name="driver_LiveListenerBus",type="queueShared"} 2.85
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="stddev",name="driver_LiveListenerBus",type="eventLog"} 0.39
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="stddev",name="driver_LiveListenerBus",type="queueAppStatus"} 0.36
+driver_LiveListenerBus{application="application_1676201956571_0003",category="listenerProcessingTime",measure="stddev",name="driver_LiveListenerBus",type="queueShared"} 0.36
+driver_LiveListenerBus{application="application_1676201956571_0003",category="numDroppedEvents",measure="count",name="driver_LiveListenerBus",type="eventLog"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",category="numDroppedEvents",measure="count",name="driver_LiveListenerBus",type="queueAppStatus"} 0
+driver_LiveListenerBus{application="application_1676201956571_0003",category="numDroppedEvents",measure="count",name="driver_LiveListenerBus",type="queueShared"} 0
+# HELP driver_block_manager Graphite metric driver_block_manager
+# TYPE driver_block_manager gauge
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="diskSpaceUsed_MB",type="disk"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="maxMem_MB",type="memory"} 484
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="maxOffHeapMem_MB",type="memory"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="maxOnHeapMem_MB",type="memory"} 484
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="memUsed_MB",type="memory"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="offHeapMemUsed_MB",type="memory"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="onHeapMemUsed_MB",type="memory"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="remainingMem_MB",type="memory"} 484
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="remainingOffHeapMem_MB",type="memory"} 0
+driver_block_manager{application="application_1676201956571_0003",executor_id="driver",name="driver_block_manager",qty="remainingOnHeapMem_MB",type="memory"} 484
+# HELP driver_dag_scheduler Graphite metric driver_dag_scheduler
+# TYPE driver_dag_scheduler gauge
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="count"} 2
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="m15_rate"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="m1_rate"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="m5_rate"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="max"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="mean"} 1.06
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="mean_rate"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="min"} 0.01
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p50"} 0.01
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p75"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p95"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p98"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p99"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="p999"} 2.15
+driver_dag_scheduler{application="application_1676201956571_0003",name="driver_dag_scheduler",type="stddev"} 1.07
+driver_dag_scheduler{application="application_1676201956571_0003",group="job",name="driver_dag_scheduler",type="activeJobs"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",group="job",name="driver_dag_scheduler",type="allJobs"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",group="stage",name="driver_dag_scheduler",type="failedStages"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",group="stage",name="driver_dag_scheduler",type="runningStages"} 0
+driver_dag_scheduler{application="application_1676201956571_0003",group="stage",name="driver_dag_scheduler",type="waitingStages"} 0
+# HELP executor Graphite metric executor
+# TYPE executor gauge
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="bytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="bytesWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="cpuTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="deserializeCpuTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="deserializeTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="diskBytesSpilled"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="jvmGCTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="memoryBytesSpilled"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="recordsRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="recordsWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="resultSerializationTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="resultSize"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="runTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleBytesWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleFetchWaitTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleLocalBlocksFetched"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleLocalBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleRecordsRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleRecordsWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleRemoteBlocksFetched"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleRemoteBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleRemoteBytesReadToDisk"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleTotalBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="shuffleWriteTime"} 0
+executor{application="application_1676201956571_0003",executor_id="1",name="executor",type="succeededTasks"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="bytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="bytesWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="cpuTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="deserializeCpuTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="deserializeTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="diskBytesSpilled"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="jvmGCTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="memoryBytesSpilled"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="recordsRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="recordsWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="resultSerializationTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="resultSize"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="runTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleBytesWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleFetchWaitTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleLocalBlocksFetched"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleLocalBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleRecordsRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleRecordsWritten"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleRemoteBlocksFetched"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleRemoteBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleRemoteBytesReadToDisk"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleTotalBytesRead"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="shuffleWriteTime"} 0
+executor{application="application_1676201956571_0003",executor_id="2",name="executor",type="succeededTasks"} 0
+# HELP executor_filesystem_usage Graphite metric executor_filesystem_usage
+# TYPE executor_filesystem_usage gauge
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="file",qty="largeRead_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="file",qty="read_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="file",qty="read_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="file",qty="write_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="file",qty="write_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="hdfs",qty="largeRead_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="hdfs",qty="read_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="hdfs",qty="read_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="hdfs",qty="write_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="1",fs_type="hdfs",qty="write_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="file",qty="largeRead_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="file",qty="read_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="file",qty="read_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="file",qty="write_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="file",qty="write_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="hdfs",qty="largeRead_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="hdfs",qty="read_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="hdfs",qty="read_ops"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="hdfs",qty="write_bytes"} 0
+executor_filesystem_usage{application="application_1676201956571_0003",executor_id="2",fs_type="hdfs",qty="write_ops"} 0
+# HELP executor_netty_block_transfer Graphite metric executor_netty_block_transfer
+# TYPE executor_netty_block_transfer gauge
+executor_netty_block_transfer{action="usedDirectMemory",application="application_1676201956571_0003",executor_id="1",shuffle_type="shuffle-client"} 3.3554432e+07
+executor_netty_block_transfer{action="usedDirectMemory",application="application_1676201956571_0003",executor_id="1",shuffle_type="shuffle-server"} 0
+executor_netty_block_transfer{action="usedDirectMemory",application="application_1676201956571_0003",executor_id="2",shuffle_type="shuffle-client"} 3.3554432e+07
+executor_netty_block_transfer{action="usedDirectMemory",application="application_1676201956571_0003",executor_id="2",shuffle_type="shuffle-server"} 0
+executor_netty_block_transfer{action="usedHeapMemory",application="application_1676201956571_0003",executor_id="1",shuffle_type="shuffle-client"} 0
+executor_netty_block_transfer{action="usedHeapMemory",application="application_1676201956571_0003",executor_id="1",shuffle_type="shuffle-server"} 0
+executor_netty_block_transfer{action="usedHeapMemory",application="application_1676201956571_0003",executor_id="2",shuffle_type="shuffle-client"} 0
+executor_netty_block_transfer{action="usedHeapMemory",application="application_1676201956571_0003",executor_id="2",shuffle_type="shuffle-server"} 0
+# HELP executor_tasks Graphite metric executor_tasks
+# TYPE executor_tasks gauge
+executor_tasks{application="application_1676201956571_0003",executor_id="1",qty="activeTasks"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="1",qty="completeTasks"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="1",qty="currentPool_size"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="1",qty="maxPool_size"} 2.147483647e+09
+executor_tasks{application="application_1676201956571_0003",executor_id="1",qty="startedTasks"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="2",qty="activeTasks"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="2",qty="completeTasks"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="2",qty="currentPool_size"} 0
+executor_tasks{application="application_1676201956571_0003",executor_id="2",qty="maxPool_size"} 2.147483647e+09
+executor_tasks{application="application_1676201956571_0003",executor_id="2",qty="startedTasks"} 0
+# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.
+# TYPE go_gc_duration_seconds summary
+go_gc_duration_seconds{quantile="0"} 1.7677e-05
+go_gc_duration_seconds{quantile="0.25"} 7.2124e-05
+go_gc_duration_seconds{quantile="0.5"} 9.997e-05
+go_gc_duration_seconds{quantile="0.75"} 0.000135489
+go_gc_duration_seconds{quantile="1"} 0.000869905
+go_gc_duration_seconds_sum 0.056878973
+go_gc_duration_seconds_count 495
+# HELP go_goroutines Number of goroutines that currently exist.
+# TYPE go_goroutines gauge
+go_goroutines 12
+# HELP go_info Information about the Go environment.
+# TYPE go_info gauge
+go_info{version="go1.19.3"} 1
+# HELP go_memstats_alloc_bytes Number of bytes allocated and still in use.
+# TYPE go_memstats_alloc_bytes gauge
+go_memstats_alloc_bytes 3.680752e+06
+# HELP go_memstats_alloc_bytes_total Total number of bytes allocated, even if freed.
+# TYPE go_memstats_alloc_bytes_total counter
+go_memstats_alloc_bytes_total 2.03015136e+09
+# HELP go_memstats_buck_hash_sys_bytes Number of bytes used by the profiling bucket hash table.
+# TYPE go_memstats_buck_hash_sys_bytes gauge
+go_memstats_buck_hash_sys_bytes 1.459858e+06
+# HELP go_memstats_frees_total Total number of frees.
+# TYPE go_memstats_frees_total counter
+go_memstats_frees_total 1.009761e+06
+# HELP go_memstats_gc_sys_bytes Number of bytes used for garbage collection system metadata.
+# TYPE go_memstats_gc_sys_bytes gauge
+go_memstats_gc_sys_bytes 9.132152e+06
+# HELP go_memstats_heap_alloc_bytes Number of heap bytes allocated and still in use.
+# TYPE go_memstats_heap_alloc_bytes gauge
+go_memstats_heap_alloc_bytes 3.680752e+06
+# HELP go_memstats_heap_idle_bytes Number of heap bytes waiting to be used.
+# TYPE go_memstats_heap_idle_bytes gauge
+go_memstats_heap_idle_bytes 1.417216e+07
+# HELP go_memstats_heap_inuse_bytes Number of heap bytes that are in use.
+# TYPE go_memstats_heap_inuse_bytes gauge
+go_memstats_heap_inuse_bytes 5.521408e+06
+# HELP go_memstats_heap_objects Number of allocated objects.
+# TYPE go_memstats_heap_objects gauge
+go_memstats_heap_objects 27584
+# HELP go_memstats_heap_released_bytes Number of heap bytes released to OS.
+# TYPE go_memstats_heap_released_bytes gauge
+go_memstats_heap_released_bytes 1.3549568e+07
+# HELP go_memstats_heap_sys_bytes Number of heap bytes obtained from system.
+# TYPE go_memstats_heap_sys_bytes gauge
+go_memstats_heap_sys_bytes 1.9693568e+07
+# HELP go_memstats_last_gc_time_seconds Number of seconds since 1970 of last garbage collection.
+# TYPE go_memstats_last_gc_time_seconds gauge
+go_memstats_last_gc_time_seconds 1.6762261534089453e+09
+# HELP go_memstats_lookups_total Total number of pointer lookups.
+# TYPE go_memstats_lookups_total counter
+go_memstats_lookups_total 0
+# HELP go_memstats_mallocs_total Total number of mallocs.
+# TYPE go_memstats_mallocs_total counter
+go_memstats_mallocs_total 1.037345e+06
+# HELP go_memstats_mcache_inuse_bytes Number of bytes in use by mcache structures.
+# TYPE go_memstats_mcache_inuse_bytes gauge
+go_memstats_mcache_inuse_bytes 9600
+# HELP go_memstats_mcache_sys_bytes Number of bytes used for mcache structures obtained from system.
+# TYPE go_memstats_mcache_sys_bytes gauge
+go_memstats_mcache_sys_bytes 15600
+# HELP go_memstats_mspan_inuse_bytes Number of bytes in use by mspan structures.
+# TYPE go_memstats_mspan_inuse_bytes gauge
+go_memstats_mspan_inuse_bytes 150552
+# HELP go_memstats_mspan_sys_bytes Number of bytes used for mspan structures obtained from system.
+# TYPE go_memstats_mspan_sys_bytes gauge
+go_memstats_mspan_sys_bytes 195840
+# HELP go_memstats_next_gc_bytes Number of heap bytes when next garbage collection will take place.
+# TYPE go_memstats_next_gc_bytes gauge
+go_memstats_next_gc_bytes 5.722136e+06
+# HELP go_memstats_other_sys_bytes Number of bytes used for other system allocations.
+# TYPE go_memstats_other_sys_bytes gauge
+go_memstats_other_sys_bytes 1.367054e+06
+# HELP go_memstats_stack_inuse_bytes Number of bytes in use by the stack allocator.
+# TYPE go_memstats_stack_inuse_bytes gauge
+go_memstats_stack_inuse_bytes 1.277952e+06
+# HELP go_memstats_stack_sys_bytes Number of bytes obtained from system for stack allocator.
+# TYPE go_memstats_stack_sys_bytes gauge
+go_memstats_stack_sys_bytes 1.277952e+06
+# HELP go_memstats_sys_bytes Number of bytes obtained from system.
+# TYPE go_memstats_sys_bytes gauge
+go_memstats_sys_bytes 3.3142024e+07
+# HELP go_threads Number of OS threads created.
+# TYPE go_threads gauge
+go_threads 11
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_count Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_count
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_count gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_count 4343
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m15_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m15_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m15_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m15_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m1_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m1_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m1_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m1_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m5_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m5_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m5_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_m5_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_max Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_max
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_max gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_max 0.02
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_mean_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_min Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_min
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_min gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_min 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p50 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p50
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p50 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p50 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p75 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p75
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p75 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p75 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p95 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p95
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p95 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p95 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p98 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p98
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p98 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p98 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p99 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p99
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p99 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p99 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p999 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p999
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p999 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_p999 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_stddev Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_stddev
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_stddev gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_stddev 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_count Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_count
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_count gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_count 4343
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m15_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m15_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m15_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m15_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m1_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m1_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m1_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m1_rate 0.31
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m5_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m5_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m5_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_m5_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_max Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_max
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_max gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_max 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean_rate Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean_rate
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean_rate gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_mean_rate 0.3
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_min Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_min
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_min gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_min 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p50 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p50
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p50 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p50 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p75 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p75
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p75 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p75 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p95 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p95
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p95 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p95 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p98 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p98
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p98 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p98 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p99 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p99
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p99 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p99 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p999 Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p999
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p999 gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_p999 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_stddev Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_stddev
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_stddev gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_zeppelin_spark_Spark3Shims_1_stddev 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_numEventsPosted_count Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_numEventsPosted_count
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_numEventsPosted_count gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_numEventsPosted_count 4351
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_count Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_count
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_count gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_numDroppedEvents_count 0
+# HELP graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_size Graphite metric graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_size
+# TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_size gauge
+graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_executorManagement_size 0
+# HELP graphite_exporter_build_info A metric with a constant '1' value labeled by version, revision, branch, and goversion from which graphite_exporter was built.
+# TYPE graphite_exporter_build_info gauge
+graphite_exporter_build_info{branch="HEAD",goversion="go1.19.3",revision="4848deacb8fd5a1087379026857ad3764a00aa8d",version="0.13.1"} 1
+# HELP graphite_last_processed_timestamp_seconds Unix timestamp of the last processed graphite metric.
+# TYPE graphite_last_processed_timestamp_seconds gauge
+graphite_last_processed_timestamp_seconds 1.6762261529329052e+09
+# HELP graphite_sample_expiry_seconds How long in seconds a metric sample is valid for.
+# TYPE graphite_sample_expiry_seconds gauge
+graphite_sample_expiry_seconds 300
+# HELP graphite_tag_parse_failures Total count of samples with invalid tags
+# TYPE graphite_tag_parse_failures counter
+graphite_tag_parse_failures 0
+# HELP jvmCpuTime Graphite metric jvmCpuTime
+# TYPE jvmCpuTime gauge
+jvmCpuTime{application="application_1676201956571_0003",executor_id="1",name="jvmCpuTime"} 3.324e+10
+jvmCpuTime{application="application_1676201956571_0003",executor_id="2",name="jvmCpuTime"} 3.217e+10
+jvmCpuTime{application="application_1676201956571_0003",executor_id="driver",name="jvmCpuTime"} 1.0882e+11
+# HELP jvm_memory_pools Graphite metric jvm_memory_pools
+# TYPE jvm_memory_pools gauge
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Code-Cache",qty="committed"} 1.2255232e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Code-Cache",qty="init"} 2.555904e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Code-Cache",qty="max"} 2.5165824e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Code-Cache",qty="usage"} 0.05
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Code-Cache",qty="used"} 1.211328e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Compressed-Class-Space",qty="committed"} 4.980736e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Compressed-Class-Space",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Compressed-Class-Space",qty="max"} 1.073741824e+09
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Compressed-Class-Space",qty="usage"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Compressed-Class-Space",qty="used"} 4.663528e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Metaspace",qty="committed"} 3.7486592e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Metaspace",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Metaspace",qty="max"} -1
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Metaspace",qty="usage"} 0.94
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="Metaspace",qty="used"} 3.532156e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="committed"} 1.42082048e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="init"} 6.5011712e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="max"} 2.13385216e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="usage"} 0.12
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="used"} 2.4824624e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Eden-Space",qty="used-after-gc"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="committed"} 1.47324928e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="init"} 1.71966464e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="max"} 4.47741952e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="usage"} 0.02
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="used"} 9.031896e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Old-Gen",qty="used-after-gc"} 8.941784e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="committed"} 524288
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="init"} 1.048576e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="max"} 524288
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="usage"} 0.69
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="used"} 360448
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Survivor-Space",qty="used-after-gc"} 360448
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Code-Cache",qty="committed"} 1.2255232e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Code-Cache",qty="init"} 2.555904e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Code-Cache",qty="max"} 2.5165824e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Code-Cache",qty="usage"} 0.05
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Code-Cache",qty="used"} 1.2073024e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Compressed-Class-Space",qty="committed"} 4.980736e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Compressed-Class-Space",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Compressed-Class-Space",qty="max"} 1.073741824e+09
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Compressed-Class-Space",qty="usage"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Compressed-Class-Space",qty="used"} 4.662984e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Metaspace",qty="committed"} 3.7486592e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Metaspace",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Metaspace",qty="max"} -1
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Metaspace",qty="usage"} 0.94
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="Metaspace",qty="used"} 3.5332704e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="committed"} 1.3893632e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="init"} 6.5011712e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="max"} 2.08142336e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="usage"} 0.02
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="used"} 4.6792e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Eden-Space",qty="used-after-gc"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="committed"} 1.47324928e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="init"} 1.71966464e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="max"} 4.47741952e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="usage"} 0.02
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="used"} 9.027336e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Old-Gen",qty="used-after-gc"} 8.953608e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="committed"} 5.767168e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="init"} 1.048576e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="max"} 5.767168e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="usage"} 0.05
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="used"} 262144
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Survivor-Space",qty="used-after-gc"} 262144
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Code-Cache",qty="committed"} 5.0724864e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Code-Cache",qty="init"} 2.555904e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Code-Cache",qty="max"} 2.5165824e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Code-Cache",qty="usage"} 0.2
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Code-Cache",qty="used"} 5.034144e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Compressed-Class-Space",qty="committed"} 1.3893632e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Compressed-Class-Space",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Compressed-Class-Space",qty="max"} 1.073741824e+09
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Compressed-Class-Space",qty="usage"} 0.01
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Compressed-Class-Space",qty="used"} 1.3214896e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Metaspace",qty="committed"} 1.16588544e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Metaspace",qty="init"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Metaspace",qty="max"} -1
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Metaspace",qty="usage"} 0.93
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="Metaspace",qty="used"} 1.08824528e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="committed"} 1.21634816e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="init"} 6.5011712e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="max"} 2.09190912e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="usage"} 0.09
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="used"} 1.8949904e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Eden-Space",qty="used-after-gc"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="committed"} 4.12090368e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="init"} 1.71966464e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="max"} 4.47741952e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="usage"} 0.29
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="used"} 1.27957632e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Old-Gen",qty="used-after-gc"} 1.27957632e+08
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="committed"} 1.048576e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="init"} 1.048576e+07
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="max"} 1.048576e+06
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="usage"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="used"} 0
+jvm_memory_pools{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Survivor-Space",qty="used-after-gc"} 0
+# HELP jvm_memory_usage Graphite metric jvm_memory_usage
+# TYPE jvm_memory_usage gauge
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="PS-MarkSweep",qty="count"} 2
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="PS-MarkSweep",qty="time"} 37
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Scavenge",qty="count"} 18
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="PS-Scavenge",qty="time"} 67
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="direct",qty="capacity"} 10263
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="direct",qty="count"} 4
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="direct",qty="used"} 10264
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="heap",qty="committed"} 2.89931264e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="heap",qty="init"} 2.57949696e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="heap",qty="max"} 5.96639744e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="heap",qty="usage"} 0.06
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="heap",qty="used"} 3.4216968e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="mapped",qty="capacity"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="mapped",qty="count"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="mapped",qty="used"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="non-heap",qty="committed"} 5.472256e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="non-heap",qty="init"} 2.555904e+06
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="non-heap",qty="max"} -1
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="non-heap",qty="usage"} -5.2098368e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="non-heap",qty="used"} 5.2098368e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="total",qty="committed"} 3.44653824e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="total",qty="init"} 2.605056e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="total",qty="max"} 5.96639743e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="1",mem_type="total",qty="used"} 8.6315336e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="PS-MarkSweep",qty="count"} 2
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="PS-MarkSweep",qty="time"} 38
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Scavenge",qty="count"} 18
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="PS-Scavenge",qty="time"} 69
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="direct",qty="capacity"} 10263
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="direct",qty="count"} 4
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="direct",qty="used"} 10264
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="heap",qty="committed"} 2.92028416e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="heap",qty="init"} 2.57949696e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="heap",qty="max"} 5.96639744e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="heap",qty="usage"} 0.02
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="heap",qty="used"} 1.396868e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="mapped",qty="capacity"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="mapped",qty="count"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="mapped",qty="used"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="non-heap",qty="committed"} 5.472256e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="non-heap",qty="init"} 2.555904e+06
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="non-heap",qty="max"} -1
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="non-heap",qty="usage"} -5.2068712e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="non-heap",qty="used"} 5.2068712e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="total",qty="committed"} 3.46750976e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="total",qty="init"} 2.605056e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="total",qty="max"} 5.96639743e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="2",mem_type="total",qty="used"} 6.6037392e+07
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-MarkSweep",qty="count"} 12
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-MarkSweep",qty="time"} 1585
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Scavenge",qty="count"} 43
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="PS-Scavenge",qty="time"} 283
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="direct",qty="capacity"} 111946
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="direct",qty="count"} 11
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="direct",qty="used"} 111947
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="heap",qty="committed"} 5.3477376e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="heap",qty="init"} 2.57949696e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="heap",qty="max"} 5.96639744e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="heap",qty="usage"} 0.25
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="heap",qty="used"} 1.46907536e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="mapped",qty="capacity"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="mapped",qty="count"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="mapped",qty="used"} 0
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="non-heap",qty="committed"} 1.8120704e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="non-heap",qty="init"} 2.555904e+06
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="non-heap",qty="max"} -1
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="non-heap",qty="usage"} -1.72380864e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="non-heap",qty="used"} 1.72380864e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="total",qty="committed"} 7.159808e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="total",qty="init"} 2.605056e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="total",qty="max"} 5.96639743e+08
+jvm_memory_usage{application="application_1676201956571_0003",executor_id="driver",mem_type="total",qty="used"} 3.192884e+08
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 4.34
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1.048576e+06
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 12
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.7866752e+07
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.67622573919e+09
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 7.41371904e+08
+# HELP process_virtual_memory_max_bytes Maximum amount of virtual memory available in bytes.
+# TYPE process_virtual_memory_max_bytes gauge
+process_virtual_memory_max_bytes 1.8446744073709552e+19
+# HELP promhttp_metric_handler_requests_in_flight Current number of scrapes being served.
+# TYPE promhttp_metric_handler_requests_in_flight gauge
+promhttp_metric_handler_requests_in_flight 1
+# HELP promhttp_metric_handler_requests_total Total number of scrapes by HTTP status code.
+# TYPE promhttp_metric_handler_requests_total counter
+promhttp_metric_handler_requests_total{code="200"} 13
+promhttp_metric_handler_requests_total{code="500"} 0
+promhttp_metric_handler_requests_total{code="503"} 0
+# HELP statsd_metric_mapper_cache_gets_total The count of total metric cache gets.
+# TYPE statsd_metric_mapper_cache_gets_total counter
+statsd_metric_mapper_cache_gets_total 27279
+# HELP statsd_metric_mapper_cache_hits_total The count of total metric cache hits.
+# TYPE statsd_metric_mapper_cache_hits_total counter
+statsd_metric_mapper_cache_hits_total 26617
+# HELP statsd_metric_mapper_cache_length The count of unique metrics currently cached.
+# TYPE statsd_metric_mapper_cache_length gauge
+statsd_metric_mapper_cache_length 662
+# HELP yarn_applicationMaster Graphite metric yarn_applicationMaster
+# TYPE yarn_applicationMaster gauge
+yarn_applicationMaster{application="application_1676201956571_0003",type="numContainersPendingAllocate"} 0
+yarn_applicationMaster{application="application_1676201956571_0003",type="numExecutorsFailed"} 0
+yarn_applicationMaster{application="application_1676201956571_0003",type="numExecutorsRunning"} 2
+yarn_applicationMaster{application="application_1676201956571_0003",type="numLocalityAwareTasks"} 0
+yarn_applicationMaster{application="application_1676201956571_0003",type="numReleasedContainers"} 0

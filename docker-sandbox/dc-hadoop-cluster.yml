@@ -62,13 +62,28 @@ services:
       - envs/docker_hadoop.env
 
   #
-  nodemanager:
+  nodemanager01:
     image: brijeshdhaker/hadoop-nodemanager:3.3.4
-    container_name: nodemanager
-    hostname: nodemanager
+    container_name: nodemanager01
+    hostname: nodemanager01
     restart: always
     ports:
       - "8042:8042"
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+    environment:
+      SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
+    env_file:
+      - envs/docker_hadoop.env
+
+  nodemanager02:
+    image: brijeshdhaker/hadoop-nodemanager:3.3.4
+    container_name: nodemanager02
+    hostname: nodemanager02
+    restart: always
+    ports:
+      - "8043:8042"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
@@ -159,11 +174,12 @@ services:
   # Spark History Server
   #
   spark-historyserver:
-    image: brijeshdhaker/spark:3.3.1
+    image: docker.io/brijeshdhaker/spark:3.1.2-standalone
     container_name: spark-historyserver
     hostname: spark-historyserver
     environment:
       SPARK_WORKLOAD: HistoryServer
+      SPARK_HISTORY_CONF_FILE: '/opt/spark/conf/spark-defaults.conf'
     depends_on:
       - namenode
       - datanode
@@ -172,6 +188,7 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
+      - ./conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
 
   #
   # Zeppelin Notebook
@@ -184,7 +201,6 @@ services:
       - envs/docker_zeppelin.env
     ports:
       - "9080:8080"
-      - "4040:4040"
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
