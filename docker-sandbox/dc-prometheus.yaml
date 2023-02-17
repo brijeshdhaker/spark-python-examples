@@ -20,7 +20,7 @@ services:
 # Prometheus Server
 #
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:latest
     hostname: prometheus
     container_name: prometheus
     restart: always
@@ -70,8 +70,10 @@ services:
     image: prom/alertmanager
     hostname: alertmanager
     container_name: alertmanager
+    labels:
+      type: prom-alertmanager
     ports:
-      - 9093:9093
+      - 9003:9093
     volumes:
       - sandbox_alertmanager:/etc/alertmanager/
       - sandbox_alertmanager_data:/alertmanager
@@ -84,9 +86,10 @@ services:
   #        constraints:
   #          - node.hostname == ${HOSTNAME}
 
-#
-#
-#
+
+  #
+  #
+  #
   cadvisor:
     image: gcr.io/cadvisor/cadvisor
     hostname: cadvisor
@@ -102,9 +105,43 @@ services:
     deploy:
       mode: global
 
-#
-#
-#
+  #
+  # graphite-exporter
+  #
+  graphite-exporter:
+    image: docker.io/prom/graphite-exporter:latest
+    hostname: graphite-exporter
+    container_name: graphite-exporter
+    restart: always
+    command:
+      - --graphite.mapping-config=/tmp/graphite_mapping.yaml
+    ports:
+      - "9108:9108"       # api
+      - "9109:9109"       # graphite tcp
+      - "9109:9109/udp"   # graphite udp
+    volumes:
+      - sandbox_host_path:/apps/hostpath
+      - sandbox_base_path:/apps/sandbox
+      - ./conf/graphite_mapping.yaml:/tmp/graphite_mapping.yaml
+
+  #
+  #
+  #
+#  statsd-exporter:
+#    image: prom/statsd-exporter
+#    hostname: statsd-exporter
+#    container_name: statsd-exporter
+#    command: --statsd.mapping-config=/tmp/statsd_mapping.yaml
+#    ports:
+#      - 9102:9102
+#      - 9125:9125
+#      - 9125:9125/udp
+#    volumes:
+#      - ./conf/statsd_mapping.yaml:/tmp/statsd_mapping.yaml
+
+  #
+  #
+  #
   grafana:
     image: grafana/grafana
     hostname: grafana
