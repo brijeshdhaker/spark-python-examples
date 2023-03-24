@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-12 Add graphite_exporter mapping configuration.">
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/graphite_mapping.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/graphite_mapping.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/prometheus/alert.rules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/prometheus/prometheus.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark-defaults.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-graphite-cluster.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/dc-influxdb-cluster.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/dashboard/spark-jmx-grafana-board.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/jmx/jmx-spark-2-0.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/jmx/jmx-spark-3-0.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/jmx/prometheus.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/metrics/graphite-metrics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/metrics/jmx-metrics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/metrics/prometheus-metrics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/monitoring/metrics/statsd-metrics.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/statsd_mapping.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/statsd_mapping.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-airflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-airflow.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hadoop-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,17 +47,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox/conf",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31724137",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox/conf&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="spark-python-examples">
@@ -99,7 +81,7 @@
       <recent name="$PROJECT_DIR$/src/main/py/com/example/azure" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -168,6 +150,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-sandbox/dc-airflow.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-sandbox/dc-airflow.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -181,12 +171,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.hive-metastore: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="spark-historyserver" />
+              <option value="hive-metastore" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
@@ -194,52 +184,39 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.mysqlserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="spark-historyserver" />
+              <option value="mysqlserver" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-master: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="spark-master" />
+              <option value="namenode" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-spark-cluster.yml.spark-worker-a: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="spark-worker-a" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-spark-cluster.yml" />
+          <option name="sourceFilePath" value="docker-sandbox/dc-hadoop-cluster.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-historyserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-master: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-spark-cluster.yml.spark-worker-a: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.spark-historyserver: Compose Deployment" />
         <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.hive-metastore: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-hadoop-cluster.yml.mysqlserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox/dc-airflow.yml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -251,20 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1653622607980</updated>
-    </task>
-    <task id="LOCAL-00028" summary="2022-09-12 Update docker compose for kafka cluster setup.">
-      <created>1662957566062</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1662957566062</updated>
-    </task>
-    <task id="LOCAL-00029" summary="2022-09-14 Update docker compose for postgres docker setup.">
-      <created>1663175452066</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1663175452066</updated>
     </task>
     <task id="LOCAL-00030" summary="2022-09-16 Update docker compose for postgres docker setup.">
       <created>1663293736348</created>
@@ -595,7 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676601531005</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="2023-02-12 Add graphite_exporter mapping configuration.">
+      <created>1676601700078</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1676601700078</updated>
+    </task>
+    <task id="LOCAL-00078" summary="2023-02-12 Add graphite_exporter mapping configuration.">
+      <created>1676601753614</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1676601753614</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="UnknownFeatures">

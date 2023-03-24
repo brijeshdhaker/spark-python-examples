@@ -1,5 +1,6 @@
 #
-#
+# docker volume create --name sandbox_hadoop_33_dfs --opt type=none --opt device=/apps/sandbox/hadoop-3.3.4/dfs --opt o=bind
+# docker volume create --name sandbox_hadoop_33_yarn --opt type=none --opt device=/apps/sandbox/hadoop-3.3.4/yarn --opt o=bind
 #
 version: "3.9"
 
@@ -16,7 +17,7 @@ services:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_hadoop_dfs_name:/hadoop/dfs/name
+      - sandbox_hadoop_33_dfs:/hadoop/dfs
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
@@ -34,7 +35,7 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_hadoop_dfs_data:/hadoop/dfs/data
+      - sandbox_hadoop_33_dfs:/hadoop/dfs
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
     environment:
@@ -227,9 +228,7 @@ volumes:
     external: true
   sandbox_hadoop_data:
     external: true
-  sandbox_hadoop_dfs_name:
-    external: true
-  sandbox_hadoop_dfs_data:
+  sandbox_hadoop_33_dfs:
     external: true
   sandbox_yarn_history:
     external: true
