@@ -1,0 +1,329 @@
+mappings:
+
+  # applicationMaster
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.applicationMaster.*"
+    name: "yarn_applicationMaster"
+    labels:
+      application: $1
+      type: $2
+
+  # Standalone Master
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.master.*"
+    name: "spark_master"
+    labels:
+      application: $1
+      type: $2
+
+  # Standalone Worker
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.worker.*"
+    name: "spark_worker"
+    labels:
+      application: $1
+      type: $2
+
+  #
+  # Spark shuffleService
+  #
+
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.shuffleService.blockTransferRateBytes.*"
+    name: "spark_shuffleService"
+    labels:
+      application: $1
+      measure: $2
+      type: "blockTransferRateBytes"
+
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.shuffleService.*.count"
+    name: "spark_shuffleService"
+    labels:
+      application: $1
+      type: $2
+      measure: "count"
+
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.shuffleService.openBlockRequestLatencyMillis.*"
+    name: "spark_shuffleService"
+    labels:
+      application: $1
+      type: "openBlockRequestLatencyMillis"
+      measure: $2
+
+  # TYPE graphite_application_1676201956571_0003_applicationMaster_numContainersPendingAllocate gauge
+  - match: "graphite.*.shuffleService.registerExecutorRequestLatencyMillis.*"
+    name: "spark_shuffleService"
+    labels:
+      application: $1
+      type: "registerExecutorRequestLatencyMillis"
+      measure: $2
+
+  #
+  #
+  #
+  - match: "graphite.*.*.jvm.*.*"
+    name: "jvm_memory_usage"
+    labels:
+      application: $1
+      executor_id: $2
+      mem_type: $3
+      qty: $4
+
+  - match: "graphite.*.*.jvm.pools.*.*"
+    name: "jvm_memory_pools"
+    labels:
+      application: $1
+      executor_id: $2
+      mem_type: $3
+      qty: $4
+
+  - match: "graphite.*.*.executor.threadpool.*"
+    name: "executor_tasks"
+    labels:
+      application: $1
+      executor_id: $2
+      qty: $3
+
+  # TYPE graphite_application_1676201956571_0003_2_executor_filesystem_hdfs_write_bytes gauge
+  - match: "graphite.*.*.executor.filesystem.*.*"
+    name: "executor_filesystem_usage"
+    #    match_type: regex
+    labels:
+      application: $1
+      executor_id: $2
+      fs_type: $3
+      qty: $4
+
+  #
+  - match: "graphite.*.*.BlockManager.*.*"
+    name: "driver_block_manager"
+    labels:
+      name: "driver_block_manager"
+      application: $1
+      executor_id: $2
+      type: $3
+      qty: $4
+
+  # TYPE graphite_application_1676201956571_0003_driver_DAGScheduler_job_activeJobs gauge
+  - match: "graphite.*.driver.DAGScheduler.job.*"
+    name: "driver_dag_scheduler"
+    labels:
+      name: driver_dag_scheduler
+      application: $1
+      type: $2
+      group: "job"
+
+  # TYPE graphite_application_1676201956571_0003_driver_DAGScheduler_stage_failedStages gauge
+  - match: "graphite.*.driver.DAGScheduler.stage.*"
+    name: "driver_dag_scheduler"
+    labels:
+      name: driver_dag_scheduler
+      application: $1
+      group: "stage"
+      type: $2
+
+  # TYPE graphite_application_1676201956571_0003_driver_DAGScheduler_messageProcessingTime_min gauge
+  - match: "graphite.*.driver.DAGScheduler.messageProcessingTime.*"
+    name: "driver_dag_scheduler"
+    labels:
+      name: driver_dag_scheduler
+      application: $1
+      type: $2
+
+  # namespace=LiveListenerBus
+  # TYPE graphite_application_1676201956571_0003_driver_DAGScheduler_messageProcessingTime_min gauge
+  - match: "graphite.*.driver.LiveListenerBus.listenerProcessingTime.org.apache.spark.HeartbeatReceiver.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: $2
+      type: "HeartbeatReceiver"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_scheduler_EventLoggingListener_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.listenerProcessingTime.org.apache.spark.scheduler.EventLoggingListener.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: $2
+      type: "EventLoggingListener"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_status_AppStatusListener_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: $2
+      type: "AppStatusListener"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_listenerProcessingTime_org_apache_spark_sql_SparkSession__anon_1_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.listenerProcessingTime.org.apache.zeppelin.spark.Spark3Shims_1.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: $2
+      type: "Spark3Shims_1"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_listenerProcessingTime_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.appStatus.*.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      category: $2
+      measure: $3
+      type: "queueAppStatus"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_size gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.appStatus.size"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: "size"
+      type: "queueAppStatus"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_listenerProcessingTime_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.eventLog.*.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      category: $2
+      measure: $3
+      type: "eventLog"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_size gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.eventLog.size"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: "size"
+      type: "eventLog"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_shared_numDroppedEvents_count gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.shared.*.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      category: $2
+      measure: $3
+      type: "queueShared"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_size gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.shared.size"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: "size"
+      type: "queueShared"
+
+  # TYPE graphite_application_1676201956571_0003_driver_LiveListenerBus_queue_appStatus_size gauge
+  - match: "graphite.*.driver.LiveListenerBus.queue.executorManagement.listenerProcessingTime.*"
+    name: "driver_LiveListenerBus"
+    labels:
+      name: driver_LiveListenerBus
+      application: $1
+      measure: $2
+      type: "executorManagement"
+
+
+  # TYPE graphite_application_1676201956571_0003_1_executor_bytesRead_count gauge
+  - match: "graphite.*.*.executor.*.count"
+    name: "executor"
+    labels:
+      name: executor
+      application: $1
+      executor_id: $2
+      type: $3
+
+  # TYPE graphite_application_1676201956571_0003_1_CodeGenerator_compilationTime_p50 gauge
+  - match: "graphite.*.*.CodeGenerator.*.*"
+    name: "CodeGenerator"
+    labels:
+      name: CodeGenerator
+      application: $1
+      executor_id: $2
+      type: $3
+      qty: $4
+
+  # TYPE graphite_application_1676201956571_0003_1_ExecutorMetrics_MinorGCCount gauge
+  - match: "graphite.*.*.ExecutorMetrics.*"
+    name: "ExecutorMetrics"
+    labels:
+      name: ExecutorMetrics
+      application: $1
+      executor_id: $2
+      type: $3
+
+  #
+  # # TYPE graphite_application_1676201956571_0003_driver_appStatus_jobDuration gauge
+  - match: "graphite.*.driver.appStatus.*"
+    name: "appStatus"
+    labels:
+      name: appStatus
+      application: $1
+      type: "jobs"
+      action: $3
+
+  # TYPE graphite_application_1676201956571_0003_driver_appStatus_jobs_failedJobs_count gauge
+  - match: "graphite.*.driver.appStatus.jobs.*.count"
+    name: "appStatus"
+    labels:
+      name: appStatus
+      application: $1
+      type: "jobs"
+      action: $2
+
+  # TYPE graphite_application_1676201956571_0003_driver_appStatus_stages_completedStages_count gauge
+  - match: "graphite.*.driver.appStatus.stages.*.count"
+    name: "appStatus"
+    labels:
+      name: appStatus
+      application: $1
+      type: "stages"
+      action: $2
+
+  # TYPE graphite_application_1676201956571_0003_driver_appStatus_tasks_blackListedExecutors_count gauge
+  - match: "graphite.*.driver.appStatus.tasks.*.count"
+    name: "appStatus"
+    labels:
+      name: appStatus
+      application: $1
+      type: "tasks"
+      action: $2
+
+  # TYPE graphite_application_1676201956571_0003_1_HiveExternalCatalog_fileCacheHits_count gauge
+  - match: "graphite.*.*.HiveExternalCatalog.*.count"
+    name: "HiveExternalCatalog"
+    labels:
+      name: HiveExternalCatalog
+      application: $1
+      executor_id: $2
+      type: $3
+
+  # TYPE graphite_application_1676201956571_0003_1_NettyBlockTransfer_shuffle-client_usedDirectMemory gauge
+  - match: "graphite.*.*.NettyBlockTransfer.*.*"
+    name: "executor_netty_block_transfer"
+    labels:
+      application: $1
+      executor_id: $2
+      shuffle_type: $3
+      action: $4
+
+  # TYPE graphite_application_1676201956571_0003_driver_JVMCPU_jvmCpuTime gauge
+  # TYPE graphite_application_1676201956571_0003_1_JVMCPU_jvmCpuTime gauge
+  - match: "graphite.*.*.JVMCPU.*"
+    name: "jvmCpuTime"
+    labels:
+      application: $1
+      executor_id: $2
+      name: $3

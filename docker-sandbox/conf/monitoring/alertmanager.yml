@@ -1,0 +1,17 @@
+#
+#
+#
+route:
+  receiver: 'mail'
+  repeat_interval: 4h
+  group_by: [ alertname ]
+
+
+receivers:
+  - name: 'mail'
+    email_configs:
+      - smarthost: 'smtp.gmail.com:465'
+        auth_username: 'brijeshdhaker@gmail.com'
+        auth_password: "Gmail2021$"
+        from: 'brijeshdhaker@gmail.com'
+        to: 'brijeshdhaker@gmail.com'

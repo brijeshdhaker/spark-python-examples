@@ -1,3 +1,12 @@
+#
+# docker volume create --name sandbox_airflow_sources --opt type=none --opt device=/apps/sandbox/airflow --opt o=bind
+# docker volume create --name sandbox_airflow_dags --opt type=none --opt device=/apps/sandbox/airflow/dags --opt o=bind
+# docker volume create --name sandbox_airflow_logs --opt type=none --opt device=/apps/sandbox/airflow/logs --opt o=bind
+# docker volume create --name sandbox_airflow_plugins --opt type=none --opt device=/apps/sandbox/airflow/plugins --opt o=bind
+#
+
+
+
 
 # Basic Airflow cluster configuration for CeleryExecutor with Redis and PostgreSQL.
 #
@@ -7,7 +16,7 @@
 # The following variables are supported:
 #
 # AIRFLOW_IMAGE_NAME           - Docker image name used to run Airflow.
-#                                Default: apache/airflow:2.5.1
+#                                Default: apache/airflow:2.4.3
 # AIRFLOW_UID                  - User ID in Airflow containers
 #                                Default: 50000
 # Those configurations are useful mostly in case of standalone testing/running Airflow in test/try-out mode
@@ -27,10 +36,10 @@ x-airflow-common:
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
   # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
   # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.5.1}
+  image: ${AIRFLOW_IMAGE_NAME:-brijeshdhaker/airflow:2.5.3}
   # build: .
   env_file:
-    - ./envs/docker_airflow.env
+    - envs/docker_airflow.env
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -43,18 +52,18 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
-    _PIP_ADDITIONAL_REQUIREMENTS: 'apache-airflow-providers-apache-spark apache-airflow-providers-cncf-kubernetes'
+  #    _PIP_ADDITIONAL_REQUIREMENTS: 'apache-airflow-providers-apache-spark apache-airflow-providers-cncf-kubernetes'
   volumes:
     - sandbox_airflow_dags:/opt/airflow/dags
     - sandbox_airflow_logs:/opt/airflow/logs
     - sandbox_airflow_plugins:/opt/airflow/plugins
     - sandbox_host_path:/apps/hostpath
     - sandbox_base_path:/apps/sandbox
-    - sandbox_hadoop:/opt/hadoop-3.3.4
-    - sandbox_hbase:/opt/hbase-2.4.9
-    - sandbox_hbase_client:/opt/hbase-client
-    - sandbox_hive:/opt/hive-3.1.2
-    - sandbox_spark:/opt/spark-3.1.2
+    - sandbox_hadoop_334:/opt/hadoop
+    - sandbox_hbase_249:/opt/hbase
+    - sandbox_hbase_117:/opt/hbase-client
+    - sandbox_hive_312:/opt/hive
+    - sandbox_spark_312:/opt/spark
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -64,20 +73,6 @@ x-airflow-common:
       condition: service_healthy
 
 services:
-
-  redisserver:
-    container_name: redisserver
-    hostname: redisserver
-    image: redis:latest
-    expose:
-      - 6379
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 30s
-      retries: 50
-    restart: always
-
   #
   # Mysql Database Server
   #
@@ -92,15 +87,30 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_mysql_conf:/etc/mysql/conf.d
       - sandbox_mysql_data:/var/lib/mysql
+      - ./conf/mysql:/etc/mysql/conf.d
     env_file:
-      - envs/docker_airflow.env
+      - envs/docker_mysql.env
     healthcheck:
-      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      test: "/usr/bin/mysql --user=root --password=p@SSW0rd --execute \"SHOW DATABASES;\""
+      # test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       timeout: 20s
       retries: 10
-
+  #
+  #
+  #
+  redisserver:
+    container_name: redisserver
+    hostname: redisserver
+    image: redis:latest
+    expose:
+      - 6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: always
 
   #
   #
@@ -253,7 +263,7 @@ services:
       _AIRFLOW_WWW_USER_CREATE: 'true'
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-      _PIP_ADDITIONAL_REQUIREMENTS: 'apache-airflow-providers-apache-spark apache-airflow-providers-cncf-kubernetes'
+      _PIP_ADDITIONAL_REQUIREMENTS: ''
     user: "0:0"
     volumes:
       - sandbox_airflow_sources:/sources
@@ -302,6 +312,10 @@ volumes:
     external: true
   sandbox_base_path:
     external: true
+  sandbox_mysql_data:
+    external: true
+  sandbox_mysql_conf:
+    external: true
   sandbox_airflow_sources:
     external: true
   sandbox_airflow_dags:
@@ -310,19 +324,17 @@ volumes:
     external: true
   sandbox_airflow_plugins:
     external: true
-  sandbox_mysql_data:
+  sandbox_hbase_249:
     external: true
-  sandbox_mysql_conf:
+  sandbox_hbase_117:
     external: true
-  sandbox_hadoop:
+  sandbox_hive_312:
     external: true
-  sandbox_hbase:
+  sandbox_spark_312:
     external: true
-  sandbox_hbase_client:
+  sandbox_hadoop_274:
     external: true
-  sandbox_hive:
-    external: true
-  sandbox_spark:
+  sandbox_hadoop_334:
     external: true
 
 #

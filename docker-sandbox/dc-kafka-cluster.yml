@@ -1,12 +1,14 @@
 #
+# docker volume create --name sandbox_kafka_secrets --opt type=none --opt device=/apps/sandbox/kafka-broker/secrets --opt o=bind
+# docker volume create --name sandbox_kafka_data --opt type=none --opt device=/apps/sandbox/kafka-broker/data --opt o=bind
+# docker volume create --name sandbox_kafka_log --opt type=none --opt device=/apps/sandbox/kafka-broker/log --opt o=bind
 #
-#
+---
 version: "3.9"
 
 services:
-  #
+
   # Zookeeper Server
-  #
   zookeeper:
     image: confluentinc/cp-zookeeper:7.1.2
     hostname: zookeeper
@@ -77,7 +79,7 @@ services:
     volumes:
       - sandbox_host_path:/apps/hostpath
       - sandbox_base_path:/apps/sandbox
-      - sandbox_schema_registry_secrets:/etc/schema-registry/secrets
+      - sandbox_kafka_secrets:/etc/schema-registry/secrets
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafka-broker:19092'
@@ -101,8 +103,6 @@ volumes:
   sandbox_kafka_data:
     external: true
   sandbox_kafka_log:
-    external: true
-  sandbox_schema_registry_secrets:
     external: true
 
 #
