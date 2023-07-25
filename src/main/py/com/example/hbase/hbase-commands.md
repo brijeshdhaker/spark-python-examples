@@ -38,3 +38,9 @@ disable 'test_table'
 
 ### 9. Drop Table
 drop 'test_table'
+
+### Grant
+# sudo -u hbase kinit -kt /etc/security/keytabs/hbase.service.keytab hbase/hive-spike.example.com@EXAMPLE.COM
+# sudo -u hbase hbase shell
+
+hbase(main):001:0> grant 'brijeshdhaker','RWCA'
