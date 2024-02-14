@@ -8,14 +8,17 @@ services:
   # Zookeeper Server
   #
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.1.2
+    image: confluentinc/cp-zookeeper:7.5.0
     hostname: zookeeper
     container_name: zookeeper
+    healthcheck:
+      test: curl -f http://zookeeper.sandbox.net:8080/commands || exit 1
+      retries: 20
+      interval: 10s
     ports:
       - "2181:2181"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
       - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
       - sandbox_zookeeper_data:/var/lib/zookeeper/data
       - sandbox_zookeeper_log:/var/lib/zookeeper/log
@@ -25,45 +28,56 @@ services:
       ALLOW_UNSIGNED: "true"
 
   #
-  # Hbase Server
+  # Hbase Cluster
   #
-  hbase-master:
-    image: brijeshdhaker/hbase-master:2.4.9
-    hostname: hbase-master
-    container_name: hbase-master
+  hmaster:
+    image: brijeshdhaker/hbase-master:2.4.6
+    hostname: hmaster.sandbox.net
+    container_name: hmaster
+    healthcheck:
+      test: curl -f http://hmaster.sandbox.net:16010 || exit 1
+      retries: 20
+      interval: 10s
+    depends_on:
+      zookeeper:
+        condition: service_healthy
     environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181"
+      SERVICE_PRECONDITION: "namenode.sandbox.net:9870 zookeeper.sandbox.net:2181"
     env_file:
       - envs/docker_hbase.env
     ports:
       - "16000:16000"
       - "16010:16010"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_311:/opt/hadoop
+      - ./conf/hadoop/client:/opt/hadoop/etc/hadoop
 
   #
-  hbase-region:
-    image: brijeshdhaker/hbase-regionserver:2.4.9
-    container_name: hbase-regionserver
-    hostname: hbase-regionserver
+  hregion:
+    image: brijeshdhaker/hbase-regionserver:2.4.6
+    hostname: hregion.sandbox.net
+    container_name: hregion
+    healthcheck:
+      test: curl -f http://hregion.sandbox.net:16030 || exit 1
+      retries: 20
+      interval: 10s
     env_file:
       - envs/docker_hbase.env
     environment:
-      HBASE_CONF_hbase_regionserver_hostname: hbase-region
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181 hbase-master:16010"
+      SERVICE_PRECONDITION: "namenode.sandbox.net:9870 zookeeper.sandbox.net:2181 hmaster.sandbox.net:16010"
     ports:
       - "16020:16020"
       - "16030:16030"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_311:/opt/hadoop
+      - ./conf/hadoop/client:/opt/hadoop/etc/hadoop
 
 #
 volumes:
-  sandbox_host_path:
-    external: true
-  sandbox_base_path:
+  #
+  sandbox_apps_path:
     external: true
   sandbox_zookeeper_secrets:
     external: true
@@ -71,10 +85,11 @@ volumes:
     external: true
   sandbox_zookeeper_log:
     external: true
-
+  sandbox_hadoop_311:
+    external: true
 #
 networks:
   default:
     external: true
     driver: bridge
-    name: sandbox-bigdata.net
+    name: sandbox.net

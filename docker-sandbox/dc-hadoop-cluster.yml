@@ -1,6 +1,5 @@
 #
-# docker volume create --name sandbox_host_path --opt type=none --opt device=/apps/hostpath --opt o=bind
-# docker volume create --name sandbox_base_path --opt type=none --opt device=/apps/sandbox --opt o=bind
+# docker volume create --name sandbox_apps_path --opt type=none --opt device=/apps --opt o=bind
 # docker volume create --name sandbox_hadoop_334 --opt type=none --opt device=/opt/hadoop-3.3.4 --opt o=bind
 #
 # docker volume create --name sandbox_hadoop_334_dfs --opt type=none --opt device=/apps/sandbox/hadoop-3.3.4/dfs --opt o=bind
@@ -15,13 +14,14 @@ services:
     image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode
     hostname: namenode
-    restart: always
+    restart: no
+#    command:
+#      - /opt/hadoop-3.3.4/bin/hdfs namenode -upgrade
     ports:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
       - sandbox_hadoop_334_dfs:/hadoop/dfs
     environment:
       - CLUSTER_NAME=docker-sandbox
@@ -38,8 +38,7 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
       - sandbox_hadoop_334_dfs:/hadoop/dfs
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
@@ -56,8 +55,7 @@ services:
       - "8088:8088"
       - "8032:8032"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
@@ -72,8 +70,7 @@ services:
     ports:
       - "8042:8042"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
@@ -93,19 +90,14 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
       - sandbox_hadoop_334_yarn:/yarn
     env_file:
       - envs/docker_hadoop334.env
 
 #
 volumes:
-  sandbox_host_path:
-    external: true
-  sandbox_base_path:
-    external: true
-  sandbox_hadoop_334:
+  sandbox_apps_path:
     external: true
   sandbox_hadoop_334_dfs:
     external: true
@@ -116,4 +108,4 @@ networks:
   default:
     external: true
     driver: bridge
-    name: sandbox-bigdata.net
+    name: sandbox.net

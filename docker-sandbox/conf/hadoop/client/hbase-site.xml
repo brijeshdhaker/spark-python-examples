@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <property><name>hbase.superuser</name><value>hbase</value></property>
+    <property><name>hbase.master.kerberos.principal</name><value>hbase/_HOST@SANDBOX.NET</value></property>
+    <property><name>hbase.cluster.distributed</name><value>true</value></property>
+    <property><name>hbase.master.port</name><value>16000</value></property>
+    <property><name>hbase.zookeeper.property.clientPort</name><value>2181</value></property>
+    <property><name>hbase.unsafe.stream.capability.enforce</name><value>false</value></property>
+    <property><name>hbase.rpc.engine</name><value>org.apache.hadoop.hbase.ipc.SecureRpcEngine</value></property>
+    <property><name>hbase.master.info.port</name><value>16010</value></property>
+    <property><name>hbase.master.keytab.file</name><value>/apps/security/keytabs/services/hbase.service.keytab</value></property>
+    <property><name>hbase.security.authorization</name><value>true</value></property>
+    <property><name>hbase.zookeeper.quorum</name><value>zookeeper.sandbox.net:2181</value></property>
+    <property><name>hbase.master</name><value>hmaster.sandbox.net:16000</value></property>
+    <property><name>hbase.coprocessor.master.classes</name><value>org.apache.hadoop.hbase.security.access.AccessController</value></property>
+    <property><name>hbase.tmp.dir</name><value>/tmp</value></property>
+    <property><name>hbase.security.authentication</name><value>kerberos</value></property>
+    <property><name>hbase.rootdir</name><value>hdfs://namenode.sandbox.net:9000/hbase</value></property>
+    <property><name>hbase.master.hostname</name><value>hmaster.sandbox.net</value></property>
+    <property><name>hbase.regionserver.keytab.file</name><value>/apps/security/keytabs/services/hbase.service.keytab</value></property>
+    <property><name>hbase.regionserver.info.port</name><value>16030</value></property>
+    <property><name>hbase.zookeeper.property.dataDir</name><value>/data/zookeeper</value></property>
+    <property><name>hbase.regionserver.port</name><value>16020</value></property>
+    <property><name>hbase.regionserver.kerberos.principal</name><value>hbase/_HOST@SANDBOX.NET</value></property>
+    <property><name>hbase.coprocessor.regionserver.classes</name><value>org.apache.hadoop.hbase.security.access.AccessController</value></property>
+</configuration>
