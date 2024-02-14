@@ -19,9 +19,9 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
-      - sandbox_zookeeper_data:/var/lib/zookeeper/data
-      - sandbox_zookeeper_log:/var/lib/zookeeper/log
+      - /apps/sandbox/zookeeper/hadoop334/secrets:/etc/zookeeper/secrets
+      - /apps/sandbox/zookeeper/hadoop334/data:/var/lib/zookeeper/data
+      - /apps/sandbox/zookeeper/hadoop334/log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000

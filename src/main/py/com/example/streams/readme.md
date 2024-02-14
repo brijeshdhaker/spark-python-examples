@@ -30,23 +30,23 @@ kafka-topics --list --bootstrap-server kafka-broker:9092
 kafka-topics --describe --topic tweeter-tweets --bootstrap-server kafka-broker:9092
 
 ##### Topic - Alter
-kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server zookeeper.sandbox-bigdata.net:2181
+kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server zookeeper.sandbox.net:2181
 
 ##### Topic - Delete
 kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker:9092
-kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker.sandbox-bigdata.net:9092
+kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker.sandbox.net:9092
 
 ##### Command Line Producer :
-kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox-bigdata.net:9092
+kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox.net:9092
 
-kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox-bigdata.net:9092 --property parse.key=true --property key.separator=":"
+kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox.net:9092 --property parse.key=true --property key.separator=":"
 
 ##### Command Line Consumer :
-kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server kafka-broker.sandbox-bigdata.net:9092
+kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server kafka-broker.sandbox.net:9092
 
 ```
 
-listeners=PLAINTEXT://kafka-broker.sandbox-bigdata.net:9092
+listeners=PLAINTEXT://kafka-broker.sandbox.net:9092
 advertised.listeners=PLAINTEXT://localhost:19092
 
 ### Create Hive Table

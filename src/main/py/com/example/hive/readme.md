@@ -30,7 +30,7 @@ $SPARK_HOME/bin/pyspark
 ```commandline
 export HIVE_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive
 export HIVE_HOME=/opt/hive
-$HIVE_HOME/bin/beeline -u jdbc:hive2://hive-server.sandbox-bigdata.net:10000 scott tiger
+$HIVE_HOME/bin/beeline -u jdbc:hive2://hive-server.sandbox.net:10000 scott tiger
 
 [0: jdbc:hive2://hive-server:> show tables;
 +------------+--+

@@ -5,7 +5,9 @@
 version: "3.9"
 
 services:
+  #
   # HDFS Sandbox
+  #
   namenode:
     image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode

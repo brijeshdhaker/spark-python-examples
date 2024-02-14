@@ -8,17 +8,20 @@ services:
   # Zookeeper Server
   #
   zookeeper:
-    image: confluentinc/cp-zookeeper:7.1.2
+    image: confluentinc/cp-zookeeper:7.5.0
     hostname: zookeeper
     container_name: zookeeper
+    healthcheck:
+      test: curl -f http://zookeeper.sandbox.net:8080/commands || exit 1
+      retries: 20
+      interval: 10s
     ports:
       - "2181:2181"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-      - sandbox_zookeeper_secrets:/etc/zookeeper/secrets
-      - sandbox_zookeeper_data:/var/lib/zookeeper/data
-      - sandbox_zookeeper_log:/var/lib/zookeeper/log
+      - sandbox_apps_path:/apps
+      - /apps/sandbox/zookeeper/hadoop334/secrets:/etc/zookeeper/secrets
+      - /apps/sandbox/zookeeper/hadoop334/data:/var/lib/zookeeper/data
+      - /apps/sandbox/zookeeper/hadoop334/log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -105,23 +108,24 @@ services:
   # HDFS Sandbox
   #
 
-  #
+  # HDFS Sandbox
   namenode:
     image: brijeshdhaker/hadoop-namenode:3.3.4
     container_name: namenode
     hostname: namenode
-    restart: always
+    restart: no
+    #    command:
+    #      - /opt/hadoop-3.3.4/bin/hdfs namenode -upgrade
     ports:
       - "9870:9870"
       - "9000:9000"
     volumes:
-      - sandbox_hadoop_dfs_name:/hadoop/dfs/name
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_334_dfs:/hadoop/dfs
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - envs/sandbox_3_3_4.env
+      - envs/docker_hadoop334.env
 
   #
   datanode:
@@ -133,19 +137,17 @@ services:
       - "9866:9866"
     restart: always
     volumes:
-      - sandbox_hadoop_dfs_data:/hadoop/dfs/data
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_334_dfs:/hadoop/dfs
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - envs/sandbox_3_3_4.env
+      - envs/docker_hadoop334.env
 
   #
   # YARN Sandbox
   #
-
-  #
+  # YARN Sandbox
   resourcemanager:
     image: brijeshdhaker/hadoop-resourcemanager:3.3.4
     container_name: resourcemanager
@@ -155,12 +157,11 @@ services:
       - "8088:8088"
       - "8032:8032"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
-      - envs/sandbox_3_3_4.env
+      - envs/docker_hadoop334.env
 
   #
   nodemanager:
@@ -171,13 +172,14 @@ services:
     ports:
       - "8042:8042"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
-      - envs/sandbox_3_3_4.env
+      - envs/docker_hadoop334.env
 
+  #
+  # YARN History Server
   #
   historyserver:
     image: brijeshdhaker/hadoop-historyserver:3.3.4
@@ -189,132 +191,99 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     volumes:
-      - sandbox_yarn_history:/tmp/yarn/history
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_334_yarn:/yarn
     env_file:
-      - envs/sandbox_3_3_4.env
+      - envs/docker_hadoop334.env
 
   #
   # Mysql Database Server
   #
-
-  #
   mysqlserver:
     image: mysql/mysql-server:8.0.28
     container_name: mysqlserver
-    hostname: mysqlserver
+    hostname: mysqlserver.sandbox.net
     restart: always
     ports:
       - "3306:3306"
+    command: "mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-      - sandbox_mysql_conf:/etc/mysql/conf.d
+      - sandbox_apps_path:/apps
       - sandbox_mysql_data:/var/lib/mysql
+      - ./conf/mysql:/etc/mysql/conf.d
     env_file:
-      - envs/docker_mysql.env
+      - ./envs/docker_mysql.env
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=p@SSW0rd --execute \"SHOW DATABASES;\""
+      # test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
 
   #
-  # Hive Server
+  # Hive Metastore
   #
-
-  #
-  hive-metastore:
-    image: brijeshdhaker/hive:3.1.2
-    hostname: hive-metastore
-    container_name: hive-metastore
+  metastore:
+    image: brijeshdhaker/hive:3.1.3
+    hostname: metastore.sandbox.net
+    container_name: metastore
+    healthcheck:
+      test: netstat -lpn | grep 9083 || exit 1
+      retries: 20
+      interval: 10s
     env_file:
-      - envs/docker_hive.env
-    command: /opt/hive-3.1.2/bin/hive --service metastore
+      - ./envs/docker_hive.env
+    command: /opt/hive/bin/hive --service metastore
     environment:
-      SERVICE_PRECONDITION: "mysqlserver:3306"
-    links:
-      - mysqlserver
+      SERVICE_PRECONDITION: "mysqlserver.sandbox.net:3306"
     ports:
       - "9083:9083"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_311:/opt/hadoop
 
-  #
-  hive-server:
-    image: brijeshdhaker/hive:3.1.2
-    hostname: hive-server
-    container_name: hive-server
+  # Hive Server
+  hiveserver:
+    image: brijeshdhaker/hive:3.1.3
+    container_name: hiveserver
+    hostname: hiveserver.sandbox.net
+    healthcheck:
+      test: nc -vz hiveserver.sandbox.net 10002 || exit 1
+      retries: 20
+      interval: 10s
+    depends_on:
+      metastore:
+        condition: service_healthy
     env_file:
-      - envs/docker_hive.env
-    links:
-      - hive-metastore
-      - namenode
-      - datanode
+      - ./envs/docker_hive.env
     environment:
-      HIVE_CORE_CONF_javax_jdo_option_ConnectionURL: "jdbc:mysql://mysqlserver/metastore?createDatabaseIfNotExist=true;autoReconnect=true;useSSL=false"
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 hive-metastore:9083"
+      SERVICE_PRECONDITION: "namenode.sandbox.net:9000 metastore.sandbox.net:9083"
     ports:
       - "10000:10000"
       - "10002:10002"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_311:/opt/hadoop
 
-
-  #
-  # Hbase Server
-  #
-  hbase-master:
-    image: brijeshdhaker/hbase-master:2.4.9
-    hostname: hbase-master
-    container_name: hbase-master
-    environment:
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181"
-    env_file:
-      - envs/docker_hbase.env
-    ports:
-      - "16000:16000"
-      - "16010:16010"
-    volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-
-  #
-  hbase-region:
-    image: brijeshdhaker/hbase-regionserver:2.4.9
-    container_name: hbase-regionserver
-    hostname: hbase-regionserver
-    env_file:
-      - envs/docker_hbase.env
-    environment:
-      HBASE_CONF_hbase_regionserver_hostname: hbase-region
-      SERVICE_PRECONDITION: "namenode:9870 datanode:9864 zookeeper:2181 hbase-master:16010"
-    ports:
-      - "16020:16020"
-      - "16030:16030"
-    volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-
-  #
-  #
-  #
+  # Spark History Server
   spark-historyserver:
-    image: brijeshdhaker/spark-historyserver:3.1.2
-    container_name: spark-historyserver
-    hostname: spark-historyserver
+    image: brijeshdhaker/spark-standalon:3.1.2
+    container_name: sparkhistory
+    hostname: sparkhistory.sandbox.net
     environment:
+      SPARK_WORKLOAD: HistoryServer
       SERVICE_PRECONDITION: "namenode:9870 datanode:9864"
     depends_on:
       - namenode
       - datanode
     ports:
       - "18080:18080"
+    env_file:
+      - envs/docker_spark312.env
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
+      - ./conf/spark/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
 
-  #
   # Zeppelin Notebook
-  #
   zeppelin:
     image: apache/zeppelin:0.10.1
     container_name: zeppelin
@@ -323,16 +292,18 @@ services:
       - envs/docker_zeppelin.env
     ports:
       - "9080:8080"
-      - "4040:4040"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
-      - sandbox_hadoop:/opt/hadoop-3.3.4
-      - sandbox_hbase:/opt/hbase-2.4.9
-      - sandbox_hbase_client:/opt/hbase-client
-      - sandbox_hive:/opt/hive-3.1.2
-      - sandbox_spark:/opt/spark-3.1.2
-      - sandbox_zeppelin:/opt/zeppelin
+      - sandbox_apps_path:/apps
+      - sandbox_hadoop_311:/opt/hadoop
+      - sandbox_hbase_246:/opt/hbase
+      #      - sandbox_hbase_117:/opt/hbase-client
+      - sandbox_hive_313:/opt/hive
+      - sandbox_spark_312:/opt/spark
+      - sandbox_zeppelin_conf:/opt/zeppelin/conf
+      - sandbox_zeppelin_notebook:/opt/notebook
+  #      - sandbox_zeppelin_conf:/opt/zeppelin/conf
+  #      - sandbox_m2:/opt/zeppelin/.m2
+  #      - sandbox_ivy2:/opt/zeppelin/.ivy2
 
   #
   # Apache NiFi
@@ -435,4 +406,4 @@ networks:
   default:
     external: true
     driver: bridge
-    name: sandbox-bigdata.net
+    name: sandbox.net

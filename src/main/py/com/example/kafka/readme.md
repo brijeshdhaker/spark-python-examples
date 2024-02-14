@@ -22,7 +22,7 @@ kafka-topics --alter --topic kafka-python-partitioned-topic --partitions 5 --boo
 kafka-topics --delete --topic kafka-python-simple-topic --bootstrap-server kafka-broker:9092
 
 # Topic - Check current Retention period
-kafka-configs –zookeeper zookeeper.sandbox-bigdata.net:2181 –describe –entity-type topics –entity-name <topic name>
+kafka-configs –zookeeper zookeeper.sandbox.net:2181 –describe –entity-type topics –entity-name <topic name>
 
 
 # Kafka - Broker Console
