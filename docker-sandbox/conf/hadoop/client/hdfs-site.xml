@@ -17,17 +17,31 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
-    <property><name>dfs.webhdfs.enabled</name><value>true</value></property>
-    <property><name>dfs.replication</name><value>1</value></property>
     <property><name>dfs.datanode.data.dir</name><value>file:///hadoop/dfs/data</value></property>
+    <property><name>dfs.datanode.keytab.file</name><value>/apps/security/keytabs/services/hdfs.service.keytab</value></property>
+    <property><name>dfs.namenode.https-address</name><value>0.0.0.0:9871</value></property>
     <property><name>dfs.namenode.datanode.registration.ip-hostname-check</name><value>false</value></property>
+    <property><name>dfs.secondary.namenode.kerberos.internal.spnego.principal</name><value>HTTP/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.namenode.secondary.http-address</name><value>0.0.0.0:9868</value></property>
+    <property><name>dfs.datanode.data.dir.perm</name><value>700</value></property>
+    <property><name>dfs.namenode.http-address</name><value>0.0.0.0:9870</value></property>
+    <property><name>dfs.secondary.namenode.kerberos.principal</name><value>hdfs/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.namenode.checkpoint.dir</name><value>file:///hadoop/dfs/secondary</value></property>
+    <property><name>dfs.webhdfs.enabled</name><value>true</value></property>
     <property><name>dfs.permissions.enabled</name><value>false</value></property>
+    <property><name>dfs.namenode.keytab.file</name><value>/apps/security/keytabs/services/hdfs.service.keytab</value></property>
+    <property><name>dfs.permissions.superusergroup</name><value>hadoop</value></property>
+    <property><name>dfs.replication</name><value>1</value></property>
+    <property><name>dfs.secondary.namenode.keytab.file</name><value>/apps/security/keytabs/services/hdfs.service.keytab</value></property>
+    <property><name>dfs.web.authentication.kerberos.principal</name><value>HTTP/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.namenode.kerberos.principal</name><value>hdfs/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.datanode.kerberos.principal</name><value>hdfs/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.http.policy</name><value>HTTP_ONLY</value></property>
     <property><name>dfs.namenode.name.dir</name><value>file:///hadoop/dfs/name</value></property>
-    <property><name>dfs.namenode.rpc-bind-host</name><value>0.0.0.0</value></property>
-    <property><name>dfs.namenode.servicerpc-bind-host</name><value>0.0.0.0</value></property>
-    <property><name>dfs.namenode.http-bind-host</name><value>0.0.0.0</value></property>
-    <property><name>dfs.namenode.https-bind-host</name><value>0.0.0.0</value></property>
-    <property><name>dfs.client.use.datanode.hostname</name><value>true</value></property>
-    <property><name>dfs.datanode.use.datanode.hostname</name><value>true</value></property>
+    <property><name>dfs.block.access.token.enable</name><value>true</value></property>
+    <property><name>dfs.namenode.secondary.https-address</name><value>0.0.0.0:9869</value></property>
+    <property><name>dfs.web.authentication.kerberos.keytab</name><value>/apps/security/keytabs/services/spnego.service.keytab</value></property>
+    <property><name>dfs.namenode.kerberos.internal.spnego.principal</name><value>HTTP/_HOST@SANDBOX.NET</value></property>
+    <property><name>dfs.namenode.decommission.interval</name><value>30</value></property>
+    <property><name>dfs.client.datanode-restart.timeout</name><value>30</value></property>
 </configuration>

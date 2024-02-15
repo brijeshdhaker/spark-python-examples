@@ -30,9 +30,9 @@ $SPARK_HOME/bin/pyspark
 ```commandline
 export HIVE_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive
 export HIVE_HOME=/opt/hive
-$HIVE_HOME/bin/beeline -u jdbc:hive2://hive-server.sandbox.net:10000 scott tiger
+$HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver.sandbox.net:10000 scott tiger
 
-[0: jdbc:hive2://hive-server:> show tables;
+[0: jdbc:hive2://hiveserver:> show tables;
 +------------+--+
 |  tab_name  |
 +------------+--+
@@ -111,11 +111,11 @@ $HIVE_HOME/bin/beeline -u jdbc:hive2://hive-server.sandbox.net:10000 scott tiger
 
 #### 10. In Beeline, show the Hive tables:
 ```commandline
-$beeline -u jdbc:hive2://hive-server:10000 scott tiger
+$beeline -u jdbc:hive2://hiveserver:10000 scott tiger
 
-$beeline -u jdbc:hive2://hive-server:10000 -n hive -p hive
+$beeline -u jdbc:hive2://hiveserver:10000 -n hive -p hive
 
-[0: jdbc:hive2://hive-server:> show tables;
+[0: jdbc:hive2://hiveserver:> show tables;
 +------------+--+
 |  tab_name  |
 +------------+--+
@@ -151,8 +151,8 @@ if __name__ == "__main__":
 #
 
 ```commandline
-$beeline -u jdbc:hive2://hive-server:10000 scott tiger
-0: jdbc:hive2://hive-server:10000> drop table sample_09;
+$beeline -u jdbc:hive2://hiveserver:10000 scott tiger
+0: jdbc:hive2://hiveserver:10000> drop table sample_09;
 ```
 
 #

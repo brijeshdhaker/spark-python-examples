@@ -5,27 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-14 Add graphite_exporter mapping configuration.">
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/conf/capacity-scheduler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/spark-defaults.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/spark-env.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/tez/tez-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_clients.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-airflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-airflow.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-apache-nifi.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-apache-nifi.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-cassandra.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-cassandra.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-elasticsearch.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-graphite-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-graphite-cluster.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-hbase-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-hbase-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-influxdb-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-influxdb-cluster.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster-7.1.2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster-7.1.2.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-mysqlserver.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-mysqlserver.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-postgres.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-postgres.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-prometheus.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-spark-cluster.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/core-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hdfs-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hdfs-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hive-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hive-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/mapred-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/mapred-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/yarn-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/yarn-site.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_grafana.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop274.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop334.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hive.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hive.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/sandbox_3_2_1.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/sandbox_3_3_4.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/window-functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/streams/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,40 +52,47 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="29jNbZCrSDVeMfMOMCtAV4vzr9p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.docker-sandbox.hiveserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.metastore: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.mysqlserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.spark-historyserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.zeppelin: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.nodemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.resourcemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox/conf/hadoop/client",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31724137",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-sandbox.datanode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hiveserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.metastore: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.mysqlserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.nodemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.resourcemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.spark-historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.timelineserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.zeppelin: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.nodemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.resourcemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/docker-sandbox/conf&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="spark-python-examples">
@@ -94,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client" />
       <recent name="$PROJECT_DIR$/docker-sandbox/conf" />
-      <recent name="$PROJECT_DIR$/docker-sandbox/conf/prometheus" />
-      <recent name="$PROJECT_DIR$/docker-sandbox" />
-      <recent name="$PROJECT_DIR$/monitoring" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/envs" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/conf/hadoop/conf" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/conf/spark" />
+      <recent name="$PROJECT_DIR$/docker-sandbox/conf/hbase/client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docker-sandbox/conf/hadoop" />
@@ -108,7 +116,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-sandbox.gateway: Compose Deployment">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -178,51 +186,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.gateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="hmaster" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="hregion" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="zookeeper" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-hbase-cluster.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-sandbox.spark-historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="spark-historyserver" />
+              <option value="gateway" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -230,12 +199,51 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.zeppelin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="zeppelin" />
+              <option value="historyserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox.hiveserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="hiveserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox.metastore: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="metastore" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-sandbox.mysqlserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="mysqlserver" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -245,11 +253,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.zeppelin: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.spark-historyserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.gateway: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.hiveserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.metastore: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.mysqlserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.historyserver: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -612,7 +620,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676601753614</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="UnknownFeatures">
