@@ -43,5 +43,7 @@
     <property><name>dfs.web.authentication.kerberos.keytab</name><value>/apps/security/keytabs/services/spnego.service.keytab</value></property>
     <property><name>dfs.namenode.kerberos.internal.spnego.principal</name><value>HTTP/_HOST@SANDBOX.NET</value></property>
     <property><name>dfs.namenode.decommission.interval</name><value>30</value></property>
+    <!--
     <property><name>dfs.client.datanode-restart.timeout</name><value>30</value></property>
+    -->
 </configuration>

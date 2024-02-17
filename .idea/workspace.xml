@@ -4,29 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-14 Add graphite_exporter mapping configuration.">
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/conf/capacity-scheduler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/spark-defaults.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/spark/conf/spark-env.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/tez/tez-site.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_clients.env" afterDir="false" />
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-15 update sandbox cluster details.">
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/hive/client/hive-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/zeppelin/conf/interpreter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/zeppelin/conf/shiro.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/zeppelin/conf/zeppelin-env.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/zeppelin/conf/zeppelin-site.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-sandbox/conf/zeppelin/conf/zeppelin.service" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/core-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/core-site.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hdfs-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hdfs-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hive-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/hive-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/mapred-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/mapred-site.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/yarn-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/hadoop/client/yarn-site.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/conf/tez/tez-site.xml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/conf/tez/tez-site.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop274.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hadoop334.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hive.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hive.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/sandbox_3_2_1.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/sandbox_3_3_4.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/hive-setup.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/hive/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-sandbox/envs/docker_hbase.env" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/envs/docker_hbase.env" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +57,9 @@
     &quot;Docker.docker-sandbox.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.hiveserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hivetezui: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hmaster: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hregion: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.metastore: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.mysqlserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
@@ -75,6 +68,7 @@
     &quot;Docker.docker-sandbox.spark-historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.timelineserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox.zeppelin: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.nodemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
@@ -116,7 +110,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-sandbox.gateway: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-sandbox.timelineserver: Compose Deployment">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -186,12 +180,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.gateway: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.hivetezui: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="gateway" />
+              <option value="hivetezui" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -199,12 +193,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.historyserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.nodemanager: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="historyserver" />
+              <option value="nodemanager" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -212,12 +206,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.hiveserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.resourcemanager: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="hiveserver" />
+              <option value="resourcemanager" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -225,12 +219,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.metastore: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.timelineserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="metastore" />
+              <option value="timelineserver" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -238,12 +232,12 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox.mysqlserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-sandbox.zeppelin: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="mysqlserver" />
+              <option value="zeppelin" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-sandbox/docker-compose.yml" />
@@ -253,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-sandbox.gateway: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.hiveserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.metastore: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.mysqlserver: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox.historyserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.timelineserver: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.nodemanager: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.resourcemanager: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.zeppelin: Compose Deployment" />
+        <item itemvalue="Docker.docker-sandbox.hivetezui: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -620,7 +614,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676601753614</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -642,7 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022-09-02 Update docker compose for kafka cluster setup." />
     <MESSAGE value="2022-09-12 Update docker compose for kafka cluster setup." />
     <MESSAGE value="2022-09-14 Update docker compose for postgres docker setup." />
     <MESSAGE value="2022-09-16 Update docker compose for postgres docker setup." />
@@ -667,7 +660,8 @@
     <MESSAGE value="2023-02-12 Add statsd_exporter mapping configuration." />
     <MESSAGE value="2023-02-12 Add graphite_exporter mapping configuration." />
     <MESSAGE value="2023-02-14 Add graphite_exporter mapping configuration." />
-    <option name="LAST_COMMIT_MESSAGE" value="2023-02-14 Add graphite_exporter mapping configuration." />
+    <MESSAGE value="2023-02-15 update sandbox cluster details." />
+    <option name="LAST_COMMIT_MESSAGE" value="2023-02-15 update sandbox cluster details." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
