@@ -19,9 +19,9 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_apps_path:/apps
-      - /apps/sandbox/zookeeper/hadoop334/secrets:/etc/zookeeper/secrets
-      - /apps/sandbox/zookeeper/hadoop334/data:/var/lib/zookeeper/data
-      - /apps/sandbox/zookeeper/hadoop334/log:/var/lib/zookeeper/log
+      - /apps/sandbox/zookeeper/hadoop311/secrets:/etc/zookeeper/secrets
+      - /apps/sandbox/zookeeper/hadoop311/data:/var/lib/zookeeper/data
+      - /apps/sandbox/zookeeper/hadoop311/log:/var/lib/zookeeper/log
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -110,26 +110,26 @@ services:
 
   # HDFS Sandbox
   namenode:
-    image: brijeshdhaker/hadoop-namenode:3.3.4
+    image: brijeshdhaker/hadoop-namenode:3.1.1
     container_name: namenode
     hostname: namenode
     restart: no
     #    command:
-    #      - /opt/hadoop-3.3.4/bin/hdfs namenode -upgrade
+    #      - /opt/hadoop-3.1.1/bin/hdfs namenode -upgrade
     ports:
       - "9870:9870"
       - "9000:9000"
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334_dfs:/hadoop/dfs
+      - sandbox_hadoop_311_dfs:/hadoop/dfs
     environment:
       - CLUSTER_NAME=docker-sandbox
     env_file:
-      - envs/docker_hadoop334.env
+      - envs/docker_hadoop311.env
 
   #
   datanode:
-    image: brijeshdhaker/hadoop-datanode:3.3.4
+    image: brijeshdhaker/hadoop-datanode:3.1.1
     container_name: datanode
     hostname: datanode
     ports:
@@ -138,18 +138,18 @@ services:
     restart: always
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334_dfs:/hadoop/dfs
+      - sandbox_hadoop_311_dfs:/hadoop/dfs
     environment:
       SERVICE_PRECONDITION: "namenode:9870"
     env_file:
-      - envs/docker_hadoop334.env
+      - envs/docker_hadoop311.env
 
   #
   # YARN Sandbox
   #
   # YARN Sandbox
   resourcemanager:
-    image: brijeshdhaker/hadoop-resourcemanager:3.3.4
+    image: brijeshdhaker/hadoop-resourcemanager:3.1.1
     container_name: resourcemanager
     hostname: resourcemanager
     restart: always
@@ -161,11 +161,11 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
-      - envs/docker_hadoop334.env
+      - envs/docker_hadoop311.env
 
   #
   nodemanager:
-    image: brijeshdhaker/hadoop-nodemanager:3.3.4
+    image: brijeshdhaker/hadoop-nodemanager:3.1.1
     container_name: nodemanager
     hostname: nodemanager
     restart: always
@@ -176,13 +176,13 @@ services:
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
-      - envs/docker_hadoop334.env
+      - envs/docker_hadoop311.env
 
   #
   # YARN History Server
   #
   historyserver:
-    image: brijeshdhaker/hadoop-historyserver:3.3.4
+    image: brijeshdhaker/hadoop-historyserver:3.1.1
     container_name: historyserver
     hostname: historyserver
     restart: always
@@ -192,9 +192,9 @@ services:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334_yarn:/yarn
+      - sandbox_hadoop_311_yarn:/yarn
     env_file:
-      - envs/docker_hadoop334.env
+      - envs/docker_hadoop311.env
 
   #
   # Mysql Database Server

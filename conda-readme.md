@@ -1,51 +1,47 @@
-#
+
+++`+++++++++++++++++++++#
 #### Install Conda
 #
 
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/Downloads/Miniconda3-latest-Linux-x86_64.sh
-sudo bash ~/Downloads/Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda
-conda config --set always_yes yes
+wget -nv https://repo.anaconda.com/miniconda/Miniconda3-py37_4.9.2-Linux-x86_64.sh -O /apps/hostpath/python/Miniconda3-py37_4.9.2-Linux-x86_64.sh
+sudo bash /apps/hostpath/python/Miniconda3-py37_4.9.2-Linux-x86_64.sh -b -p /opt/conda
+sudo chmod -Rf 775 /opt/conda
+sudo chown -Rf root:brijeshdhaker /opt/conda
+
+export PATH=/opt/conda/bin:$PATH
+conda config --set always_yes yes --set changeps1 no
 conda info -a
-sudo -E /opt/conda/bin/conda update -n base -c defaults conda
-sudo -E /opt/conda/bin/conda install mamba -c conda-forge
+conda update -n base -c defaults conda
+conda install mamba -c
++++++++++++++++++++++++++++conda-forge
+
+#
+#### Path entry for conda package manager
+#
 
 export PATH=/opt/conda/bin:$PATH
 PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
 PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
 
 #
-#### Path entry for conda package manager
+#### Create Conda Virtual Env : Python 3.7
 #
-
+conda env create -f mr-delta.yml
 mamba env update -f venv_pyspark3.7.yml --prune
-
-#
-#### Create Conda Virtual Env 
-#
-
-conda create --name pyspark3.8
-
-
-conda create -y -n pyspark3.7 -c conda-forge pyarrow pandas conda-pack
+conda create -y -n pyspark3.7 -c conda-forge python=3.7 pyarrow pandas conda-pack
 conda activate pyspark3.7
-conda pack -f -o pyspark3.7.tar.gz
-
-hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/
-
-hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /user/root
-
-hdfs dfs -put pyspark_env.tar.gz /tmp
+conda pack -f -o pyspark3.7-20221125.tar.gz
 
 # The python conda tar should be public accessible, so need to change permission here.
-hadoop fs -chmod 644 /tmp/pyspark_env.tar.gz
+hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/pyspark/
+hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
 
-
-
+#
+#### Create Conda Virtual Env : Python 3.8
+#
 conda create -y -n pyspark3.8 -c conda-forge pyarrow pandas conda-pack
 conda activate pyspark3.8
 conda pack -f -o pyspark3.8.tar.gz
-
-hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/
 
 #
 #### Install Package in Virtual Environment

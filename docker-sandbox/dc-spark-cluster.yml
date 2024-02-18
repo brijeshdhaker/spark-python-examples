@@ -16,7 +16,7 @@ services:
       - "8080:8080"
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
+      - sandbox_hadoop_311:/opt/hadoop
       - sandbox_hive_313:/opt/hive
     environment:
       - SPARK_MASTER_LOG=/opt/spark/logs/spark-master.out
@@ -47,7 +47,7 @@ services:
       - SPARK_WORKER_LOG=/opt/spark/logs/spark-worker.out
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
+      - sandbox_hadoop_311:/opt/hadoop
       - sandbox_hive_313:/opt/hive
 
 
@@ -73,7 +73,7 @@ services:
       - SPARK_WORKER_LOG=/opt/spark/logs/spark-worker.out
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
+      - sandbox_hadoop_311:/opt/hadoop
       - sandbox_hive_313:/opt/hive
 
   #
@@ -106,7 +106,7 @@ services:
       - "4040:4040"
     volumes:
       - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
+      - sandbox_hadoop_311:/opt/hadoop
       - sandbox_hive_313:/opt/hive
       - sandbox_hbase_246:/opt/hbase
       - sandbox_hbase_117:/opt/hbase-client
@@ -120,7 +120,7 @@ volumes:
   sandbox_apps_path:
     external: true
   #
-  sandbox_hadoop_334:
+  sandbox_hadoop_311:
     external: true
   sandbox_hadoop_data:
     external: true

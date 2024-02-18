@@ -17,14 +17,17 @@ channels:
   - defaults
 dependencies:
   - python=3.7
+  - pyarrow
+  - pandas
+  - conda-pack
   - ipykernel
-  - nb_conda
-  - jupyterlab
-  - jupyterlab_code_formatter
-  - isort
-  - black
-  - pytest
-  - pip
+#  - nb_conda
+#  - jupyterlab
+#  - jupyterlab_code_formatter
+#  - isort
+#  - black
+#  - pytest
+#  - pip
 #  - pip:
 #    - pyspark==3.1.2
 #    - delta-spark==1.0.0
