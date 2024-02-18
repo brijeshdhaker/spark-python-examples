@@ -12,8 +12,8 @@ from pyspark.sql import SparkSession
 def setEnv():
 
     # Replace with your Spark dir in windows
-    os.environ['SPARK_HOME'] = 'D:\\opt\\sandbox3\\spark-3.1.2'
-    os.environ['HADOOP_HOME'] = 'D:\\opt\\sandbox3\\hadoop-3.2.1'
+    os.environ['SPARK_HOME'] = '/opt/spark-3.1.2'
+    os.environ['HADOOP_HOME'] = '/opt/hadoop-3.1.1'
 
     print(os.environ['SPARK_HOME'])
 

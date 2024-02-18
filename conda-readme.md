@@ -12,16 +12,15 @@ export PATH=/opt/conda/bin:$PATH
 conda config --set always_yes yes --set changeps1 no
 conda info -a
 conda update -n base -c defaults conda
-conda install mamba -c
-+++++++++++++++++++++++++++conda-forge
+conda install mamba -c conda-forge
 
 #
 #### Path entry for conda package manager
 #
 
 export PATH=/opt/conda/bin:$PATH
-PYSPARK_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
-PYSPARK_DRIVER_PYTHON=/home/brijeshdhaker/.conda/envs/pyspark3.7/bin/python
+PYSPARK_PYTHON=/opt/conda/envs/pyspark3.7/bin/python
+PYSPARK_DRIVER_PYTHON=/opt/conda/envs/pyspark3.7/bin/python
 
 #
 #### Create Conda Virtual Env : Python 3.7

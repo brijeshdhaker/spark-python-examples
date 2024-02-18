@@ -11,15 +11,11 @@ dependencies:
   - pycodestyle
   - pandas
   - pandasql
-  - numpy
   - scipy
   - grpcio
   - protobuf
-  - ipython
-  - ipykernel
   - jupyterlab
   - jupyterlab_code_formatter
-  - jupyter_client
   - panel
   - jellyfish
   - matplotlib
@@ -47,7 +43,6 @@ dependencies:
   - r-shiny
   - r-googlevis
   - jsonschema
-  - requests
   - faker
   - mysql-connector-python
   - pip
@@ -57,4 +52,4 @@ dependencies:
       - quinn
       - chispa
       - confluent-kafka[avro]==1.8.2
-      - avro==1.11.0
+      - avro==1.11.3
