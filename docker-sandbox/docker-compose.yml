@@ -6,33 +6,6 @@ version: "3.9"
 
 services:
   #
-  # Zookeeper Server
-  #
-  zookeeper:
-    image: confluentinc/cp-zookeeper:7.5.0
-    hostname: zookeeper
-    container_name: zookeeper
-    healthcheck:
-      test: curl -f http://zookeeper.sandbox.net:8080/commands || exit 1
-      retries: 20
-      interval: 10s
-    ports:
-      - "2181:2181"
-    volumes:
-      - sandbox_apps_path:/apps
-      - /apps/sandbox/zookeeper/hadoop334/secrets:/etc/zookeeper/secrets
-      - /apps/sandbox/zookeeper/hadoop334/data:/var/lib/zookeeper/data
-      - /apps/sandbox/zookeeper/hadoop334/log:/var/lib/zookeeper/log
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
-      ALLOW_UNSIGNED: "true"
-    labels:
-      - io.confluent.docker.testing=true
-    extra_hosts:
-      - "thinkpad.sandbox.net:172.18.0.1"
-
-  #
   # HDFS Cluster
   #
   namenode:
@@ -275,55 +248,6 @@ services:
       - sandbox_apps_path:/apps
 
   #
-  # Hbase Cluster
-  #
-  hmaster:
-    image: brijeshdhaker/hbase-master:2.4.9
-    hostname: hmaster.sandbox.net
-    container_name: hmaster
-    healthcheck:
-      test: curl -f http://hmaster.sandbox.net:16010 || exit 1
-      retries: 20
-      interval: 10s
-    depends_on:
-      zookeeper:
-        condition: service_healthy
-    environment:
-      SERVICE_PRECONDITION: "namenode.sandbox.net:9870 zookeeper.sandbox.net:2181"
-    env_file:
-      - envs/docker_hbase.env
-      - envs/docker_clients.env
-    ports:
-      - "16000:16000"
-      - "16010:16010"
-    volumes:
-      - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
-      - ./conf/hadoop/client:/opt/hadoop/etc/hadoop
-
-  #
-  hregion:
-    image: brijeshdhaker/hbase-regionserver:2.4.9
-    hostname: hregion.sandbox.net
-    container_name: hregion
-    healthcheck:
-      test: curl -f http://hregion.sandbox.net:16030 || exit 1
-      retries: 20
-      interval: 10s
-    env_file:
-      - envs/docker_hbase.env
-      - envs/docker_clients.env
-    environment:
-      SERVICE_PRECONDITION: "namenode.sandbox.net:9870 zookeeper.sandbox.net:2181 hmaster.sandbox.net:16010"
-    ports:
-      - "16020:16020"
-      - "16030:16030"
-    volumes:
-      - sandbox_apps_path:/apps
-      - sandbox_hadoop_334:/opt/hadoop
-      - ./conf/hadoop/client:/opt/hadoop/etc/hadoop
-
-  #
   # Spark History Server
   #
   sparkhistory:
@@ -348,7 +272,6 @@ services:
       - ./envs/docker_clients.env
     volumes:
       - sandbox_apps_path:/apps
-      - ./conf/kerberos/krb5.conf:/etc/krb5.conf
       - sandbox_hadoop_334:/opt/hadoop
       - ./conf/hadoop/client:/opt/hadoop/etc/hadoop
       - ./conf/spark/conf:/opt/spark/conf
@@ -421,6 +344,8 @@ volumes:
   #
   sandbox_apps_path:
     external: true
+  sandbox_security_secrets:
+    external: true
   #
   sandbox_krb5_stash:
     external: true
@@ -453,11 +378,6 @@ volumes:
   sandbox_zeppelin_notebook:
     external: true
   #
-  sandbox_cassandra_data:
-    external: true
-  sandbox_cassandra_conf:
-    external: true
-  #
   sandbox_hbase_246:
     external: true
   sandbox_hbase_117:
@@ -472,30 +392,6 @@ volumes:
     external: true
   #
   sandbox_flink_112:
-    external: true
-  #
-  sandbox_nifi_conf:
-    external: true
-  sandbox_nifi_content_repository:
-    external: true
-  sandbox_nifi_database_repository:
-    external: true
-  sandbox_nifi_flowfile_repository:
-    external: true
-  sandbox_nifi_provenance_repository:
-    external: true
-  sandbox_nifi_log:
-    external: true
-  sandbox_nifi_state:
-    external: true
-  #
-  sandbox_airflow_sources:
-    external: true
-  sandbox_airflow_dags:
-    external: true
-  sandbox_airflow_logs:
-    external: true
-  sandbox_airflow_plugins:
     external: true
 
 #

@@ -28,6 +28,17 @@ services:
       timeout: 20s
       retries: 10
 
+  #
+  #
+  #
+  adminer:
+    image: adminer
+    restart: always
+    hostname: adminer
+    container_name: adminer
+    ports:
+      - 8080:8080
+
 #
 volumes:
   sandbox_host_path:

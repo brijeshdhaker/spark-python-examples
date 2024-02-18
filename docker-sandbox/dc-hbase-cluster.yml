@@ -19,7 +19,7 @@ services:
       - "2181:2181"
     volumes:
       - sandbox_apps_path:/apps
-      - /apps/sandbox/zookeeper/hadoop334/secrets:/etc/zookeeper/secrets
+      - sandbox_security_secrets:/etc/zookeeper/secrets
       - /apps/sandbox/zookeeper/hadoop334/data:/var/lib/zookeeper/data
       - /apps/sandbox/zookeeper/hadoop334/log:/var/lib/zookeeper/log
     environment:
@@ -79,8 +79,9 @@ volumes:
   #
   sandbox_apps_path:
     external: true
-  sandbox_zookeeper_secrets:
+  sandbox_security_secrets:
     external: true
+  #
   sandbox_zookeeper_data:
     external: true
   sandbox_zookeeper_log:
