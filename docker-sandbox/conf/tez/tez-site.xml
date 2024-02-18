@@ -4,7 +4,7 @@
   
   <property>
     <name>tez.lib.uris</name>
-    <value>hdfs://namenode.sandbox.net:9000/archives/tez-0.10.2/tez.tar.gz</value>
+    <value>hdfs://namenode.sandbox.net:9000/archives/tez-0.9.1/tez.tar.gz</value>
     <type>string</type>
   </property>
   
