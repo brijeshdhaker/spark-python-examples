@@ -7,7 +7,7 @@ import json
 An at-least-once consumer commits the offsets to kafka only after finishing storing all of results of processing the 
 message. This will result in occasional reprocessing of the same messages.
 
-docker-compose -f dc-kafka-cluster.yml exec kafka-broker kafka-console-consumer --bootstrap-server kafka-broker:9092 --topic test-topic --from-beginning --max-messages 100
+docker-compose -f dc-kafka-cluster.yaml exec kafka-broker kafka-console-consumer --bootstrap-server kafka-broker:9092 --topic test-topic --from-beginning --max-messages 100
 
 """
 

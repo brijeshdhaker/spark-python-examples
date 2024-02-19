@@ -81,7 +81,7 @@ $HIVE_HOME/lib/guava-14.0.1.jar \
 ```
 $HIVE_HOME/bin/hiveserver2
 
-$HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver:10000 -n hive -p hive
+$HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver:10000/default;user=scott;password=tiger
 $HIVE_HOME/bin/beeline -u jdbc:hive2:// -n scott -p tiger
 
 $HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver:10000 scott tiger

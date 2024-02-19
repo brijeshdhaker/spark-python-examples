@@ -24,8 +24,8 @@ services:
     volumes:
       - sandbox_apps_path:/apps
       - sandbox_security_secrets:/etc/zookeeper/secrets
-      - sandbox_zookeeper311_data:/var/lib/zookeeper/data
-      - sandbox_zookeeper311_log:/var/lib/zookeeper/log
+      - /apps/sandbox/zookeeper/data:/var/lib/zookeeper/data
+      - /apps/sandbox/zookeeper/log:/var/lib/zookeeper/log
       - ./conf/kerberos/krb5.conf:/etc/krb5.conf
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -47,20 +47,19 @@ services:
     volumes:
       - sandbox_apps_path:/apps
       - sandbox_security_secrets:/etc/kafka/secrets
-      - sandbox_kafka311_data:/var/lib/kafka/data
-      - sandbox_kafka311_log:/var/lib/kafka/log
+      - /apps/sandbox/kafka/data:/var/lib/kafka/data
+      - /apps/sandbox/kafka/log:/var/lib/kafka/log
       - ./conf/kerberos/krb5.conf:/etc/krb5.conf
     environment:
       KRB5_CONFIG: "/etc/krb5.conf"
       KAFKA_BROKER_ID: "1"
       KAFKA_BROKER_RACK: "R1"
-      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper.sandbox.net:2181'
       KAFKA_ADVERTISED_HOST_NAME: localhost
-      KAFKA_LISTENERS: INTERNAL://kafkabroker:19092,EXTERNAL://0.0.0.0:9092
-      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafkabroker:19092,EXTERNAL://localhost:9092
+      KAFKA_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://localhost:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
-      KAFKA_METRIC_REPORTERS: io.confluent.metrics.reporter.ConfluentMetricsReporter
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_CONFLUENT_LICENSE_TOPIC_REPLICATION_FACTOR: 1
@@ -68,10 +67,6 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_CONFLUENT_SCHEMA_REGISTRY_URL: http://schemaregistry.sandbox.net:8081
-      CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS: kafkabroker:19092
-      CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
-      CONFLUENT_METRICS_ENABLE: 'true'
-      CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
 
   #
   #
@@ -88,10 +83,12 @@ services:
     volumes:
       - sandbox_apps_path:/apps
       - sandbox_security_secrets:/etc/schema-registry/secrets
+      - /apps/sandbox/schema-registry/data:/var/lib/schema-registry/data
+      - /apps/sandbox/schema-registry/log:/var/lib/schema-registry/log
       - ./conf/kerberos/krb5.conf:/etc/krb5.conf
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schemaregistry
-      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafkabroker:19092'
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'kafkabroker.sandbox.net:19092'
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
       SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: INFO
 

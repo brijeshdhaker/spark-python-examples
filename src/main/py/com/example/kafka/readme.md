@@ -1,9 +1,13 @@
 
-docker-compose -f dc-kafka-cluster.yml exec kafkabroker bash
+docker compose -f  docker-sandbox/docker-compose.yaml exec kafkaclient sh -c "kafkacat -V"
+
+docker-compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker bash
+
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --list --bootstrap-server kafkabroker:9092"
 
 # Topic - Creation
 
-docker-compose -f dc-kafka-cluster.yml exec -T kafkabroker
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec -T kafkabroker
 
 kafka-topics --create --bootstrap-server kafkabroker:9092 --partitions 1 --replication-factor 1 --topic kafka-python-simple-topic --if-not-exists
 
@@ -11,9 +15,11 @@ kafka-topics --create --bootstrap-server kafkabroker:9092 --partitions 4 --repli
 
 # Topic - List
 kafka-topics --list --bootstrap-server kafkabroker:9092
+docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --list --bootstrap-server kafkabroker:9092"
 
 # Topic - Describe
 kafka-topics --describe --topic kafka-python-simple-topic --bootstrap-server kafkabroker:9092
+docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --describe --topic kafka-python-simple-topic --bootstrap-server kafkabroker:9092"
 
 # Topic - Alter
 kafka-topics --alter --topic kafka-python-partitioned-topic --partitions 5 --bootstrap-server kafkabroker:9092
@@ -70,9 +76,9 @@ docker-compose exec broker kafka-topics --create \
 
 
 #
-##  schema-registry
+##  schemaregistry
 #
-docker-compose exec schema-registry bash
+docker-compose exec schemaregistry bash
 
 kafka-avro-console-producer --topic users-topic-avro \
 --bootstrap-server kafkabroker:9092 \
@@ -81,82 +87,85 @@ kafka-avro-console-producer --topic users-topic-avro \
 # Register a new version of a schema under the subject "Kafka-key"
 $ curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"schema": "{\"type\": \"string\"}"}' \
-http://localhost:8081/subjects/auditlog-topic-avro-value/versions
+http://schemaregistry:8081/subjects/auditlog-topic-avro-value/versions
 
 # Register a new version of a schema under the subject "Kafka-value"
 $ curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"schema": "{\"type\": \"string\"}"}' \
-http://localhost:8081/subjects/auditlog-topic-avro-value/versions
+http://schemaregistry:8081/subjects/auditlog-topic-avro-value/versions
 
 # List all subjects
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/subjects
+http://schemaregistry:8081/subjects
 
 # List all schema versions registered under the subject "Kafka-value"
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/subjects/auditlog-topic-avro-value/versions
+http://schemaregistry:8081/subjects/auditlog-topic-avro-value/versions
 
 # Fetch a schema by globally unique id 1
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/schemas/ids/1
+http://schemaregistry:8081/schemas/ids/1
 
 # Fetch version 1 of the schema registered under subject "Kafka-value"
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/subjects/auditlog-topic-avro-value/versions/1
+http://schemaregistry:8081/subjects/auditlog-topic-avro-value/versions/1
 
 # Fetch the most recently registered schema under subject "Kafka-value"
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/subjects/auditlog-topic-avro-value/versions/latest
+http://schemaregistry:8081/subjects/auditlog-topic-avro-value/versions/latest
 
 # Check whether a schema has been registered under subject "Kafka-key"
 $ curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"schema": "{\"type\": \"string\"}"}' \
-http://localhost:8081/subjects/Kafka-key
+http://schemaregistry:8081/subjects/Kafka-key
 
 # Test compatibility of a schema with the latest schema under subject "Kafka-value"
 $ curl -X POST -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"schema": "{\"type\": \"string\"}"}' \
-http://localhost:8081/compatibility/subjects/auditlog-topic-avro-value/versions/latest
+http://schemaregistry:8081/compatibility/subjects/auditlog-topic-avro-value/versions/latest
 
 # Get top level config
 $ curl -X GET -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-http://localhost:8081/config
+http://schemaregistry:8081/config
 
 # Update compatibility requirements globally
 $ curl -X PUT -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"compatibility": "NONE"}' \
-http://localhost:8081/config
+http://schemaregistry:8081/config
 
 # Update compatibility requirements under the subject "Kafka-value"
 $ curl -X PUT -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 --data '{"compatibility": "BACKWARD"}' \
-http://localhost:8081/config
+http://schemaregistry:8081/config
 
+#
+# Avro Producer & Consumer
+#
 kafka-avro-console-consumer --topic users \
 --bootstrap-server kafkabroker:9092
 
 kafka-avro-console-consumer --topic users \
 --bootstrap-server kafkabroker:9092 \
---property schema.registry.url=http://schema-registry:8081 \
+--property schema.registry.url=http://schemaregistry:8081 \
 --from-beginning
 
-http://dockerhost:8081/subjects
+http://schemaregistry:8081/subjects
 ["users-value","order-updated-value","order-created-value"]
 
-http://dockerhost:8081/schemas/types
+http://schemaregistry:8081/schemas/types
 
-http://dockerhost:8081/subjects/order-updated-value/versions
-http://dockerhost:8081/schemas/ids/1
+http://schemaregistry:8081/subjects/order-updated-value/versions
+http://schemaregistry:8081/schemas/ids/1
 
-http://dockerhost:8081/subjects?deleted=true
+http://schemaregistry:8081/subjects?deleted=true
 
 
 
 docker-compose exec connect sh -c "curl -L -O -H 'Accept: application/vnd.github.v3.raw' https://api.github.com/repos/confluentinc/kafka-connect-datagen/contents/config/connector_pageviews_cos.config"
-docker-compose exec connect sh -c "curl -X POST -H 'Content-Type: application/json' --data @connector_pageviews_cos.config http://localhost:8083/connectors"
+docker-compose exec connect sh -c "curl -X POST -H 'Content-Type: application/json' --data @connector_pageviews_cos.config http://schemaregistry:8083/connectors"
 
 docker-compose exec connect sh -c "curl -L -O -H 'Accept: application/vnd.github.v3.raw' https://api.github.com/repos/confluentinc/kafka-connect-datagen/contents/config/connector_users_cos.config"
-docker-compose exec connect sh -c "curl -X POST -H 'Content-Type: application/json' --data @connector_users_cos.config http://localhost:8083/connectors"
+docker-compose exec connect sh -c "curl -X POST -H 'Content-Type: application/json' --data @connector_users_cos.config http://schemaregistry:8083/connectors"
 
 docker container stop $(docker container ls -a -q -f "label=io.confluent.docker")
 docker container stop $(docker container ls -a -q -f "label=io.confluent.docker") && docker system prune -a -f --volumes
