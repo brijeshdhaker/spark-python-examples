@@ -1,42 +1,42 @@
 
-docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
+docker-compose -f dc-kafka-cluster.yml exec kafkabroker bash
 
 # Topic - Creation
 
-docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker
+docker-compose -f dc-kafka-cluster.yml exec -T kafkabroker
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic kafka-python-simple-topic --if-not-exists
+kafka-topics --create --bootstrap-server kafkabroker:9092 --partitions 1 --replication-factor 1 --topic kafka-python-simple-topic --if-not-exists
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 4 --replication-factor 1 --topic kafka-python-partitioned-topic
+kafka-topics --create --bootstrap-server kafkabroker:9092 --partitions 4 --replication-factor 1 --topic kafka-python-partitioned-topic
 
 # Topic - List
-kafka-topics --list --bootstrap-server kafka-broker:9092
+kafka-topics --list --bootstrap-server kafkabroker:9092
 
 # Topic - Describe
-kafka-topics --describe --topic kafka-python-simple-topic --bootstrap-server kafka-broker:9092
+kafka-topics --describe --topic kafka-python-simple-topic --bootstrap-server kafkabroker:9092
 
 # Topic - Alter
-kafka-topics --alter --topic kafka-python-partitioned-topic --partitions 5 --bootstrap-server kafka-broker:9092
+kafka-topics --alter --topic kafka-python-partitioned-topic --partitions 5 --bootstrap-server kafkabroker:9092
 
 # Topic - Delete
-kafka-topics --delete --topic kafka-python-simple-topic --bootstrap-server kafka-broker:9092
+kafka-topics --delete --topic kafka-python-simple-topic --bootstrap-server kafkabroker:9092
 
 # Topic - Check current Retention period
 kafka-configs –zookeeper zookeeper.sandbox.net:2181 –describe –entity-type topics –entity-name <topic name>
 
 
 # Kafka - Broker Console
-docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
+docker-compose -f dc-kafka-cluster.yml exec kafkabroker bash
 
 ### Producer :
-docker-compose -f dc-kafka-cluster.yml exec kafka-broker bash
+docker-compose -f dc-kafka-cluster.yml exec kafkabroker bash
 
-kafka-console-producer --topic kafka-python-simple-topic --broker-list kafka-broker:9092
+kafka-console-producer --topic kafka-python-simple-topic --broker-list kafkabroker:9092
 
 #### With Key
 kafka-console-producer \
 --topic kafka-python-simple-topic
---broker-list kafka-broker:9092 \
+--broker-list kafkabroker:9092 \
 --property parse.key=true \
 --property key.separator=":" \
 
@@ -45,13 +45,13 @@ kafka-console-producer \
 kafka-console-consumer \
 --topic kafka-python-simple-topic \
 --group test-cg \
---bootstrap-server kafka-broker:9092
+--bootstrap-server kafkabroker:9092
 
 #### With Key
 kafka-console-consumer \
 --topic kafka-python-simple-topic \
 --group test-cg \
---bootstrap-server kafka-broker:9092 \
+--bootstrap-server kafkabroker:9092 \
 --from-beginning \
 --property print.key=true \
 --property key.separator="-"
@@ -63,7 +63,7 @@ docker system prune -a --volumes --filter "label=io.confluent.docker"
 docker-compose up -d
 docker-compose exec broker kafka-topics --create \
 --topic users-topic-avro \
---bootstrap-server kafka-broker:9092 \
+--bootstrap-server kafkabroker:9092 \
 --partitions 1 \
 --replication-factor 1
 --if-not-exists
@@ -75,7 +75,7 @@ docker-compose exec broker kafka-topics --create \
 docker-compose exec schema-registry bash
 
 kafka-avro-console-producer --topic users-topic-avro \
---bootstrap-server kafka-broker:9092 \
+--bootstrap-server kafkabroker:9092 \
 --property value.schema="$(< /opt/app/schema/user.avsc)"
 
 # Register a new version of a schema under the subject "Kafka-key"
@@ -133,10 +133,10 @@ $ curl -X PUT -i -H "Content-Type: application/vnd.schemaregistry.v1+json" \
 http://localhost:8081/config
 
 kafka-avro-console-consumer --topic users \
---bootstrap-server kafka-broker:9092
+--bootstrap-server kafkabroker:9092
 
 kafka-avro-console-consumer --topic users \
---bootstrap-server kafka-broker:9092 \
+--bootstrap-server kafkabroker:9092 \
 --property schema.registry.url=http://schema-registry:8081 \
 --from-beginning
 
@@ -180,29 +180,29 @@ kafka-topics --zookeeper zookeeper:2181 --alter --topic users-topic-avro --confi
 ### Setup Default  7 days (168 hours , retention.ms= 604800000)
 
 ### Get Detail Info about Your Consumer Group –
-docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker kafka-consumer-groups --bootstrap-server kafka-broker:9092 --list
-docker-compose -f dc-kafka-cluster.yml exec -T kafka-broker kafka-consumer-groups --bootstrap-server kafka-broker:9092 --describe --group test-avro-cg
+docker-compose -f dc-kafka-cluster.yml exec -T kafkabroker kafka-consumer-groups --bootstrap-server kafkabroker:9092 --list
+docker-compose -f dc-kafka-cluster.yml exec -T kafkabroker kafka-consumer-groups --bootstrap-server kafkabroker:9092 --describe --group test-avro-cg
 
 kafka-consumer-groups --describe --bootstrap-server localhost:9092 --group test-taxi-rides-cg 
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --list 
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --list 
 
 #### Delete Offset 
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --delete --group group_name
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --delete --group group_name
 
 #### Reset Offset 
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --reset-offsets --to-earliest --all-topics --execute --group test-taxi-rides-cg
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --reset-offsets --to-earliest --all-topics --execute --group test-taxi-rides-cg
 
 ##### --shift-by :- Reset the offset by incrementing the current offset position by take both +ve or -ve number
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --shift-by 10 --topic sales_topic --execute
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --group test-taxi-rides-cg --reset-offsets --shift-by 10 --topic sales_topic --execute
 
 ##### --to-datetime :- Reset offsets to offset from datetime. Format: ‘YYYY-MM-DDTHH:mm:SS.sss’
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --to-datetime 2020-11-01T00:00:00Z --topic sales_topic --execute
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --group test-taxi-rides-cg --reset-offsets --to-datetime 2020-11-01T00:00:00Z --topic sales_topic --execute
 
 ##### --to-earliest :- Reset offsets to earliest (oldest) offset available in the topic.
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --to-earliest --topic sales_topic --execute
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --group test-taxi-rides-cg --reset-offsets --to-earliest --topic sales_topic --execute
 
 ##### --to-latest :- Reset offsets to latest (recent) offset available in the topic.
-kafka-consumer-groups --bootstrap-server kafka-broker:9092 --group test-taxi-rides-cg --reset-offsets --to-latest --topic taxi-rides --execute
+kafka-consumer-groups --bootstrap-server kafkabroker:9092 --group test-taxi-rides-cg --reset-offsets --to-latest --topic taxi-rides --execute
 
 ### Get Detail Info about Your Consumer Group –
 

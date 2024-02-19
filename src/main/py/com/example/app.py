@@ -13,8 +13,8 @@ require_minimum_pyarrow_version()
 def setEnv():
 
     # Replace with your Spark dir in windows
-    os.environ['PYSPARK_DRIVER_PYTHON'] = 'C:\\Users\\brije\\IdeaProjects\\spark-python-examples\\venv\\Scripts\\python'
-    os.environ['PYSPARK_PYTHON'] = 'C:\\Users\\brije\\IdeaProjects\\spark-python-examples\\venv\\Scripts\\python'
+    os.environ['PYSPARK_DRIVER_PYTHON'] = '/opt/conda/envs/pyspark3.7/bin/python'
+    os.environ['PYSPARK_PYTHON'] = '/opt/conda/envs/pyspark3.7/bin/python'
 
     print(os.environ['SPARK_HOME'])
 

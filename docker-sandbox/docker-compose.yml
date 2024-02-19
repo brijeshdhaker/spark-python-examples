@@ -344,7 +344,7 @@ services:
     volumes:
       - ./conf/kerberos/krb5.conf:/etc/krb5.conf
       - sandbox_apps_path:/apps
-      - /apps/sandbox/zeppelin:/opt/zeppelin/conf
+      - /apps/sandbox/zeppelin/conf:/opt/zeppelin/conf
       - sandbox_zeppelin_notebook:/opt/notebook
       - sandbox_spark_312:/opt/spark
       - sandbox_hadoop_311:/opt/hadoop

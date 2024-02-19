@@ -1,5 +1,5 @@
 
-++`+++++++++++++++++++++#
+#
 #### Install Conda
 #
 
@@ -13,7 +13,7 @@ conda config --set always_yes yes --set changeps1 no
 conda info -a
 conda update -n base -c defaults conda
 conda install mamba -c conda-forge
-
+conda init bash
 #
 #### Path entry for conda package manager
 #
@@ -34,6 +34,7 @@ conda pack -f -o pyspark3.7-20221125.tar.gz
 # The python conda tar should be public accessible, so need to change permission here.
 hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/pyspark/
 hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
+hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 
 #
 #### Create Conda Virtual Env : Python 3.8
@@ -47,6 +48,7 @@ conda pack -f -o pyspark3.8.tar.gz
 #
 
 conda install -c conda-forge grpcio protobuf pycodestyle numpy pandas scipy pandasql panel pyyaml seaborn plotnine hvplot intake intake-parquet intake-xarray altair vega_datasets pyarrow
+conda install pyspark==3.1.2
 
 #
 ####  
@@ -67,6 +69,7 @@ pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
 # List Conda Virtual Environments
 #
 conda env list
+conda info --envs
 
 #
 # List Conda Virtual Environments Libraries
@@ -89,31 +92,26 @@ pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
 pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
 
 #
+# Update Virtual Env
 #
-#
-conda env update --file local.yml --prune
+conda env update --file venv_pyspark3.7.yml --prune --prune
+conda env update --name pyspark3.7 --file venv_pyspark3.7.yml --prune
 
-conda env update --name pyspark3.7 --file local.yml --prune
 #
 #### Export Virtual Env
 #
 conda pack -n pyspark3.7 -o pyspark3.7.tar.gz
-
-conda pack -n pyspark3.8 -o pyspark3.8.tar.gz
-
-conda pack -f -o pyspark_conda_env.tar.gz
-
-#
-#
-#
-
-hadoop fs -rmr /archives/mr-delta.tar.gz
-
-hadoop fs -put mr-delta.tar.gz /archives
+hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/pyspark/
+hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
+hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 
 # The python conda tar should be public accessible, so need to change permission here.
-hadoop fs -chmod 644 /tmp/pyspark_env.tar.gz
 
+#
+#
+#
+
+conda deactivate
 
 #
 ####
