@@ -7,13 +7,6 @@
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-19 update sandbox cluster details.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conda-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/conda-readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster-7.1.2.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-sandbox-cluster.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr-delta.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mr-delta.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -626,7 +619,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676601753614</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="UnknownFeatures">

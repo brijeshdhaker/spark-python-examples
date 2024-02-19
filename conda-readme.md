@@ -29,11 +29,11 @@ conda env create -f mr-delta.yml
 mamba env update -f venv_pyspark3.7.yml --prune
 conda create -y -n pyspark3.7 -c conda-forge python=3.7 pyarrow pandas conda-pack
 conda activate pyspark3.7
-conda pack -f -o pyspark3.7-20221125.tar.gz
+conda pack -f -o /apps/hostpath/python/pyspark3.7-20221125.tar.gz
 
 # The python conda tar should be public accessible, so need to change permission here.
-hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/pyspark/
-hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
+hdfs dfs –put /apps/hostpath/python/pyspark3.7-20221125.tar.gz /archives/pyspark/
+hdfs dfs -copyFromLocal /apps/hostpath/python/pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
 hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 
 #
@@ -41,7 +41,7 @@ hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 #
 conda create -y -n pyspark3.8 -c conda-forge pyarrow pandas conda-pack
 conda activate pyspark3.8
-conda pack -f -o pyspark3.8.tar.gz
+conda pack -f -o /apps/hostpath/python/pyspark3.8.tar.gz
 
 #
 #### Install Package in Virtual Environment
@@ -100,15 +100,13 @@ conda env update --name pyspark3.7 --file venv_pyspark3.7.yml --prune
 #
 #### Export Virtual Env
 #
-conda pack -n pyspark3.7 -o pyspark3.7.tar.gz
-hdfs dfs –put pyspark3.7-20221125.tar.gz /archives/pyspark/
-hdfs dfs -copyFromLocal ./pyspark3.7-20221125.tar.gz /archives/pyspark/pyspark3.7-20221125.tar.gz
+conda pack -n pyspark3.7 -o /apps/hostpath/python/pyspark3.7-$(date "+%Y%m%d").tar.gz
+hdfs dfs -copyFromLocal /apps/hostpath/python/pyspark3.7-$(date "+%Y%m%d").tar.gz /archives/pyspark/
+# The python conda tar should be public accessible, so need to change permission here.
 hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 
-# The python conda tar should be public accessible, so need to change permission here.
-
 #
-#
+#### Deactivate Cond Env
 #
 
 conda deactivate
@@ -120,10 +118,5 @@ conda install anaconda-clean
 
 #
 #### Remove all Anaconda-related files and directories with a confirmation prompt before deleting each one:
-#
-anaconda-clean
-
-#
-#### remove all Anaconda-related files and directories without being prompted to delete each one:
 #
 anaconda-clean --yes
