@@ -1,7 +1,7 @@
 #
-# docker volume create --name sandbox_kafka_secrets --opt type=none --opt device=/apps/sandbox/kafka-broker/secrets --opt o=bind
-# docker volume create --name sandbox_kafka_data --opt type=none --opt device=/apps/sandbox/kafka-broker/data --opt o=bind
-# docker volume create --name sandbox_kafka_log --opt type=none --opt device=/apps/sandbox/kafka-broker/log --opt o=bind
+# docker volume create --name sandbox_kafka_secrets --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/secrets --opt o=bind
+# docker volume create --name sandbox_kafka_data --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/data --opt o=bind
+# docker volume create --name sandbox_kafka_log --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/log --opt o=bind
 #
 ---
 version: "3.9"

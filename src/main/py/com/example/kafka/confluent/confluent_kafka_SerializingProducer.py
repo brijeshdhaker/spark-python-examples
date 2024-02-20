@@ -17,7 +17,7 @@
 #
 
 #
-# confluent_kafka_SerializingProducer.py -b kafka-broker:9092 -s http://schema-registry:8081 -t test-avro-topic
+# confluent_kafka_SerializingProducer.py -b kafkabroker.sandbox.net:9092 -s http://schema-registry:8081 -t test-avro-topic
 #
 #
 # This is a simple example of the SerializingProducer using Avro.

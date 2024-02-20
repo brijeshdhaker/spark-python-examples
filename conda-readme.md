@@ -14,6 +14,7 @@ conda info -a
 conda update -n base -c defaults conda
 conda install mamba -c conda-forge
 conda init bash
+conda init --reverse --all
 #
 #### Path entry for conda package manager
 #
@@ -81,6 +82,8 @@ conda list
 #
 conda env remove --name pyspark3.7
 
+conda rename -n base  pyspark3.7
+conda rename -p /opt/conda base
 #
 #### Activate Virtual Env
 #
@@ -112,7 +115,7 @@ hadoop fs -chmod 775 /archives/pyspark/pyspark3.7-20221125.tar.gz
 conda deactivate
 
 #
-####
+#### 
 #
 conda install anaconda-clean
 

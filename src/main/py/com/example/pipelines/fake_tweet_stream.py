@@ -6,7 +6,7 @@ from time import sleep
 import sys
 from com.example.models.Transaction import Transaction
 
-BROKER = 'kafka-broker:9092'
+BROKER = 'kafkabroker.sandbox.net:9092'
 TOPIC = 'tweeter-tweets'
 
 WORD_FILE = '/usr/share/dict/words'

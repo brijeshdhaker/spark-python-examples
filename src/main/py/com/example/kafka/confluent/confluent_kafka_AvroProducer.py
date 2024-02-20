@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
 
         avroProducer = AvroProducer({
-            'bootstrap.servers': 'kafka-broker:9092',
+            'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
             'on_delivery': delivery_report,
             'schema.registry.url': 'http://schema-registry:8081'
         }, default_key_schema=key_schema, default_value_schema=value_schema)

@@ -87,7 +87,7 @@ schema = StructType() \
 structureStreamDf = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "kafka-broker:9092") \
+    .option("kafka.bootstrap.servers", "kafkabroker.sandbox.net:9092") \
     .option("subscribe", "txn-text-stream-topic") \
     .option("startingOffsets", "earliest")\
     .option("failOnDataLoss", "false") \

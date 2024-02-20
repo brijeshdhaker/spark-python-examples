@@ -124,7 +124,7 @@ TOPIC = "test-topic"
 #     'enable.auto.commit': False,
 #
 consumer = Consumer({
-    'bootstrap.servers': 'kafka-broker:9092',
+    'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
     'group.id': 'confluent_kafka_simple_consumer-cg',
     'on_commit': commit_completed
 })

@@ -31,7 +31,7 @@ TOPIC = "test-topic"
 
 # Create Producer instance
 producer = Producer({
-    'bootstrap.servers': 'kafka-broker:9092'
+    'bootstrap.servers': 'kafkabroker.sandbox.net:9092'
 })
 
 #

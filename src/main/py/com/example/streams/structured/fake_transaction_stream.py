@@ -6,7 +6,7 @@ from time import sleep
 from com.example.models.Transaction import Transaction
 import sys
 
-BROKER = 'kafka-broker:9092'
+BROKER = 'kafkabroker.sandbox.net:9092'
 TOPIC = 'structured-stream-source'
 
 try:
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     topic = 'structured-stream-topic'
     # Create Producer instance
     producer_conf = {
-        'bootstrap.servers': 'kafka-broker:9092',
+        'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
     }
     producer = Producer(producer_conf)
     # Create topic if needed

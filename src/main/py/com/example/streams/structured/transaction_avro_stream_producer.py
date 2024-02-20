@@ -44,7 +44,7 @@ if __name__ == '__main__':
     avro_serializer = AvroSerializer(schema_registry_client, str(value_schema), txn_to_dict)
 
     # Create Producer instance
-    producer_conf = {'bootstrap.servers': 'kafka-broker:9092',
+    producer_conf = {'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
                      'key.serializer': StringSerializer('utf_8'),
                      'value.serializer': avro_serializer}
 

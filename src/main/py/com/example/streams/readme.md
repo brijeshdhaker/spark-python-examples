@@ -13,40 +13,39 @@ Let's quickly visualize how the data will flow:
 ```shell
 
 # Topic - Creation
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic tweeter-tweets --if-not-exists
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic tweeter-tweets --if-not-exists
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 2 --replication-factor 1 --topic test-partitioned-topic
 
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic --if-not-exists
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
-kafka-topics --create --bootstrap-server kafka-broker:9092 --partitions 1 --replication-factor 1 --topic txn-delimiter-stream-topic
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic txn-text-stream-topic --if-not-exists
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic txn-json-stream-topic
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic txn-avro-stream-topic
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic txn-xml-stream-topic
+kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic txn-delimiter-stream-topic
 
 ##### Topic - List
-kafka-topics --list --bootstrap-server kafka-broker:9092
+kafka-topics --list --bootstrap-server kafkabroker.sandbox.net:9092
 
 ##### Topic - Describe
-kafka-topics --describe --topic tweeter-tweets --bootstrap-server kafka-broker:9092
+kafka-topics --describe --topic tweeter-tweets --bootstrap-server kafkabroker.sandbox.net:9092
 
 ##### Topic - Alter
 kafka-topics --alter --topic tweeter-tweets --partitions 3 --bootstrap-server zookeeper.sandbox.net:2181
 
 ##### Topic - Delete
-kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker:9092
-kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafka-broker.sandbox.net:9092
+kafka-topics --delete --topic tweeter-tweets --bootstrap-server kafkabroker.sandbox.net:9092
 
 ##### Command Line Producer :
-kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox.net:9092
+kafka-console-producer --topic tweeter-tweets --broker-list kafkabroker.sandbox.net:9092
 
-kafka-console-producer --topic tweeter-tweets --broker-list kafka-broker.sandbox.net:9092 --property parse.key=true --property key.separator=":"
+kafka-console-producer --topic tweeter-tweets --broker-list kafkabroker.sandbox.net:9092 --property parse.key=true --property key.separator=":"
 
 ##### Command Line Consumer :
-kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server kafka-broker.sandbox.net:9092
+kafka-console-consumer --topic tweeter-tweets --group pyspark-structured-stream-cg --bootstrap-server kafkabroker.sandbox.net:9092
 
 ```
 
-listeners=PLAINTEXT://kafka-broker.sandbox.net:9092
+listeners=PLAINTEXT://kafkabroker.sandbox.net:9092
 advertised.listeners=PLAINTEXT://localhost:19092
 
 ### Create Hive Table
@@ -87,7 +86,7 @@ select count(*) from tweeter_tweets;
 ```
 ### Create Cassandra Table
 ```
-docker-compose -f dc-sandbox-cluster3.yml up -d cassandra
+docker-compose -f docker-sandbox/dc-cassandra.yaml up -d cassandra
 
 
 CREATE KEYSPACE spark_stream WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};

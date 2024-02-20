@@ -40,7 +40,7 @@ TOPIC = "txn-avro-stream-topic"
 MIN_COMMIT_COUNT = 10
 
 consumer = KafkaConsumer(
-    bootstrap_servers='kafka-broker:9092',
+    bootstrap_servers='kafkabroker.sandbox.net:9092',
     client_id='kafka_python_avro_consumer-client',
     group_id='kafka_python_avro_consumer-cg',
     key_deserializer=key_deserializer,

@@ -3,7 +3,7 @@ from confluent_kafka.avro.serializer import SerializerError
 
 
 c = AvroConsumer({
-    'bootstrap.servers': 'kafka-broker:9092',
+    'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
     'group.id': 'python-avro-cg',
     'schema.registry.url': 'http://schema-registry:8081',
     'auto.offset.reset': 'earliest'

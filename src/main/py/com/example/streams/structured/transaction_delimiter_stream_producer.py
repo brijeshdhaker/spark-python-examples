@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     # Create Producer instance
     producer_conf = {
-        'bootstrap.servers': 'kafka-broker:9092',
+        'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
     }
     producer = Producer(producer_conf)
 

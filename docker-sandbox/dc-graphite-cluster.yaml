@@ -34,8 +34,7 @@ services:
       - "8125:8125/udp"
       - "8126:8126"
     volumes:
-      - sandbox_host_path:/apps/hostpath
-      - sandbox_base_path:/apps/sandbox
+      - sandbox_apps_path:/apps
       - ./conf/graphite:/opt/graphite/conf
       - ./conf/statsd:/opt/statsd/config
       - ./data/graphite:/opt/graphite/storage
@@ -44,9 +43,7 @@ services:
 
 #
 volumes:
-  sandbox_host_path:
-    external: true
-  sandbox_base_path:
+  sandbox_apps_path:
     external: true
   sandbox_graphite_config:
     external: true

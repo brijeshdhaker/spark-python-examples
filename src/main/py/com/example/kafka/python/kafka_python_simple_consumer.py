@@ -17,7 +17,7 @@ key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: v.decode("utf-8")
 
 consumer = KafkaConsumer(
-    bootstrap_servers='kafka-broker:9092',
+    bootstrap_servers='kafkabroker.sandbox.net:9092',
     client_id='kafka_python_simple_consumer-client',
     group_id='kafka_python_simple_consumer-cg',
     key_deserializer=key_deserializer,

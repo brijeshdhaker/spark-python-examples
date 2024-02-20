@@ -14,7 +14,7 @@ process them. This will ensure that messages are never processed more than once.
 unexpectedly exits after comitting but before finishing processing every message in a batch, the unprocessed messages 
 will be lost.
 
-docker-compose -f dc-kafka-cluster.yaml exec kafka-broker kafka-console-consumer --bootstrap-server kafka-broker:9092 --topic test-topic --from-beginning --max-messages 100
+docker-compose -f dc-kafka-cluster.yaml exec kafkabroker.sandbox.net kafka-console-consumer --bootstrap-server kafkabroker.sandbox.net:9092 --topic test-topic --from-beginning --max-messages 100
 
 """
 
@@ -118,7 +118,7 @@ def on_partitions_lost(consumer, lost_partitions):
 # 'value.deserializer': value_deserializer,
 # 'auto.offset.reset': 'earliest',
 consumer_conf = {
-    'bootstrap.servers': 'kafka-broker:9092',
+    'bootstrap.servers': 'kafkabroker.sandbox.net:9092',
     'client.id': 'confluent_kafka_exactly_once_consumer_client',
     'group.id': 'confluent_kafka_exactly_once_consumer_cg',
     'enable.auto.commit': False

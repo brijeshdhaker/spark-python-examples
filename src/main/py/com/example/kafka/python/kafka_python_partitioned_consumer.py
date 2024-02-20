@@ -58,7 +58,7 @@ key_deserializer = lambda k: k.decode("utf-8")
 value_deserializer = lambda v: json.loads(v.decode("utf-8"))
 
 consumer = KafkaConsumer(
-    bootstrap_servers='kafka-broker:9092',
+    bootstrap_servers='kafkabroker.sandbox.net:9092',
     client_id='kafka-python-partitioned-client',
     group_id='kafka-python-partitioned-cg',
     auto_offset_reset='earliest',

@@ -87,7 +87,7 @@ spark.sparkContext.setLogLevel('ERROR')
 sdfRides = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "kafka-broker:9092") \
+    .option("kafka.bootstrap.servers", "kafkabroker.sandbox.net:9092") \
     .option("subscribe", "taxi-rides") \
     .option("startingOffsets", "latest") \
     .option("kafka.group.id", "taxi-rides-cg") \
@@ -97,7 +97,7 @@ sdfRides = spark \
 sdfFares = spark \
     .readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "kafka-broker:9092") \
+    .option("kafka.bootstrap.servers", "kafkabroker.sandbox.net:9092") \
     .option("subscribe", "taxi-fares") \
     .option("startingOffsets", "latest") \
     .option("kafka.group.id", "taxi-fares-cg") \
