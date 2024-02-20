@@ -1,7 +1,7 @@
 
 ## Delta Lake Architecture
 
-![deltalake_architecture.png](deltalake_architecture.png)
+![deltalake_architecture.png](../src/main/py/com/example/deltalake/deltalake_architecture.png)
 
 ## Advantages of Delta Lake
 
