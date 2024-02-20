@@ -44,6 +44,10 @@ services:
     ports:
       - "9092:9092"
       - "19092:19092"
+    healthcheck:
+      test: nc -vz kafkabroker.sandbox.net 19092 || exit 1
+      retries: 20
+      interval: 10s
     volumes:
       - sandbox_apps_path:/apps
       - sandbox_security_secrets:/etc/kafka/secrets
@@ -78,6 +82,10 @@ services:
     depends_on:
       - zookeeper
       - kafkabroker
+    healthcheck:
+      test: curl -f http://schemaregistry.sandbox.net:8081 || exit 1
+      retries: 20
+      interval: 10s
     ports:
       - "8081:8081"
     volumes:

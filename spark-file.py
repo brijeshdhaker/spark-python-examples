@@ -29,8 +29,8 @@ if __name__ == "__main__":
       .appName("PythonSpark")\
       .getOrCreate()
 
-#   lines = spark.read.text("file:///apps/hostpath/spark/in/airports.text").rdd
-    lines = spark.sparkContext.textFile("file:///apps/hostpath/spark/in/airports.text")
+#   lines = spark.read.text("file:///apps/hostpath/datasets/airports.text").rdd
+    lines = spark.sparkContext.textFile("file:///apps/hostpath/datasets/airports.text")
 
     print("Partition Size : " + str(lines.getNumPartitions()))
     filtered_data = lines.filter(lambda x: applyFilter(x))
