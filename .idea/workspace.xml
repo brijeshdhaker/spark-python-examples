@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-20 update sandbox kafka cluster configurations.">
+      <change afterPath="$PROJECT_DIR$/src/main/py/com/example/models/fack-data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-sandbox/dc-kafka-cluster.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spark-file.py" beforeDir="false" afterPath="$PROJECT_DIR$/spark-file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme/beeline-help.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/hive-beeline.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme/hive-setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/hive-setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme/hive_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/hive_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme/kafka_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/kafka_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme/kcat-help.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/kcat-help.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,57 +48,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.docker-sandbox.datanode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.gateway: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.historyserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.hiveserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.hivetezui: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.hmaster: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.hregion: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.metastore: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.mysqlserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.namenode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.nodemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.resourcemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.spark-historyserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.sparkhistory: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.timelineserver: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.zeppelin: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox.zookeeper: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.nodemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hadoop-cluster.yml.resourcemanager: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yaml.kafkabroker: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yaml.schemaregistry: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yml.kafkabroker: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yml.kafkaclient: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yml.schemaregistry: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yml.zookeeper: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox/dc-kafka-cluster.yml: Compose Deployment.executor": "Run",
-    "Docker.docker-sandbox: Compose Deployment.executor": "Run",
-    "Python tests.Python tests for test_static.test_flake8.executor": "Run",
-    "Python.hello-spark.executor": "Run",
-    "Python.pie.executor": "Run",
-    "Python.run_tests.executor": "Run",
-    "Python.spark-file.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/brijeshdhaker/IdeaProjects/spark-python-examples/src/main/py/com/example/kafka/confluent",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31724137",
-    "settings.editor.selected.configurable": "terminal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.docker-sandbox.datanode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.gateway: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hiveserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hivetezui: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hmaster: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.hregion: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.metastore: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.mysqlserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.nodemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.resourcemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.spark-historyserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.sparkhistory: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.timelineserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.zeppelin: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.datanode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.namenode: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.nodemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hadoop-cluster.yml.resourcemanager: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.hmaster: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.hregion: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-hbase-cluster.yml.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yaml.kafkabroker: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yaml.schemaregistry: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yml.kafkabroker: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yml.kafkaclient: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yml.schemaregistry: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yml.zookeeper: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox/dc-kafka-cluster.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-sandbox: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_static.test_flake8.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Transaction.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fack-data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.hello-spark.executor&quot;: &quot;Run&quot;,
+    &quot;Python.pie.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.spark-file.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brijeshdhaker/IdeaProjects/spark-python-examples/src/main/py/com/example/kafka/confluent&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31724137&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;
   }
-}]]></component>
+}</component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
       <console-settings module-name="spark-python-examples">
@@ -148,6 +156,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Transaction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="spark-python-examples" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/models/Transaction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="spark-python-examples" />
       <option name="ENV_FILES" value="" />
@@ -180,13 +220,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="spark-file" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="fack-data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="spark-python-examples" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/example/models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -200,7 +243,7 @@
           <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
         </ENTRIES>
       </EXTENSION>
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/spark-file.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/example/models/fack-data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,19 +279,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-sandbox/dc-kafka-cluster.yaml.kafkaclient: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="kafkaclient" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-sandbox/dc-kafka-cluster.yaml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <configuration name="docker-sandbox/dc-kafka-cluster.yaml.schemaregistry: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -265,10 +295,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml.kafkabroker: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml.schemaregistry: Compose Deployment" />
-        <item itemvalue="Python.spark-file" />
         <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml.kafkaclient: Compose Deployment" />
+        <item itemvalue="Python.fack-data" />
+        <item itemvalue="Python.Transaction" />
+        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml.schemaregistry: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -624,7 +654,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676601753614</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">

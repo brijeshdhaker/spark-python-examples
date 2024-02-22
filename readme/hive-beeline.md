@@ -88,7 +88,19 @@ delimiterForDSV	The delimiter for delimiter-separated values output format. Defa
 !set delimiterForDSV “-”
 Hive queries
 
+
 PURPOSE	QUERY
-Display current database being used	SELECT CURRENT_DATABASE();
-Load data from a local file to the hive table	LOAD DATA LOCAL INPATH '/unix-path/myfile' INTO TABLE mytable;
-Load data from hdfs file to the hive table	LOAD DATA INPATH '/hdfs-path/myfile' INTO TABLE mytable;
+Display current database being used	
+```shell
+SELECT CURRENT_DATABASE();
+```
+
+Load data from a local file to the hive table	
+```shell
+LOAD DATA LOCAL INPATH '/unix-path/myfile' INTO TABLE mytable;
+```
+
+Load data from hdfs file to the hive table	
+```shell
+LOAD DATA INPATH '/hdfs-path/myfile' INTO TABLE mytable;
+```

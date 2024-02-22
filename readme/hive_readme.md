@@ -1,4 +1,5 @@
 
+$HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver:10000/default;user=scott;password=tiger
 
 #### 1. At the command line, copy the Hue sample_07 and sample_08 CSV files to HDFS
 ```commandline
@@ -28,8 +29,6 @@ $SPARK_HOME/bin/pyspark
 
 #### 4. In Beeline, show the Hive tables:
 ```commandline
-export HIVE_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive
-export HIVE_HOME=/opt/hive
 $HIVE_HOME/bin/beeline -u jdbc:hive2://hiveserver.sandbox.net:10000 scott tiger
 
 [0: jdbc:hive2://hiveserver:> show tables;
@@ -160,9 +159,8 @@ $beeline -u jdbc:hive2://hiveserver:10000 scott tiger
 #
 
 ```commandline
-export PYSPARK_PYTHON=/usr/bin/python2
-export PYSPARK_DRIVER_PYTHON=/usr/bin/python2
-
+export PYSPARK_DRIVER_PYTHON=/opt/sandbox/conda/envs/pyspark3.7/bin/python
+export PYSPARK_PYTHON=/opt/sandbox/conda/envs/pyspark3.7/bin/python
 $SPARK_HOME/bin/spark-submit \
     --name "PySpark HiveContext" \
     --master local[*] \
@@ -173,10 +171,8 @@ $SPARK_HOME/bin/spark-submit \
 ###
 
 ```commandline
-export PYSPARK_PYTHON=/usr/bin/python2
-export PYSPARK_DRIVER_PYTHON=/usr/bin/python2
-#
-export SPARK_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/spark
+export PYSPARK_DRIVER_PYTHON=/opt/sandbox/conda/envs/pyspark3.7/bin/python
+export PYSPARK_PYTHON=/opt/sandbox/conda/envs/pyspark3.7/bin/python
 #
 $SPARK_HOME/bin/spark-submit \
     --name "PySpark Hive Session" \

@@ -1,7 +1,7 @@
 #
-# docker volume create --name sandbox_kafka_secrets --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/secrets --opt o=bind
-# docker volume create --name sandbox_kafka_data --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/data --opt o=bind
-# docker volume create --name sandbox_kafka_log --opt type=none --opt device=/apps/sandbox/kafkabroker.sandbox.net/log --opt o=bind
+# docker volume create --name sandbox_kafka_secrets --opt type=none --opt device=/apps/sandbox/kafkabroker/secrets --opt o=bind
+# docker volume create --name sandbox_kafka_data --opt type=none --opt device=/apps/sandbox/kafkabroker/data --opt o=bind
+# docker volume create --name sandbox_kafka_log --opt type=none --opt device=/apps/sandbox/kafkabroker/log --opt o=bind
 #
 ---
 version: "3.9"
@@ -60,8 +60,8 @@ services:
       KAFKA_BROKER_RACK: "R1"
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper.sandbox.net:2181'
       KAFKA_ADVERTISED_HOST_NAME: localhost
-      KAFKA_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://0.0.0.0:9092
-      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://localhost:9092
+      KAFKA_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://kafkabroker.sandbox.net:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafkabroker.sandbox.net:19092,EXTERNAL://kafkabroker.sandbox.net:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

@@ -6,6 +6,8 @@ import csv
 from uuid import uuid4
 from datetime import datetime
 import random
+from faker import Faker
+
 #
 class Transaction(object):
 
@@ -17,10 +19,10 @@ class Transaction(object):
         "UK": ["London", "Manchester", "Liverpool", "Oxford"],
         "JP": ["Tokyo", "Osaka", "Yokohama", "Hiroshima"]
     }
-    PRODUCTS = ["Mobile", "Tablet", "Computer", "Laptop"]
+    PRODUCTS = ["Mobile", "Tablet", "Computer", "Laptop", "RAM", "TV", "Speaker", "Mouse", "Keyboard", "LDC", "Monitor", "Printer"]
     COUNTRIES = ["IN", "USA", "UK", "JP"]
     CCTYPES = ["VISA", "Master", "Amex", "RuPay"]
-    SITES = ["Amazon", "Flipkart", "SnapDeal", "Myntra"]
+    SITES = ["Amazon", "Flipkart", "SnapDeal", "Myntra", "Ebay"]
 
     # Use __slots__ to explicitly declare all data members.
     __slots__ = ["id", "uuid", "cardType", "website",  "product", "amount", "city", "country", "addts"]
@@ -74,14 +76,19 @@ class Transaction(object):
     @staticmethod
     def random():
         t = Transaction()
+        fake = Faker()
         t.id = random.randint(1000, 5000)
         t.setCardType(random.choice(Transaction.CCTYPES))
-        t.setWebsite(random.choice(Transaction.SITES))
+        random.choice(Transaction.SITES)
+        t.setWebsite(fake.url())
         t.setProduct(random.choice(Transaction.PRODUCTS))
         t.setAmount(round(random.uniform(500.99, 25000.99), 2))
+
         c = random.choice(Transaction.COUNTRIES)
-        t.setCountry(c)
-        t.setCity(random.choice(Transaction.CITIES[c]))
+        random.choice(Transaction.CITIES[c])
+
+        t.setCountry(fake.country_code())
+        t.setCity(fake.city())
         return t
 
     @staticmethod

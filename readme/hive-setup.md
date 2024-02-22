@@ -1,69 +1,6 @@
 ### Solution for 'For input string: "0x100" '
 export TERM=xterm-color
 
-#### JAVA Configurations
-```commandline
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export JAVA_HOME=/usr/java/jdk1.8.0_181-cloudera
-export PATH=$PATH:$JAVA_HOME/bin
-```
-
-#### Hadoop Configurations
-```
-export HADOOP_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
-export HADOOP_MAPRED_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop-mapreduce
-export HADOOP_COMMON_HOME=${HADOOP_HOME}
-export HADOOP_HDFS_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop-hdfs
-export YARN_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop-yarn
-export PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin:${HADOOP_HDFS_HOME}/bin:${HADOOP_HDFS_HOME}/sbin:${YARN_HOME}/bin:${YARN_HOME}/sbin:${HADOOP_MAPRED_HOME}/bin:${HADOOP_MAPRED_HOME}/sbin
-
-or 
-
-export HADOOP_HOME=/opt/sandbox/hadoop-2.10.1
-export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
-export HADOOP_MAPRED_HOME=/opt/sandbox/hadoop-2.10.1
-export HADOOP_COMMON_HOME=/opt/sandbox/hadoop-2.10.1
-export HADOOP_HDFS_HOME=/opt/sandbox/hadoop-2.10.1
-export YARN_HOME=/opt/sandbox/hadoop-2.10.1
-export PATH=$PATH:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin:${HADOOP_HDFS_HOME}/bin:${HADOOP_HDFS_HOME}/sbin:${YARN_HOME}/bin:${YARN_HOME}/sbin:${HADOOP_MAPRED_HOME}/bin:${HADOOP_MAPRED_HOME}/sbin
-
-```
-#### Hive Configurations
-```
-export HIVE_HOME=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hive
-export PATH=$PATH:$HIVE_HOME/sbin:$HIVE_HOME/bin
-export CLASSPATH=$CLASSPATH:$HADOOP_HOME/lib/*:$HIVE_HOME/lib/*
-```
-
-#
-#### Setup Metastore Database
-#
-echo "CREATE DATABASE metastore;" | psql -U postgres
-echo "CREATE USER hiveadmin WITH PASSWORD 'hiveadmin';" | psql -U postgres
-echo "GRANT ALL PRIVILEGES ON DATABASE metastore TO hiveadmin;" | psql -U postgres
-
-#### Setup Hadoop Directories
-```
-export HADOOP_HOME=/opt/sandbox/hadoop-2.10.1
-
-$HADOOP_HOME/bin/hdfs dfs -mkdir -p /user/hive/warehouse
-$HADOOP_HOME/bin/hdfs dfs -mkdir -p /user/tmp
-
-$HADOOP_HOME/bin/hdfs dfs -chmod g+w /user/tmp
-$HADOOP_HOME/bin/hdfs dfs -chmod g+w /user/hive/warehouse
-```
-
-schematool -initSchema -dbType derby
-
-$HIVE_HOME/bin/schematool -initSchema -dbType postgres
-
-$HIVE_HOME/bin/hive --version
-Hive 2.3.9
-Git git://chaos-mbp.lan/Users/chao/git/hive -r 92dd0159f440ca7863be3232f3a683a510a62b9d
-Compiled by chao on Tue Jun 1 14:02:14 PDT 2021
-From source with checksum 6715a3ba850b746eefbb0ec20d5a0187
-
 ###
 
 $SPARK_HOME/bin/spark-shell \
