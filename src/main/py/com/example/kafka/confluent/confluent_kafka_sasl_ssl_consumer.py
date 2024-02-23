@@ -118,7 +118,7 @@ def asynchronous_commits_consume_loop(consumer, topics):
 #
 #
 #
-TOPIC = "kcat-test-topic"
+TOPIC = "kafka-simple-topic"
 
 #
 #     'enable.auto.commit': False,
@@ -128,13 +128,13 @@ consumer = Consumer({
     'sasl.mechanism': 'GSSAPI',
     'security.protocol': 'SASL_SSL',
     'sasl.kerberos.service.name': 'kafka',
-    'sasl.kerberos.keytab': '/etc/kerberos/keytabs/kafkaclient.keytab',
+    'sasl.kerberos.keytab': '/apps/security/keytabs/services/kafkaclient.keytab',
     'sasl.kerberos.principal': 'kafkaclient@SANDBOX.NET',
-    'ssl.key.location': '/etc/kafka/secrets/clients.key',
+    'ssl.key.location': '/apps/security/ssl/clients.key',
     'ssl.key.password': 'confluent',
-    'ssl.certificate.location': '/etc/kafka/secrets/clients-signed.crt',
-    'ssl.ca.location': '/etc/kafka/secrets/sandbox-ca.pem',
-    'group.id': 'confluent_kafka_sasl_ssl_cg',
+    'ssl.certificate.location': '/apps/security/ssl/clients-signed.crt',
+    'ssl.ca.location': '/apps/security/ssl/sandbox-ca.pem',
+    'group.id': 'kafka-simple-cg',
     'on_commit': commit_completed
 })
 

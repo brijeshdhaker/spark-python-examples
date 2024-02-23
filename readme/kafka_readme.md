@@ -1,19 +1,19 @@
 
-docker compose -f  docker-sandbox/docker-compose.yaml exec kafkaclient sh -c "kafkacat -V"
-
-docker-compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker.sandbox.net bash
-
-# Kafka - Broker Console
+# Kafka - Broker Validations
 ```shell
 
-docker-compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker /bin/bash
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkaclient sh -c "kafkacat -V"
+
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker /bin/bash
 
 ```
 
-# Topic - Creation
+#
+### Topic - Actions :
+#
 ```shell
 
-docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec -T kafkabroker
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker /bin/bash
 
 kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 1 --replication-factor 1 --topic kafka-simple-topic --if-not-exists
 kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 4 --replication-factor 1 --topic kafka-partitioned-topic --if-not-exists
@@ -24,16 +24,13 @@ kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitio
 kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 3 --replication-factor 1 --topic transaction-json-topic --if-not-exists
 kafka-topics --create --bootstrap-server kafkabroker.sandbox.net:9092 --partitions 3 --replication-factor 1 --topic transaction-avro-topic --if-not-exists
 
-
-```
-
 # Topic - List
 kafka-topics --list --bootstrap-server kafkabroker.sandbox.net:9092
-docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker -c "kafka-topics --list --bootstrap-server kafkabroker.sandbox.net:9092"
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --list --bootstrap-server kafkabroker.sandbox.net:9092"
 
 # Topic - Describe
 kafka-topics --describe --topic kafka-simple-topic --bootstrap-server kafkabroker.sandbox.net:9092
-docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker -c "kafka-topics --describe --topic kafka-simple-topic --bootstrap-server kafkabroker.sandbox.net:9092 "
+docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --describe --topic kafka-simple-topic --bootstrap-server kafkabroker.sandbox.net:9092 "
 
 # Topic - Alter
 kafka-topics --alter --topic kafka-partitioned-topic --partitions 5 --bootstrap-server kafkabroker.sandbox.net:9092
@@ -52,13 +49,17 @@ docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "
 docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-topics --bootstrap-server localhost:9092 --topic kafka-simple-topic --create --partitions 3 --replication-factor 1 "
 
 ### Setup Default  7 days (168 hours , retention.ms= 604800000)
+```
 
 #
 ### Producer :
 #
+
 ```shell
 
-docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-producer --topic kafka-simple-topic --broker-list kafkabroker.sandbox.net:9092"
+docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-producer \
+--topic kafka-simple-topic \
+--broker-list kafkabroker.sandbox.net:9092"
 
 #### With Key
 docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-producer \
@@ -67,6 +68,7 @@ docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "k
 --property parse.key=true \
 --property key.separator=':' \
 "
+
 ```
 
 #
@@ -102,8 +104,10 @@ docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "
 docker system prune -a --volumes --filter "label=io.confluent.docker"
 
 # Application Setup
-docker-compose up -d
-docker-compose exec broker kafka-topics --create \
+
+docker-compose -f  docker-sandbox/dc-kafka-cluster.yaml up -d
+
+docker-compose exec kafkabroker kafka-topics --create \
 --topic users-topic-avro \
 --bootstrap-server kafkabroker.sandbox.net:9092 \
 --partitions 1 \

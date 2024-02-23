@@ -61,7 +61,7 @@ sudo -E /opt/conda/bin/conda update -n base -c defaults conda
 conda env create -f mr-delta.yml
 
 conda activate mr-delta
-pip install confluent-kafka avro-python3 fastavro==1.4.9 pycodestyle
+pip install confluent-kafka[avro]==1.8.2 avro-python3 fastavro==1.4.9 pycodestyle
 pip install numpy pandas scipy grpcio protobuf pandasql ipython ipykernel
 pip install jupyter_client nb_conda panel pyyaml seaborn plotnine hvplot intake
 pip install intake-parquet intake-xarray altair vega_datasets pyarrow pytest
