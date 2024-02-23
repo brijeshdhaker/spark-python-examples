@@ -62,13 +62,16 @@ docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "k
 --broker-list kafkabroker.sandbox.net:9092"
 
 #### With Key
+#### Note : \t is default key seperator
 docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-producer \
---topic kafka-simple-topic
+--topic kafka-simple-topic \
 --broker-list kafkabroker.sandbox.net:9092 \
+--producer.config /apps/sandbox/kafka/cnf/client_plaintext.config \
 --property parse.key=true \
---property key.separator=':' \
-"
+< /apps/sandbox/kafka/json_messages.txt \
+2>/dev/null"
 
+# --property parse.key=true \
 ```
 
 #
@@ -78,14 +81,16 @@ docker compose -f docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "k
 
 docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-consumer \
 --topic kafka-simple-topic \
---group kafka-simple-cg \
 --bootstrap-server kafkabroker.sandbox.net:9092 \
+--consumer.config /apps/sandbox/kafka/cnf/client_plaintext.config \
 --timeout-ms 5000 2>/dev/null"
 
+#
 docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-consumer \
 --topic kafka-simple-topic \
 --bootstrap-server kafkabroker.sandbox.net:19092 \
---offset 600 \
+--consumer.config /apps/sandbox/kafka/cnf/client_plaintext.config \
+--offset 0 \
 --partition 0 \
 --property print.key=true \
 --property key.separator=' - ' \
@@ -94,10 +99,10 @@ docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "
 docker compose -f  docker-sandbox/dc-kafka-cluster.yaml exec kafkabroker sh -c "kafka-console-consumer \
 --topic kafka-simple-topic \
 --group kafka-simple-cg \
---bootstrap-server kafkabroker.sandbox.net:19092 \
---from-beginning \
+--bootstrap-server kafkabroker.sandbox.net:9092 \
+--consumer.config /apps/sandbox/kafka/cnf/client_plaintext.config \
 --property print.key=true \
---property key.separator=\",\" \
+--property key.separator='  -  ' \
 --timeout-ms 5000 2>/dev/null"
 
 ```

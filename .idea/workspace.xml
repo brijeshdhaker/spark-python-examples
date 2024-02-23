@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-20 update sandbox kafka cluster configurations.">
+    <list default="true" id="14c5b8bd-d7b9-408a-a351-03e67b56f0b7" name="Changes" comment="2023-02-23 update sandbox kafka cluster validation scripts.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme/conda-readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/conda-readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme/kafka_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme/kafka_readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_sasl_ssl_consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_sasl_ssl_consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_sasl_ssl_producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/py/com/example/kafka/confluent/confluent_kafka_sasl_ssl_producer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +119,7 @@
       <recent name="$PROJECT_DIR$/monitoring/merrics" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.confluent_kafka_sasl_ssl_producer">
+  <component name="RunManager" selected="Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -311,10 +308,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment" />
         <item itemvalue="Python.confluent_kafka_sasl_ssl_producer" />
         <item itemvalue="Python.confluent_kafka_sasl_ssl_consumer" />
         <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml.kafkabroker: Compose Deployment" />
-        <item itemvalue="Docker.docker-sandbox/dc-kafka-cluster.yaml: Compose Deployment" />
         <item itemvalue="Python.fack-data" />
       </list>
     </recent_temporary>
@@ -671,7 +668,7 @@
       <option name="project" value="LOCAL" />
       <updated>1676601753614</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -698,7 +695,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2022-09-16 add postgres examples in python." />
     <MESSAGE value="2022-09-18 update Hive metastore with mysql server." />
     <MESSAGE value="2022-09-19 update Hive metastore with mysql server." />
     <MESSAGE value="2022-09-20 update volume config in all compose.yml ." />
@@ -723,7 +719,8 @@
     <MESSAGE value="2023-02-18 update sandbox cluster details." />
     <MESSAGE value="2023-02-19 update sandbox cluster details." />
     <MESSAGE value="2023-02-20 update sandbox kafka cluster configurations." />
-    <option name="LAST_COMMIT_MESSAGE" value="2023-02-20 update sandbox kafka cluster configurations." />
+    <MESSAGE value="2023-02-23 update sandbox kafka cluster validation scripts." />
+    <option name="LAST_COMMIT_MESSAGE" value="2023-02-23 update sandbox kafka cluster validation scripts." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
